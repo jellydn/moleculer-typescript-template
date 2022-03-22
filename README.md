@@ -73,13 +73,6 @@ Prior to your first deployment, you'll need to do a few things:
 
 -   Add a `FLY_API_TOKEN` to your GitHub repo. To do this, go to your user settings on Fly and create a new [token](https://web.fly.io/user/personal_access_tokens/new), then add it to [your repo secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets) with the name `FLY_API_TOKEN`.
 
--   Create a persistent volume for the sqlite database for both your staging and production environments. Run the following:
-
-    ```sh
-    fly volumes create data --size 1 --app moleculer-typescript
-    fly volumes create data --size 1 --app moleculer-typescript-staging
-    ```
-
 Now that every is set up you can commit and push your changes to your repo. Every commit to your `main` branch will trigger a deployment to your production environment, and every commit to your `dev` branch will trigger a deployment to your staging environment.
 
 ## GitHub Actions

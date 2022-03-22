@@ -9,16 +9,13 @@ NODE_ENV = "production"
 NAMESPACE = "api"
 TRANSPORTER = "TCP"
 SERVICEDIR = "dist/services"
+SERVICES = "api,greeter"
+LOGGER = "true"
+LOGLEVEL = "debug"
 
 [experimental]
 allowed_public_ports = [ ]
 auto_rollback = true
-cmd = "start.sh"
-entrypoint = "sh"
-
-[mounts]
-source = "data"
-destination = "/data"
 
 [[services]]
 internal_port = 3_000
