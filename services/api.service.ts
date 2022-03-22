@@ -1,8 +1,7 @@
+import { IncomingMessage } from "http";
 import { Context, ServiceSchema } from "moleculer";
 import ApiGateway from "moleculer-web";
-
-import { IncomingMessage } from "node:http";
-import process from "node:process";
+import process from "process";
 
 /**
  * @typedef {import('moleculer').Context} Context Moleculer's Context
