@@ -14,7 +14,7 @@ LOGGER = "true"
 LOGLEVEL = "debug"
 
 [experimental]
-allowed_public_ports = [ ]
+allowed_public_ports = ["3000"]
 auto_rollback = true
 
 [[services]]
