@@ -1,0 +1,14 @@
+{
+	"extends": [
+		"xo",
+		"xo-typescript",
+		"prettier"
+	],
+	"parserOptions": {
+		"project": "./tsconfig.json"
+	},
+	"rules": {
+		"@typescript-eslint/naming-convention": "warn",
+		"import/extensions": "off"
+	}
+}
