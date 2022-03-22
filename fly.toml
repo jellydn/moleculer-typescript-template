@@ -7,14 +7,21 @@ kill_timeout = 5
 processes = []
 
 [env]
+PORT = 3000
+NODE_ENV = "production"
+NAMESPACE = "api"
+TRANSPORTER = "TCP"
+SERVICEDIR = "dist/services"
 
 [experimental]
   allowed_public_ports = []
   auto_rollback = true
+  cmd = "start.sh"
+  entrypoint = "sh"
 
 [[services]]
   http_checks = []
-  internal_port = 8080
+  internal_port = 3000
   processes = ["app"]
   protocol = "tcp"
   script_checks = []
@@ -37,3 +44,13 @@ processes = []
     interval = "15s"
     restart_limit = 0
     timeout = "2s"
+
+  [[services.http_checks]]
+	interval = 10_000
+	grace_period = "5s"
+	method = "get"
+	path = "/api/health/check"
+	protocol = "http"
+	timeout = 2_000
+	tls_skip_verify = false
+	headers = { }
