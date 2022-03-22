@@ -25,6 +25,17 @@ const apiService: ServiceSchema = {
 
 		routes: [
 			{
+				path: "/api/health",
+
+				// Route CORS settings (overwrite global settings)
+				cors: {
+					origin: "*",
+				},
+				aliases: {
+					check: "$node.health",
+				},
+			},
+			{
 				path: "/api",
 
 				whitelist: ["**"],
