@@ -1,6 +1,6 @@
 {
-  "name": "matching-engine",
-  "version": "1.0.0",
+  "name": "moleculer-typescript-template",
+  "version": "0.1.0",
   "description": "My Moleculer-based microservices project",
   "scripts": {
     "dev": "NODE_OPTIONS=--trace-warnings ts-node-dev --watch services node_modules/.bin/moleculer-runner --env --config moleculer.config.ts",
@@ -14,7 +14,8 @@
   },
   "keywords": [
     "microservices",
-    "moleculer"
+    "moleculer",
+    "moleculer typescript template"
   ],
   "author": "",
   "devDependencies": {
@@ -54,12 +55,5 @@
     "roots": [
       "../test"
     ]
-  },
-  "xo": {
-    "prettier": true,
-    "rules": {
-      "@typescript-eslint/naming-convention": "warn",
-      "import/extensions": "off"
-    }
   }
 }

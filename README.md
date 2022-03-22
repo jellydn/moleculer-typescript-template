@@ -1,11 +1,11 @@
 [![Moleculer](https://badgen.net/badge/Powered%20by/Moleculer/0e83cd)](https://moleculer.services)
 
-# matching-engine
+# moleculer-typescript-template
 This is a [Moleculer](https://moleculer.services/)-based microservices project. Generated with the [Moleculer CLI](https://moleculer.services/docs/0.14/moleculer-cli.html).
 
 ## Usage
-Start the project with `npm run dev` command. 
-After starting, open the http://localhost:3000/ URL in your browser. 
+Start the project with `npm run dev` command.
+After starting, open the http://localhost:3000/ URL in your browser.
 On the welcome page you can test the generated services via API Gateway and check the nodes & services.
 
 In the terminal, try the following commands:
