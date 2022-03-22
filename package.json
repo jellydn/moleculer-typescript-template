@@ -10,12 +10,14 @@
     "ci": "jest --watch",
     "test": "jest --coverage",
     "build": "tsc",
+    "lint": "eslint --cache --cache-location ./node_modules/.cache/eslint --ext .ts,.js,.tsx,.jsx services/",
     "build:watch": "tsc -w",
     "prebuild": "rimraf dist",
     "dc:up": "docker-compose up --build -d",
     "dc:logs": "docker-compose logs -f",
     "dc:down": "docker-compose down",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "typecheck": "tsc -b"
   },
   "keywords": [
     "microservices",
@@ -29,6 +31,7 @@
     "@types/node": "^16.11.26",
     "@typescript-eslint/eslint-plugin": "^5.16.0",
     "@typescript-eslint/parser": "^5.16.0",
+    "eslint": "^8.11.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-config-xo": "^0.40.0",
     "eslint-config-xo-typescript": "^0.50.0",
