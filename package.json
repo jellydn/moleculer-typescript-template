@@ -56,7 +56,7 @@
     "moleculer": "^0.14.19",
     "moleculer-web": "^0.10.4",
     "nats": "^2.6.1",
-    "pino": "^7.9.1",
+    "pino": "7.9.2",
     "pino-pretty": "^7.5.4"
   },
   "engines": {
