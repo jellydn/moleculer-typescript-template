@@ -1,11 +1,10 @@
 version: "3.3"
 
 services:
-
   api:
     build:
       context: .
-    image: matching-engine
+    image: moleculer-typescript
     env_file: docker-compose.env
     environment:
       SERVICES: api
@@ -22,7 +21,7 @@ services:
   greeter:
     build:
       context: .
-    image: matching-engine
+    image: moleculer-typescript
     env_file: docker-compose.env
     environment:
       SERVICES: greeter

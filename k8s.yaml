@@ -36,7 +36,7 @@ metadata:
   name: ingress
 spec:
   rules:
-    - host: matching-engine.127.0.0.1.nip.io
+    - host: moleculer-typescript.127.0.0.1.nip.io
       http:
         paths:
           - path: /
@@ -64,7 +64,7 @@ spec:
     spec:
       containers:
         - name: api
-          image: matching-engine
+          image: moleculer-typescript
           envFrom:
             - configMapRef:
                 name: common-env
@@ -92,7 +92,7 @@ spec:
     spec:
       containers:
         - name: greeter
-          image: matching-engine
+          image: moleculer-typescript
           envFrom:
             - configMapRef:
                 name: common-env
