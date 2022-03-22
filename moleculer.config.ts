@@ -1,11 +1,6 @@
-import {BrokerOptions} from 'moleculer';
-import pino from 'pino';
+import { BrokerOptions } from "moleculer";
 
-const logger = pino({
-	transport: {
-		target: 'pino-pretty',
-	},
-});
+import { logger } from "./logger";
 
 /**
  * Moleculer ServiceBroker configuration file
@@ -34,7 +29,7 @@ const logger = pino({
  */
 const config: BrokerOptions = {
 	// Namespace of nodes to segment your nodes on the same network.
-	namespace: 'microservices',
+	namespace: "microservices",
 	// Unique node identifier. Must be unique in a namespace.
 	nodeID: `api${Math.random().toString(36).slice(2, 15)}${Math.random()
 		.toString(36)
@@ -45,14 +40,14 @@ const config: BrokerOptions = {
 	// Enable/disable logging or use custom logger. More info: https://moleculer.services/docs/0.14/logging.html
 	// Available logger types: "Console", "File", "Pino", "Winston", "Bunyan", "debug", "Log4js", "Datadog"
 	logger: {
-		type: 'Console',
+		type: "Console",
 		options: {
 			// Using colors on the output
 			colors: true,
 			// Print module names with different colors (like docker-compose for containers)
 			moduleColors: false,
 			// Line formatter. It can be "json", "short", "simple", "full", a `Function` or a template string like "{timestamp} {level} {nodeID}/{mod}: {msg}"
-			formatter: 'full',
+			formatter: "full",
 			// Custom object printer. If not defined, it uses the `util.inspect` method.
 			objectPrinter: null,
 			// Auto-padding the module name in order to messages begin at the same column.
@@ -61,13 +56,13 @@ const config: BrokerOptions = {
 	},
 	// Default log level for built-in console logger. It can be overwritten in logger options above.
 	// Available values: trace, debug, info, warn, error, fatal
-	logLevel: 'info',
+	logLevel: "info",
 
 	// Define transporter.
 	// More info: https://moleculer.services/docs/0.14/networking.html
 	// Note: During the development, you don't need to define it because all services will be loaded locally.
 	// In production you can set it via `TRANSPORTER=nats://localhost:4222` environment variable.
-	transporter: 'NATS', // "NATS"
+	transporter: "NATS", // "NATS"
 
 	// Define a cacher.
 	// More info: https://moleculer.services/docs/0.14/caching.html
@@ -76,7 +71,7 @@ const config: BrokerOptions = {
 	// Define a serializer.
 	// Available values: "JSON", "Avro", "ProtoBuf", "MsgPack", "Notepack", "Thrift".
 	// More info: https://moleculer.services/docs/0.14/networking.html#Serialization
-	serializer: 'JSON',
+	serializer: "JSON",
 
 	// Number of milliseconds to wait before reject a request with a RequestTimeout error. Disabled: 0
 	requestTimeout: 10 * 1000,
@@ -94,7 +89,7 @@ const config: BrokerOptions = {
 		// Backoff factor for delay. 2 means exponential backoff.
 		factor: 2,
 		// A function to check failed requests.
-		check: (error: Error & {retryable?: boolean}) =>
+		check: (error: Error & { retryable?: boolean }) =>
 			error && Boolean(error.retryable),
 	},
 
@@ -124,7 +119,7 @@ const config: BrokerOptions = {
 	registry: {
 		// Define balancing strategy. More info: https://moleculer.services/docs/0.14/balancing.html
 		// Available values: "RoundRobin", "Random", "CpuUsage", "Latency", "Shard"
-		strategy: 'RoundRobin',
+		strategy: "RoundRobin",
 		// Enable local action call preferring. Always call the local action instance if available.
 		preferLocal: true,
 	},
@@ -166,7 +161,7 @@ const config: BrokerOptions = {
 		enabled: false,
 		// Available built-in reporters: "Console", "CSV", "Event", "Prometheus", "Datadog", "StatsD"
 		reporter: {
-			type: 'Console',
+			type: "Console",
 			options: {
 				// Custom logger
 				logger: null,
@@ -185,7 +180,7 @@ const config: BrokerOptions = {
 		enabled: true,
 		// Available built-in exporters: "Console", "Datadog", "Event", "EventLegacy", "Jaeger", "Zipkin"
 		exporter: {
-			type: 'Console', // Console exporter is only for development!
+			type: "Console", // Console exporter is only for development!
 			options: {
 				// Custom logger
 				logger: null,
@@ -207,17 +202,17 @@ const config: BrokerOptions = {
 
 	// Called after broker created.
 	created(broker) {
-		logger.warn('Broker created!', broker);
+		logger.warn("Broker created!", broker);
 	},
 
 	// Called after broker started.
 	async started(broker) {
-		logger.warn('Broker started!', broker);
+		logger.warn("Broker started!", broker);
 	},
 
 	// Called after broker stopped.
 	async stopped(broker) {
-		logger.warn('Broker stopped!', broker);
+		logger.warn("Broker stopped!", broker);
 	},
 };
 
