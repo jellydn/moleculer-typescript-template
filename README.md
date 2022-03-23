@@ -10,6 +10,12 @@
 
 -   node >= 14.x.x
 
+## Init new project
+
+```sh
+npx degit jellydn/moleculer-typescript-template [PROJECT-NAME]
+```
+
 ## Install
 
 ```sh
