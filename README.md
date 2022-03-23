@@ -25,6 +25,8 @@ yarn install
 ## Usage
 
 ```sh
+# Copy env file
+cp .env.example .env
 yarn dev
 ```
 
