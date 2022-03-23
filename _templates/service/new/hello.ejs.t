@@ -25,10 +25,10 @@ const <%= name %>Service: ServiceSchema = {
 		 *
 		 * @returns
 		 */
-		hi: {
+		hello: {
 			rest: {
 				method: "GET",
-				path: "/hi",
+				path: "/hello",
 			},
 			async handler() {
 				return "Hello Moleculer";
