@@ -7,11 +7,6 @@ COPY package.json yarn.lock logger.ts moleculer.config.ts tsconfig.json ./
 COPY services services
 COPY public public
 
-RUN apk --no-cache --virtual build-dependencies add \
-    python \
-    make \
-    git \
-    g++
 RUN yarn install
 ENV NODE_ENV=production
 RUN yarn build
