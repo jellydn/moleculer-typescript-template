@@ -53,6 +53,7 @@
   },
   "dependencies": {
     "dotenv": "16.0.0",
+    "helmet": "^5.0.2",
     "moleculer": "0.14.19",
     "moleculer-web": "0.10.4",
     "nats": "2.6.1",

@@ -1,3 +1,4 @@
+import helmet from "helmet";
 import { IncomingMessage } from "http";
 import { Context, ServiceSchema } from "moleculer";
 import ApiGateway from "moleculer-web";
@@ -21,7 +22,7 @@ const apiService: ServiceSchema = {
 		ip: "0.0.0.0",
 
 		// Global Express middlewares. More info: https://moleculer.services/docs/0.14/moleculer-web.html#Middlewares
-		use: [],
+		use: [helmet()],
 
 		routes: [
 			{
