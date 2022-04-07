@@ -58,7 +58,7 @@
     "moleculer-web": "0.10.4",
     "nats": "2.6.1",
     "pino": "7.9.2",
-    "pino-pretty": "7.6.0"
+    "pino-pretty": "7.6.1"
   },
   "engines": {
     "node": ">= 14.x.x"
