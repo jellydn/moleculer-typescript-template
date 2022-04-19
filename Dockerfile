@@ -5,6 +5,7 @@ WORKDIR /app
 
 COPY package.json yarn.lock logger.ts moleculer.config.ts tsconfig.json ./
 COPY services services
+COPY addons addons
 COPY public public
 
 RUN yarn install
