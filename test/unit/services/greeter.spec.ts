@@ -22,15 +22,23 @@ describe("Test 'greeter' service", () => {
 	describe("Test 'greeter.welcome' action", () => {
 		it("should return with 'Welcome'", async () => {
 			const response = await broker.call("greeter.welcome", {
-				name: "Adam",
+				username: "Adam",
 			});
 			expect(response).toBe("Welcome, Adam");
 		});
 
 		it("should reject an ValidationError", async () => {
-			expect.assertions(1);
+			expect.assertions(2);
 			try {
 				await broker.call("greeter.welcome");
+			} catch (error: unknown) {
+				expect(error).toBeInstanceOf(ValidationError);
+			}
+
+			try {
+				await broker.call("greeter.welcome", {
+					username: "a1",
+				});
 			} catch (error: unknown) {
 				expect(error).toBeInstanceOf(ValidationError);
 			}
