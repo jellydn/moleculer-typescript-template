@@ -1,6 +1,6 @@
 # Welcome to moleculer-typescript-template 👋
 
-![Version](https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000)
+![Version](https://img.shields.io/badge/version-0.1.1-blue.svg?cacheSeconds=2592000)
 ![Prerequisite](https://img.shields.io/badge/node-%3E%3D%2014.x.x-blue.svg)
 [![Twitter: jellydn](https://img.shields.io/twitter/follow/jellydn.svg?style=social)](https://twitter.com/jellydn)
 
@@ -15,6 +15,14 @@
 ```sh
 npx degit jellydn/moleculer-typescript-template [PROJECT-NAME]
 ```
+
+## Features
+
+-   ⚡️ Progressive microservices framework for Node.js.
+    [Moleculer](https://moleculer.services/) with [Typescript](https://www.typescriptlang.org/) template
+-   📦 [hygen](http://www.hygen.io/) - The scalable code generator that saves you time.
+-   🦾 [pino](https://getpino.io) - super fast, all natural json logger
+-   🔥 [swagger-jsdoc](https://github.com/Surnet/swagger-jsdoc/blob/v6/docs/README.md) - Generates swagger/openapi specification based on jsDoc comments and YAML files.
 
 ## Install
 
@@ -32,6 +40,7 @@ yarn dev
 
 After starting, open the http://localhost:3000/ URL in your browser.
 On the welcome page you can test the generated services via API Gateway and check the nodes & services.
+![https://gyazo.com/c8a8c8b05319504d36922458d9807db2.gif](https://gyazo.com/c8a8c8b05319504d36922458d9807db2.gif)
 
 ```sh
 yarn cli
@@ -49,6 +58,14 @@ Add new service to your project with below command
 ```sh
 yarn generate:service [service-name]
 ```
+
+## API Documentation
+
+This template also reads your [JSDoc-annotated](https://github.com/Surnet/swagger-jsdoc/blob/v6/docs/README.md) source code and generates an OpenAPI (Swagger) specification.
+
+Open the http://localhost:3000/docs URL in your browser, you will see the Swagger UI as
+
+![https://gyazo.com/a4fe2413414c94dde636a531eee1a4a0.gif](https://gyazo.com/a4fe2413414c94dde636a531eee1a4a0.gif)
 
 ## Run tests
 
