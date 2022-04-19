@@ -43,15 +43,21 @@ On the welcome page you can test the generated services via API Gateway and chec
 ![https://gyazo.com/c8a8c8b05319504d36922458d9807db2.gif](https://gyazo.com/c8a8c8b05319504d36922458d9807db2.gif)
 
 ```sh
-yarn cli
+yarn cli --ns api
 ```
+
+![https://gyazo.com/235f710ab3fd906f80768261e793eb13](https://gyazo.com/235f710ab3fd906f80768261e793eb13.gif)
 
 In the terminal, try the following commands:
 
 -   `nodes` - List all connected nodes.
 -   `actions` - List all registered service actions.
 -   `call greeter.hello` - Call the `greeter.hello` action.
--   `call greeter.welcome --name John` - Call the `greeter.welcome` action with the `name` parameter.
+-   `call greeter.welcome --username dunghd` - Call the `greeter.welcome` action with the `username` parameter.
+
+![https://gyazo.com/3aca1c4e1992ad1c10da8060d7e21a6c.gif](https://gyazo.com/3aca1c4e1992ad1c10da8060d7e21a6c.gif)
+
+## Code generator
 
 Add new service to your project with below command
 
