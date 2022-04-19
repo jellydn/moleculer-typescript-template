@@ -92,6 +92,7 @@
 	},
 	"include": [
 		"services/**/*.ts",
+		"addons/**/*.ts",
 		"test/**/*.spec.ts",
 	],
 	"files": [

@@ -4,6 +4,8 @@ import { Context, ServiceSchema } from "moleculer";
 import ApiGateway from "moleculer-web";
 import process from "process";
 
+import { swaggerService } from "../addons/swagger";
+
 /**
  * @typedef {import('moleculer').Context} Context Moleculer's Context
  * @typedef {import('http').IncomingMessage} IncomingRequest Incoming HTTP Request
@@ -11,7 +13,7 @@ import process from "process";
  */
 const apiService: ServiceSchema = {
 	name: "api",
-	mixins: [ApiGateway],
+	mixins: [ApiGateway, swaggerService()],
 
 	// More info about settings: https://moleculer.services/docs/0.14/moleculer-web.html
 	settings: {
@@ -57,8 +59,6 @@ const apiService: ServiceSchema = {
 				// The gateway will dynamically build the full routes from service schema.
 				autoAliases: true,
 
-				aliases: {},
-
 				/**
 				 * Before call hook. You can check the request.
 				 * @param {Context} ctx
@@ -86,6 +86,10 @@ const apiService: ServiceSchema = {
 
 				// Calling options. More info: https://moleculer.services/docs/0.14/moleculer-web.html#Calling-options
 				callingOptions: {},
+
+				aliases: {
+					swagger: "api.getSwaggerSpec",
+				},
 
 				bodyParsers: {
 					json: {

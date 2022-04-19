@@ -18,9 +18,13 @@ const greeterService: ServiceSchema = {
 	 */
 	actions: {
 		/**
-		 * Say a 'Hello' action.
-		 *
-		 * @returns
+		 * @swagger
+		 * /api/greeter/hello:
+		 *   get:
+		 *     description: Returns the Hello Moleculer
+		 *     responses:
+		 *       200:
+		 *         description: Hello Moleculer
 		 */
 		hello: {
 			rest: {
@@ -36,19 +40,34 @@ const greeterService: ServiceSchema = {
 		 * Welcome, a username
 		 *
 		 * @param {String} name - User name
+		 * @swagger
+		 * /api/greeter/welcome:
+		 *   get:
+		 *     description: Returns Welcome, a username
+		 *     parameters:
+		 *     - name: username
+		 *       description: a username
+		 *       in: query
+		 *       required: true
+		 *       type: string
+		 *     responses:
+		 *      200:
+		 *         description: Welcome, a username
+		 *      422:
+		 *         description: Invalid username
 		 */
 		welcome: {
 			rest: "/welcome",
 			params: {
-				name: "string",
+				username: { type: "string", min: 3, max: 25 },
 			},
 			/** @param {Context} ctx  */
 			async handler(
 				ctx: Context<{
-					name: string;
+					username: string;
 				}>
 			) {
-				return `Welcome, ${ctx.params.name}`;
+				return `Welcome, ${ctx.params.username}`;
 			},
 		},
 	},
@@ -66,7 +85,9 @@ const greeterService: ServiceSchema = {
 	/**
 	 * Service created lifecycle event handler
 	 */
-	// created() {},
+	created() {
+		this.logger.info("[greeter] The service was created");
+	},
 
 	/**
 	 * Service started lifecycle event handler

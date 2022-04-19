@@ -1,6 +1,6 @@
 {
   "name": "moleculer-typescript-template",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "My Moleculer-based microservices project",
   "scripts": {
     "dev": "run-p *:watch",
@@ -31,8 +31,9 @@
     "@trivago/prettier-plugin-sort-imports": "3.2.0",
     "@types/jest": "27.4.1",
     "@types/node": "16.11.27",
-    "@typescript-eslint/eslint-plugin": "5.19.0",
-    "@typescript-eslint/parser": "5.19.0",
+    "@types/swagger-jsdoc": "^6.0.1",
+    "@typescript-eslint/eslint-plugin": "5.20.0",
+    "@typescript-eslint/parser": "5.20.0",
     "eslint": "8.13.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-config-xo": "0.40.0",
@@ -58,7 +59,8 @@
     "moleculer-web": "0.10.4",
     "nats": "2.6.1",
     "pino": "7.10.0",
-    "pino-pretty": "7.6.1"
+    "pino-pretty": "7.6.1",
+    "swagger-jsdoc": "^6.2.1"
   },
   "engines": {
     "node": ">= 14.x.x"

@@ -1,0 +1,44 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Swagger Api",
+    "version": "1.0"
+  },
+  "host": "http://0.0.0.0:3000",
+  "paths": {
+    "/api/greeter/hello": {
+      "get": {
+        "description": "Returns the Hello Moleculer",
+        "responses": {
+          "200": {
+            "description": "Hello Moleculer"
+          }
+        }
+      }
+    },
+    "/api/greeter/welcome": {
+      "get": {
+        "description": "Returns Welcome, a username",
+        "parameters": [
+          {
+            "name": "username",
+            "description": "a username",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Welcome, a username"
+          },
+          "422": {
+            "description": "Invalid username"
+          }
+        }
+      }
+    }
+  },
+  "components": {},
+  "tags": []
+}
