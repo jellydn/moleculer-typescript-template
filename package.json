@@ -31,7 +31,7 @@
     "@trivago/prettier-plugin-sort-imports": "3.2.0",
     "@types/jest": "27.4.1",
     "@types/node": "16.11.28",
-    "@types/swagger-jsdoc": "^6.0.1",
+    "@types/swagger-jsdoc": "6.0.1",
     "@typescript-eslint/eslint-plugin": "5.20.0",
     "@typescript-eslint/parser": "5.20.0",
     "eslint": "8.14.0",
@@ -60,7 +60,7 @@
     "nats": "2.6.1",
     "pino": "7.10.0",
     "pino-pretty": "7.6.1",
-    "swagger-jsdoc": "^6.2.1"
+    "swagger-jsdoc": "6.2.1"
   },
   "engines": {
     "node": ">= 14.x.x"
