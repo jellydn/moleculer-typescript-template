@@ -92,12 +92,16 @@ const greeterService: ServiceSchema = {
 	/**
 	 * Service started lifecycle event handler
 	 */
-	// async started() {},
+	async started() {
+		this.logger.info("[greeter] The service was started");
+	},
 
 	/**
 	 * Service stopped lifecycle event handler
 	 */
-	// async stopped() {},
+	async stopped() {
+		this.logger.info("[greeter] The service was stopped");
+	},
 };
 
 export default greeterService;

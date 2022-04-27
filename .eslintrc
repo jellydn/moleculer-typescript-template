@@ -1,9 +1,5 @@
 {
-	"extends": [
-		"xo",
-		"xo-typescript",
-		"prettier"
-	],
+	"extends": ["xo", "xo-typescript", "prettier"],
 	"parserOptions": {
 		"project": "./tsconfig.json"
 	},
@@ -12,6 +8,7 @@
 		"@typescript-eslint/no-unsafe-return": "warn",
 		"@typescript-eslint/no-unsafe-call": "warn",
 		"@typescript-eslint/no-unsafe-assignment": "warn",
-		"import/extensions": "off"
+		"import/extensions": "off",
+		"new-cap": "warn"
 	}
 }

@@ -20,9 +20,9 @@ export const swaggerService = (
 	{
 		autoGenerateFile,
 		swaggerFilePath,
-	}: { autoGenerateFile: boolean; swaggerFilePath: string } = {
-		autoGenerateFile: true,
-		swaggerFilePath: resolve(__dirname, "../../public/docs/open-api.json"),
+	}: { autoGenerateFile: boolean; swaggerFilePath?: string } = {
+		autoGenerateFile: process.env.NODE_ENV !== "production",
+		swaggerFilePath: resolve(__dirname, "open-api.json"),
 	}
 ): ServiceSchema => ({
 	name: "$swagger",
@@ -68,7 +68,10 @@ export const swaggerService = (
 	 * Service created lifecycle event handler
 	 */
 	created() {
-		const scanFolders = [resolve(__dirname, "..")];
+		const folder = __dirname.includes("dist")
+			? resolve(__dirname.substring(0, __dirname.indexOf("dist")), "dist")
+			: resolve(__dirname, "dist");
+		const scanFolders = [folder];
 		this.logger.info(`Scanning folders: ${scanFolders.join(",")}`);
 		const options: Options = {
 			apis: scanFolders.flatMap((apiFolder) => [

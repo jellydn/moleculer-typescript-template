@@ -2,6 +2,7 @@ import helmet from "helmet";
 import { IncomingMessage } from "http";
 import { Context, ServiceSchema } from "moleculer";
 import ApiGateway from "moleculer-web";
+import { resolve } from "path";
 import process from "process";
 
 import { swaggerService } from "../addons/swagger";
@@ -13,7 +14,25 @@ import { swaggerService } from "../addons/swagger";
  */
 const apiService: ServiceSchema = {
 	name: "api",
-	mixins: [ApiGateway, swaggerService()],
+	mixins: [
+		ApiGateway,
+		swaggerService(
+			{
+				definition: {
+					openapi: "3.0.0",
+					info: {
+						title: "Swagger Api",
+						version: "1.0",
+					},
+					host: `http://0.0.0.0:${Number(process.env?.PORT ?? 3000)}`,
+				},
+			},
+			{
+				autoGenerateFile: true,
+				swaggerFilePath: resolve(__dirname, "open-api.json"),
+			}
+		),
+	],
 
 	// More info about settings: https://moleculer.services/docs/0.14/moleculer-web.html
 	settings: {

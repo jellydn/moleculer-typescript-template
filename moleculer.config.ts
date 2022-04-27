@@ -29,7 +29,7 @@ import { logger } from "./logger";
  */
 const config: BrokerOptions = {
 	// Namespace of nodes to segment your nodes on the same network.
-	namespace: "microservices",
+	namespace: "api",
 	// Unique node identifier. Must be unique in a namespace.
 	nodeID: `api-${Math.random().toString(36).slice(2, 15)}${Math.random()
 		.toString(36)
