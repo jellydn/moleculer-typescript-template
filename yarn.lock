@@ -4421,10 +4421,10 @@ moleculer-web@0.10.4:
     qs "^6.10.1"
     serve-static "^1.14.1"
 
-moleculer@0.14.20:
-  version "0.14.20"
-  resolved "https://registry.yarnpkg.com/moleculer/-/moleculer-0.14.20.tgz#76766cfe9dc01e8e27ad0bc8a14bb9585e7f7d91"
-  integrity sha512-mip/ZncbiVv6DhC8gKXPpu8XLQEe9Qep7QmHuPns9heNTS1umixkZzlfGBD4d0/j0YNvHUMu029EujSSIEsHOA==
+moleculer@0.14.21:
+  version "0.14.21"
+  resolved "https://registry.yarnpkg.com/moleculer/-/moleculer-0.14.21.tgz#6136de8743dddc3b833b0c0103b77fe0171961cb"
+  integrity sha512-z+kIzbYl4uMNLaIKvsSugGLMorvppsali53GdkfSEHooR/5II59DI+EnW234mI2M/OWy/MxFzuGVfqDsWZkJ9g==
   dependencies:
     args "^5.0.1"
     eventemitter2 "^6.4.5"
