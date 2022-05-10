@@ -11,7 +11,7 @@
   "author": "Huynh Duc Dung",
   "scripts": {
     "dev": "run-p build:ts *:watch",
-    "dev:watch": "NODE_OPTIONS=--trace-warnings ts-node-dev --watch services node_modules/.bin/moleculer-runner --env --config moleculer.config.ts",
+    "dev:watch": "NODE_OPTIONS=--trace-warnings ts-node-dev --rs --watch services node_modules/.bin/moleculer-runner --env --config moleculer.config.ts",
     "start": "moleculer-runner --env --config dist/moleculer.config.js",
     "cli": "moleculer connect --env --config dist/moleculer.config.js NATS",
     "ci": "jest --watch",
@@ -36,15 +36,6 @@
       "prettier --write",
       "sort-package-json"
     ]
-  },
-  "jest": {
-    "coverageDirectory": "../coverage",
-    "preset": "ts-jest",
-    "rootDir": "./services",
-    "roots": [
-      "../test"
-    ],
-    "testEnvironment": "node"
   },
   "dependencies": {
     "dotenv": "16.0.0",
@@ -79,6 +70,7 @@
     "hygen": "6.2.0",
     "jest": "28.1.0",
     "jest-cli": "28.1.0",
+    "jest-html-reporter": "^3.4.2",
     "lint-staged": "12.4.1",
     "moleculer-io": "^2.0.0",
     "moleculer-repl": "0.7.0",
