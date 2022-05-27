@@ -44,7 +44,7 @@
     "helmet": "5.1.0",
     "moleculer": "0.14.21",
     "moleculer-web": "0.10.4",
-    "nats": "2.7.0",
+    "nats": "2.7.1",
     "pino": "7.11.0",
     "pino-pretty": "7.6.1",
     "swagger-jsdoc": "6.2.1"

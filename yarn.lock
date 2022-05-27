@@ -3557,10 +3557,10 @@ nanoid@^3.3.3:
   resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.3.4.tgz#730b67e3cd09e2deacf03c027c81c9d9dbc5e8ab"
   integrity sha512-MqBkQh/OHTS2egovRtLk45wEyNXwF+cokD+1YPf9u5VfJiRdAiRwB2froX5Co9Rh20xs4siNPm8naNotSD6RBw==
 
-nats@2.7.0:
-  version "2.7.0"
-  resolved "https://registry.yarnpkg.com/nats/-/nats-2.7.0.tgz#39de3bed949a2014b40e2db80d69cacd2c3f2d10"
-  integrity sha512-KZ6kDoDsFZq8aPFtH72DzvRKzEk4fzRImb0A8vkHi/KQzlt4VXKLaRLdkAnIUBp08+dEfb47LPDRB4JTJqhuZQ==
+nats@2.7.1:
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/nats/-/nats-2.7.1.tgz#d390a48df1a348a335143abc09afad03b2eb9687"
+  integrity sha512-aH0OXxasfLCTG+LQCFRaWoL1kqejCQg7B+t4z++JgLPgfdpQMET1Rqo95I06DEQyIJGTTgYpxkI/zC0ul8V3pw==
   dependencies:
     nkeys.js "^1.0.0-9"
 
