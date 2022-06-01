@@ -2799,10 +2799,10 @@ husky@8.0.1:
   resolved "https://registry.yarnpkg.com/husky/-/husky-8.0.1.tgz#511cb3e57de3e3190514ae49ed50f6bc3f50b3e9"
   integrity sha512-xs7/chUH/CKdOCs7Zy0Aev9e/dKOMZf3K1Az1nar3tzlv0jfqnYtu235bstsWTmXOR0EfINrPa97yy4Lz6RiKw==
 
-hygen@6.2.2:
-  version "6.2.2"
-  resolved "https://registry.yarnpkg.com/hygen/-/hygen-6.2.2.tgz#90fc127d67ba45180e394f721d7fd28ccf51103d"
-  integrity sha512-nAnZE+pE/IzekjVycFA3m5A3A+scWQnFU+bWXzewrburFkH1oXv+mpXGAR3P1gFlbvS0pB7rBECPhpDT3QDNnA==
+hygen@6.2.3:
+  version "6.2.3"
+  resolved "https://registry.yarnpkg.com/hygen/-/hygen-6.2.3.tgz#ce82dce79151159fb36cb8b1911ddab0060a9335"
+  integrity sha512-ZpOCKv5VAQmwC7pq6S/7fsC5mBGkD0alUnWZ8nMmj+91jkl5+xZFyB8uRSLQIEQWoj4Pnw/lcbYFhTsT52MOZw==
   dependencies:
     "@types/node" "^17.0.19"
     chalk "^4.1.2"
