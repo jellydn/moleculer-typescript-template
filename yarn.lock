@@ -2804,10 +2804,10 @@ husky@8.0.1:
   resolved "https://registry.yarnpkg.com/husky/-/husky-8.0.1.tgz#511cb3e57de3e3190514ae49ed50f6bc3f50b3e9"
   integrity sha512-xs7/chUH/CKdOCs7Zy0Aev9e/dKOMZf3K1Az1nar3tzlv0jfqnYtu235bstsWTmXOR0EfINrPa97yy4Lz6RiKw==
 
-hygen@6.2.3:
-  version "6.2.3"
-  resolved "https://registry.yarnpkg.com/hygen/-/hygen-6.2.3.tgz#ce82dce79151159fb36cb8b1911ddab0060a9335"
-  integrity sha512-ZpOCKv5VAQmwC7pq6S/7fsC5mBGkD0alUnWZ8nMmj+91jkl5+xZFyB8uRSLQIEQWoj4Pnw/lcbYFhTsT52MOZw==
+hygen@6.2.4:
+  version "6.2.4"
+  resolved "https://registry.yarnpkg.com/hygen/-/hygen-6.2.4.tgz#b7393f65fea284e2736d0df516fdceb7aa4ffd8e"
+  integrity sha512-KdvcsC5tY8L2dgmq/h6dvH2OUd5EOC2h1H3TcYstnOO5RxbsEoAMJW3KJUv6TwpLoNmkNN5wVeaposHW35TeoQ==
   dependencies:
     "@types/node" "^17.0.19"
     chalk "^4.1.2"
@@ -2822,6 +2822,7 @@ hygen@6.2.3:
     fs-extra "^10.0.0"
     ignore-walk "^4.0.1"
     inflection "^1.12.0"
+    ora "^5.0.0"
     yargs-parser "^21.0.0"
 
 iconv-lite@0.4.24:
@@ -3784,9 +3785,9 @@ optionator@^0.9.1:
     type-check "^0.4.0"
     word-wrap "^1.2.3"
 
-ora@^5.4.1:
+ora@^5.0.0, ora@^5.4.1:
   version "5.4.1"
-  resolved "https://registry.npmjs.org/ora/-/ora-5.4.1.tgz"
+  resolved "https://registry.yarnpkg.com/ora/-/ora-5.4.1.tgz#1b2678426af4ac4a509008e5e4ac9e9959db9e18"
   integrity sha512-5b6Y85tPxZZ7QytO+BQzysW31HJku27cRIlkbAXaNx+BdcVi+LlRFmVXzeF6a7JCwJpyw5c4b+YSVImQIrBpuQ==
   dependencies:
     bl "^4.1.0"
