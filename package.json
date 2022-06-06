@@ -59,7 +59,7 @@
     "@types/ws": "^8.5.3",
     "@typescript-eslint/eslint-plugin": "5.27.0",
     "@typescript-eslint/parser": "5.27.0",
-    "@vitest/ui": "0.13.1",
+    "@vitest/ui": "0.14.1",
     "apollo-server-core": "3.8.2",
     "apollo-server-express": "3.8.2",
     "c8": "^7.11.3",
