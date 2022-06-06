@@ -6,6 +6,8 @@
 
 > My Moleculer-based microservices project
 
+[![Moleculer - Progressive microservices framework for Node.js ](https://img.youtube.com/vi/peb2OflRu-4/0.jpg)](https://www.youtube.com/watch?v=peb2OflRu-4)
+
 [![Deploy](https://button.deta.dev/1/svg)](https://go.deta.dev/deploy?repo=https://github.com/jellydn/moleculer-typescript-template)
 
 ## Prerequisites
