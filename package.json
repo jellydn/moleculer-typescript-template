@@ -69,7 +69,7 @@
     "eslint-config-xo-typescript": "0.51.1",
     "express": "4.18.1",
     "graphql": "^16.5.0",
-    "graphql-ws": "5.9.0",
+    "graphql-ws": "5.9.1",
     "husky": "8.0.1",
     "hygen": "6.2.7",
     "lint-staged": "13.0.3",
