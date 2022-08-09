@@ -47,7 +47,7 @@
     "nats": "2.7.1",
     "pino": "8.3.1",
     "pino-pretty": "8.1.0",
-    "swagger-jsdoc": "6.2.1"
+    "swagger-jsdoc": "6.2.5"
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "3.3.0",
