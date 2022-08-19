@@ -3890,10 +3890,10 @@ moleculer-web@0.10.4:
     qs "^6.10.1"
     serve-static "^1.14.1"
 
-moleculer@0.14.22:
-  version "0.14.22"
-  resolved "https://registry.yarnpkg.com/moleculer/-/moleculer-0.14.22.tgz#b665f117bc9ef413d8c54a53e79f2238e98b9c58"
-  integrity sha512-Ac956bq81V1T8977oDBg8cNu2150Pzfy+9U1Y+AZbGq6WxfnXEYZzvU1RNe3FHiBgCqC5rSre+9PG+wNTtC8rQ==
+moleculer@0.14.23:
+  version "0.14.23"
+  resolved "https://registry.yarnpkg.com/moleculer/-/moleculer-0.14.23.tgz#be629a66dd2370f13c0b4002b49470358b2ab635"
+  integrity sha512-DE84fy8+1QiA7kUkF9ce4nyDdptBDlLFQfsaUccTScMGAbEjye5e+zfoI9iSA9rznwvshC8tgLhbOcnQBMn/HA==
   dependencies:
     args "^5.0.3"
     eventemitter2 "^6.4.7"
