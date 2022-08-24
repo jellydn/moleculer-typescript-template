@@ -46,7 +46,7 @@
     "moleculer-web": "0.10.4",
     "nats": "2.7.1",
     "pino": "8.4.2",
-    "pino-pretty": "9.0.1",
+    "pino-pretty": "9.1.0",
     "swagger-jsdoc": "6.2.5"
   },
   "devDependencies": {
