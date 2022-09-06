@@ -1,6 +1,6 @@
 import helmet from "helmet";
-import { IncomingMessage } from "http";
-import { Context, ServiceSchema } from "moleculer";
+import type { IncomingMessage } from "http";
+import type { Context, ServiceSchema } from "moleculer";
 import ApiGateway from "moleculer-web";
 import { resolve } from "path";
 import process from "process";

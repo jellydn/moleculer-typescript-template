@@ -1,4 +1,5 @@
-import { ServiceBroker, ServiceSchema } from "moleculer";
+import type { ServiceSchema } from "moleculer";
+import { ServiceBroker } from "moleculer";
 import SocketIOService from "moleculer-io";
 import ApiService from "moleculer-web";
 

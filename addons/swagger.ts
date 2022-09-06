@@ -1,5 +1,6 @@
-import { ServiceSchema } from "moleculer";
-import swaggerJsdoc, { Options } from "swagger-jsdoc";
+import type { ServiceSchema } from "moleculer";
+import type { Options } from "swagger-jsdoc";
+import swaggerJsdoc from "swagger-jsdoc";
 
 import { writeFileSync } from "node:fs";
 import { resolve } from "node:path";

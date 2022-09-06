@@ -23,7 +23,7 @@
     "build": "tsc",
     "build:ts": "tsup --env.NODE_ENV production",
     "format": "prettier --write services test addons examples",
-    "lint": "eslint --cache --cache-location ./node_modules/.cache/eslint --ext .ts,.js,.tsx,.jsx services test addons examples",
+    "lint": "eslint --fix --cache --cache-location ./node_modules/.cache/eslint --ext .ts,.js,.tsx,.jsx services test addons examples",
     "build:watch": "tsc --watch --incremental",
     "dc:up": "docker-compose up --build -d",
     "dc:logs": "docker-compose logs -f",

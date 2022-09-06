@@ -1,4 +1,4 @@
-import { Context, ServiceSchema } from "moleculer";
+import type { Context, ServiceSchema } from "moleculer";
 
 const greeterService: ServiceSchema = {
 	name: "greeter",
