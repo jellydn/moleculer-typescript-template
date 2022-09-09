@@ -71,7 +71,7 @@
     "graphql": "16.6.0",
     "graphql-ws": "5.10.1",
     "husky": "8.0.1",
-    "hygen": "6.2.10",
+    "hygen": "6.2.11",
     "lint-staged": "13.0.3",
     "moleculer-io": "2.1.0",
     "moleculer-repl": "0.7.2",
