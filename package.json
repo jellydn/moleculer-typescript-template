@@ -63,7 +63,7 @@
     "apollo-server-core": "3.10.2",
     "apollo-server-express": "3.10.2",
     "c8": "7.12.0",
-    "eslint": "8.23.0",
+    "eslint": "8.23.1",
     "eslint-config-prettier": "8.5.0",
     "eslint-config-xo": "0.42.0",
     "eslint-config-xo-typescript": "0.53.0",
