@@ -36,7 +36,7 @@ services:
       - internal
 
   traefik:
-    image: traefik:v2.8
+    image: traefik:v2.9
     command:
       - "--api.insecure=true" # Don't do that in production!
       - "--providers.docker=true"
