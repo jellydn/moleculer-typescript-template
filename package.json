@@ -40,7 +40,7 @@
     ]
   },
   "dependencies": {
-    "dotenv": "16.0.2",
+    "dotenv": "16.0.3",
     "helmet": "6.0.0",
     "moleculer": "0.14.23",
     "moleculer-web": "0.10.4",
