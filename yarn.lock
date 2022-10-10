@@ -2550,10 +2550,10 @@ event-target-shim@^5.0.0:
   resolved "https://registry.yarnpkg.com/event-target-shim/-/event-target-shim-5.0.1.tgz#5d4d3ebdf9583d63a5333ce2deb7480ab2b05789"
   integrity sha512-i/2XbnSz/uxRCU6+NdVJgKWDTM427+MqYbkQzD321DuCQJUqOuJKIA0IM2+W2xtYHdKOmZ4dR6fExsd4SXL+WQ==
 
-eventemitter2@^6.4.7:
-  version "6.4.7"
-  resolved "https://registry.yarnpkg.com/eventemitter2/-/eventemitter2-6.4.7.tgz#a7f6c4d7abf28a14c1ef3442f21cb306a054271d"
-  integrity sha512-tYUSVOGeQPKt/eC1ABfhHy5Xd96N3oIijJvN3O9+TsC28T5V9yX9oEfEK5faP0EFSNVOG97qtAS68GBrQB2hDg==
+eventemitter2@^6.4.9:
+  version "6.4.9"
+  resolved "https://registry.yarnpkg.com/eventemitter2/-/eventemitter2-6.4.9.tgz#41f2750781b4230ed58827bc119d293471ecb125"
+  integrity sha512-JEPTiaOt9f04oa6NOkc4aH+nVp5I3wEjpHbIPqfgCdD5v5bUzy7xQqwcVO2aDQgOWhI28da57HksMrzK9HlRxg==
 
 execa@^5.0.0:
   version "5.1.1"
@@ -2692,10 +2692,10 @@ fast-safe-stringify@^2.1.1:
   resolved "https://registry.yarnpkg.com/fast-safe-stringify/-/fast-safe-stringify-2.1.1.tgz#c406a83b6e70d9e35ce3b30a81141df30aeba884"
   integrity sha512-W+KJc2dmILlPplD/H4K9l9LcAHAfPtP6BY84uVLXQ6Evcz9Lcg33Y2z1IVblT6xdY54PXYVHEv+0Wpq8Io6zkA==
 
-fastest-validator@^1.12.0:
-  version "1.12.0"
-  resolved "https://registry.npmjs.org/fastest-validator/-/fastest-validator-1.12.0.tgz"
-  integrity sha512-Qc7oCVO9hAPz5GUONmToIoa95YWzoe7SLsrjIXTfCFf6HFQXxxWePXe8D+Kp/XCrr5H/pMJwP2xprW07wYv/BQ==
+fastest-validator@^1.15.0:
+  version "1.15.0"
+  resolved "https://registry.yarnpkg.com/fastest-validator/-/fastest-validator-1.15.0.tgz#580cf08a7f6b662c4d1ec49a7d61125b55e972e1"
+  integrity sha512-iSGBqeRSD3O8porodq42sk0kxSC2DTyszFcrLIjQNB5fqlG2qH0sok3BSyl0lR6IKmz5Bu7ZO06i7z16XcMihw==
 
 fastq@^1.6.0:
   version "1.13.0"
@@ -3859,14 +3859,14 @@ moleculer-web@0.10.4:
     qs "^6.10.1"
     serve-static "^1.14.1"
 
-moleculer@0.14.23:
-  version "0.14.23"
-  resolved "https://registry.yarnpkg.com/moleculer/-/moleculer-0.14.23.tgz#be629a66dd2370f13c0b4002b49470358b2ab635"
-  integrity sha512-DE84fy8+1QiA7kUkF9ce4nyDdptBDlLFQfsaUccTScMGAbEjye5e+zfoI9iSA9rznwvshC8tgLhbOcnQBMn/HA==
+moleculer@0.14.24:
+  version "0.14.24"
+  resolved "https://registry.yarnpkg.com/moleculer/-/moleculer-0.14.24.tgz#19ace1ddcad8f53499574c96a60bdb5e0bd45afc"
+  integrity sha512-qJgMsToDOT20972DnQiMTw5HXzWTlwzsKEwgOk0fGo8cxvXEC7CSQaoVd3gMKCC9Sm0waWnnHEhUSRhqu/XvJw==
   dependencies:
     args "^5.0.3"
-    eventemitter2 "^6.4.7"
-    fastest-validator "^1.12.0"
+    eventemitter2 "^6.4.9"
+    fastest-validator "^1.15.0"
     glob "^7.2.0"
     ipaddr.js "^2.0.1"
     kleur "^4.1.5"
