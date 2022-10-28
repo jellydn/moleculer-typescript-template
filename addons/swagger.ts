@@ -9,7 +9,7 @@ const defaultOptions: Options = {
 	definition: {
 		openapi: "3.0.0",
 		info: {
-			title: "Swagger Api",
+			title: "Moleculer Swagger Api",
 			version: "1.0",
 		},
 		host: `http://0.0.0.0:${Number(process.env?.PORT ?? 3000)}`,
