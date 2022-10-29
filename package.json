@@ -38,7 +38,7 @@
   "dependencies": {
     "dotenv": "16.0.3",
     "helmet": "6.0.0",
-    "moleculer": "0.14.24",
+    "moleculer": "0.14.25",
     "moleculer-web": "0.10.4",
     "nats": "2.8.0",
     "pino": "8.7.0",
