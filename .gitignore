@@ -65,3 +65,6 @@ typings/
 
 # Build folder
 dist
+
+# Envrc file
+.envrc
