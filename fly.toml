@@ -5,6 +5,7 @@ processes = [ ]
 
 [env]
 PORT = 8080
+SERVER_HOSTNAME = "0.0.0.0"
 NODE_ENV = "production"
 NAMESPACE = "api"
 TRANSPORTER = "TCP"

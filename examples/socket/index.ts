@@ -15,7 +15,7 @@ broker.createService({
 		port: Number(process.env?.PORT ?? 3000),
 
 		// Exposed IP
-		ip: "0.0.0.0",
+		ip: process.env?.SERVER_HOSTNAME ?? "0.0.0.0",
 
 		cors: {
 			origin: "*",

@@ -12,7 +12,9 @@ const defaultOptions: Options = {
 			title: "Moleculer Swagger Api",
 			version: "1.0",
 		},
-		host: `http://0.0.0.0:${Number(process.env?.PORT ?? 3000)}`,
+		host: `http://${process.env?.SERVER_HOSTNAME ?? "127.0.0.1"}:${Number(
+			process.env?.PORT ?? 3000
+		)}`,
 	},
 };
 
