@@ -12,7 +12,7 @@ TRANSPORTER = "TCP"
 SERVICEDIR = "dist/services"
 SERVICES = "api,greeter"
 LOGGER = "true"
-LOGLEVEL = "debug"
+LOGLEVEL = "warn"
 
 [experimental]
 allowed_public_ports = ["8080"]
