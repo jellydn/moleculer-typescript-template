@@ -3750,10 +3750,10 @@ minimatch@^3.0.4, minimatch@^3.1.2:
   dependencies:
     brace-expansion "^1.1.7"
 
-moleculer-io@2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/moleculer-io/-/moleculer-io-2.1.0.tgz#37d115718c1d6c04ae1d51ca0c9fd6b817eee00c"
-  integrity sha512-lekTCMc5ZVZ/h/vfKISRkOQWTmBpOJHa1lqmoGt6asCaQv78V+Q9/I1qw56gYOVD1vNlkCsS6ZkZPUW6Z35Y/w==
+moleculer-io@2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/moleculer-io/-/moleculer-io-2.2.0.tgz#3c1a9165530d2d09564a217b431fea08795caa6e"
+  integrity sha512-EVUgLrktzj/A9Tk4GkE9+15J8Ojnz3GcjdJNkiGsixLwYsz8rxu0k8AusdDFAIOy2DDt6WR18hxexsMzDsEcGw==
   dependencies:
     kleur "^4.1.5"
     lodash "^4.17.21"
