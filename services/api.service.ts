@@ -30,7 +30,7 @@ const apiService: ServiceSchema = {
 				},
 			},
 			{
-				autoGenerateFile: true,
+				autoGenerateFile: false,
 				swaggerFilePath: resolve(__dirname, "open-api.json"),
 			}
 		),
