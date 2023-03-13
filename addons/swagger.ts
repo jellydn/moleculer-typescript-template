@@ -2,7 +2,7 @@ import type { ServiceSchema } from "moleculer";
 import type { Options } from "swagger-jsdoc";
 import swaggerJsdoc from "swagger-jsdoc";
 
-import { writeFileSync } from "node:fs";
+import { type PathOrFileDescriptor, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 
 const defaultOptions: Options = {
@@ -53,7 +53,7 @@ export const swaggerService = (
 				path: "/swagger.json",
 			},
 			handler() {
-				return swaggerJsdoc(this.$swaggerOptions);
+				return swaggerJsdoc(this.$swaggerOptions as Options);
 			},
 		},
 	},
@@ -93,7 +93,7 @@ export const swaggerService = (
 			const swaggerSpec = swaggerJsdoc(options);
 			this.logger.info("Writing swagger file");
 			writeFileSync(
-				this.settings?.swaggerFilePath,
+				this.settings?.swaggerFilePath as PathOrFileDescriptor,
 				JSON.stringify(swaggerSpec, null, 2)
 			);
 		}

@@ -4,7 +4,7 @@ import express from "express";
 import { useServer } from "graphql-ws/lib/use/ws";
 import { createServer } from "http";
 import defaultsDeep from "lodash/defaultsDeep";
-import { ServiceBroker } from "moleculer";
+import { ServiceBroker, type ServiceSchema } from "moleculer";
 import { resolve } from "path";
 import { WebSocketServer } from "ws";
 
@@ -30,7 +30,7 @@ const svc = broker.createService(
 		settings: {
 			server: false,
 		},
-	})
+	}) as ServiceSchema
 );
 
 // Create express and HTTP server
@@ -44,6 +44,7 @@ const wsServer = new WebSocketServer({
 });
 
 // Use ApiGateway as middleware
+// eslint-disable-next-line @typescript-eslint/no-unsafe-argument
 app.use("/", svc.express());
 
 async function main() {
