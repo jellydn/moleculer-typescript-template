@@ -1,4 +1,4 @@
-import { BrokerOptions } from "moleculer";
+import { type BrokerOptions } from "moleculer";
 
 import { logger } from "./logger";
 
@@ -108,7 +108,7 @@ const config: BrokerOptions = {
 	tracking: {
 		// Enable feature
 		enabled: false,
-		// Number of milliseconds to wait before shuting down the process.
+		// Number of milliseconds to wait before shooting down the process.
 		shutdownTimeout: 5000,
 	},
 
@@ -179,19 +179,42 @@ const config: BrokerOptions = {
 	tracing: {
 		enabled: true,
 		// Available built-in exporters: "Console", "Datadog", "Event", "EventLegacy", "Jaeger", "Zipkin"
-		exporter: {
-			type: "Console", // Console exporter is only for development!
-			options: {
-				// Custom logger
-				logger: null,
-				// Using colors
-				colors: true,
-				// Width of row
-				width: 100,
-				// Gauge width in the row
-				gaugeWidth: 40,
+		exporter: [
+			{
+				type: "Event",
+				options: {
+					// Name of event
+					eventName: "$tracing.spans",
+					// Send event when a span started
+					sendStartSpan: false,
+					// Send event when a span finished
+					sendFinishSpan: true,
+					// Broadcast or emit event
+					broadcast: false,
+					// Event groups
+					groups: null,
+					// Sending time interval in seconds
+					interval: 5,
+					// Custom span object converter before sending
+					spanConverter: null,
+					// Default tags. They will be added into all span tags.
+					defaultTags: null,
+				},
 			},
-		},
+			{
+				type: "Console", // Console exporter is only for development!
+				options: {
+					// Custom logger
+					logger: null,
+					// Using colors
+					colors: true,
+					// Width of row
+					width: 100,
+					// Gauge width in the row
+					gaugeWidth: 40,
+				},
+			},
+		],
 	},
 
 	// Register custom middlewares
