@@ -307,7 +307,7 @@
   dependencies:
     text-decoding "^1.0.0"
 
-"@flydotio/dockerfile@^0.2.5":
+"@flydotio/dockerfile@0.2.5":
   version "0.2.5"
   resolved "https://registry.yarnpkg.com/@flydotio/dockerfile/-/dockerfile-0.2.5.tgz#1adb5d0ccbba9ee37ab105ea53fef4c7f9708feb"
   integrity sha512-sIuGnkn9X7GlYIF+aPXW3h3q0QIhRz4ESA+i5zZLgVliP5HU30eX4YT1us5XCbW+pgycSwbvIyAPH27rLRJxbA==
