@@ -7,11 +7,6 @@ import process from "process";
 
 import { swaggerService } from "../addons/swagger";
 
-/**
- * @typedef {import('moleculer').Context} Context Moleculer's Context
- * @typedef {import('http').IncomingMessage} IncomingRequest Incoming HTTP Request
- * @typedef {import('http').ServerResponse} ServerResponse HTTP Server Response
- */
 const apiService: ServiceSchema = {
 	name: "api",
 	mixins: [
@@ -154,15 +149,10 @@ const apiService: ServiceSchema = {
 		 * The resolved user will be available in `ctx.meta.user`
 		 *
 		 * PLEASE NOTE, IT'S JUST AN EXAMPLE IMPLEMENTATION. DO NOT USE IN PRODUCTION!
-		 *
-		 * @param {Context} ctx
-		 * @param {Object} route
-		 * @param {IncomingRequest} req
-		 * @returns {Promise}
 		 */
 		async authenticate(
-			ctx: Context<any, { user?: Record<string, any> }>,
-			route: Record<string, any>,
+			_ctx: Context<any, { user?: Record<string, any> }>,
+			_route: Record<string, any>,
 			request: IncomingMessage & {
 				$action: any;
 			}
@@ -195,15 +185,10 @@ const apiService: ServiceSchema = {
 		 * Authorize the request. Check that the authenticated user has right to access the resource.
 		 *
 		 * PLEASE NOTE, IT'S JUST AN EXAMPLE IMPLEMENTATION. DO NOT USE IN PRODUCTION!
-		 *
-		 * @param {Context} ctx
-		 * @param {Object} route
-		 * @param {IncomingRequest} req
-		 * @returns {Promise}
 		 */
 		async authorize(
 			ctx: Context<any, { user?: Record<string, any> }>,
-			route: Record<string, any>,
+			_route: Record<string, any>,
 			request: IncomingMessage & {
 				$action: any;
 			}
