@@ -16,7 +16,7 @@ const folder = __dirname.includes("dist")
 	? resolve(__dirname.substring(0, __dirname.indexOf("dist")), "dist")
 	: resolve(__dirname, "dist");
 enableServices.forEach((serviceName) =>
-	broker.loadServices(folder, `**/${serviceName}.service.js`)
+	broker.loadServices(folder, `**/${serviceName}.service.js`),
 );
 // Load API Gateway
 const svc = broker.createService(
@@ -24,7 +24,7 @@ const svc = broker.createService(
 		settings: {
 			server: false,
 		},
-	}) as ServiceSchema
+	}) as ServiceSchema,
 );
 
 // Create express and HTTP server

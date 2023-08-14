@@ -1,8 +1,8 @@
-/* eslint-disable @typescript-eslint/naming-convention */
 import { Errors, ServiceBroker } from "moleculer";
 
 import TestGreeterService from "../../../services/greeter.service";
 
+// eslint-disable-next-line @typescript-eslint/naming-convention
 const { ValidationError } = Errors;
 
 describe("Test 'greeter' service", () => {

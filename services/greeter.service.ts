@@ -65,7 +65,7 @@ const greeterService: ServiceSchema = {
 			async handler(
 				ctx: Context<{
 					username: string;
-				}>
+				}>,
 			) {
 				return `Welcome, ${ctx.params.username}`;
 			},

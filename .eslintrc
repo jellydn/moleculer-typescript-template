@@ -1,14 +1,7 @@
 {
-	"extends": ["xo", "xo-typescript", "prettier"],
+	"extends": ["productsway/typescript"],
+	"ignorePatterns": ["dist", ".eslintrc.cjs", "vite.config.ts"],
 	"parserOptions": {
 		"project": "./tsconfig.json"
-	},
-	"rules": {
-		"@typescript-eslint/naming-convention": "warn",
-		"@typescript-eslint/no-unsafe-return": "warn",
-		"@typescript-eslint/no-unsafe-call": "warn",
-		"@typescript-eslint/no-unsafe-assignment": "warn",
-		"import/extensions": "off",
-		"new-cap": "warn"
 	}
 }

@@ -13,7 +13,7 @@ const defaultOptions: Options = {
 			version: "1.0",
 		},
 		host: `http://${process.env?.SERVER_HOSTNAME ?? "127.0.0.1"}:${Number(
-			process.env?.PORT ?? 3000
+			process.env?.PORT ?? 3000,
 		)}`,
 	},
 };
@@ -26,7 +26,7 @@ export const swaggerService = (
 	}: { autoGenerateFile: boolean; swaggerFilePath?: string } = {
 		autoGenerateFile: process.env.NODE_ENV !== "production",
 		swaggerFilePath: resolve(__dirname, "open-api.json"),
-	}
+	},
 ): ServiceSchema => ({
 	name: "$swagger",
 
@@ -88,13 +88,13 @@ export const swaggerService = (
 		if (this.settings?.autoGenerateFile) {
 			this.logger.info(
 				"Generating swagger file",
-				this.settings?.swaggerFilePath
+				this.settings?.swaggerFilePath,
 			);
 			const swaggerSpec = swaggerJsdoc(options);
 			this.logger.info("Writing swagger file");
 			writeFileSync(
 				this.settings?.swaggerFilePath as PathOrFileDescriptor,
-				JSON.stringify(swaggerSpec, null, 2)
+				JSON.stringify(swaggerSpec, null, 2),
 			);
 		}
 	},

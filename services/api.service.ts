@@ -27,7 +27,7 @@ const apiService: ServiceSchema = {
 			{
 				autoGenerateFile: false,
 				swaggerFilePath: resolve(__dirname, "open-api.json"),
-			}
+			},
 		),
 	],
 
@@ -155,7 +155,7 @@ const apiService: ServiceSchema = {
 			_route: Record<string, any>,
 			request: IncomingMessage & {
 				$action: any;
-			}
+			},
 		) {
 			// Read the token from header
 			const auth = request.headers.authorization;
@@ -172,7 +172,7 @@ const apiService: ServiceSchema = {
 				// Invalid token
 				throw new ApiGateway.Errors.UnAuthorizedError(
 					ApiGateway.Errors.ERR_INVALID_TOKEN,
-					[]
+					[],
 				);
 			} else {
 				// No token. Throw an error or do nothing if anonymous access is allowed.
@@ -191,7 +191,7 @@ const apiService: ServiceSchema = {
 			_route: Record<string, any>,
 			request: IncomingMessage & {
 				$action: any;
-			}
+			},
 		) {
 			// Get the authenticated user.
 			const { user } = ctx.meta;
