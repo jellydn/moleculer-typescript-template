@@ -12,7 +12,7 @@
 
 ## Prerequisites
 
--   node >= 14.x.x
+-   node >= 16.20.x
 
 ## Init new project
 
@@ -142,7 +142,3 @@ We use GitHub Actions for continuous integration and deployment. Anything that g
 [![Stargazers repo roster for @jellydn/moleculer-typescript-template](https://reporoster.com/stars/jellydn/moleculer-typescript-template)](https://github.com/jellydn/moleculer-typescript-template/stargazers)
 
 Give a ⭐️ if this project helped you!
-
----
-
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
