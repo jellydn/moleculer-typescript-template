@@ -1,13 +1,13 @@
-import { Errors, ServiceBroker } from "moleculer";
+import { Errors, ServiceBroker, type ServiceSchema } from "moleculer";
 
-import TestGreeterService from "../../../services/greeter.service";
+import TestService from "../../../services/greeter.service";
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
 const { ValidationError } = Errors;
 
 describe("Test 'greeter' service", () => {
 	const broker = new ServiceBroker({ logger: false });
-	broker.createService(TestGreeterService);
+	broker.createService(TestService as unknown as ServiceSchema);
 
 	beforeAll(async () => broker.start());
 	afterAll(async () => broker.stop());

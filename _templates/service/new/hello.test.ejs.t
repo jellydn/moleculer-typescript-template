@@ -1,7 +1,7 @@
 ---
 to: test/unit/services/<%= name %>.spec.ts
 ---
-import { Errors, ServiceBroker } from "moleculer";
+import { Errors, ServiceBroker, type ServiceSchema } from "moleculer";
 
 import TestService from "../../../services/<%= name %>.service";
 
@@ -9,7 +9,7 @@ const { ValidationError } = Errors;
 
 describe("Test '<%= name %>' service", () => {
 	const broker = new ServiceBroker({ logger: false });
-	broker.createService(TestService);
+	broker.createService(TestService as unknown as ServiceSchema);
 
 	beforeAll(async () => broker.start());
 	afterAll(async () => broker.stop());

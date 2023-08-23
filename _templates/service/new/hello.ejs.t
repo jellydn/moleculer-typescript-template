@@ -1,15 +1,31 @@
 ---
 to: services/<%= name %>.service.ts
 ---
-import { Context, ServiceSchema } from "moleculer";
+import type { Context, Service, ServiceSchema } from "moleculer";
 
-const <%= name %>Service: ServiceSchema = {
+export type ActionHelloParams = {
+	name: string;
+};
+
+type ServiceSettings = {
+	defaultName: string;
+};
+
+type ServiceMethods = {
+	uppercase(str: string): string;
+};
+
+type ServiceThis = Service<ServiceSettings> & ServiceMethods;
+
+const <%= name %>Service: ServiceSchema<ServiceSettings> = {
 	name: "<%= name %>",
 
 	/**
 	 * Settings
 	 */
-	settings: {},
+	settings: {
+		defaultName: "Moleculer",
+	},
 
 	/**
 	 * Dependencies
@@ -30,8 +46,8 @@ const <%= name %>Service: ServiceSchema = {
 				method: "GET",
 				path: "/hello",
 			},
-			async handler() {
-				return "Hello Moleculer";
+			handler(this: ServiceThis): string {
+				return `Hello ${this.settings.defaultName}`;
 			},
 		},
 
@@ -41,16 +57,14 @@ const <%= name %>Service: ServiceSchema = {
 		 * @param {String} name - User name
 		 */
 		welcome: {
-			rest: "/welcome",
+			rest: "GET /welcome/:name",
 			params: {
 				name: "string",
 			},
-			/** @param {Context} ctx  */
-			async handler(
-				ctx: Context<{
-					name: string;
-				}>
-			) {
+			handler(
+				this: ServiceThis,
+				ctx: Context<ActionHelloParams>,
+			): string {
 				return `Welcome, ${ctx.params.name}`;
 			},
 		},
@@ -64,22 +78,40 @@ const <%= name %>Service: ServiceSchema = {
 	/**
 	 * Methods
 	 */
-	methods: {},
+	methods: {
+		/**
+		 * A simple method example.
+		 *
+		 * @example
+		 * 	let upper = this.uppercase("John");
+		 * 		// "JOHN"
+		 * 			*/
+		uppercase(str: string): string {
+			return str.toUpperCase();
+		},
+	},
 
 	/**
 	 * Service created lifecycle event handler
 	 */
-	// created() {},
+	created() {
+		this.logger.info(`The ${this.name} service created.`);
+	},
 
 	/**
 	 * Service started lifecycle event handler
 	 */
-	// async started() {},
+	async started() {
+		this.logger.info(`The ${this.name} service started.`);
+	},
 
 	/**
 	 * Service stopped lifecycle event handler
 	 */
-	// async stopped() {},
+	async stopped() {
+		this.logger.info(`The ${this.name} service stopped.`);
+	},
 };
 
-export default <%= name  %>Service;
+export default <%= name %>Service;
+

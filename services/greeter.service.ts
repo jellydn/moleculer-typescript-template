@@ -1,12 +1,30 @@
-import type { Context, ServiceSchema } from "moleculer";
+import type { Context, Service, ServiceSchema } from "moleculer";
 
-const greeterService: ServiceSchema = {
+type GreeterSettings = {
+	defaultName: string;
+};
+
+type GreeterMethods = {
+	/**
+	 * Say a 'Hello' to a user.
+	 * @example
+	 * sayHello("John Doe");
+	 * // Hello John Doe
+	 **/
+	sayHello(name: string): string;
+};
+
+type GreeterThis = Service<GreeterSettings> & GreeterMethods;
+
+const greeterService: ServiceSchema<GreeterSettings> = {
 	name: "greeter",
 
 	/**
 	 * Settings
 	 */
-	settings: {},
+	settings: {
+		defaultName: "Moleculer",
+	},
 
 	/**
 	 * Dependencies
@@ -31,8 +49,8 @@ const greeterService: ServiceSchema = {
 				method: "GET",
 				path: "/hello",
 			},
-			async handler() {
-				return "Hello Moleculer";
+			async handler(this: GreeterThis) {
+				return this.sayHello(this.settings.defaultName);
 			},
 		},
 
@@ -80,7 +98,11 @@ const greeterService: ServiceSchema = {
 	/**
 	 * Methods
 	 */
-	methods: {},
+	methods: {
+		sayHello(name: string) {
+			return `Hello ${name}`;
+		},
+	},
 
 	/**
 	 * Service created lifecycle event handler
