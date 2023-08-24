@@ -57,7 +57,7 @@ const greeterService: ServiceSchema<GreeterSettings> = {
 		/**
 		 * Welcome, a username
 		 *
-		 * @param {String} name - User name
+		 * @param name - User name
 		 * @swagger
 		 * /api/greeter/welcome:
 		 *   get:
@@ -79,7 +79,10 @@ const greeterService: ServiceSchema<GreeterSettings> = {
 			params: {
 				username: { type: "string", min: 3, max: 25 },
 			},
-			/** @param {Context} ctx  */
+			/**
+			 * @param ctx - Request context
+			 * @returns Welcome, a username
+			 */
 			async handler(
 				ctx: Context<{
 					username: string;
