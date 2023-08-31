@@ -37,7 +37,7 @@ const apiService: ServiceSchema = {
 		port: Number(process.env?.PORT ?? 3000),
 
 		// Exposed IP
-		ip: process.env?.SERVER_HOSTNAME ?? "127.0.0.1",
+		ip: process.env?.SERVER_HOSTNAME ?? "0.0.0.0",
 
 		// Global Express middlewares. More info: https://moleculer.services/docs/0.14/moleculer-web.html#Middlewares
 		use: [helmet()],
