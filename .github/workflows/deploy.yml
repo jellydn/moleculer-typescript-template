@@ -20,13 +20,16 @@ jobs:
       - name: ⎔ Setup node
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
+
+      - name: 📥 Install pnpm
+        run: npm install -g pnpm
 
       - name: 📥 Download deps
-        uses: bahmutov/npm-install@v1
+        run: pnpm install
 
       - name: 🔬 Lint
-        run: npm run lint
+        run: pnpm run lint
 
   typecheck:
     name: ʦ TypeScript
@@ -41,13 +44,16 @@ jobs:
       - name: ⎔ Setup node
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
+
+      - name: 📥 Install pnpm
+        run: npm install -g pnpm
 
       - name: 📥 Download deps
-        uses: bahmutov/npm-install@v1
+        run: pnpm install
 
       - name: 🔎 Type check
-        run: npm run typecheck --if-present
+        run: pnpm run typecheck
 
   test:
     name: ⚡ Vitest
@@ -62,13 +68,16 @@ jobs:
       - name: ⎔ Setup node
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
+
+      - name: 📥 Install pnpm
+        run: npm install -g pnpm
 
       - name: 📥 Download deps
-        uses: bahmutov/npm-install@v1
+        run: pnpm install
 
       - name: ⚡ Run vitest
-        run: npm run test
+        run: pnpm run test
 
   build:
     name: 🐳 Build
