@@ -30,20 +30,22 @@ spec:
 #########################################################
 # Ingress for Moleculer API Gateway
 #########################################################
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: ingress
 spec:
   rules:
-    - host: moleculer-typescript.127.0.0.1.nip.io
+    - host: moleculer-typescript.local
       http:
         paths:
           - path: /
+            pathType: Prefix
             backend:
-              serviceName: api
-              servicePort: 3000
-
+              service:
+                name: api
+                port:
+                  number: 3000
 ---
 #########################################################
 # API Gateway service
@@ -64,14 +66,12 @@ spec:
     spec:
       containers:
         - name: api
-          image: moleculer-typescript
+          image: moleculer-typescript:latest
+          imagePullPolicy: IfNotPresent
           envFrom:
             - configMapRef:
                 name: common-env
           env:
-            - name: SERVICES
-              value: api
-
 ---
 #########################################################
 # Greeter service
@@ -92,7 +92,9 @@ spec:
     spec:
       containers:
         - name: greeter
-          image: moleculer-typescript
+          image: moleculer-typescript:latest
+          imagePullPolicy: IfNotPresent
+
           envFrom:
             - configMapRef:
                 name: common-env
