@@ -12,7 +12,7 @@
 
 ## Prerequisites
 
--   node >= 16.20.x
+-   node >= 18.17.x
 
 ## Init new project
 
@@ -31,7 +31,7 @@ npx degit jellydn/moleculer-typescript-template [PROJECT-NAME]
 ## Install
 
 ```sh
-yarn install
+pnpm install
 ```
 
 ## Usage
@@ -39,7 +39,7 @@ yarn install
 ```sh
 # Copy env file
 cp .env.example .env
-yarn dev
+pnpm dev
 ```
 
 After starting, open the http://localhost:3000/ URL in your browser.
@@ -47,7 +47,7 @@ On the welcome page you can test the generated services via API Gateway and chec
 ![https://gyazo.com/c8a8c8b05319504d36922458d9807db2.gif](https://gyazo.com/c8a8c8b05319504d36922458d9807db2.gif)
 
 ```sh
-yarn cli --ns api
+pnpm cli --ns api
 ```
 
 ![https://gyazo.com/235f710ab3fd906f80768261e793eb13](https://gyazo.com/235f710ab3fd906f80768261e793eb13.gif)
@@ -66,7 +66,7 @@ In the terminal, try the following commands:
 Add new service to your project with below command
 
 ```sh
-yarn generate:service [service-name]
+pnpm generate:service [service-name]
 ```
 
 ## API Documentation
@@ -80,7 +80,7 @@ Open the http://localhost:3000/docs URL in your browser, you will see the Swagge
 ## Run tests
 
 ```sh
-yarn test
+pnpm test
 ```
 
 ## Deployment
@@ -121,13 +121,13 @@ We use GitHub Actions for continuous integration and deployment. Anything that g
 
 ## NPM scripts
 
--   `yarn dev`: Start development mode (load all services locally with hot-reload & watch)
--   `yarn start`: Start production mode (set `SERVICES` env variable to load certain services)
--   `yarn cli`: Start a CLI and connect to production. Don't forget to set production namespace with `--ns` argument in script
--   `yarn ci`: Run continuous test mode with watching
--   `yarn test`: Run tests & generate coverage report
--   `yarn dc:up`: Start the stack with Docker Compose
--   `yarn dc:down`: Stop the stack with Docker Compose
+-   `pnpm dev`: Start development mode (load all services locally with hot-reload & watch)
+-   `pnpm start`: Start production mode (set `SERVICES` env variable to load certain services)
+-   `pnpm cli`: Start a CLI and connect to production. Don't forget to set production namespace with `--ns` argument in script
+-   `pnpm ci`: Run continuous test mode with watching
+-   `pnpm test`: Run tests & generate coverage report
+-   `pnpm dc:up`: Start the stack with Docker Compose
+-   `pnpm dc:down`: Stop the stack with Docker Compose
 
 ## Author
 
