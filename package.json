@@ -42,7 +42,7 @@
     "moleculer-web": "0.10.6",
     "nats": "2.17.0",
     "openapi-types": "12.1.3",
-    "pino": "8.15.3",
+    "pino": "8.15.4",
     "swagger-jsdoc": "6.2.8"
   },
   "devDependencies": {
@@ -73,7 +73,7 @@
     "sort-package-json": "2.6.0",
     "tsup": "7.2.0",
     "typescript": "5.2.2",
-    "vite": "4.4.9",
+    "vite": "4.4.10",
     "vitest": "0.34.6",
     "ws": "8.14.2"
   },
