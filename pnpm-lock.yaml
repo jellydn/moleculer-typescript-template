@@ -13,13 +13,13 @@ dependencies:
     version: 7.0.0
   moleculer:
     specifier: 0.14.31
-    version: 0.14.31(nats@2.17.0)(pino@8.16.1)
+    version: 0.14.31(nats@2.18.0)(pino@8.16.1)
   moleculer-web:
     specifier: 0.10.6
     version: 0.10.6(moleculer@0.14.31)
   nats:
-    specifier: 2.17.0
-    version: 2.17.0
+    specifier: 2.18.0
+    version: 2.18.0
   openapi-types:
     specifier: 12.1.3
     version: 12.1.3
@@ -3747,7 +3747,7 @@ packages:
     dependencies:
       kleur: 4.1.5
       lodash: 4.17.21
-      moleculer: 0.14.31(nats@2.17.0)(pino@8.16.1)
+      moleculer: 0.14.31(nats@2.18.0)(pino@8.16.1)
       socket.io: 4.7.2
     transitivePeerDependencies:
       - bufferutil
@@ -3786,7 +3786,7 @@ packages:
       isstream: 0.1.2
       kleur: 4.1.5
       lodash: 4.17.21
-      moleculer: 0.14.31(nats@2.17.0)(pino@8.16.1)
+      moleculer: 0.14.31(nats@2.18.0)(pino@8.16.1)
       path-to-regexp: 3.2.0
       qs: 6.11.2
       serve-static: 1.15.0
@@ -3794,7 +3794,7 @@ packages:
       - supports-color
     dev: false
 
-  /moleculer@0.14.31(nats@2.17.0)(pino@8.16.1):
+  /moleculer@0.14.31(nats@2.18.0)(pino@8.16.1):
     resolution: {integrity: sha512-EbcafGr4KWfltjwrV+k8xLA7majB7g8RvsD6aQ2bwzYpBo5e8xp9jYlJPpfScoORXAwT75puAqQTrFmAaBpYqA==}
     engines: {node: '>= 10.x.x'}
     hasBin: true
@@ -3875,7 +3875,7 @@ packages:
       kleur: 4.1.5
       lodash: 4.17.21
       lru-cache: 6.0.0
-      nats: 2.17.0
+      nats: 2.18.0
       node-fetch: 2.7.0
       pino: 8.16.1
       recursive-watch: 1.1.4
@@ -3915,8 +3915,8 @@ packages:
     hasBin: true
     dev: true
 
-  /nats@2.17.0:
-    resolution: {integrity: sha512-749TtweWL6bc9R9yNra4a+tuk8J0bqurxcPV/9R2D+WPTplY4PPde/LPSXspqR/eCCTxiM80/AjVlfboEafRxA==}
+  /nats@2.18.0:
+    resolution: {integrity: sha512-zZF004ejzf67Za0Tva+xphxoxBMNc5IMLqbZ7Ho0j9TMuisjpo+qCd1EktXRCLNxmrZ8O6Tbm1dBsZYNF6yR1A==}
     engines: {node: '>= 14.0.0'}
     dependencies:
       nkeys.js: 1.0.5
