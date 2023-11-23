@@ -1,16 +1,16 @@
 app = "moleculer-typescript"
 kill_signal = "SIGINT"
 kill_timeout = 5
-processes = [ ]
+processes = []
 
 [env]
-PORT = 8080
+PORT = "8080"
 SERVER_HOSTNAME = "0.0.0.0"
 NODE_ENV = "production"
 NAMESPACE = "api"
 TRANSPORTER = "TCP"
 SERVICEDIR = "dist/services"
-SERVICES = "api,greeter"
+SERVICES = "api,greeter,product"
 LOGGER = "true"
 LOGLEVEL = "warn"
 
@@ -20,35 +20,35 @@ auto_rollback = true
 
 [[services]]
 internal_port = 8_080
-processes = [ "app" ]
+processes = ["app"]
 protocol = "tcp"
-script_checks = [ ]
+script_checks = []
 
-  [services.concurrency]
-  hard_limit = 25
-  soft_limit = 20
-  type = "connections"
+[services.concurrency]
+hard_limit = 25
+soft_limit = 20
+type = "connections"
 
-  [[services.ports]]
-  handlers = [ "http" ]
-  port = 80
+[[services.ports]]
+handlers = ["http"]
+port = 80
 
-  [[services.ports]]
-  handlers = [ "tls", "http" ]
-  port = 443
+[[services.ports]]
+handlers = ["tls", "http"]
+port = 443
 
-  [[services.tcp_checks]]
-  grace_period = "1s"
-  interval = "15s"
-  restart_limit = 0
-  timeout = "2s"
+[[services.tcp_checks]]
+grace_period = "1s"
+interval = "15s"
+restart_limit = 0
+timeout = "2s"
 
-  [[services.http_checks]]
-  interval = 10_000
-  grace_period = "5s"
-  method = "get"
-  path = "/api/health/check"
-  protocol = "http"
-  timeout = 2_000
-  tls_skip_verify = false
-  headers = { }
+[[services.http_checks]]
+interval = 10_000
+grace_period = "5s"
+method = "get"
+path = "/api/health/check"
+protocol = "http"
+timeout = 2_000
+tls_skip_verify = false
+headers = {}

@@ -30,6 +30,18 @@ services:
     networks:
       - internal
 
+  product:
+    build:
+      context: .
+    image: moleculer-typescript
+    env_file: docker-compose.env
+    environment:
+      SERVICES: product
+    depends_on:
+      - nats
+    networks:
+      - internal
+
   nats:
     image: nats:2
     networks:

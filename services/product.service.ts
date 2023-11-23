@@ -34,8 +34,10 @@ const productService: ServiceSchema<ServiceSettings> = {
 		 * Add a product to the cart
 		 */
 		addToCart: {
-			method: "POST",
-			path: "/card",
+			rest: {
+				method: "POST",
+				path: "/cart",
+			},
 			params: orderItemValidator.schema,
 			handler(
 				this: ServiceThis,

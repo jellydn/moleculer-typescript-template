@@ -519,6 +519,7 @@
 					menu: [
 						{ id: "home", caption: "Home" },
 						{ id: "greeter", caption: "Greeter service" },
+						{ id: "product", caption: "Product service" },
 						{ id: "nodes", caption: "Nodes" },
 						{ id: "services", caption: "Services" }
 					],
@@ -527,15 +528,39 @@
 					requests: {
 						greeter: [
 							{ id: "hello", action: "greeter.hello", rest: "/api/greeter/hello", response: null, status: null, duration: null },
-
-							{ id: "welcome", action: "greeter.welcome", rest: "/api/greeter/welcome", fields: [
-								{ field: "username", label: "Username", type: "text", paramType: "param", model: "welcomeName" }
-							], response: null, status: null, duration: null }
+							{
+								id: "welcome",
+								action: "greeter.welcome",
+								rest: "/api/greeter/welcome",
+								fields: [
+									{ field: "username", label: "Username", type: "text", paramType: "param", model: "welcomeName" }
+								],
+								response: null,
+								status: null,
+								duration: null
+							}
+						],
+						product: [
+							{
+								id: "addToCart",
+								action: "product.addToCart",
+								method: 'POST',
+								rest: "/api/product/cart",
+								fields: [
+									{ field: "name", label: "Name", type: "text", paramType: "body", model: "name" },
+									{ field: "qty", label: "Quantity", type: "number", paramType: "body", model: "quantity" }
+								],
+								response: null,
+								status: null,
+								duration: null
+							},
 						]
 					},
 
 					fields: {
-						welcomeName: "John"
+						welcomeName: "John",
+						name: 'iPhone',
+						quantity: 1
 					},
 
 					broker: null,
