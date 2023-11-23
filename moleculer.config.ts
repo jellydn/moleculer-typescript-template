@@ -1,4 +1,5 @@
 import { type BrokerOptions } from "moleculer";
+import { ZodValidator } from "moleculer-zod-validator";
 
 import { logger } from "./logger";
 
@@ -105,7 +106,7 @@ const config: BrokerOptions = {
 	// Cloning the params of context if enabled. High performance impact, use it with caution!
 	contextParamsCloning: false,
 
-	// Tracking requests and waiting for running requests before shuting down. More info: https://moleculer.services/docs/0.14/context.html#Context-tracking
+	// Tracking requests and waiting for running requests before shutting down. More info: https://moleculer.services/docs/0.14/context.html#Context-tracking
 	tracking: {
 		// Enable feature
 		enabled: false,
@@ -153,7 +154,7 @@ const config: BrokerOptions = {
 	},
 
 	// Enable action & event parameter validation. More info: https://moleculer.services/docs/0.14/validating.html
-	validator: true,
+	validator: new ZodValidator(),
 
 	// ErrorHandler: null,
 
