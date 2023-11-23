@@ -27,6 +27,7 @@ npx degit jellydn/moleculer-typescript-template [PROJECT-NAME]
 -   📦 [hygen](http://www.hygen.io/) - The scalable code generator that saves you time.
 -   🦾 [pino](https://getpino.io) - super fast, all natural json logger
 -   🔥 [swagger-jsdoc](https://github.com/Surnet/swagger-jsdoc/blob/v6/docs/README.md) - Generates swagger/openapi specification based on jsDoc comments and YAML files.
+-   ✨ [moleculer-zod-validator](https://github.com/TheAppleFreak/moleculer-zod-validator) - A validator for the Moleculer microservice framework to allow the use of [Zod](https://zod.dev/).
 
 ## Install
 
