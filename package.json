@@ -1,6 +1,6 @@
 {
   "name": "moleculer-typescript-template",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "My Moleculer-based microservices project",
   "keywords": [
     "microservices",
@@ -11,7 +11,9 @@
   "author": "Huynh Duc Dung",
   "scripts": {
     "dev": "tsup --watch --onSuccess 'node_modules/.bin/moleculer-runner --env --config dist/moleculer.config.js'",
+    "dev:esm": "npx tsx watch ./server.ts",
     "start": "moleculer-runner --env --config dist/moleculer.config.js",
+    "start:esm": "npx tsx ./server.ts",
     "cli": "moleculer connect --env --config dist/moleculer.config.js NATS",
     "ci": "vitest --watch",
     "test": "vitest --run",
@@ -38,6 +40,7 @@
   "dependencies": {
     "dotenv": "16.3.1",
     "helmet": "7.1.0",
+    "lodash.defaultsdeep": "4.6.1",
     "moleculer": "0.14.32",
     "moleculer-web": "0.10.7",
     "moleculer-zod-validator": "3.3.1",
@@ -53,7 +56,7 @@
     "@types/express": "4.17.21",
     "@types/jest": "29.5.10",
     "@types/lodash": "4.14.202",
-    "@types/node": "20.9.5",
+    "@types/node": "20.10.0",
     "@types/swagger-jsdoc": "6.0.4",
     "@types/ws": "8.5.10",
     "@typescript-eslint/eslint-plugin": "6.12.0",
@@ -74,6 +77,7 @@
     "prettier": "3.1.0",
     "sort-package-json": "2.6.0",
     "tsup": "8.0.1",
+    "tsx": "4.4.0",
     "typescript": "5.3.2",
     "vite": "5.0.2",
     "vitest": "0.34.6",

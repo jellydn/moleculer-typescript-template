@@ -9,16 +9,15 @@ WORKDIR /app
 RUN apk --no-cache add git
 
 # Copy essential files
-COPY package.json pnpm-lock.yaml logger.ts moleculer.config.ts tsconfig.json ./
+COPY package.json pnpm-lock.yaml *.ts ./
 COPY services services
 COPY addons addons
 COPY public public
 
-# Install pnpm and dependencies, then build
+# Install pnpm and dependencies
 RUN npm install -g pnpm
 RUN pnpm install
 ENV NODE_ENV=production
-RUN pnpm run build
 
 # Set up the production image
 FROM node:20-alpine
@@ -31,4 +30,4 @@ COPY --from=builder /app .
 EXPOSE 8080
 
 # Start the application
-CMD ["npm", "run", "start"]
+CMD ["npm", "run", "start:esm"]

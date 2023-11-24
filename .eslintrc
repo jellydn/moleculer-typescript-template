@@ -1,6 +1,11 @@
 {
 	"extends": ["productsway/typescript"],
-	"ignorePatterns": ["dist", ".eslintrc.cjs", "vite.config.ts"],
+	"ignorePatterns": [
+		"dist",
+		".eslintrc.cjs",
+		"vite.config.ts",
+		"tsup.config.ts"
+	],
 	"parserOptions": {
 		"project": "./tsconfig.json"
 	}
