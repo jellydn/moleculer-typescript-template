@@ -1,15 +1,16 @@
 import { config } from "dotenv";
 import defaultsDeep from "lodash/defaultsDeep";
 import { type BrokerOptions, type LogLevels, ServiceBroker } from "moleculer";
+import os from "os";
 
 import { logger } from "./logger";
 import moleculerConfig from "./moleculer.config";
 
 config();
 
-function getConfig() {
+export function getMoleculerConfig(moleculerFileConfig: BrokerOptions) {
 	const mergedConfig = defaultsDeep(
-		moleculerConfig,
+		moleculerFileConfig,
 		ServiceBroker.defaultOptions,
 	) as unknown as BrokerOptions;
 
@@ -27,11 +28,16 @@ function getConfig() {
 		mergedConfig.logLevel = process.env.LOGLEVEL as unknown as LogLevels;
 	}
 
+	if (!mergedConfig.nodeID) {
+		const nodeId = `${os.hostname().toLowerCase()}-${process.pid}`;
+		mergedConfig.nodeID = nodeId;
+	}
+
 	return mergedConfig;
 }
 
 // Create a ServiceBroker
-const broker = new ServiceBroker(getConfig());
+const broker = new ServiceBroker(getMoleculerConfig(moleculerConfig));
 
 // Start the broker
 broker
