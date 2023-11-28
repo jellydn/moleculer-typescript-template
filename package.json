@@ -14,7 +14,7 @@
     "dev:esm": "npx tsx watch ./server.ts",
     "start": "moleculer-runner --env --config dist/moleculer.config.js",
     "start:esm": "npx tsx ./server.ts",
-    "cli": "moleculer connect --env --config dist/moleculer.config.js NATS",
+    "cli": "NODE_OPTIONS='--import tsx' moleculer connect --env --config moleculer.config.ts NATS",
     "ci": "vitest --watch",
     "test": "vitest --run",
     "test:coverage": "vitest --coverage",
@@ -71,6 +71,7 @@
     "husky": "8.0.3",
     "hygen": "6.2.11",
     "lint-staged": "15.1.0",
+    "moleculer-cli": "0.8.1",
     "moleculer-io": "2.2.0",
     "moleculer-repl": "0.7.4",
     "npm-run-all": "4.1.5",
@@ -83,6 +84,7 @@
     "vitest": "0.34.6",
     "ws": "8.14.2"
   },
+  "packageManager": "pnpm@8.11.0",
   "engines": {
     "node": ">= 18.17.x"
   },
