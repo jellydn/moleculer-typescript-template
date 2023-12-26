@@ -16,7 +16,7 @@ dependencies:
     version: 4.6.1
   moleculer:
     specifier: 0.14.32
-    version: 0.14.32(nats@2.18.0)(pino@8.17.1)
+    version: 0.14.32(nats@2.18.0)(pino@8.17.2)
   moleculer-web:
     specifier: 0.10.7
     version: 0.10.7(moleculer@0.14.32)
@@ -30,8 +30,8 @@ dependencies:
     specifier: 12.1.3
     version: 12.1.3
   pino:
-    specifier: 8.17.1
-    version: 8.17.1
+    specifier: 8.17.2
+    version: 8.17.2
   swagger-jsdoc:
     specifier: 6.2.8
     version: 6.2.8(openapi-types@12.1.3)
@@ -102,7 +102,7 @@ devDependencies:
     version: 15.2.0
   moleculer-cli:
     specifier: 0.8.1
-    version: 0.8.1(pino@8.17.1)
+    version: 0.8.1(pino@8.17.2)
   moleculer-connect:
     specifier: 0.2.1
     version: 0.2.1
@@ -137,8 +137,8 @@ devDependencies:
     specifier: 1.1.0
     version: 1.1.0(@types/node@20.10.5)(@vitest/ui@1.1.0)
   ws:
-    specifier: 8.15.1
-    version: 8.15.1
+    specifier: 8.16.0
+    version: 8.16.0
 
 packages:
 
@@ -5050,7 +5050,7 @@ packages:
       ufo: 1.3.2
     dev: true
 
-  /moleculer-cli@0.8.1(pino@8.17.1):
+  /moleculer-cli@0.8.1(pino@8.17.2):
     resolution: {integrity: sha512-txTg05eAkZpO3dfbrAcKlxlrieIhf6DN4mY7O0nYgEG1qTngHzrzRViMo89EBg+oTHY449SUQgsMseTySniZFg==}
     hasBin: true
     dependencies:
@@ -5066,7 +5066,7 @@ packages:
       metalsmith: 2.6.2
       minimatch: 3.1.2
       mkdirp: 1.0.4
-      moleculer: 0.14.32(nats@2.18.0)(pino@8.17.1)
+      moleculer: 0.14.32(nats@2.18.0)(pino@8.17.2)
       moleculer-repl: 0.7.4
       multimatch: 4.0.0
       nats: 2.18.0
@@ -5156,10 +5156,10 @@ packages:
     dependencies:
       glob: 10.3.10
       lodash: 4.17.21
-      moleculer: 0.14.32(nats@2.18.0)(pino@8.17.1)
+      moleculer: 0.14.32(nats@2.18.0)(pino@8.17.2)
       moleculer-repl: 0.6.6
       nats: 2.18.0
-      pino: 8.17.1
+      pino: 8.17.2
       rimraf: 5.0.5
       yargs: 17.7.2
     transitivePeerDependencies:
@@ -5194,7 +5194,7 @@ packages:
     dependencies:
       kleur: 4.1.5
       lodash: 4.17.21
-      moleculer: 0.14.32(nats@2.18.0)(pino@8.17.1)
+      moleculer: 0.14.32(nats@2.18.0)(pino@8.17.2)
       socket.io: 4.7.2
     transitivePeerDependencies:
       - bufferutil
@@ -5249,7 +5249,7 @@ packages:
       isstream: 0.1.2
       kleur: 4.1.5
       lodash: 4.17.21
-      moleculer: 0.14.32(nats@2.18.0)(pino@8.17.1)
+      moleculer: 0.14.32(nats@2.18.0)(pino@8.17.2)
       path-to-regexp: 3.2.0
       qs: 6.11.2
       serve-static: 1.15.0
@@ -5264,11 +5264,11 @@ packages:
       moleculer: 0.14.x
       zod: 3.x.x
     dependencies:
-      moleculer: 0.14.32(nats@2.18.0)(pino@8.17.1)
+      moleculer: 0.14.32(nats@2.18.0)(pino@8.17.2)
       zod: 3.22.4
     dev: false
 
-  /moleculer@0.14.32(nats@2.18.0)(pino@8.17.1):
+  /moleculer@0.14.32(nats@2.18.0)(pino@8.17.2):
     resolution: {integrity: sha512-N5RXKS9Z01Gl6gLkf3snLgYbzU0bLci1WNEIuy2D+cjEg7i3XEArsiFHKnmNYWF6L5DajVrT8dw9EqGgvmjmOw==}
     engines: {node: '>= 10.x.x'}
     hasBin: true
@@ -5351,7 +5351,7 @@ packages:
       lru-cache: 6.0.0
       nats: 2.18.0
       node-fetch: 2.7.0
-      pino: 8.17.1
+      pino: 8.17.2
       recursive-watch: 1.1.4
     transitivePeerDependencies:
       - encoding
@@ -5911,8 +5911,8 @@ packages:
   /pino-std-serializers@6.2.2:
     resolution: {integrity: sha512-cHjPPsE+vhj/tnhCy/wiMh3M3z3h/j15zHQX+S9GkTBgqJuTuJzYJ4gUyACLhDaJ7kk9ba9iRDmbH2tJU03OiA==}
 
-  /pino@8.17.1:
-    resolution: {integrity: sha512-YoN7/NJgnsJ+fkADZqjhRt96iepWBndQHeClmSBH0sQWCb8zGD74t00SK4eOtKFi/f8TUmQnfmgglEhd2kI1RQ==}
+  /pino@8.17.2:
+    resolution: {integrity: sha512-LA6qKgeDMLr2ux2y/YiUt47EfgQ+S9LznBWOJdN3q1dx2sv0ziDLUBeVpyVv17TEcGCBuWf0zNtg3M5m1NhhWQ==}
     hasBin: true
     dependencies:
       atomic-sleep: 1.0.0
@@ -5920,7 +5920,7 @@ packages:
       on-exit-leak-free: 2.1.2
       pino-abstract-transport: 1.1.0
       pino-std-serializers: 6.2.2
-      process-warning: 2.3.2
+      process-warning: 3.0.0
       quick-format-unescaped: 4.0.4
       real-require: 0.2.0
       safe-stable-stringify: 2.4.3
@@ -5999,8 +5999,8 @@ packages:
     resolution: {integrity: sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==}
     dev: true
 
-  /process-warning@2.3.2:
-    resolution: {integrity: sha512-n9wh8tvBe5sFmsqlg+XQhaQLumwpqoAUruLwjCopgTmUBjJ/fjtBsJzKleCaIGBOMXYEhp1YfKl4d7rJ5ZKJGA==}
+  /process-warning@3.0.0:
+    resolution: {integrity: sha512-mqn0kFRl0EoqhnL0GQ0veqFHyIN1yig9RHh/InzORTUiZHFRAur+aMtRkELNwGs9aNwKS6tg/An4NYBPGwvtzQ==}
 
   /process@0.11.10:
     resolution: {integrity: sha512-cdGef/drWFoydD1JsMzuFf8100nZl+GT+yacc2bEced5f9Rjk4z+WtFUTBu9PhOi9j/jfmBPu0mMEY4wIdAF8A==}
@@ -7785,8 +7785,8 @@ packages:
         optional: true
     dev: true
 
-  /ws@8.15.1:
-    resolution: {integrity: sha512-W5OZiCjXEmk0yZ66ZN82beM5Sz7l7coYxpRkzS+p9PP+ToQry8szKh+61eNktr7EA9DOwvFGhfC605jDHbP6QQ==}
+  /ws@8.16.0:
+    resolution: {integrity: sha512-HS0c//TP7Ina87TfiPUz1rQzMhHrl/SG2guqRcTOIUYD2q8uhUdNHZYJUaQ8aTGPzCh+c6oawMKW35nFl1dxyQ==}
     engines: {node: '>=10.0.0'}
     peerDependencies:
       bufferutil: ^4.0.1
