@@ -1,54 +1,69 @@
-app = "moleculer-typescript"
-kill_signal = "SIGINT"
-kill_timeout = 5
-processes = []
+# fly.toml app configuration file generated for moleculer-typescript on 2024-01-06T07:14:06+08:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
 
-[env]
-PORT = "8080"
-SERVER_HOSTNAME = "0.0.0.0"
-NODE_ENV = "production"
-NAMESPACE = "api"
-TRANSPORTER = "TCP"
-SERVICEDIR = "dist/services"
-SERVICES = "api,greeter,product"
-LOGGER = "true"
-LOGLEVEL = "warn"
+app = "moleculer-typescript"
+primary_region = "sin"
+kill_signal = "SIGINT"
+kill_timeout = "5s"
 
 [experimental]
-allowed_public_ports = ["8080"]
 auto_rollback = true
 
-[[services]]
-internal_port = 8_080
-processes = ["app"]
-protocol = "tcp"
-script_checks = []
+[build]
 
+[env]
+LOGGER = "true"
+LOGLEVEL = "warn"
+NAMESPACE = "api"
+NODE_ENV = "production"
+PORT = "8080"
+SERVER_HOSTNAME = "0.0.0.0"
+SERVICEDIR = "dist/services"
+SERVICES = "api,greeter,product"
+TRANSPORTER = "TCP"
+
+[http_service]
+internal_port = 8080
+force_https = true
+auto_stop_machines = true
+auto_start_machines = true
+min_machines_running = 0
+processes = ["app"]
+
+[[services]]
+protocol = "tcp"
+internal_port = 8080
+processes = ["app"]
+
+[[services.ports]]
+port = 80
+handlers = ["http"]
+
+[[services.ports]]
+port = 443
+handlers = ["tls", "http"]
 [services.concurrency]
+type = "connections"
 hard_limit = 25
 soft_limit = 20
-type = "connections"
-
-[[services.ports]]
-handlers = ["http"]
-port = 80
-
-[[services.ports]]
-handlers = ["tls", "http"]
-port = 443
 
 [[services.tcp_checks]]
-grace_period = "1s"
 interval = "15s"
-restart_limit = 0
 timeout = "2s"
+grace_period = "1s"
 
 [[services.http_checks]]
-interval = 10_000
+interval = "10s"
+timeout = "2s"
 grace_period = "5s"
 method = "get"
 path = "/api/health/check"
 protocol = "http"
-timeout = 2_000
 tls_skip_verify = false
-headers = {}
+
+[[vm]]
+cpu_kind = "shared"
+cpus = 1
+memory_mb = 256
