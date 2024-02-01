@@ -16,7 +16,7 @@ dependencies:
     version: 4.6.1
   moleculer:
     specifier: 0.14.32
-    version: 0.14.32(nats@2.19.0)(pino@8.17.2)
+    version: 0.14.32(nats@2.19.0)(pino@8.18.0)
   moleculer-web:
     specifier: 0.10.7
     version: 0.10.7(moleculer@0.14.32)
@@ -30,8 +30,8 @@ dependencies:
     specifier: 12.1.3
     version: 12.1.3
   pino:
-    specifier: 8.17.2
-    version: 8.17.2
+    specifier: 8.18.0
+    version: 8.18.0
   swagger-jsdoc:
     specifier: 6.2.8
     version: 6.2.8(openapi-types@12.1.3)
@@ -50,14 +50,14 @@ devDependencies:
     specifier: 4.17.21
     version: 4.17.21
   '@types/jest':
-    specifier: 29.5.11
-    version: 29.5.11
+    specifier: 29.5.12
+    version: 29.5.12
   '@types/lodash':
     specifier: 4.14.202
     version: 4.14.202
   '@types/node':
-    specifier: 20.11.15
-    version: 20.11.15
+    specifier: 20.11.16
+    version: 20.11.16
   '@types/swagger-jsdoc':
     specifier: 6.0.4
     version: 6.0.4
@@ -102,7 +102,7 @@ devDependencies:
     version: 15.2.1
   moleculer-cli:
     specifier: 0.8.1
-    version: 0.8.1(pino@8.17.2)
+    version: 0.8.1(pino@8.18.0)
   moleculer-connect:
     specifier: 0.2.1
     version: 0.2.1
@@ -132,10 +132,10 @@ devDependencies:
     version: 5.3.3
   vite:
     specifier: 5.0.12
-    version: 5.0.12(@types/node@20.11.15)
+    version: 5.0.12(@types/node@20.11.16)
   vitest:
     specifier: 1.2.2
-    version: 1.2.2(@types/node@20.11.15)(@vitest/ui@1.2.2)
+    version: 1.2.2(@types/node@20.11.16)(@vitest/ui@1.2.2)
   ws:
     specifier: 8.16.0
     version: 8.16.0
@@ -636,7 +636,7 @@ packages:
       '@jest/schemas': 29.6.3
       '@types/istanbul-lib-coverage': 2.0.6
       '@types/istanbul-reports': 3.0.4
-      '@types/node': 20.11.15
+      '@types/node': 20.11.16
       '@types/yargs': 17.0.32
       chalk: 4.1.2
     dev: true
@@ -890,13 +890,13 @@ packages:
     resolution: {integrity: sha512-fB3Zu92ucau0iQ0JMCFQE7b/dv8Ot07NI3KaZIkIUNXq82k4eBAqUaneXfleGY9JWskeS9y+u0nXMyspcuQrCg==}
     dependencies:
       '@types/connect': 3.4.38
-      '@types/node': 20.11.15
+      '@types/node': 20.11.16
     dev: true
 
   /@types/connect@3.4.38:
     resolution: {integrity: sha512-K6uROf1LD88uDQqJCktA4yzL1YYAK6NgfsI0v/mTgyPKWsX1CnJ0XPSDhViejru1GcRkLWb8RlzFYJRqGUbaug==}
     dependencies:
-      '@types/node': 20.11.15
+      '@types/node': 20.11.16
     dev: true
 
   /@types/cookie@0.4.1:
@@ -906,7 +906,7 @@ packages:
   /@types/cors@2.8.17:
     resolution: {integrity: sha512-8CGDvrBj1zgo2qE+oS3pOCyYNqCPryMWY2bGfwA0dcfopWGgxs+78df0Rs3rc9THP4JkOhLsAa+15VdpAqkcUA==}
     dependencies:
-      '@types/node': 20.11.15
+      '@types/node': 20.11.16
     dev: true
 
   /@types/estree@1.0.5:
@@ -916,7 +916,7 @@ packages:
   /@types/express-serve-static-core@4.17.42:
     resolution: {integrity: sha512-ckM3jm2bf/MfB3+spLPWYPUH573plBFwpOhqQ2WottxYV85j1HQFlxmnTq57X1yHY9awZPig06hL/cLMgNWHIQ==}
     dependencies:
-      '@types/node': 20.11.15
+      '@types/node': 20.11.16
       '@types/qs': 6.9.11
       '@types/range-parser': 1.2.7
       '@types/send': 0.17.4
@@ -951,8 +951,8 @@ packages:
       '@types/istanbul-lib-report': 3.0.3
     dev: true
 
-  /@types/jest@29.5.11:
-    resolution: {integrity: sha512-S2mHmYIVe13vrm6q4kN6fLYYAka15ALQki/vgDC3mIukEOx8WJlv0kQPM+d4w8Gp6u0uSdKND04IlTXBv0rwnQ==}
+  /@types/jest@29.5.12:
+    resolution: {integrity: sha512-eDC8bTvT/QhYdxJAulQikueigY5AsdBRH2yDKW3yveW7svY3+DzN84/2NUgkw10RTiJbWqZrTtoGVdYlvFJdLw==}
     dependencies:
       expect: 29.7.0
       pretty-format: 29.7.0
@@ -968,7 +968,7 @@ packages:
   /@types/keyv@3.1.4:
     resolution: {integrity: sha512-BQ5aZNSCpj7D6K2ksrRCTmKRLEpnPvWDiLPfoGyhZ++8YtiK9d/3DBKPJgry359X/P1PfruyYwvnvwFjuEiEIg==}
     dependencies:
-      '@types/node': 20.11.15
+      '@types/node': 20.11.16
     dev: true
 
   /@types/lodash@4.14.202:
@@ -991,8 +991,8 @@ packages:
     resolution: {integrity: sha512-w+tIMs3rq2afQdsPJlODhoUEKzFP1ayaoyl1CcnwtIlsVe7K7bA1NGm4s3PraqTLlXnbIN84zuBlxBWo1u9BLw==}
     dev: true
 
-  /@types/node@20.11.15:
-    resolution: {integrity: sha512-gscmuADZfvNULx1eyirVbr3kVOVZtpQtzKMCZpeSZcN6MfbkRXAR4s9/gsQ4CzxLHw6EStDtKLNtSDL3vbq05A==}
+  /@types/node@20.11.16:
+    resolution: {integrity: sha512-gKb0enTmRCzXSSUJDq6/sPcqrfCv2mkkG6Jt/clpn5eiCbKTY+SgZUxo+p8ZKMof5dCp9vHQUAB7wOUTod22wQ==}
     dependencies:
       undici-types: 5.26.5
     dev: true
@@ -1012,7 +1012,7 @@ packages:
   /@types/responselike@1.0.3:
     resolution: {integrity: sha512-H/+L+UkTV33uf49PH5pCAUBVPNj2nDBXTN+qS1dOwyyg24l3CcicicCA7ca+HMvJBZcFgl5r8e+RR6elsb4Lyw==}
     dependencies:
-      '@types/node': 20.11.15
+      '@types/node': 20.11.16
     dev: true
 
   /@types/semver@7.5.6:
@@ -1023,7 +1023,7 @@ packages:
     resolution: {integrity: sha512-x2EM6TJOybec7c52BX0ZspPodMsQUd5L6PRwOunVyVUhXiBSKf3AezDL8Dgvgt5o0UfKNfuA0eMLr2wLT4AiBA==}
     dependencies:
       '@types/mime': 1.3.5
-      '@types/node': 20.11.15
+      '@types/node': 20.11.16
     dev: true
 
   /@types/serve-static@1.15.5:
@@ -1031,7 +1031,7 @@ packages:
     dependencies:
       '@types/http-errors': 2.0.4
       '@types/mime': 3.0.4
-      '@types/node': 20.11.15
+      '@types/node': 20.11.16
     dev: true
 
   /@types/stack-utils@2.0.3:
@@ -1045,7 +1045,7 @@ packages:
   /@types/ws@8.5.10:
     resolution: {integrity: sha512-vmQSUcfalpIq0R9q7uTo2lXs6eGIpt9wtnLdMv9LVpIjCA/+ufZRozlVoVelIYixx1ugCBKDhn89vnsEGOCx9A==}
     dependencies:
-      '@types/node': 20.11.15
+      '@types/node': 20.11.16
     dev: true
 
   /@types/yargs-parser@21.0.3:
@@ -1236,7 +1236,7 @@ packages:
       pathe: 1.1.2
       picocolors: 1.0.0
       sirv: 2.0.4
-      vitest: 1.2.2(@types/node@20.11.15)(@vitest/ui@1.2.2)
+      vitest: 1.2.2(@types/node@20.11.16)(@vitest/ui@1.2.2)
     dev: true
 
   /@vitest/utils@1.2.2:
@@ -2638,7 +2638,7 @@ packages:
     dependencies:
       '@types/cookie': 0.4.1
       '@types/cors': 2.8.17
-      '@types/node': 20.11.15
+      '@types/node': 20.11.16
       accepts: 1.3.8
       base64id: 2.0.0
       cookie: 0.4.2
@@ -4524,7 +4524,7 @@ packages:
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
     dependencies:
       '@jest/types': 29.6.3
-      '@types/node': 20.11.15
+      '@types/node': 20.11.16
       chalk: 4.1.2
       ci-info: 3.9.0
       graceful-fs: 4.2.11
@@ -5035,7 +5035,7 @@ packages:
       ufo: 1.3.2
     dev: true
 
-  /moleculer-cli@0.8.1(pino@8.17.2):
+  /moleculer-cli@0.8.1(pino@8.18.0):
     resolution: {integrity: sha512-txTg05eAkZpO3dfbrAcKlxlrieIhf6DN4mY7O0nYgEG1qTngHzrzRViMo89EBg+oTHY449SUQgsMseTySniZFg==}
     hasBin: true
     dependencies:
@@ -5051,7 +5051,7 @@ packages:
       metalsmith: 2.6.2
       minimatch: 3.1.2
       mkdirp: 1.0.4
-      moleculer: 0.14.32(nats@2.19.0)(pino@8.17.2)
+      moleculer: 0.14.32(nats@2.19.0)(pino@8.18.0)
       moleculer-repl: 0.7.4
       multimatch: 4.0.0
       nats: 2.19.0
@@ -5141,10 +5141,10 @@ packages:
     dependencies:
       glob: 10.3.10
       lodash: 4.17.21
-      moleculer: 0.14.32(nats@2.19.0)(pino@8.17.2)
+      moleculer: 0.14.32(nats@2.19.0)(pino@8.18.0)
       moleculer-repl: 0.6.6
       nats: 2.19.0
-      pino: 8.17.2
+      pino: 8.18.0
       rimraf: 5.0.5
       yargs: 17.7.2
     transitivePeerDependencies:
@@ -5179,7 +5179,7 @@ packages:
     dependencies:
       kleur: 4.1.5
       lodash: 4.17.21
-      moleculer: 0.14.32(nats@2.19.0)(pino@8.17.2)
+      moleculer: 0.14.32(nats@2.19.0)(pino@8.18.0)
       socket.io: 4.7.4
     transitivePeerDependencies:
       - bufferutil
@@ -5234,7 +5234,7 @@ packages:
       isstream: 0.1.2
       kleur: 4.1.5
       lodash: 4.17.21
-      moleculer: 0.14.32(nats@2.19.0)(pino@8.17.2)
+      moleculer: 0.14.32(nats@2.19.0)(pino@8.18.0)
       path-to-regexp: 3.2.0
       qs: 6.11.2
       serve-static: 1.15.0
@@ -5249,11 +5249,11 @@ packages:
       moleculer: 0.14.x
       zod: 3.x.x
     dependencies:
-      moleculer: 0.14.32(nats@2.19.0)(pino@8.17.2)
+      moleculer: 0.14.32(nats@2.19.0)(pino@8.18.0)
       zod: 3.22.4
     dev: false
 
-  /moleculer@0.14.32(nats@2.19.0)(pino@8.17.2):
+  /moleculer@0.14.32(nats@2.19.0)(pino@8.18.0):
     resolution: {integrity: sha512-N5RXKS9Z01Gl6gLkf3snLgYbzU0bLci1WNEIuy2D+cjEg7i3XEArsiFHKnmNYWF6L5DajVrT8dw9EqGgvmjmOw==}
     engines: {node: '>= 10.x.x'}
     hasBin: true
@@ -5336,7 +5336,7 @@ packages:
       lru-cache: 6.0.0
       nats: 2.19.0
       node-fetch: 2.7.0
-      pino: 8.17.2
+      pino: 8.18.0
       recursive-watch: 1.1.4
     transitivePeerDependencies:
       - encoding
@@ -5880,8 +5880,8 @@ packages:
   /pino-std-serializers@6.2.2:
     resolution: {integrity: sha512-cHjPPsE+vhj/tnhCy/wiMh3M3z3h/j15zHQX+S9GkTBgqJuTuJzYJ4gUyACLhDaJ7kk9ba9iRDmbH2tJU03OiA==}
 
-  /pino@8.17.2:
-    resolution: {integrity: sha512-LA6qKgeDMLr2ux2y/YiUt47EfgQ+S9LznBWOJdN3q1dx2sv0ziDLUBeVpyVv17TEcGCBuWf0zNtg3M5m1NhhWQ==}
+  /pino@8.18.0:
+    resolution: {integrity: sha512-Mz/gKiRyuXu4HnpHgi1YWdHQCoWMufapzooisvFn78zl4dZciAxS+YeRkUxXl1ee/SzU80YCz1zpECCh4oC6Aw==}
     hasBin: true
     dependencies:
       atomic-sleep: 1.0.0
@@ -7424,7 +7424,7 @@ packages:
     engines: {node: '>= 0.8'}
     dev: true
 
-  /vite-node@1.2.2(@types/node@20.11.15):
+  /vite-node@1.2.2(@types/node@20.11.16):
     resolution: {integrity: sha512-1as4rDTgVWJO3n1uHmUYqq7nsFgINQ9u+mRcXpjeOMJUmviqNKjcZB7UfRZrlM7MjYXMKpuWp5oGkjaFLnjawg==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -7433,7 +7433,7 @@ packages:
       debug: 4.3.4
       pathe: 1.1.2
       picocolors: 1.0.0
-      vite: 5.0.12(@types/node@20.11.15)
+      vite: 5.0.12(@types/node@20.11.16)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -7445,7 +7445,7 @@ packages:
       - terser
     dev: true
 
-  /vite@5.0.12(@types/node@20.11.15):
+  /vite@5.0.12(@types/node@20.11.16):
     resolution: {integrity: sha512-4hsnEkG3q0N4Tzf1+t6NdN9dg/L3BM+q8SWgbSPnJvrgH2kgdyzfVJwbR1ic69/4uMJJ/3dqDZZE5/WwqW8U1w==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -7473,7 +7473,7 @@ packages:
       terser:
         optional: true
     dependencies:
-      '@types/node': 20.11.15
+      '@types/node': 20.11.16
       esbuild: 0.19.12
       postcss: 8.4.33
       rollup: 4.9.6
@@ -7481,7 +7481,7 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /vitest@1.2.2(@types/node@20.11.15)(@vitest/ui@1.2.2):
+  /vitest@1.2.2(@types/node@20.11.16)(@vitest/ui@1.2.2):
     resolution: {integrity: sha512-d5Ouvrnms3GD9USIK36KG8OZ5bEvKEkITFtnGv56HFaSlbItJuYr7hv2Lkn903+AvRAgSixiamozUVfORUekjw==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -7506,7 +7506,7 @@ packages:
       jsdom:
         optional: true
     dependencies:
-      '@types/node': 20.11.15
+      '@types/node': 20.11.16
       '@vitest/expect': 1.2.2
       '@vitest/runner': 1.2.2
       '@vitest/snapshot': 1.2.2
@@ -7526,8 +7526,8 @@ packages:
       strip-literal: 1.3.0
       tinybench: 2.6.0
       tinypool: 0.8.2
-      vite: 5.0.12(@types/node@20.11.15)
-      vite-node: 1.2.2(@types/node@20.11.15)
+      vite: 5.0.12(@types/node@20.11.16)
+      vite-node: 1.2.2(@types/node@20.11.16)
       why-is-node-running: 2.2.2
     transitivePeerDependencies:
       - less
