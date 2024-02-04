@@ -77,7 +77,7 @@
     "moleculer-io": "2.2.0",
     "moleculer-repl": "0.7.4",
     "npm-run-all2": "5.0.2",
-    "prettier": "3.2.4",
+    "prettier": "3.2.5",
     "sort-package-json": "2.7.0",
     "tsup": "8.0.1",
     "tsx": "4.7.0",
