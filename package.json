@@ -39,7 +39,7 @@
     ]
   },
   "dependencies": {
-    "dotenv": "16.4.1",
+    "dotenv": "16.4.2",
     "helmet": "7.1.0",
     "lodash.defaultsdeep": "4.6.1",
     "moleculer": "0.14.32",
