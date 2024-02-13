@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   dotenv:
-    specifier: 16.4.2
-    version: 16.4.2
+    specifier: 16.4.3
+    version: 16.4.3
   helmet:
     specifier: 7.1.0
     version: 7.1.0
@@ -41,8 +41,8 @@ dependencies:
 
 devDependencies:
   '@flydotio/dockerfile':
-    specifier: 0.5.1
-    version: 0.5.1
+    specifier: 0.5.2
+    version: 0.5.2
   '@trivago/prettier-plugin-sort-imports':
     specifier: 4.3.0
     version: 4.3.0(prettier@3.2.5)
@@ -89,8 +89,8 @@ devDependencies:
     specifier: 16.8.1
     version: 16.8.1
   graphql-ws:
-    specifier: 5.14.3
-    version: 5.14.3(graphql@16.8.1)
+    specifier: 5.15.0
+    version: 5.15.0(graphql@16.8.1)
   husky:
     specifier: 8.0.3
     version: 8.0.3
@@ -566,8 +566,8 @@ packages:
       text-decoding: 1.0.0
     dev: false
 
-  /@flydotio/dockerfile@0.5.1:
-    resolution: {integrity: sha512-O4f5Yp13HX1MNTGRyh+Z/uYnmunS4JuVCReFD6McmjHn1ANafEYdUUjdAORX6BkPuJpEfBajIqhwdDsjypFtqA==}
+  /@flydotio/dockerfile@0.5.2:
+    resolution: {integrity: sha512-2IQ32c6Eeag1gUD35wNLfdJw7CK1HanwESQKBkHdVjsT1eakMFgP/9QJ7a88QkfPBmzQFU2yNci/bxQZBpAucw==}
     engines: {node: '>=16.0.0'}
     hasBin: true
     dependencies:
@@ -2563,8 +2563,8 @@ packages:
       is-obj: 2.0.0
     dev: true
 
-  /dotenv@16.4.2:
-    resolution: {integrity: sha512-rZSSFxke7d9nYQ5NeMIwp5PP+f8wXgKNljpOb7KtH6SKW1cEqcXAz9VSJYVLKe7Jhup/gUYOkaeSVyK8GJ+nBg==}
+  /dotenv@16.4.3:
+    resolution: {integrity: sha512-II98GFrje5psQTSve0E7bnwMFybNLqT8Vu8JIFWRjsE3khyNUm/loZupuy5DVzG2IXf/ysxvrixYOQnM6mjD3A==}
     engines: {node: '>=12'}
     dev: false
 
@@ -3831,8 +3831,8 @@ packages:
     resolution: {integrity: sha512-EtKwoO6kxCL9WO5xipiHTZlSzBm7WLT627TqC/uVRd0HKmq8NXyebnNYxDoBi7wt8eTWrUrKXCOVaFq9x1kgag==}
     dev: true
 
-  /graphql-ws@5.14.3(graphql@16.8.1):
-    resolution: {integrity: sha512-F/i2xNIVbaEF2xWggID0X/UZQa2V8kqKDPO8hwmu53bVOcTL7uNkxnexeEgSCVxYBQUTUNEI8+e4LO1FOhKPKQ==}
+  /graphql-ws@5.15.0(graphql@16.8.1):
+    resolution: {integrity: sha512-xWGAtm3fig9TIhSaNsg0FaDZ8Pyn/3re3RFlP4rhQcmjRDIPpk1EhRuNB+YSJtLzttyuToaDiNhwT1OMoGnJnw==}
     engines: {node: '>=10'}
     peerDependencies:
       graphql: '>=0.11 <=16'
