@@ -68,6 +68,7 @@ Add new service to your project with below command
 
 ```sh
 pnpm generate:service [service-name]
+pnpm generate:action [action-name] --service [service-name]
 ```
 
 ## API Documentation

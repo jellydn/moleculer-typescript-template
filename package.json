@@ -28,6 +28,7 @@
     "dc:logs": "docker-compose logs -f",
     "dc:down": "docker-compose down",
     "generate:service": "hygen service new --name",
+    "generate:action": "hygen action new --name",
     "prepare": "husky install",
     "typecheck": "tsc -b"
   },
