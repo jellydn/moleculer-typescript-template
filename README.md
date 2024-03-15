@@ -71,6 +71,12 @@ pnpm generate:service [service-name]
 pnpm generate:action [action-name] --service [service-name]
 ```
 
+Generates CRUD services with below command
+
+```sh
+pnpm generate:crud [service-name]
+```
+
 ## API Documentation
 
 This template also reads your [JSDoc-annotated](https://github.com/Surnet/swagger-jsdoc/blob/v6/docs/README.md) source code and generates an OpenAPI (Swagger) specification.
