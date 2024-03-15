@@ -96,5 +96,5 @@
 		"examples/**/*.ts",
 		"test/**/*.spec.ts"
 	],
-	"files": ["server.ts", "moleculer.config.ts", "logger.ts"]
+	"files": ["server.ts", "moleculer.config.ts", "logger.ts", "cli.ts"]
 }

@@ -81,6 +81,12 @@ pnpm generate:crud [service-name]
 
 This template also reads your [JSDoc-annotated](https://github.com/Surnet/swagger-jsdoc/blob/v6/docs/README.md) source code and generates an OpenAPI (Swagger) specification.
 
+Run the following command to generate the Swagger documentation:
+
+```sh
+pnpm generate:swagger
+```
+
 Open the http://localhost:3000/docs URL in your browser, you will see the Swagger UI as
 
 ![https://gyazo.com/a4fe2413414c94dde636a531eee1a4a0.gif](https://gyazo.com/a4fe2413414c94dde636a531eee1a4a0.gif)
