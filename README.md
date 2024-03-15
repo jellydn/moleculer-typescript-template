@@ -62,16 +62,27 @@ In the terminal, try the following commands:
 
 ![https://gyazo.com/3aca1c4e1992ad1c10da8060d7e21a6c.gif](https://gyazo.com/3aca1c4e1992ad1c10da8060d7e21a6c.gif)
 
-## Code generator
+This project uses [hygen](http://www.hygen.io/) to generate code templates, saving you time and ensuring consistency across your codebase.
 
-Add new service to your project with below command
+### Adding a New Service
+
+To add a new service to your project, use the following command:
 
 ```sh
 pnpm generate:service [service-name]
+```
+
+### Adding a New Action to a Service
+
+To add a new action to an existing service, use the following command:
+
+```sh
 pnpm generate:action [action-name] --service [service-name]
 ```
 
-Generates CRUD services with below command
+### Generating CRUD Services
+
+To generate a service with Create, Read, Update, and Delete (CRUD) operations, use the following command:
 
 ```sh
 pnpm generate:crud [service-name]
@@ -153,6 +164,6 @@ We use GitHub Actions for continuous integration and deployment. Anything that g
 
 ## Show your support
 
-[![Stargazers repo roster for @jellydn/moleculer-typescript-template](https://reporoster.com/stars/jellydn/moleculer-typescript-template)](https://github.com/jellydn/moleculer-typescript-template/stargazers)
+[![Star History Chart](https://api.star-history.com/svg?repos=jellydn/moleculer-typescript-template&type=Date)](https://star-history.com/#jellydn/moleculer-typescript-template)
 
 Give a ⭐️ if this project helped you!
