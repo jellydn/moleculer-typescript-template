@@ -41,8 +41,8 @@ dependencies:
 
 devDependencies:
   '@flydotio/dockerfile':
-    specifier: 0.5.3
-    version: 0.5.3
+    specifier: 0.5.4
+    version: 0.5.4
   '@trivago/prettier-plugin-sort-imports':
     specifier: 4.3.0
     version: 4.3.0(prettier@3.2.5)
@@ -777,8 +777,8 @@ packages:
       text-decoding: 1.0.0
     dev: false
 
-  /@flydotio/dockerfile@0.5.3:
-    resolution: {integrity: sha512-HvPMYkvgAJm9564M8QB8rxy8kuXV4JbUjvfvaUbO3Ogw4SDWLUphEDGThf2IPB+lI4NN4w7zOHzV+GM0mBZw9g==}
+  /@flydotio/dockerfile@0.5.4:
+    resolution: {integrity: sha512-pglzQeVXVjCk/UCoY+g/jtr4i0zN+1BRTR35rFB4mNWZx/4cxBVa70zH1+N80TvOQ9y3ydB1M8258flr0bM/CQ==}
     engines: {node: '>=16.0.0'}
     hasBin: true
     dependencies:
