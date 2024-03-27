@@ -92,8 +92,8 @@ devDependencies:
     specifier: 16.8.1
     version: 16.8.1
   graphql-ws:
-    specifier: 5.15.0
-    version: 5.15.0(graphql@16.8.1)
+    specifier: 5.16.0
+    version: 5.16.0(graphql@16.8.1)
   husky:
     specifier: 9.0.11
     version: 9.0.11
@@ -4122,8 +4122,8 @@ packages:
     resolution: {integrity: sha512-EtKwoO6kxCL9WO5xipiHTZlSzBm7WLT627TqC/uVRd0HKmq8NXyebnNYxDoBi7wt8eTWrUrKXCOVaFq9x1kgag==}
     dev: true
 
-  /graphql-ws@5.15.0(graphql@16.8.1):
-    resolution: {integrity: sha512-xWGAtm3fig9TIhSaNsg0FaDZ8Pyn/3re3RFlP4rhQcmjRDIPpk1EhRuNB+YSJtLzttyuToaDiNhwT1OMoGnJnw==}
+  /graphql-ws@5.16.0(graphql@16.8.1):
+    resolution: {integrity: sha512-Ju2RCU2dQMgSKtArPbEtsK5gNLnsQyTNIo/T7cZNp96niC1x0KdJNZV0TIoilceBPQwfb5itrGl8pkFeOUMl4A==}
     engines: {node: '>=10'}
     peerDependencies:
       graphql: '>=0.11 <=16'
