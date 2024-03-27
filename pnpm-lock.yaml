@@ -16,7 +16,7 @@ dependencies:
     version: 4.6.1
   moleculer:
     specifier: 0.14.32
-    version: 0.14.32(nats@2.19.0)(pino@8.19.0)
+    version: 0.14.32(nats@2.21.0)(pino@8.19.0)
   moleculer-web:
     specifier: 0.10.7
     version: 0.10.7(moleculer@0.14.32)
@@ -24,8 +24,8 @@ dependencies:
     specifier: 3.3.1
     version: 3.3.1(moleculer@0.14.32)(zod@3.22.4)
   nats:
-    specifier: 2.19.0
-    version: 2.19.0
+    specifier: 2.21.0
+    version: 2.21.0
   openapi-types:
     specifier: 12.1.3
     version: 12.1.3
@@ -5375,10 +5375,10 @@ packages:
       metalsmith: 2.6.3
       minimatch: 3.1.2
       mkdirp: 1.0.4
-      moleculer: 0.14.32(nats@2.19.0)(pino@8.19.0)
+      moleculer: 0.14.32(nats@2.21.0)(pino@8.19.0)
       moleculer-repl: 0.7.4
       multimatch: 4.0.0
-      nats: 2.19.0
+      nats: 2.21.0
       rimraf: 3.0.2
       update-notifier: 5.1.0
       yargs: 15.4.1
@@ -5465,9 +5465,9 @@ packages:
     dependencies:
       glob: 10.3.10
       lodash: 4.17.21
-      moleculer: 0.14.32(nats@2.19.0)(pino@8.19.0)
+      moleculer: 0.14.32(nats@2.21.0)(pino@8.19.0)
       moleculer-repl: 0.6.6
-      nats: 2.19.0
+      nats: 2.21.0
       pino: 8.19.0
       rimraf: 5.0.5
       yargs: 17.7.2
@@ -5503,7 +5503,7 @@ packages:
     dependencies:
       kleur: 4.1.5
       lodash: 4.17.21
-      moleculer: 0.14.32(nats@2.19.0)(pino@8.19.0)
+      moleculer: 0.14.32(nats@2.21.0)(pino@8.19.0)
       socket.io: 4.7.5
     transitivePeerDependencies:
       - bufferutil
@@ -5558,7 +5558,7 @@ packages:
       isstream: 0.1.2
       kleur: 4.1.5
       lodash: 4.17.21
-      moleculer: 0.14.32(nats@2.19.0)(pino@8.19.0)
+      moleculer: 0.14.32(nats@2.21.0)(pino@8.19.0)
       path-to-regexp: 3.2.0
       qs: 6.12.0
       serve-static: 1.15.0
@@ -5573,11 +5573,11 @@ packages:
       moleculer: 0.14.x
       zod: 3.x.x
     dependencies:
-      moleculer: 0.14.32(nats@2.19.0)(pino@8.19.0)
+      moleculer: 0.14.32(nats@2.21.0)(pino@8.19.0)
       zod: 3.22.4
     dev: false
 
-  /moleculer@0.14.32(nats@2.19.0)(pino@8.19.0):
+  /moleculer@0.14.32(nats@2.21.0)(pino@8.19.0):
     resolution: {integrity: sha512-N5RXKS9Z01Gl6gLkf3snLgYbzU0bLci1WNEIuy2D+cjEg7i3XEArsiFHKnmNYWF6L5DajVrT8dw9EqGgvmjmOw==}
     engines: {node: '>= 10.x.x'}
     hasBin: true
@@ -5658,7 +5658,7 @@ packages:
       kleur: 4.1.5
       lodash: 4.17.21
       lru-cache: 6.0.0
-      nats: 2.19.0
+      nats: 2.21.0
       node-fetch: 2.7.0
       pino: 8.19.0
       recursive-watch: 1.1.4
@@ -5713,11 +5713,11 @@ packages:
     hasBin: true
     dev: true
 
-  /nats@2.19.0:
-    resolution: {integrity: sha512-TuOAqPljCRpfHPo2o3midezchqYJUOOnK/YLmYf9rdoshzlYN1xvCd9dAKveVB6Bfubp/m63eN3l3ukfn43JOg==}
+  /nats@2.21.0:
+    resolution: {integrity: sha512-sHXlOmcPsk/JWUcUvgQKCEhzUS9VsBdazYsIN/2eQv4WENuiHlJDMDxq+4HWTLOxfti05okvgeE7d6wMt5yHfQ==}
     engines: {node: '>= 14.0.0'}
     dependencies:
-      nkeys.js: 1.0.5
+      nkeys.js: 1.1.0
 
   /natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
@@ -5740,8 +5740,8 @@ packages:
     resolution: {integrity: sha512-CXdUiJembsNjuToQvxayPZF9Vqht7hewsvy2sOWafLvi2awflj9mOC6bHIg50orX8IJvWKY9wYQ/zB2kogPslQ==}
     dev: true
 
-  /nkeys.js@1.0.5:
-    resolution: {integrity: sha512-u25YnRPHiGVsNzwyHnn+PT90sgAhnS8jUJ1nxmkHMFYCJ6+Ic0lv291w7uhRBpJVJ3PH2GWbYqA151lGCRrB5g==}
+  /nkeys.js@1.1.0:
+    resolution: {integrity: sha512-tB/a0shZL5UZWSwsoeyqfTszONTt4k2YS0tuQioMOD180+MbombYVgzDUYHlx+gejYK6rgf08n/2Df99WY0Sxg==}
     engines: {node: '>=10.0.0'}
     dependencies:
       tweetnacl: 1.0.3
