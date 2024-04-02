@@ -2,7 +2,7 @@ import type { IncomingMessage } from "node:http";
 import { resolve } from "node:path";
 import process from "node:process";
 import helmet from "helmet";
-import type { Context, ServiceSchema } from "moleculer";
+import type { Context, ServiceAction, ServiceSchema } from "moleculer";
 import ApiGateway from "moleculer-web";
 
 import { swaggerService } from "../addons/swagger";
@@ -151,10 +151,10 @@ const apiService: ServiceSchema = {
          * PLEASE NOTE, IT'S JUST AN EXAMPLE IMPLEMENTATION. DO NOT USE IN PRODUCTION!
          */
         async authenticate(
-            _ctx: Context<any, { user?: Record<string, any> }>,
-            _route: Record<string, any>,
+            _ctx: Context<unknown, { user?: Record<string, unknown> }>,
+            _route: Record<string, unknown>,
             request: IncomingMessage & {
-                $action: any;
+                $action: ServiceAction & { auth: string };
             },
         ) {
             // Read the token from header
@@ -186,10 +186,10 @@ const apiService: ServiceSchema = {
          * PLEASE NOTE, IT'S JUST AN EXAMPLE IMPLEMENTATION. DO NOT USE IN PRODUCTION!
          */
         async authorize(
-            ctx: Context<any, { user?: Record<string, any> }>,
-            _route: Record<string, any>,
+            ctx: Context<unknown, { user?: Record<string, unknown> }>,
+            _route: Record<string, unknown>,
             request: IncomingMessage & {
-                $action: any;
+                $action: ServiceAction & { auth: string };
             },
         ) {
             // Get the authenticated user.
