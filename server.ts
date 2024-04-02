@@ -1,7 +1,7 @@
+import os from "node:os";
 import { config } from "dotenv";
 import defaultsDeep from "lodash/defaultsDeep";
 import { type BrokerOptions, type LogLevels, ServiceBroker } from "moleculer";
-import os from "os";
 
 import { logger } from "./logger";
 import moleculerConfig from "./moleculer.config";

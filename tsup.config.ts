@@ -5,7 +5,6 @@ export default defineConfig({
 	splitting: false,
 	sourcemap: true,
 	format: ["esm", "cjs"],
-	// legacyOutput: true,
 	target: "es2022",
 	clean: true,
 	outExtension({ format }) {

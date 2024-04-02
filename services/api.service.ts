@@ -1,9 +1,9 @@
+import type { IncomingMessage } from "node:http";
+import { resolve } from "node:path";
+import process from "node:process";
 import helmet from "helmet";
-import type { IncomingMessage } from "http";
 import type { Context, ServiceSchema } from "moleculer";
 import ApiGateway from "moleculer-web";
-import { resolve } from "path";
-import process from "process";
 
 import { swaggerService } from "../addons/swagger";
 
@@ -19,9 +19,9 @@ const apiService: ServiceSchema = {
 						title: "Swagger Api",
 						version: "1.0",
 					},
-					host: `http://${
-						process.env?.SERVER_HOSTNAME ?? "127.0.0.1"
-					}:${Number(process.env?.PORT ?? 3000)}`,
+					host: `http://${process.env?.SERVER_HOSTNAME ?? "127.0.0.1"}:${Number(
+						process.env?.PORT ?? 3000,
+					)}`,
 				},
 			},
 			{
@@ -174,11 +174,10 @@ const apiService: ServiceSchema = {
 					ApiGateway.Errors.ERR_INVALID_TOKEN,
 					[],
 				);
-			} else {
-				// No token. Throw an error or do nothing if anonymous access is allowed.
-				// throw new E.UnAuthorizedError(E.ERR_NO_TOKEN);
-				return null;
 			}
+			// No token. Throw an error or do nothing if anonymous access is allowed.
+			// throw new E.UnAuthorizedError(E.ERR_NO_TOKEN);
+			return null;
 		},
 
 		/**

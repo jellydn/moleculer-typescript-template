@@ -1,8 +1,8 @@
+import { createServer } from "node:http";
+import { resolve } from "node:path";
 import express from "express";
-import { createServer } from "http";
 import defaultsDeep from "lodash/defaultsDeep";
 import { ServiceBroker, type ServiceSchema } from "moleculer";
-import { resolve } from "path";
 
 import config from "../../moleculer.config";
 import apiService from "../../services/api.service";
@@ -32,7 +32,6 @@ const app = express();
 const httpServer = createServer(app);
 
 // Use ApiGateway as middleware
-// eslint-disable-next-line @typescript-eslint/no-unsafe-argument
 app.use("/", svc.express());
 
 async function main() {
