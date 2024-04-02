@@ -76,17 +76,5 @@
   "packageManager": "pnpm@8.15.6",
   "engines": {
     "node": ">= 18.17.x"
-  },
-  "tsup": {
-    "entry": [
-      "moleculer.config.ts",
-      "logger.ts",
-      "services/**/*.ts",
-      "examples/**/*.ts",
-      "addons/**/*.ts"
-    ],
-    "splitting": false,
-    "sourcemap": true,
-    "clean": true
   }
 }

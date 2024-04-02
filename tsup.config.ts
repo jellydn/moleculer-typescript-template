@@ -1,7 +1,7 @@
 import { defineConfig } from "tsup";
 
 export default defineConfig({
-    entry: ["moleculer.config.ts", "services/**/*.ts", "addons/**/*.ts"],
+    entry: ["addons/**/*.ts", "logger.ts", "moleculer.config.ts", "services/**/*.ts"],
     splitting: false,
     sourcemap: true,
     format: ["esm", "cjs"],
