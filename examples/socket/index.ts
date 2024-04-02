@@ -8,36 +8,36 @@ import config from "../../moleculer.config";
 // Create broker
 const broker = new ServiceBroker(config);
 broker.createService({
-	name: "gateway",
-	mixins: [ApiService, SocketIOService as ServiceSchema], // Should after moleculer-web
-	settings: {
-		// Exposed port
-		port: Number(process.env?.PORT ?? 3000),
+    name: "gateway",
+    mixins: [ApiService, SocketIOService as ServiceSchema], // Should after moleculer-web
+    settings: {
+        // Exposed port
+        port: Number(process.env?.PORT ?? 3000),
 
-		// Exposed IP
-		ip: process.env?.SERVER_HOSTNAME ?? "0.0.0.0",
+        // Exposed IP
+        ip: process.env?.SERVER_HOSTNAME ?? "0.0.0.0",
 
-		cors: {
-			origin: "*",
-			allowedHeaders: [],
-			exposedHeaders: [],
-			credentials: false,
-			maxAge: 3600,
-		},
-	},
+        cors: {
+            origin: "*",
+            allowedHeaders: [],
+            exposedHeaders: [],
+            credentials: false,
+            maxAge: 3600,
+        },
+    },
 });
 
 // Math service
 broker.createService({
-	name: "math",
-	actions: {
-		add(ctx) {
-			return Number(ctx.params.a) + Number(ctx.params.b);
-		},
-	},
+    name: "math",
+    actions: {
+        add(ctx) {
+            return Number(ctx.params.a) + Number(ctx.params.b);
+        },
+    },
 });
 
 broker
-	.start()
-	.then(() => broker.repl())
-	.catch(console.error);
+    .start()
+    .then(() => broker.repl())
+    .catch(console.error);

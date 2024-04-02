@@ -13,18 +13,18 @@ const broker = new ServiceBroker(config);
 // Load other services
 const enableServices = ["greeter"];
 const folder = __dirname.includes("dist")
-	? resolve(__dirname.substring(0, __dirname.indexOf("dist")), "dist")
-	: resolve(__dirname, "dist");
+    ? resolve(__dirname.substring(0, __dirname.indexOf("dist")), "dist")
+    : resolve(__dirname, "dist");
 enableServices.forEach((serviceName) =>
-	broker.loadServices(folder, `**/${serviceName}.service.js`),
+    broker.loadServices(folder, `**/${serviceName}.service.js`),
 );
 // Load API Gateway
 const svc = broker.createService(
-	defaultsDeep(apiService, {
-		settings: {
-			server: false,
-		},
-	}) as ServiceSchema,
+    defaultsDeep(apiService, {
+        settings: {
+            server: false,
+        },
+    }) as ServiceSchema,
 );
 
 // Create express and HTTP server
@@ -35,11 +35,11 @@ const httpServer = createServer(app);
 app.use("/", svc.express());
 
 async function main() {
-	// Now that our HTTP server is fully set up, actually listen.
-	httpServer.listen(Number(process.env?.PORT ?? 3000));
+    // Now that our HTTP server is fully set up, actually listen.
+    httpServer.listen(Number(process.env?.PORT ?? 3000));
 
-	// Start server
-	await broker.start();
+    // Start server
+    await broker.start();
 }
 
 main().catch(console.error);
