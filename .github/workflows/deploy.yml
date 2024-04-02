@@ -8,7 +8,7 @@ on:
 
 jobs:
   lint:
-    name: ⬣ ESLint
+    name: ⬣ Linter
     runs-on: ubuntu-latest
     steps:
       - name: 🛑 Cancel Previous Runs
