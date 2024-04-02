@@ -154,6 +154,20 @@ We use GitHub Actions for continuous integration and deployment. Anything that g
 -   `pnpm dc:up`: Start the stack with Docker Compose
 -   `pnpm dc:down`: Stop the stack with Docker Compose
 
+## Pre-commit hooks
+
+This template uses [Pre-commit](https://pre-commit.com/) to run checks before you commit your code. This ensures that your code is formatted correctly and passes all tests before you push it to your repository.
+
+```sh
+pre-commit install
+```
+
+To run the checks manually, use the following command:
+
+```sh
+pre-commit run --all-files
+```
+
 ## Author
 
 👤 **Dung Huynh**
@@ -167,3 +181,7 @@ We use GitHub Actions for continuous integration and deployment. Anything that g
 [![Star History Chart](https://api.star-history.com/svg?repos=jellydn/moleculer-typescript-template&type=Date)](https://star-history.com/#jellydn/moleculer-typescript-template)
 
 Give a ⭐️ if this project helped you!
+
+[![kofi](https://img.shields.io/badge/Ko--fi-F16061?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ko-fi.com/dunghd)
+[![paypal](https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://paypal.me/dunghd)
+[![buymeacoffee](https://img.shields.io/badge/Buy_Me_A_Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://www.buymeacoffee.com/dunghd)
