@@ -67,7 +67,7 @@
     "npm-run-all2": "6.1.2",
     "sort-package-json": "2.10.0",
     "tsup": "8.0.2",
-    "tsx": "4.7.1",
+    "tsx": "4.7.2",
     "typescript": "5.4.3",
     "vite": "5.2.8",
     "vitest": "1.4.0",
