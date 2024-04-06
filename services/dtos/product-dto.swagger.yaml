@@ -1,0 +1,37 @@
+components:
+  schemas:
+    addCartDTO:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name of the product
+          example: Iphone
+        qty:
+          type: number
+          description: Quantity of the product
+          example: 1
+        price:
+          type: number
+          description: Price of the product
+          example: 1000
+        billing:
+          type: object
+          properties:
+            address:
+              type: string
+            city:
+              type: string
+            zip:
+              type: number
+            country:
+              type: string
+          required:
+            - city
+            - zip
+            - country
+      required:
+        - name
+        - qty
+      description: Add cart DTO
+  parameters: {}

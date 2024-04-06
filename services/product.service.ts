@@ -2,26 +2,15 @@ import { type Context, Errors, type Service, type ServiceSchema } from "molecule
 import { ZodParams } from "moleculer-zod-validator";
 import { z } from "zod";
 
+import { addCartSchema } from "./dtos/product.dto";
+
 type ServiceSettings = Record<string, unknown>;
 
 type ServiceMethods = Record<string, unknown>;
 
 type ServiceThis = Service<ServiceSettings> & ServiceMethods;
 
-const schema = {
-    name: z.string(),
-    qty: z.number(),
-    price: z.number().optional(),
-    billing: z
-        .object({
-            address: z.string().optional(),
-            city: z.string(),
-            zip: z.number(),
-            country: z.string(),
-        })
-        .optional(),
-};
-const orderItemValidator = new ZodParams(schema);
+const orderItemValidator = new ZodParams(addCartSchema);
 
 const productService: ServiceSchema<ServiceSettings> = {
     name: "product",
@@ -42,6 +31,18 @@ const productService: ServiceSchema<ServiceSettings> = {
     actions: {
         /**
          * Add a product to the cart
+         * @swagger
+         * /api/product/cart:
+         *  post:
+         *	  description: Add a product to the cart
+         *	  tags:
+         *	   - product
+         *	  requestBody:
+         *	   required: true
+         *	   content:
+         *	    application/json:
+         *	     schema:
+         *	      $ref: '#/components/schemas/addCartDTO'
          */
         addToCart: {
             rest: {
@@ -51,7 +52,7 @@ const productService: ServiceSchema<ServiceSettings> = {
             hooks: {
                 before(ctx) {
                     this.logger.info("Before hook called");
-                    const compiled = z.object(schema).strict();
+                    const compiled = z.object(addCartSchema).strict();
                     try {
                         const parsedParams = compiled.parse(ctx.params);
                         this.logger.info("This is the result after validation %o", parsedParams);

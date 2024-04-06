@@ -1,22 +1,25 @@
 <!doctype html>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8" />
-		<title>Swagger API</title>
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, shrink-to-fit=no"
+		/>
+		<title>API Documentation</title>
+		<!-- Embed elements Elements via Web Component -->
+		<script src="https://unpkg.com/@stoplight/elements/web-components.min.js"></script>
 		<link
 			rel="stylesheet"
-			href="//unpkg.com/swagger-ui-dist@3/swagger-ui.css"
+			href="https://unpkg.com/@stoplight/elements/styles.min.css"
 		/>
-		<script src="//unpkg.com/swagger-ui-dist@3/swagger-ui-bundle.js"></script>
 	</head>
 
 	<body>
-		<div id="swagger-ui"></div>
-		<script>
-			const ui = SwaggerUIBundle({
-				url: "./open-api.json",
-				dom_id: "#swagger-ui",
-			});
-		</script>
+		<elements-api
+			apiDescriptionUrl="./open-api.json"
+			router="hash"
+			layout="sidebar"
+		/>
 	</body>
 </html>
