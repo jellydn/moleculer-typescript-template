@@ -80,9 +80,7 @@ const apiService: ServiceSchema = {
                 // Calling options. More info: https://moleculer.services/docs/0.14/moleculer-web.html#Calling-options
                 callingOptions: {},
 
-                aliases: {
-                    swagger: "api.getSwaggerSpec",
-                },
+                aliases: {},
 
                 bodyParsers: {
                     json: {
