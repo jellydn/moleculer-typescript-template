@@ -34,7 +34,8 @@
 				margin: 0;
 				color: black;
 				text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-				padding-bottom: 60px; /* footer */
+				padding-bottom: 60px;
+				/* footer */
 			}
 
 			.cursor-pointer {
@@ -260,15 +261,19 @@
 			pre.json .string {
 				color: #885800;
 			}
+
 			pre.json .number {
 				color: blue;
 			}
+
 			pre.json .boolean {
 				color: magenta;
 			}
+
 			pre.json .null {
 				color: red;
 			}
+
 			pre.json .key {
 				color: green;
 			}
@@ -364,6 +369,7 @@
 			}
 		</style>
 	</head>
+
 	<body>
 		<div id="app">
 			<header>
@@ -400,88 +406,6 @@
 							>
 							to learn how to customize this project.
 						</p>
-
-						<template v-if="broker">
-							<h3>Configuration</h3>
-							<div class="boxes">
-								<div class="box">
-									<div class="caption">Namespace</div>
-									<div class="value">
-										{{ broker.namespace || "&lt;not set&gt;"
-										}}
-									</div>
-								</div>
-
-								<div class="box">
-									<div class="caption">Transporter</div>
-									<div class="value">
-										{{ broker.transporter || "&lt;no
-										transporter&gt;" }}
-									</div>
-								</div>
-
-								<div class="box">
-									<div class="caption">Serializer</div>
-									<div class="value">
-										{{ broker.serializer || "JSON" }}
-									</div>
-								</div>
-
-								<div class="box">
-									<div class="caption">Strategy</div>
-									<div class="value">
-										{{ broker.registry.strategy || "Round
-										Robin" }}
-									</div>
-								</div>
-
-								<div class="box">
-									<div class="caption">Cacher</div>
-									<div class="value">
-										{{ broker.cacher ? "Enabled" :
-										"Disabled" }}
-									</div>
-								</div>
-
-								<div class="box">
-									<div class="caption">Logger</div>
-									<div class="value">
-										{{ broker.logger ? "Enabled" :
-										"Disabled" }}
-									</div>
-								</div>
-
-								<div class="box">
-									<div class="caption">Metrics</div>
-									<div class="value">
-										{{ broker.metrics.enabled ? "Enabled" :
-										"Disabled" }}
-									</div>
-								</div>
-
-								<div class="box">
-									<div class="caption">Tracing</div>
-									<div class="value">
-										{{ broker.tracing.enabled ? "Enabled" :
-										"Disabled" }}
-									</div>
-								</div>
-							</div>
-
-							<h3
-								class="cursor-pointer"
-								@click="showBrokerOptions = !showBrokerOptions"
-							>
-								Broker options
-								<i
-									:class="'fa fa-angle-' + (showBrokerOptions ? 'up' : 'down')"
-								></i>
-							</h3>
-							<pre
-								v-if="showBrokerOptions"
-								class="broker-options"
-							><code>{{ broker }}</code></pre>
-						</template>
 					</div>
 				</section>
 
@@ -771,7 +695,7 @@
 						},
 
 						fields: {
-							welcomeName: "John",
+							welcomeName: "dunghd",
 							name: "iPhone",
 							quantity: 1,
 						},
@@ -923,12 +847,6 @@
 							});
 					},
 
-					updateBrokerOptions: function (name) {
-						this.req("/api/~node/options", null).then(
-							(res) => (this.broker = res),
-						);
-					},
-
 					updateNodeList: function (name) {
 						this.req("/api/~node/list", null).then((res) => {
 							res.sort((a, b) => a.id.localeCompare(b.id));
@@ -980,8 +898,6 @@
 					setInterval(function () {
 						self.updatePageResources();
 					}, 2000);
-
-					this.updateBrokerOptions();
 				},
 			});
 		</script>
