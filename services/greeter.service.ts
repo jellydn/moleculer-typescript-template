@@ -77,7 +77,7 @@ const greeterService: ServiceSchema<GreeterSettings> = {
         welcome: {
             rest: "/welcome",
             params: {
-                username: { type: "string", min: 3, max: 25 },
+                username: { type: "string", min: 6, max: 25 },
             },
             /**
              * @param ctx - Request context

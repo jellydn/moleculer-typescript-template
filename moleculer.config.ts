@@ -41,19 +41,7 @@ const config: BrokerOptions = {
     // Enable/disable logging or use custom logger. More info: https://moleculer.services/docs/0.14/logging.html
     // Available logger types: "Console", "File", "Pino", "Winston", "Bunyan", "debug", "Log4js", "Datadog"
     logger: {
-        type: "Console",
-        options: {
-            // Using colors on the output
-            colors: true,
-            // Print module names with different colors (like docker-compose for containers)
-            moduleColors: false,
-            // Line formatter. It can be "json", "short", "simple", "full", a `Function` or a template string like "{timestamp} {level} {nodeID}/{mod}: {msg}"
-            formatter: "full",
-            // Custom object printer. If not defined, it uses the `util.inspect` method.
-            objectPrinter: null,
-            // Auto-padding the module name in order to messages begin at the same column.
-            autoPadding: false,
-        },
+        type: "Pino",
     },
     // Default log level for built-in console logger. It can be overwritten in logger options above.
     // Available values: trace, debug, info, warn, error, fatal
@@ -152,7 +140,7 @@ const config: BrokerOptions = {
     },
 
     // Enable action & event parameter validation. More info: https://moleculer.services/docs/0.14/validating.html
-    validator: new ZodValidator(),
+    validator: true,
 
     // ErrorHandler: null,
 
@@ -199,19 +187,6 @@ const config: BrokerOptions = {
                     spanConverter: null,
                     // Default tags. They will be added into all span tags.
                     defaultTags: null,
-                },
-            },
-            {
-                type: "Console", // Console exporter is only for development!
-                options: {
-                    // Custom logger
-                    logger: null,
-                    // Using colors
-                    colors: true,
-                    // Width of row
-                    width: 100,
-                    // Gauge width in the row
-                    gaugeWidth: 40,
                 },
             },
         ],

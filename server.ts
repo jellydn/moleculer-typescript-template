@@ -28,6 +28,8 @@ export function getMoleculerConfig(moleculerFileConfig: BrokerOptions) {
         mergedConfig.logLevel = process.env.LOGLEVEL as unknown as LogLevels;
     }
 
+    // NOTE: Support more .env variables here if needed
+
     if (!mergedConfig.nodeID) {
         const nodeId = `${os.hostname().toLowerCase()}-${process.pid}`;
         mergedConfig.nodeID = nodeId;

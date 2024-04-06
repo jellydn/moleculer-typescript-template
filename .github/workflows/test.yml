@@ -1,4 +1,4 @@
-name: CI
+name: Test
 on:
   push:
     branches:
@@ -42,8 +42,8 @@ jobs:
 
       - name: Integration test
         run: |
-          PORT=8888 bun run start &
-          curl --location --remote-name https://github.com/Orange-OpenSource/hurl/releases/download/4.2.0/hurl_4.2.0_amd64.deb
-          sudo dpkg -i hurl_4.2.0_amd64.deb
-          wait-on tcp:8888
+          PORT=8888 TRANSPORTER=TCP bun run start &
+          curl --location --remote-name https://github.com/Orange-OpenSource/hurl/releases/download/4.0.0/hurl_4.0.0_amd64.deb
+          sudo dpkg -i hurl_4.0.0_amd64.deb
+          wait-on http://0.0.0.0:8888 -l
           hurl --variable PORT=8888 --test test/e2e/*.hurl

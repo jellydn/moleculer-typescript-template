@@ -1,3 +1,4 @@
+// @deprecated Please use CLI command `generate:swagger` instead.
 import type { ServiceSchema } from "moleculer";
 import type { Options } from "swagger-jsdoc";
 import swaggerJsdoc from "swagger-jsdoc";

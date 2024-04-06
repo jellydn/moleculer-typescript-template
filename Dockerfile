@@ -30,4 +30,4 @@ COPY --from=builder /app .
 EXPOSE 8080
 
 # Start the application
-CMD ["npm", "run", "start:esm"]
+CMD ["npm", "run", "start"]

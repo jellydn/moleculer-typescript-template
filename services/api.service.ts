@@ -1,35 +1,12 @@
 import type { IncomingMessage } from "node:http";
-import { resolve } from "node:path";
 import process from "node:process";
 import helmet from "helmet";
 import type { Context, ServiceAction, ServiceSchema } from "moleculer";
 import ApiGateway from "moleculer-web";
 
-import { swaggerService } from "../addons/swagger";
-
 const apiService: ServiceSchema = {
     name: "api",
-    mixins: [
-        ApiGateway,
-        swaggerService(
-            {
-                definition: {
-                    openapi: "3.0.0",
-                    info: {
-                        title: "Swagger Api",
-                        version: "1.0",
-                    },
-                    host: `http://${process.env?.SERVER_HOSTNAME ?? "127.0.0.1"}:${Number(
-                        process.env?.PORT ?? 3000,
-                    )}`,
-                },
-            },
-            {
-                autoGenerateFile: false,
-                swaggerFilePath: resolve(__dirname, "open-api.json"),
-            },
-        ),
-    ],
+    mixins: [ApiGateway],
 
     // More info about settings: https://moleculer.services/docs/0.14/moleculer-web.html
     settings: {
