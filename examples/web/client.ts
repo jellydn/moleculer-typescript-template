@@ -11,11 +11,10 @@ logger.level = "debug";
 async function main() {
     logger.debug("Client started");
     try {
-        const hello = await apiClient.default.getApiGreeterHello();
-        console.log("Hello", hello);
-        logger.info("hello", hello);
+        const hello = await apiClient.greeter.getApiGreeterHello();
+        logger.info("%s", hello);
 
-        const welcome = await apiClient.default.getApiGreeterWelcome({ username: "IT Man" });
+        const welcome = await apiClient.greeter.getApiGreeterWelcome({ username: "IT Man" });
         logger.info(welcome);
     } catch (err) {
         console.error("Error:", err);

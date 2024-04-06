@@ -40,6 +40,8 @@ const greeterService: ServiceSchema<GreeterSettings> = {
          * /api/greeter/hello:
          *   get:
          *     description: Returns the Hello Moleculer
+         *     tags:
+         *     - greeter
          *     responses:
          *       200:
          *         description: Hello Moleculer
@@ -62,6 +64,8 @@ const greeterService: ServiceSchema<GreeterSettings> = {
          * /api/greeter/welcome:
          *   get:
          *     description: Returns Welcome, a username
+         *     tags:
+         *     - greeter
          *     parameters:
          *     - name: username
          *       description: a username
