@@ -33,7 +33,15 @@ const outputDirectory = __dirname;
 const Schema = z.object(addCartSchema).openapi("addCartDTO", {
     description: "Add cart DTO",
 });
-const generator = new OpenApiGeneratorV3([Schema]);
+const ResponseSchema = z
+    .object({
+        success: z.boolean().openapi({ description: "Success flag", example: true }),
+        message: z.string().openapi({ description: "Message", example: "Product added to cart" }),
+    })
+    .openapi("addCartResponseDTO", {
+        description: "Add cart response DTO",
+    });
+const generator = new OpenApiGeneratorV3([Schema, ResponseSchema]);
 const components = generator.generateComponents();
 
 // Write to YAML file

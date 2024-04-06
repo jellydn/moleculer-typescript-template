@@ -43,6 +43,15 @@ const productService: ServiceSchema<ServiceSettings> = {
          *	    application/json:
          *	     schema:
          *	      $ref: '#/components/schemas/addCartDTO'
+         *	  responses:
+         *	   200:
+         *	    description: Product added to cart
+         *	    content:
+         *	     application/json:
+         *	      schema:
+         *	       $ref: '#/components/schemas/addCartResponseDTO'
+         *	   422:
+         *	    description: Validation error
          */
         addToCart: {
             rest: {

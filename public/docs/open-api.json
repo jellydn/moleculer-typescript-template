@@ -59,6 +59,21 @@
               }
             }
           }
+        },
+        "responses": {
+          "200": {
+            "description": "Product added to cart",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/addCartResponseDTO"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation error"
+          }
         }
       }
     }
@@ -104,6 +119,23 @@
         },
         "required": ["name", "qty"],
         "description": "Add cart DTO"
+      },
+      "addCartResponseDTO": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "description": "Success flag",
+            "example": true
+          },
+          "message": {
+            "type": "string",
+            "description": "Message",
+            "example": "Product added to cart"
+          }
+        },
+        "required": ["success", "message"],
+        "description": "Add cart response DTO"
       }
     },
     "parameters": {}
