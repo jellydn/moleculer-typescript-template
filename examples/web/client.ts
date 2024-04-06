@@ -16,8 +16,16 @@ async function main() {
 
         const welcome = await apiClient.greeter.getApiGreeterWelcome({ username: "IT Man" });
         logger.info(welcome);
+
+        const item = await apiClient.product.postApiProductCart({
+            requestBody: {
+                name: "Iphone",
+                qty: 1,
+            },
+        });
+        logger.info(item);
     } catch (err) {
-        console.error("Error:", err);
+        logger.error(err);
     }
 }
 
