@@ -1,7 +1,14 @@
-import { type Context, Errors, type Service, type ServiceSchema } from "moleculer";
+import {
+    type Context,
+    Errors,
+    type GenericObject,
+    type Service,
+    type ServiceSchema,
+} from "moleculer";
 import { ZodParams } from "moleculer-zod-validator";
 import { z } from "zod";
 
+import { logger } from "../logger";
 import { addCartSchema } from "./dtos/product.dto";
 
 type ServiceSettings = Record<string, unknown>;
@@ -11,6 +18,27 @@ type ServiceMethods = Record<string, unknown>;
 type ServiceThis = Service<ServiceSettings> & ServiceMethods;
 
 const orderItemValidator = new ZodParams(addCartSchema);
+
+// TODO: Move this to a shared utility
+const validateParams = (
+    ctx: Context<unknown, Record<string, unknown>, GenericObject>,
+    schema: typeof addCartSchema,
+) => {
+    const compiled = z.object(schema).strict();
+    try {
+        const parsedParams = compiled.parse(ctx.params);
+        logger.info("Validated parameters: %o", parsedParams);
+    } catch (err) {
+        if (err instanceof z.ZodError)
+            throw new Errors.ValidationError(
+                "Parameters validation error!",
+                "VALIDATION_ERROR",
+                err.issues,
+            );
+
+        throw err;
+    }
+};
 
 const productService: ServiceSchema<ServiceSettings> = {
     name: "product",
@@ -60,25 +88,12 @@ const productService: ServiceSchema<ServiceSettings> = {
             },
             hooks: {
                 before(ctx) {
-                    this.logger.info("Before hook called");
-                    const compiled = z.object(addCartSchema).strict();
-                    try {
-                        const parsedParams = compiled.parse(ctx.params);
-                        this.logger.info("This is the result after validation %o", parsedParams);
-                    } catch (err) {
-                        if (err instanceof z.ZodError)
-                            throw new Errors.ValidationError(
-                                "Parameters validation error!",
-                                "VALIDATION_ERROR",
-                                err.issues,
-                            );
-
-                        throw err;
-                    }
+                    this.logger.info("Validating parameters for addToCart action");
+                    validateParams(ctx, addCartSchema);
                 },
             },
             handler(this: ServiceThis, ctx: Context<typeof orderItemValidator.context>) {
-                this.logger.info("addToCart called %o", ctx.params);
+                this.logger.info("addToCart action called with parameters: %o", ctx.params);
                 const { name, qty, billing } = ctx.params;
                 return {
                     success: true,
