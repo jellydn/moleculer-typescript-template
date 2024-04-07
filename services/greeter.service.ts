@@ -16,6 +16,14 @@ type GreeterMethods = {
 
 type GreeterThis = Service<GreeterSettings> & GreeterMethods;
 
+/**
+ * @swagger
+ * components:
+ *  schemas:
+ *    welcomeResponseDTO:
+ *      type: string
+ *      example: Welcome, dunghd
+ */
 const greeterService: ServiceSchema<GreeterSettings> = {
     name: "greeter",
 
@@ -45,6 +53,11 @@ const greeterService: ServiceSchema<GreeterSettings> = {
          *     responses:
          *       200:
          *         description: Hello Moleculer
+         *         content:
+         *          text/plain:
+         *           schema:
+         *            type: string
+         *            example: Hello Moleculer
          */
         hello: {
             rest: {
@@ -75,6 +88,10 @@ const greeterService: ServiceSchema<GreeterSettings> = {
          *     responses:
          *      200:
          *         description: Welcome, a username
+         *         content:
+         *          text/plain:
+         *           schema:
+         *	           $ref: '#/components/schemas/welcomeResponseDTO'
          *      422:
          *         description: Invalid username
          */

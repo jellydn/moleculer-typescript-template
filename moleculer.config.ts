@@ -1,5 +1,4 @@
 import type { BrokerOptions } from "moleculer";
-import { ZodValidator } from "moleculer-zod-validator";
 
 import { logger } from "./logger";
 

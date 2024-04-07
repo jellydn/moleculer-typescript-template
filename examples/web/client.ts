@@ -32,4 +32,7 @@ async function main() {
 
 main()
     .then(() => process.exit(0))
-    .catch(() => process.exit(1));
+    .catch((error) => {
+        logger.error(error);
+        process.exit(1);
+    });
