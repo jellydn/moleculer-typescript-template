@@ -29,7 +29,7 @@ npx degit jellydn/moleculer-typescript-template [PROJECT-NAME]
 -   🔥 [swagger-jsdoc](https://github.com/Surnet/swagger-jsdoc/blob/v6/docs/README.md) - Generates swagger/openapi specification based on jsDoc comments and YAML files.
 -   ✨ [moleculer-zod-validator](https://github.com/TheAppleFreak/moleculer-zod-validator) - A validator for the Moleculer microservice framework to allow the use of [Zod](https://zod.dev/).
 -   🔏 [asteasolutions/zod-to-openapi](https://github.com/asteasolutions/zod-to-openapi#defining-schemas) - A library that generates OpenAPI (Swagger) docs from Zod schemas.
--   [hey-api/openapi-tss](https://github.com/hey-api/openapi-ts) - Turn your OpenAPI specification into a beautiful TypeScript client.
+-   🪄 [hey-api/openapi-ts](https://github.com/hey-api/openapi-ts) - Turn your OpenAPI specification into a beautiful TypeScript client.
 
 ## Install
 
