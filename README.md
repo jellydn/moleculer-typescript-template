@@ -8,6 +8,8 @@
 
 [![Moleculer - Progressive microservices framework for Node.js ](https://img.youtube.com/vi/peb2OflRu-4/0.jpg)](https://www.youtube.com/watch?v=peb2OflRu-4)
 
+[![IT Man - Automating API Client Generation with openapi-ts](https://i.ytimg.com/vi/LwfcoOWlyOw/hqdefault.jpg)](https://www.youtube.com/watch?v=LwfcoOWlyOw)
+
 <!-- [![Deploy](https://button.deta.dev/1/svg)](https://go.deta.dev/deploy?repo=https://github.com/jellydn/moleculer-typescript-template) -->
 
 ## Prerequisites
