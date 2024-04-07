@@ -27,7 +27,7 @@
     "generate:crud": "hygen service crud --name",
     "generate:action": "hygen action new --name",
     "generate:swagger": "npx tsx cli.ts",
-    "generate:sdk": "openapi-ts --input ./public/docs/open-api.json --output ./generated/sdk --name MoleculerApi --useOptions --client fetch",
+    "generate:sdk": "openapi-ts",
     "typecheck": "npm run generate:sdk && tsc -b"
   },
   "dependencies": {

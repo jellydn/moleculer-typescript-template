@@ -2,6 +2,7 @@
 import { MoleculerApi } from "../../generated/sdk";
 import { logger } from "../../logger";
 
+// API client with fetch
 const apiClient = new MoleculerApi({
     BASE: "http://localhost:4567",
 });
