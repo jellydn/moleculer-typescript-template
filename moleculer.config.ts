@@ -41,6 +41,7 @@ const config: BrokerOptions = {
     // Enable/disable logging or use custom logger. More info: https://moleculer.services/docs/0.14/logging.html
     // Available logger types: "Console", "File", "Pino", "Winston", "Bunyan", "debug", "Log4js", "Datadog"
     logger: {
+        // Note: Change to Console if you want to see the logger output
         type: "Pino",
     },
     // Default log level for built-in console logger. It can be overwritten in logger options above.
