@@ -23,6 +23,16 @@ type GreeterThis = Service<GreeterSettings> & GreeterMethods;
  *    welcomeResponseDTO:
  *      type: string
  *      example: Welcome, dunghd
+ *  parameters:
+ *	  username:
+ *	    name: username
+ *	    in: query
+ *	    description: User name
+ *	    required: true
+ *	    schema:
+ *	      type: string
+ *	      minLength: 6
+ *	      maxLength: 25
  */
 const greeterService: ServiceSchema<GreeterSettings> = {
     name: "greeter",
@@ -80,11 +90,8 @@ const greeterService: ServiceSchema<GreeterSettings> = {
          *     tags:
          *     - greeter
          *     parameters:
-         *     - name: username
-         *       description: a username
+         *     - $ref: '#/components/parameters/username'
          *       in: query
-         *       required: true
-         *       type: string
          *     responses:
          *      200:
          *         description: Welcome, a username

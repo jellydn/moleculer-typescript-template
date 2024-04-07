@@ -37,11 +37,8 @@
         "tags": ["greeter"],
         "parameters": [
           {
-            "name": "username",
-            "description": "a username",
-            "in": "query",
-            "required": true,
-            "type": "string"
+            "$ref": "#/components/parameters/username",
+            "in": "query"
           }
         ],
         "responses": {
@@ -157,7 +154,19 @@
         "description": "Add cart response DTO"
       }
     },
-    "parameters": {}
+    "parameters": {
+      "username": {
+        "name": "username",
+        "in": "query",
+        "description": "User name",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "minLength": 6,
+          "maxLength": 25
+        }
+      }
+    }
   },
   "tags": []
 }
