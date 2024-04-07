@@ -65,7 +65,7 @@
     "hygen": "6.2.11",
     "moleculer-connect": "0.2.2",
     "moleculer-io": "2.2.0",
-    "moleculer-repl": "0.6.6",
+    "moleculer-repl": "0.7.4",
     "npm-run-all2": "6.1.2",
     "pino-pretty": "11.0.0",
     "sort-package-json": "2.10.0",
