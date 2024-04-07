@@ -45,5 +45,5 @@ jobs:
           PORT=8888 TRANSPORTER=TCP bun run start &
           curl --location --remote-name https://github.com/Orange-OpenSource/hurl/releases/download/4.0.0/hurl_4.0.0_amd64.deb
           sudo dpkg -i hurl_4.0.0_amd64.deb
-          wait-on http://0.0.0.0:8888 -l
+          wait-on http://0.0.0.0:8888/api/health/check -l -i 500 -d 1000
           hurl --variable PORT=8888 --test test/e2e/*.hurl
