@@ -95,14 +95,14 @@ devDependencies:
     specifier: 6.2.11
     version: 6.2.11
   moleculer-connect:
-    specifier: 0.2.1
-    version: 0.2.1
+    specifier: 0.2.2
+    version: 0.2.2(moleculer-repl@0.6.6)
   moleculer-io:
     specifier: 2.2.0
     version: 2.2.0(moleculer@0.14.33)
   moleculer-repl:
-    specifier: 0.7.4
-    version: 0.7.4
+    specifier: 0.6.6
+    version: 0.6.6
   npm-run-all2:
     specifier: 6.1.2
     version: 6.1.2
@@ -1762,6 +1762,9 @@ packages:
   /commander@9.5.0:
     resolution: {integrity: sha512-KRs7WVDKg86PWiuAqhDrAQnTXZKraVcCc6vFdL14qrZ/DcWwuRo7VoiYXalXO7S5GKpqYiVEwCbgFDfxNHKJBQ==}
     engines: {node: ^12.20.0 || >=14}
+    requiresBuild: true
+    dev: false
+    optional: true
 
   /concat-map@0.0.1:
     resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
@@ -3322,9 +3325,11 @@ packages:
       ufo: 1.5.3
     dev: true
 
-  /moleculer-connect@0.2.1:
-    resolution: {integrity: sha512-k2wVByuJ9xZIUCyBlwFaFhqwJcPfvWonQlNrxcAq9tJmykCAjOqvaiKrvbBI8eE4m9JuUrVZbIvsivcxwVg86g==}
+  /moleculer-connect@0.2.2(moleculer-repl@0.6.6):
+    resolution: {integrity: sha512-hTLWUKyDJ5Nkdk0+30lnp4GY5MhnwhTj7O7e5x2BBXDvAb7GDC9XsAHXukMlCtTCLFJ7KjfR38nk0o2uyCgQvg==}
     hasBin: true
+    peerDependencies:
+      moleculer-repl: 0.6.6
     dependencies:
       glob: 10.3.12
       lodash: 4.17.21
@@ -3388,23 +3393,6 @@ packages:
       pretty-bytes: 5.6.0
       table: 6.8.2
       tiny-human-time: 1.2.0
-    dev: true
-
-  /moleculer-repl@0.7.4:
-    resolution: {integrity: sha512-+K3aPhxPt96d995EpNslDNQCyjV8O53CiQpZI4tiUiv0cpFUA7ZYcyRNQSgFeDHpJm/ljm1itHB+1p2++ZG6bg==}
-    engines: {node: '>= 12.x.x'}
-    dependencies:
-      clui: 0.3.6
-      commander: 9.5.0
-      glob: 7.2.3
-      kleur: 4.1.5
-      lodash: 4.17.21
-      ora: 5.4.1
-      pretty-bytes: 5.6.0
-      string-argv: 0.3.2
-      table: 6.8.2
-      tiny-human-time: 1.2.0
-      yargs-parser: 21.1.1
     dev: true
 
   /moleculer-web@0.10.7(moleculer@0.14.33):
@@ -4436,11 +4424,6 @@ packages:
 
   /std-env@3.7.0:
     resolution: {integrity: sha512-JPbdCEQLj1w5GilpiHAx3qJvFndqybBysA3qUOnznweH4QbNYUsW/ea8QzSrnh0vNsezMMw5bcVool8lM0gwzg==}
-    dev: true
-
-  /string-argv@0.3.2:
-    resolution: {integrity: sha512-aqD2Q0144Z+/RqG52NeHEkZauTAUWJO8c6yTftGJKO3Tja5tUgIfmIl6kExvhtxSDP7fXB6DvzkfMpCd/F3G+Q==}
-    engines: {node: '>=0.6.19'}
     dev: true
 
   /string-width@3.1.0:
