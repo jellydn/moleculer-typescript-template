@@ -53,8 +53,8 @@ devDependencies:
     specifier: 0.5.4
     version: 0.5.4
   '@hey-api/openapi-ts':
-    specifier: 0.36.0
-    version: 0.36.0(typescript@5.4.4)
+    specifier: 0.36.2
+    version: 0.36.2(typescript@5.4.4)
   '@types/express':
     specifier: 4.17.21
     version: 4.17.21
@@ -744,8 +744,8 @@ packages:
       '@hapi/hoek': 9.3.0
     dev: true
 
-  /@hey-api/openapi-ts@0.36.0(typescript@5.4.4):
-    resolution: {integrity: sha512-vm7td6EAisXiIfaQSZmR/2T7jUt+7YGjXacQ2qSlVlJCQp+RSAhZ9xxx88fAzjYHRdv4V5BXqGl2Q2lSw2sCGg==}
+  /@hey-api/openapi-ts@0.36.2(typescript@5.4.4):
+    resolution: {integrity: sha512-CoMwPxWyWq2urr0YRsTWoZyAFY92WGmhJ+bCGfPIZRSYnPBKcxx0iwgBqrzxraT4wvZ0VsRSfPvqZB7p9GrmEA==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
