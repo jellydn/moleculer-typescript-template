@@ -19,7 +19,7 @@ dependencies:
     version: 4.6.1
   moleculer:
     specifier: 0.14.33
-    version: 0.14.33(nats@2.21.0)(pino@8.20.0)
+    version: 0.14.33(nats@2.22.0)(pino@8.20.0)
   moleculer-web:
     specifier: 0.10.7
     version: 0.10.7(moleculer@0.14.33)
@@ -27,8 +27,8 @@ dependencies:
     specifier: 3.3.1
     version: 3.3.1(moleculer@0.14.33)(zod@3.22.4)
   nats:
-    specifier: 2.21.0
-    version: 2.21.0
+    specifier: 2.22.0
+    version: 2.22.0
   openapi-types:
     specifier: 12.1.3
     version: 12.1.3
@@ -54,7 +54,7 @@ devDependencies:
     version: 0.5.4
   '@hey-api/openapi-ts':
     specifier: 0.37.3
-    version: 0.37.3(typescript@5.4.4)
+    version: 0.37.3(typescript@5.4.5)
   '@types/express':
     specifier: 4.17.21
     version: 4.17.21
@@ -114,13 +114,13 @@ devDependencies:
     version: 2.10.0
   tsup:
     specifier: 8.0.2
-    version: 8.0.2(typescript@5.4.4)
+    version: 8.0.2(typescript@5.4.5)
   tsx:
     specifier: 4.7.2
     version: 4.7.2
   typescript:
-    specifier: 5.4.4
-    version: 5.4.4
+    specifier: 5.4.5
+    version: 5.4.5
   vite:
     specifier: 5.2.8
     version: 5.2.8(@types/node@20.12.7)
@@ -744,7 +744,7 @@ packages:
       '@hapi/hoek': 9.3.0
     dev: true
 
-  /@hey-api/openapi-ts@0.37.3(typescript@5.4.4):
+  /@hey-api/openapi-ts@0.37.3(typescript@5.4.5):
     resolution: {integrity: sha512-bqadMe9YpzwO9nkpCK+XEwbom9V/WNcUSOYKp8lBJbe/Rve/eSnTjANmll65SU/uoc/5kgrnkD0Eh4hcPqSYrA==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -756,7 +756,7 @@ packages:
       camelcase: 8.0.0
       commander: 12.0.0
       handlebars: 4.7.8
-      typescript: 5.4.4
+      typescript: 5.4.5
     dev: true
 
   /@isaacs/cliui@8.0.2:
@@ -3323,9 +3323,9 @@ packages:
     dependencies:
       glob: 10.3.12
       lodash: 4.17.21
-      moleculer: 0.14.33(nats@2.21.0)(pino@8.20.0)
+      moleculer: 0.14.33(nats@2.22.0)(pino@8.20.0)
       moleculer-repl: 0.6.6
-      nats: 2.21.0
+      nats: 2.22.0
       pino: 8.20.0
       rimraf: 5.0.5
       yargs: 17.7.2
@@ -3361,7 +3361,7 @@ packages:
     dependencies:
       kleur: 4.1.5
       lodash: 4.17.21
-      moleculer: 0.14.33(nats@2.21.0)(pino@8.20.0)
+      moleculer: 0.14.33(nats@2.22.0)(pino@8.20.0)
       socket.io: 4.7.5
     transitivePeerDependencies:
       - bufferutil
@@ -3399,7 +3399,7 @@ packages:
       isstream: 0.1.2
       kleur: 4.1.5
       lodash: 4.17.21
-      moleculer: 0.14.33(nats@2.21.0)(pino@8.20.0)
+      moleculer: 0.14.33(nats@2.22.0)(pino@8.20.0)
       path-to-regexp: 3.2.0
       qs: 6.12.0
       serve-static: 1.15.0
@@ -3414,11 +3414,11 @@ packages:
       moleculer: 0.14.x
       zod: 3.x.x
     dependencies:
-      moleculer: 0.14.33(nats@2.21.0)(pino@8.20.0)
+      moleculer: 0.14.33(nats@2.22.0)(pino@8.20.0)
       zod: 3.22.4
     dev: false
 
-  /moleculer@0.14.33(nats@2.21.0)(pino@8.20.0):
+  /moleculer@0.14.33(nats@2.22.0)(pino@8.20.0):
     resolution: {integrity: sha512-0B8BT4hyems30UYGzkgP0yuO0HbWRzqytmvVqBBKSW9T65wJhzDu97xLjfpILTvFDPehvWkUvKI+w3557eI0fA==}
     engines: {node: '>= 10.x.x'}
     hasBin: true
@@ -3499,7 +3499,7 @@ packages:
       kleur: 4.1.5
       lodash: 4.17.21
       lru-cache: 6.0.0
-      nats: 2.21.0
+      nats: 2.22.0
       node-fetch: 2.7.0
       pino: 8.20.0
       recursive-watch: 1.1.4
@@ -3543,8 +3543,8 @@ packages:
     hasBin: true
     dev: true
 
-  /nats@2.21.0:
-    resolution: {integrity: sha512-sHXlOmcPsk/JWUcUvgQKCEhzUS9VsBdazYsIN/2eQv4WENuiHlJDMDxq+4HWTLOxfti05okvgeE7d6wMt5yHfQ==}
+  /nats@2.22.0:
+    resolution: {integrity: sha512-UQsmoQBuCoyVmChP2ZsmZzkQUbTPYT2aMcEVlaZ/MUcxOBvZlGUcrtsV6x2TCkxbCNTiBF9kgXD1Sp32yeCsmw==}
     engines: {node: '>= 14.0.0'}
     dependencies:
       nkeys.js: 1.1.0
@@ -4692,7 +4692,7 @@ packages:
     resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
     dev: true
 
-  /tsup@8.0.2(typescript@5.4.4):
+  /tsup@8.0.2(typescript@5.4.5):
     resolution: {integrity: sha512-NY8xtQXdH7hDUAZwcQdY/Vzlw9johQsaqf7iwZ6g1DOUlFYQ5/AtVAjTvihhEyeRlGo4dLRVHtrRaL35M1daqQ==}
     engines: {node: '>=18'}
     hasBin: true
@@ -4725,7 +4725,7 @@ packages:
       source-map: 0.8.0-beta.0
       sucrase: 3.35.0
       tree-kill: 1.2.2
-      typescript: 5.4.4
+      typescript: 5.4.5
     transitivePeerDependencies:
       - supports-color
       - ts-node
@@ -4773,8 +4773,8 @@ packages:
     resolution: {integrity: sha512-dzlvlNlt6AXU7EBSfpAscydQ7gXB+pPGsPnfJnZpiNJBDj7IaJzQlBZYGdEi4R9HmPdBv2XmWJ6YUtoTa7lmCw==}
     dev: true
 
-  /typescript@5.4.4:
-    resolution: {integrity: sha512-dGE2Vv8cpVvw28v8HCPqyb08EzbBURxDpuhJvTrusShUfGnhHBafDsLdS1EhhxyL6BJQE+2cT3dDPAv+MQ6oLw==}
+  /typescript@5.4.5:
+    resolution: {integrity: sha512-vcI4UpRgg81oIRUFwR0WSIHKt11nJ7SAVlYNIu+QpqeyXP+gpQJy/Z4+F0aGxSE4MqwjyXvW/TzgkLAx2AGHwQ==}
     engines: {node: '>=14.17'}
     hasBin: true
     dev: true
