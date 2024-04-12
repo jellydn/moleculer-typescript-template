@@ -1,6 +1,6 @@
 import type { BrokerOptions } from "moleculer";
 
-import { logger } from "./logger";
+import { stdTimeFunctions } from "pino";
 
 /**
  * Moleculer ServiceBroker configuration file
@@ -42,6 +42,14 @@ const config: BrokerOptions = {
     logger: {
         // Note: Change to Console if you want to see the logger output
         type: "Pino",
+        options: {
+            pino: {
+                // More info: http://getpino.io/#/docs/api?id=options-object
+                options: {
+                    timestamp: stdTimeFunctions.isoTime,
+                },
+            },
+        },
     },
     // Default log level for built-in console logger. It can be overwritten in logger options above.
     // Available values: trace, debug, info, warn, error, fatal
@@ -200,17 +208,17 @@ const config: BrokerOptions = {
 
     // Called after broker created.
     created(broker) {
-        logger.warn("Broker created!", broker);
+        broker.logger.warn("[%s] Broker created!", broker.namespace);
     },
 
     // Called after broker started.
     async started(broker) {
-        logger.warn("Broker started!", broker);
+        broker.logger.warn("[%s] Broker started!", broker.namespace);
     },
 
     // Called after broker stopped.
     async stopped(broker) {
-        logger.warn("Broker stopped!", broker);
+        broker.logger.warn("[%s] Broker stopped!", broker.namespace);
     },
 };
 

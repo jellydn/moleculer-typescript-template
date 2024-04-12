@@ -3,7 +3,6 @@ import { config } from "dotenv";
 import defaultsDeep from "lodash/defaultsDeep";
 import { type BrokerOptions, type LogLevels, ServiceBroker } from "moleculer";
 
-import { logger } from "./logger";
 import moleculerConfig from "./moleculer.config";
 
 config();
@@ -40,16 +39,17 @@ export function getMoleculerConfig(moleculerFileConfig: BrokerOptions) {
 
 // Create a ServiceBroker
 const broker = new ServiceBroker(getMoleculerConfig(moleculerConfig));
-
+broker.logger.info("Booting Moleculer server...");
 // Start the broker
 broker
     .start()
     .then(() => {
-        logger.info("Moleculer server started");
+        broker.logger.info("Moleculer server started.");
 
         // Load services from "services" folder
+        broker.logger.info("Loading services...");
         broker.loadServices("./services", "**/*.service.ts");
     })
     .catch((err) => {
-        logger.error(err);
+        broker.logger.error(err);
     });
