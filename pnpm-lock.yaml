@@ -53,8 +53,8 @@ devDependencies:
     specifier: 0.5.5
     version: 0.5.5
   '@hey-api/openapi-ts':
-    specifier: 0.38.1
-    version: 0.38.1(typescript@5.4.5)
+    specifier: 0.39.0
+    version: 0.39.0(typescript@5.4.5)
   '@types/express':
     specifier: 4.17.21
     version: 4.17.21
@@ -122,8 +122,8 @@ devDependencies:
     specifier: 5.4.5
     version: 5.4.5
   vite:
-    specifier: 5.2.8
-    version: 5.2.8(@types/node@20.12.7)
+    specifier: 5.2.9
+    version: 5.2.9(@types/node@20.12.7)
   vitest:
     specifier: 1.5.0
     version: 1.5.0(@types/node@20.12.7)(@vitest/ui@1.5.0)
@@ -744,8 +744,8 @@ packages:
       '@hapi/hoek': 9.3.0
     dev: true
 
-  /@hey-api/openapi-ts@0.38.1(typescript@5.4.5):
-    resolution: {integrity: sha512-HupYdS5ufSXMFzZorXvYDjh23HmrlEEHOYLy6LAUUXWfKD6+/zVQVIcnoYsWN5CjVXrVt22Is5DGjTa4+bYh+Q==}
+  /@hey-api/openapi-ts@0.39.0(typescript@5.4.5):
+    resolution: {integrity: sha512-gvJpGBUeKRHJV8dCrKNUo/+8SFIkLgqDWcGeOxd/G1ZLrC6YZoO37XGPFlpmdlbosvcmqxJHKwYmsqMAfW6w+g==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
@@ -4851,7 +4851,7 @@ packages:
       debug: 4.3.4
       pathe: 1.1.2
       picocolors: 1.0.0
-      vite: 5.2.8(@types/node@20.12.7)
+      vite: 5.2.9(@types/node@20.12.7)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -4863,8 +4863,8 @@ packages:
       - terser
     dev: true
 
-  /vite@5.2.8(@types/node@20.12.7):
-    resolution: {integrity: sha512-OyZR+c1CE8yeHw5V5t59aXsUPPVTHMDjEZz8MgguLL/Q7NblxhZUlTu9xSPqlsUO/y+X7dlU05jdhvyycD55DA==}
+  /vite@5.2.9(@types/node@20.12.7):
+    resolution: {integrity: sha512-uOQWfuZBlc6Y3W/DTuQ1Sr+oIXWvqljLvS881SVmAj00d5RdgShLcuXWxseWPd4HXwiYBFW/vXHfKFeqj9uQnw==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
@@ -4943,7 +4943,7 @@ packages:
       strip-literal: 2.1.0
       tinybench: 2.7.0
       tinypool: 0.8.3
-      vite: 5.2.8(@types/node@20.12.7)
+      vite: 5.2.9(@types/node@20.12.7)
       vite-node: 1.5.0(@types/node@20.12.7)
       why-is-node-running: 2.2.2
     transitivePeerDependencies:
