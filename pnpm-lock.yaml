@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@asteasolutions/zod-to-openapi':
         specifier: 7.0.0
-        version: 7.0.0(zod@3.22.5)
+        version: 7.0.0(zod@3.23.0)
       dotenv:
         specifier: 16.4.5
         version: 16.4.5
@@ -28,7 +28,7 @@ importers:
         version: 0.10.7(moleculer@0.14.33(debug@4.3.4)(nats@2.22.0)(pino@8.20.0))
       moleculer-zod-validator:
         specifier: 3.3.1
-        version: 3.3.1(moleculer@0.14.33(debug@4.3.4)(nats@2.22.0)(pino@8.20.0))(zod@3.22.5)
+        version: 3.3.1(moleculer@0.14.33(debug@4.3.4)(nats@2.22.0)(pino@8.20.0))(zod@3.23.0)
       nats:
         specifier: 2.22.0
         version: 2.22.0
@@ -45,8 +45,8 @@ importers:
         specifier: 2.4.1
         version: 2.4.1
       zod:
-        specifier: 3.22.5
-        version: 3.22.5
+        specifier: 3.23.0
+        version: 3.23.0
     devDependencies:
       '@biomejs/biome':
         specifier: 1.7.0
@@ -55,8 +55,8 @@ importers:
         specifier: 0.5.5
         version: 0.5.5
       '@hey-api/openapi-ts':
-        specifier: 0.41.0
-        version: 0.41.0(typescript@5.4.5)
+        specifier: 0.42.1
+        version: 0.42.1(typescript@5.4.5)
       '@types/express':
         specifier: 4.17.21
         version: 4.17.21
@@ -521,8 +521,8 @@ packages:
   '@hapi/topo@5.1.0':
     resolution: {integrity: sha512-foQZKJig7Ob0BMAYBfcJk8d77QtOe7Wo4ox7ff1lQYoNNAb6jwcY1ncdoy2e9wQZzvNy7ODZCYJkK8kzmcAnAg==}
 
-  '@hey-api/openapi-ts@0.41.0':
-    resolution: {integrity: sha512-yASbQMHtt9QlxE5ch/X8JUwI8z3c0soyOTyJv4eKv4EPbJ3U4EzSLECQ81AYL+vv0ZzHjq7ik4UPpuf95H95Rw==}
+  '@hey-api/openapi-ts@0.42.1':
+    resolution: {integrity: sha512-hLWNkTwvF0xdop8R6WTXNZRS+Nc4qPxf15Bad0Ft03rR/DGi4UkHtrjDsSo7ZqIZjl82mXNOxuX8j6ZS5VF2Gw==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
@@ -3008,8 +3008,8 @@ packages:
     engines: {node: '>=8.0.0'}
     hasBin: true
 
-  zod@3.22.5:
-    resolution: {integrity: sha512-HqnGsCdVZ2xc0qWPLdO25WnseXThh0kEYKIdV5F/hTHO75hNZFp8thxSeHhiPrHZKrFTo1SOgkAj9po5bexZlw==}
+  zod@3.23.0:
+    resolution: {integrity: sha512-OFLT+LTocvabn6q76BTwVB0hExEBS0IduTr3cqZyMqEDbOnYmcU+y0tUAYbND4uwclpBGi4I4UUBGzylWpjLGA==}
 
 snapshots:
 
@@ -3040,10 +3040,10 @@ snapshots:
       openapi-types: 12.1.3
       z-schema: 5.0.5
 
-  '@asteasolutions/zod-to-openapi@7.0.0(zod@3.22.5)':
+  '@asteasolutions/zod-to-openapi@7.0.0(zod@3.23.0)':
     dependencies:
       openapi3-ts: 4.3.1
-      zod: 3.22.5
+      zod: 3.23.0
 
   '@babel/code-frame@7.24.2':
     dependencies:
@@ -3252,7 +3252,7 @@ snapshots:
     dependencies:
       '@hapi/hoek': 9.3.0
 
-  '@hey-api/openapi-ts@0.41.0(typescript@5.4.5)':
+  '@hey-api/openapi-ts@0.42.1(typescript@5.4.5)':
     dependencies:
       '@apidevtools/json-schema-ref-parser': 11.5.5
       c12: 1.10.0
@@ -4891,10 +4891,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  moleculer-zod-validator@3.3.1(moleculer@0.14.33(debug@4.3.4)(nats@2.22.0)(pino@8.20.0))(zod@3.22.5):
+  moleculer-zod-validator@3.3.1(moleculer@0.14.33(debug@4.3.4)(nats@2.22.0)(pino@8.20.0))(zod@3.23.0):
     dependencies:
       moleculer: 0.14.33(debug@4.3.4)(nats@2.22.0)(pino@8.20.0)
-      zod: 3.22.5
+      zod: 3.23.0
 
   moleculer@0.14.33(debug@4.3.4)(nats@2.22.0)(pino@8.20.0):
     dependencies:
@@ -5894,4 +5894,4 @@ snapshots:
     optionalDependencies:
       commander: 9.5.0
 
-  zod@3.22.5: {}
+  zod@3.23.0: {}
