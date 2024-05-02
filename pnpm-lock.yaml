@@ -55,8 +55,8 @@ importers:
         specifier: 0.5.7
         version: 0.5.7
       '@hey-api/openapi-ts':
-        specifier: 0.42.1
-        version: 0.42.1(typescript@5.4.5)
+        specifier: 0.43.0
+        version: 0.43.0(typescript@5.4.5)
       '@types/express':
         specifier: 4.17.21
         version: 4.17.21
@@ -67,8 +67,8 @@ importers:
         specifier: 4.17.0
         version: 4.17.0
       '@types/node':
-        specifier: 20.12.7
-        version: 20.12.7
+        specifier: 20.12.8
+        version: 20.12.8
       '@types/swagger-jsdoc':
         specifier: 6.0.4
         version: 6.0.4
@@ -118,17 +118,17 @@ importers:
         specifier: 8.0.2
         version: 8.0.2(postcss@8.4.38)(typescript@5.4.5)
       tsx:
-        specifier: 4.8.0
-        version: 4.8.0
+        specifier: 4.8.2
+        version: 4.8.2
       typescript:
         specifier: 5.4.5
         version: 5.4.5
       vite:
-        specifier: 5.2.10
-        version: 5.2.10(@types/node@20.12.7)
+        specifier: 5.2.11
+        version: 5.2.11(@types/node@20.12.8)
       vitest:
         specifier: 1.5.3
-        version: 1.5.3(@types/node@20.12.7)(@vitest/ui@1.5.3)
+        version: 1.5.3(@types/node@20.12.8)(@vitest/ui@1.5.3)
       wait-on:
         specifier: 7.2.0
         version: 7.2.0(debug@4.3.4)
@@ -138,8 +138,8 @@ importers:
 
 packages:
 
-  '@apidevtools/json-schema-ref-parser@11.5.5':
-    resolution: {integrity: sha512-hv/aXDILyroHioVW27etFMV+IX6FyNn41YwbeGIAt5h/7fUTQvHI5w3ols8qYAT8aQt3kzexq5ZwxFDxNHIhdQ==}
+  '@apidevtools/json-schema-ref-parser@11.6.1':
+    resolution: {integrity: sha512-DxjgKBCoyReu4p5HMvpmgSOfRhhBcuf5V5soDDRgOTZMwsA4KSFzol1abFZgiCTE11L2kKGca5Md9GwDdXVBwQ==}
     engines: {node: '>= 16'}
 
   '@apidevtools/json-schema-ref-parser@9.1.2':
@@ -521,8 +521,8 @@ packages:
   '@hapi/topo@5.1.0':
     resolution: {integrity: sha512-foQZKJig7Ob0BMAYBfcJk8d77QtOe7Wo4ox7ff1lQYoNNAb6jwcY1ncdoy2e9wQZzvNy7ODZCYJkK8kzmcAnAg==}
 
-  '@hey-api/openapi-ts@0.42.1':
-    resolution: {integrity: sha512-hLWNkTwvF0xdop8R6WTXNZRS+Nc4qPxf15Bad0Ft03rR/DGi4UkHtrjDsSo7ZqIZjl82mXNOxuX8j6ZS5VF2Gw==}
+  '@hey-api/openapi-ts@0.43.0':
+    resolution: {integrity: sha512-Qq3bcy579T+8hhhaSW7MuFgvD07tl8njiFh8/mTYGXerBjoWxAn2ygkV+yE+RKY0eMvSmeH2+9yEAsrVrh5Hjw==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
@@ -735,8 +735,8 @@ packages:
   '@types/node@17.0.45':
     resolution: {integrity: sha512-w+tIMs3rq2afQdsPJlODhoUEKzFP1ayaoyl1CcnwtIlsVe7K7bA1NGm4s3PraqTLlXnbIN84zuBlxBWo1u9BLw==}
 
-  '@types/node@20.12.7':
-    resolution: {integrity: sha512-wq0cICSkRLVaf3UGLMGItu/PtdY7oaXaI/RVU+xliKVOtRna3PRY57ZDfztpDL0n11vfymMUnXv8QwYCO7L1wg==}
+  '@types/node@20.12.8':
+    resolution: {integrity: sha512-NU0rJLJnshZWdE/097cdCBbyW1h4hEg0xpovcoAQYHl8dnEyp/NAOiE45pvc+Bd1Dt+2r94v2eGFpQJ4R7g+2w==}
 
   '@types/qs@6.9.15':
     resolution: {integrity: sha512-uXHQKES6DQKKCLh441Xv/dwxOq1TVS3JPUMlEqoEglvlhR6Mxnlew/Xq/LRVHpLyk7iK3zODe1qYHIMltO7XGg==}
@@ -2758,8 +2758,8 @@ packages:
       typescript:
         optional: true
 
-  tsx@4.8.0:
-    resolution: {integrity: sha512-lp2y1/L03n7HUMujPgJQ/BwLDT4QEPPY5gBsDohsx54o0d0FqC8uL7QeQwv29ZVrv6S8rH8nzQ5cPn5ry4KBZA==}
+  tsx@4.8.2:
+    resolution: {integrity: sha512-hmmzS4U4mdy1Cnzpl/NQiPUC2k34EcNSTZYVJThYKhdqTwuBeF+4cG9KUK/PFQ7KHaAaYwqlb7QfmsE2nuj+WA==}
     engines: {node: '>=18.0.0'}
     hasBin: true
 
@@ -2844,8 +2844,8 @@ packages:
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
 
-  vite@5.2.10:
-    resolution: {integrity: sha512-PAzgUZbP7msvQvqdSD+ErD5qGnSFiGOoWmV5yAKUEI0kdhjbH6nMWVyZQC/hSc4aXwc0oJ9aEdIiF9Oje0JFCw==}
+  vite@5.2.11:
+    resolution: {integrity: sha512-HndV31LWW05i1BLPMUCE1B9E9GFbOu1MbenhS58FuK6owSO5qHm7GiCotrNY1YE5rMeQSFBGmT5ZaLEjFizgiQ==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
@@ -3018,7 +3018,7 @@ packages:
 
 snapshots:
 
-  '@apidevtools/json-schema-ref-parser@11.5.5':
+  '@apidevtools/json-schema-ref-parser@11.6.1':
     dependencies:
       '@jsdevtools/ono': 7.1.3
       '@types/json-schema': 7.0.15
@@ -3257,9 +3257,9 @@ snapshots:
     dependencies:
       '@hapi/hoek': 9.3.0
 
-  '@hey-api/openapi-ts@0.42.1(typescript@5.4.5)':
+  '@hey-api/openapi-ts@0.43.0(typescript@5.4.5)':
     dependencies:
-      '@apidevtools/json-schema-ref-parser': 11.5.5
+      '@apidevtools/json-schema-ref-parser': 11.6.1
       c12: 1.10.0
       camelcase: 8.0.0
       commander: 12.0.0
@@ -3290,7 +3290,7 @@ snapshots:
       '@jest/schemas': 29.6.3
       '@types/istanbul-lib-coverage': 2.0.6
       '@types/istanbul-reports': 3.0.4
-      '@types/node': 20.12.7
+      '@types/node': 20.12.8
       '@types/yargs': 17.0.32
       chalk: 4.1.2
 
@@ -3407,23 +3407,23 @@ snapshots:
   '@types/body-parser@1.19.5':
     dependencies:
       '@types/connect': 3.4.38
-      '@types/node': 20.12.7
+      '@types/node': 20.12.8
 
   '@types/connect@3.4.38':
     dependencies:
-      '@types/node': 20.12.7
+      '@types/node': 20.12.8
 
   '@types/cookie@0.4.1': {}
 
   '@types/cors@2.8.17':
     dependencies:
-      '@types/node': 20.12.7
+      '@types/node': 20.12.8
 
   '@types/estree@1.0.5': {}
 
   '@types/express-serve-static-core@4.19.0':
     dependencies:
-      '@types/node': 20.12.7
+      '@types/node': 20.12.8
       '@types/qs': 6.9.15
       '@types/range-parser': 1.2.7
       '@types/send': 0.17.4
@@ -3460,7 +3460,7 @@ snapshots:
 
   '@types/node@17.0.45': {}
 
-  '@types/node@20.12.7':
+  '@types/node@20.12.8':
     dependencies:
       undici-types: 5.26.5
 
@@ -3471,12 +3471,12 @@ snapshots:
   '@types/send@0.17.4':
     dependencies:
       '@types/mime': 1.3.5
-      '@types/node': 20.12.7
+      '@types/node': 20.12.8
 
   '@types/serve-static@1.15.7':
     dependencies:
       '@types/http-errors': 2.0.4
-      '@types/node': 20.12.7
+      '@types/node': 20.12.8
       '@types/send': 0.17.4
 
   '@types/stack-utils@2.0.3': {}
@@ -3485,7 +3485,7 @@ snapshots:
 
   '@types/ws@8.5.10':
     dependencies:
-      '@types/node': 20.12.7
+      '@types/node': 20.12.8
 
   '@types/yargs-parser@21.0.3': {}
 
@@ -3524,7 +3524,7 @@ snapshots:
       pathe: 1.1.2
       picocolors: 1.0.0
       sirv: 2.0.4
-      vitest: 1.5.3(@types/node@20.12.7)(@vitest/ui@1.5.3)
+      vitest: 1.5.3(@types/node@20.12.8)(@vitest/ui@1.5.3)
 
   '@vitest/utils@1.5.3':
     dependencies:
@@ -4007,7 +4007,7 @@ snapshots:
     dependencies:
       '@types/cookie': 0.4.1
       '@types/cors': 2.8.17
-      '@types/node': 20.12.7
+      '@types/node': 20.12.8
       accepts: 1.3.8
       base64id: 2.0.0
       cookie: 0.4.2
@@ -4631,7 +4631,7 @@ snapshots:
   jest-util@29.7.0:
     dependencies:
       '@jest/types': 29.6.3
-      '@types/node': 20.12.7
+      '@types/node': 20.12.8
       chalk: 4.1.2
       ci-info: 3.9.0
       graceful-fs: 4.2.11
@@ -5705,7 +5705,7 @@ snapshots:
       - supports-color
       - ts-node
 
-  tsx@4.8.0:
+  tsx@4.8.2:
     dependencies:
       esbuild: 0.20.2
       get-tsconfig: 4.7.3
@@ -5766,13 +5766,13 @@ snapshots:
 
   vary@1.1.2: {}
 
-  vite-node@1.5.3(@types/node@20.12.7):
+  vite-node@1.5.3(@types/node@20.12.8):
     dependencies:
       cac: 6.7.14
       debug: 4.3.4
       pathe: 1.1.2
       picocolors: 1.0.0
-      vite: 5.2.10(@types/node@20.12.7)
+      vite: 5.2.11(@types/node@20.12.8)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -5783,16 +5783,16 @@ snapshots:
       - supports-color
       - terser
 
-  vite@5.2.10(@types/node@20.12.7):
+  vite@5.2.11(@types/node@20.12.8):
     dependencies:
       esbuild: 0.20.2
       postcss: 8.4.38
       rollup: 4.17.0
     optionalDependencies:
-      '@types/node': 20.12.7
+      '@types/node': 20.12.8
       fsevents: 2.3.3
 
-  vitest@1.5.3(@types/node@20.12.7)(@vitest/ui@1.5.3):
+  vitest@1.5.3(@types/node@20.12.8)(@vitest/ui@1.5.3):
     dependencies:
       '@vitest/expect': 1.5.3
       '@vitest/runner': 1.5.3
@@ -5811,11 +5811,11 @@ snapshots:
       strip-literal: 2.1.0
       tinybench: 2.8.0
       tinypool: 0.8.4
-      vite: 5.2.10(@types/node@20.12.7)
-      vite-node: 1.5.3(@types/node@20.12.7)
+      vite: 5.2.11(@types/node@20.12.8)
+      vite-node: 1.5.3(@types/node@20.12.8)
       why-is-node-running: 2.2.2
     optionalDependencies:
-      '@types/node': 20.12.7
+      '@types/node': 20.12.8
       '@vitest/ui': 1.5.3(vitest@1.5.3)
     transitivePeerDependencies:
       - less
