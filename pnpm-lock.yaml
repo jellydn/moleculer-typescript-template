@@ -67,8 +67,8 @@ importers:
         specifier: 4.17.1
         version: 4.17.1
       '@types/node':
-        specifier: 20.12.10
-        version: 20.12.10
+        specifier: 20.12.11
+        version: 20.12.11
       '@types/swagger-jsdoc':
         specifier: 6.0.4
         version: 6.0.4
@@ -125,10 +125,10 @@ importers:
         version: 5.4.5
       vite:
         specifier: 5.2.11
-        version: 5.2.11(@types/node@20.12.10)
+        version: 5.2.11(@types/node@20.12.11)
       vitest:
         specifier: 1.6.0
-        version: 1.6.0(@types/node@20.12.10)(@vitest/ui@1.6.0)
+        version: 1.6.0(@types/node@20.12.11)(@vitest/ui@1.6.0)
       wait-on:
         specifier: 7.2.0
         version: 7.2.0(debug@4.3.4)
@@ -735,8 +735,8 @@ packages:
   '@types/node@17.0.45':
     resolution: {integrity: sha512-w+tIMs3rq2afQdsPJlODhoUEKzFP1ayaoyl1CcnwtIlsVe7K7bA1NGm4s3PraqTLlXnbIN84zuBlxBWo1u9BLw==}
 
-  '@types/node@20.12.10':
-    resolution: {integrity: sha512-Eem5pH9pmWBHoGAT8Dr5fdc5rYA+4NAovdM4EktRPVAAiJhmWWfQrA0cFhAbOsQdSfIHjAud6YdkbL69+zSKjw==}
+  '@types/node@20.12.11':
+    resolution: {integrity: sha512-vDg9PZ/zi+Nqp6boSOT7plNuthRugEKixDv5sFTIpkE89MmNtEArAShI4mxuX2+UrLEe9pxC1vm2cjm9YlWbJw==}
 
   '@types/qs@6.9.15':
     resolution: {integrity: sha512-uXHQKES6DQKKCLh441Xv/dwxOq1TVS3JPUMlEqoEglvlhR6Mxnlew/Xq/LRVHpLyk7iK3zODe1qYHIMltO7XGg==}
@@ -3290,7 +3290,7 @@ snapshots:
       '@jest/schemas': 29.6.3
       '@types/istanbul-lib-coverage': 2.0.6
       '@types/istanbul-reports': 3.0.4
-      '@types/node': 20.12.10
+      '@types/node': 20.12.11
       '@types/yargs': 17.0.32
       chalk: 4.1.2
 
@@ -3407,23 +3407,23 @@ snapshots:
   '@types/body-parser@1.19.5':
     dependencies:
       '@types/connect': 3.4.38
-      '@types/node': 20.12.10
+      '@types/node': 20.12.11
 
   '@types/connect@3.4.38':
     dependencies:
-      '@types/node': 20.12.10
+      '@types/node': 20.12.11
 
   '@types/cookie@0.4.1': {}
 
   '@types/cors@2.8.17':
     dependencies:
-      '@types/node': 20.12.10
+      '@types/node': 20.12.11
 
   '@types/estree@1.0.5': {}
 
   '@types/express-serve-static-core@4.19.0':
     dependencies:
-      '@types/node': 20.12.10
+      '@types/node': 20.12.11
       '@types/qs': 6.9.15
       '@types/range-parser': 1.2.7
       '@types/send': 0.17.4
@@ -3460,7 +3460,7 @@ snapshots:
 
   '@types/node@17.0.45': {}
 
-  '@types/node@20.12.10':
+  '@types/node@20.12.11':
     dependencies:
       undici-types: 5.26.5
 
@@ -3471,12 +3471,12 @@ snapshots:
   '@types/send@0.17.4':
     dependencies:
       '@types/mime': 1.3.5
-      '@types/node': 20.12.10
+      '@types/node': 20.12.11
 
   '@types/serve-static@1.15.7':
     dependencies:
       '@types/http-errors': 2.0.4
-      '@types/node': 20.12.10
+      '@types/node': 20.12.11
       '@types/send': 0.17.4
 
   '@types/stack-utils@2.0.3': {}
@@ -3485,7 +3485,7 @@ snapshots:
 
   '@types/ws@8.5.10':
     dependencies:
-      '@types/node': 20.12.10
+      '@types/node': 20.12.11
 
   '@types/yargs-parser@21.0.3': {}
 
@@ -3524,7 +3524,7 @@ snapshots:
       pathe: 1.1.2
       picocolors: 1.0.0
       sirv: 2.0.4
-      vitest: 1.6.0(@types/node@20.12.10)(@vitest/ui@1.6.0)
+      vitest: 1.6.0(@types/node@20.12.11)(@vitest/ui@1.6.0)
 
   '@vitest/utils@1.6.0':
     dependencies:
@@ -4007,7 +4007,7 @@ snapshots:
     dependencies:
       '@types/cookie': 0.4.1
       '@types/cors': 2.8.17
-      '@types/node': 20.12.10
+      '@types/node': 20.12.11
       accepts: 1.3.8
       base64id: 2.0.0
       cookie: 0.4.2
@@ -4631,7 +4631,7 @@ snapshots:
   jest-util@29.7.0:
     dependencies:
       '@jest/types': 29.6.3
-      '@types/node': 20.12.10
+      '@types/node': 20.12.11
       chalk: 4.1.2
       ci-info: 3.9.0
       graceful-fs: 4.2.11
@@ -5766,13 +5766,13 @@ snapshots:
 
   vary@1.1.2: {}
 
-  vite-node@1.6.0(@types/node@20.12.10):
+  vite-node@1.6.0(@types/node@20.12.11):
     dependencies:
       cac: 6.7.14
       debug: 4.3.4
       pathe: 1.1.2
       picocolors: 1.0.0
-      vite: 5.2.11(@types/node@20.12.10)
+      vite: 5.2.11(@types/node@20.12.11)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -5783,16 +5783,16 @@ snapshots:
       - supports-color
       - terser
 
-  vite@5.2.11(@types/node@20.12.10):
+  vite@5.2.11(@types/node@20.12.11):
     dependencies:
       esbuild: 0.20.2
       postcss: 8.4.38
       rollup: 4.17.2
     optionalDependencies:
-      '@types/node': 20.12.10
+      '@types/node': 20.12.11
       fsevents: 2.3.3
 
-  vitest@1.6.0(@types/node@20.12.10)(@vitest/ui@1.6.0):
+  vitest@1.6.0(@types/node@20.12.11)(@vitest/ui@1.6.0):
     dependencies:
       '@vitest/expect': 1.6.0
       '@vitest/runner': 1.6.0
@@ -5811,11 +5811,11 @@ snapshots:
       strip-literal: 2.1.0
       tinybench: 2.8.0
       tinypool: 0.8.4
-      vite: 5.2.11(@types/node@20.12.10)
-      vite-node: 1.6.0(@types/node@20.12.10)
+      vite: 5.2.11(@types/node@20.12.11)
+      vite-node: 1.6.0(@types/node@20.12.11)
       why-is-node-running: 2.2.2
     optionalDependencies:
-      '@types/node': 20.12.10
+      '@types/node': 20.12.11
       '@vitest/ui': 1.6.0(vitest@1.6.0)
     transitivePeerDependencies:
       - less
