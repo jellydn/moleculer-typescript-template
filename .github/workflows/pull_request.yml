@@ -16,3 +16,10 @@ jobs:
           version: latest
       - name: Run Biome
         run: biome ci .
+
+  oxlint:
+    name: Lint JS
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: npx --yes oxlint@latest --deny-warnings #
