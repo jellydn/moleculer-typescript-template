@@ -16,6 +16,7 @@ COPY public public
 
 # Install pnpm and dependencies
 RUN npm install -g pnpm
+ENV COREPACK_ENABLE_STRICT=0
 RUN pnpm install
 ENV NODE_ENV=production
 
