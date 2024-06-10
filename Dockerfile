@@ -11,7 +11,6 @@ RUN apk --no-cache add git
 # Copy essential files
 COPY package.json pnpm-lock.yaml *.ts ./
 COPY services services
-COPY addons addons
 COPY public public
 
 # Install pnpm and dependencies
