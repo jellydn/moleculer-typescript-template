@@ -79,8 +79,8 @@ importers:
         specifier: 1.6.0
         version: 1.6.0(vitest@1.6.0)
       c8:
-        specifier: 9.1.0
-        version: 9.1.0
+        specifier: 10.0.0
+        version: 10.0.0
       cleye:
         specifier: 1.3.2
         version: 1.3.2
@@ -923,9 +923,9 @@ packages:
   c12@1.10.0:
     resolution: {integrity: sha512-0SsG7UDhoRWcuSvKWHaXmu5uNjDCDN3nkQLRL4Q42IlFy+ze58FcCoI3uPwINXinkz7ZinbhEgyzYFw9u9ZV8g==}
 
-  c8@9.1.0:
-    resolution: {integrity: sha512-mBWcT5iqNir1zIkzSPyI3NCR9EZCVI3WUD+AVO17MVWTSFNyUueXE82qTeampNtTr+ilN/5Ua3j24LgbCKjDVg==}
-    engines: {node: '>=14.14.0'}
+  c8@10.0.0:
+    resolution: {integrity: sha512-rdQecjxw16P8kwgMBjruaQyfF+R2o/mucCCK4VPktwq2HFMWLOHGyUasb46+WlUOVJX94d6dZolcJxzjCzWmXg==}
+    engines: {node: '>=18'}
     hasBin: true
 
   cac@6.7.14:
@@ -2558,9 +2558,9 @@ packages:
   terminal-columns@1.4.1:
     resolution: {integrity: sha512-IKVL/itiMy947XWVv4IHV7a0KQXvKjj4ptbi7Ew9MPMcOLzkiQeyx3Gyvh62hKrfJ0RZc4M1nbhzjNM39Kyujw==}
 
-  test-exclude@6.0.0:
-    resolution: {integrity: sha512-cAGWPIyOHU6zlmg88jwm7VRyXnMN7iV68OGAbYDk/Mh/xC/pzVPlQtY6ngoIH/5/tciuhGfvESU8GrHrcxD56w==}
-    engines: {node: '>=8'}
+  test-exclude@7.0.1:
+    resolution: {integrity: sha512-pFYqmTw68LXVjeWJMST4+borgQP2AyMNbg1BpZh9LbyhUeNkeaPF9gzfPGUAnSMV3qPYdWUwDIjjCLiSDOl7vg==}
+    engines: {node: '>=18'}
 
   text-decoding@1.0.0:
     resolution: {integrity: sha512-/0TJD42KDnVwKmDK6jj3xP7E2MG7SHAOG4tyTgyUCRPdHwvkquYNLEQltmdMa3owq3TkddCVcTsoctJI8VQNKA==}
@@ -3549,7 +3549,7 @@ snapshots:
       pkg-types: 1.1.1
       rc9: 2.1.2
 
-  c8@9.1.0:
+  c8@10.0.0:
     dependencies:
       '@bcoe/v8-coverage': 0.2.3
       '@istanbuljs/schema': 0.1.3
@@ -3558,7 +3558,7 @@ snapshots:
       istanbul-lib-coverage: 3.2.2
       istanbul-lib-report: 3.0.1
       istanbul-reports: 3.1.7
-      test-exclude: 6.0.0
+      test-exclude: 7.0.1
       v8-to-istanbul: 9.2.0
       yargs: 17.7.2
       yargs-parser: 21.1.1
@@ -5370,11 +5370,11 @@ snapshots:
 
   terminal-columns@1.4.1: {}
 
-  test-exclude@6.0.0:
+  test-exclude@7.0.1:
     dependencies:
       '@istanbuljs/schema': 0.1.3
-      glob: 7.2.3
-      minimatch: 3.1.2
+      glob: 10.4.1
+      minimatch: 9.0.4
 
   text-decoding@1.0.0: {}
 
