@@ -18,7 +18,7 @@
     "test:ui": "vitest --ui",
     "build": "tsup --env.NODE_ENV production",
     "format": "biome format . --write",
-    "check": "biome check --apply .",
+    "check": "biome check --write .",
     "lint": "biome lint .",
     "build:watch": "tsc --watch --incremental",
     "dc:up": "docker compose up --build -d",
