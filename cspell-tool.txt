@@ -176,3 +176,4 @@ tsbuildinfo
 codepaths
 reviewdog
 mongolyy
+logdy
