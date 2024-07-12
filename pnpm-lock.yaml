@@ -52,8 +52,8 @@ importers:
         specifier: 1.8.3
         version: 1.8.3
       '@flydotio/dockerfile':
-        specifier: 0.5.7
-        version: 0.5.7
+        specifier: 0.5.8
+        version: 0.5.8
       '@hey-api/openapi-ts':
         specifier: 0.48.2
         version: 0.48.2(typescript@5.5.3)
@@ -376,8 +376,8 @@ packages:
     resolution: {integrity: sha512-7PQA7EH43S0CxcOa9OeAnaeA0oQ+e/DHNPZwSQM9CQHW76jle5+OvLdibRp/Aafs9KXbLhxyjOTkRjWUbQEd3Q==}
     engines: {node: '>=14'}
 
-  '@flydotio/dockerfile@0.5.7':
-    resolution: {integrity: sha512-BVkXM2K/jLLYBFos1gT/bYv0YPJue8L4j0dkIsskJI4JRn6rPA9bZjT4sJzkzhdubZuwRGG9cgxj4Cfgt4lHlw==}
+  '@flydotio/dockerfile@0.5.8':
+    resolution: {integrity: sha512-119l9s4xUEATRWTQPddE0f+jZjVBhpnJiGA/aHzDiOUet2L7SD3G5jbSGvOXJm1Ks3kGmxUcPdt3BpLQRef+ow==}
     engines: {node: '>=16.0.0'}
     hasBin: true
 
@@ -2912,7 +2912,7 @@ snapshots:
     dependencies:
       text-decoding: 1.0.0
 
-  '@flydotio/dockerfile@0.5.7':
+  '@flydotio/dockerfile@0.5.8':
     dependencies:
       chalk: 5.3.0
       diff: 5.2.0
