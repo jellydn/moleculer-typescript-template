@@ -22,13 +22,13 @@ importers:
         version: 4.6.1
       moleculer:
         specifier: 0.14.33
-        version: 0.14.33(debug@4.3.5)(nats@2.28.0)(pino@9.2.0)
+        version: 0.14.33(debug@4.3.5)(nats@2.28.0)(pino@9.3.1)
       moleculer-web:
         specifier: 0.10.7
-        version: 0.10.7(moleculer@0.14.33(debug@4.3.5)(nats@2.28.0)(pino@9.2.0))
+        version: 0.10.7(moleculer@0.14.33(debug@4.3.5)(nats@2.28.0)(pino@9.3.1))
       moleculer-zod-validator:
         specifier: 3.3.1
-        version: 3.3.1(moleculer@0.14.33(debug@4.3.5)(nats@2.28.0)(pino@9.2.0))(zod@3.23.8)
+        version: 3.3.1(moleculer@0.14.33(debug@4.3.5)(nats@2.28.0)(pino@9.3.1))(zod@3.23.8)
       nats:
         specifier: 2.28.0
         version: 2.28.0
@@ -36,8 +36,8 @@ importers:
         specifier: 12.1.3
         version: 12.1.3
       pino:
-        specifier: 9.2.0
-        version: 9.2.0
+        specifier: 9.3.1
+        version: 9.3.1
       swagger-jsdoc:
         specifier: 6.2.8
         version: 6.2.8(openapi-types@12.1.3)
@@ -55,8 +55,8 @@ importers:
         specifier: 0.5.8
         version: 0.5.8
       '@hey-api/openapi-ts':
-        specifier: 0.48.2
-        version: 0.48.2(typescript@5.5.3)
+        specifier: 0.48.3
+        version: 0.48.3(typescript@5.5.3)
       '@types/express':
         specifier: 4.17.21
         version: 4.17.21
@@ -64,8 +64,8 @@ importers:
         specifier: 29.5.12
         version: 29.5.12
       '@types/lodash':
-        specifier: 4.17.6
-        version: 4.17.6
+        specifier: 4.17.7
+        version: 4.17.7
       '@types/node':
         specifier: 20.14.10
         version: 20.14.10
@@ -76,8 +76,8 @@ importers:
         specifier: 8.5.11
         version: 8.5.11
       '@vitest/ui':
-        specifier: 2.0.2
-        version: 2.0.2(vitest@2.0.2)
+        specifier: 2.0.3
+        version: 2.0.3(vitest@2.0.3)
       c8:
         specifier: 10.1.2
         version: 10.1.2
@@ -101,7 +101,7 @@ importers:
         version: 0.2.2(debug@4.3.5)(moleculer-repl@0.7.4)
       moleculer-io:
         specifier: 2.2.0
-        version: 2.2.0(moleculer@0.14.33(debug@4.3.5)(nats@2.28.0)(pino@9.2.0))
+        version: 2.2.0(moleculer@0.14.33(debug@4.3.5)(nats@2.28.0)(pino@9.3.1))
       moleculer-repl:
         specifier: 0.7.4
         version: 0.7.4
@@ -127,8 +127,8 @@ importers:
         specifier: 5.3.3
         version: 5.3.3(@types/node@20.14.10)
       vitest:
-        specifier: 2.0.2
-        version: 2.0.2(@types/node@20.14.10)(@vitest/ui@2.0.2)
+        specifier: 2.0.3
+        version: 2.0.3(@types/node@20.14.10)(@vitest/ui@2.0.3)
       wait-on:
         specifier: 7.2.0
         version: 7.2.0(debug@4.3.5)
@@ -387,8 +387,8 @@ packages:
   '@hapi/topo@5.1.0':
     resolution: {integrity: sha512-foQZKJig7Ob0BMAYBfcJk8d77QtOe7Wo4ox7ff1lQYoNNAb6jwcY1ncdoy2e9wQZzvNy7ODZCYJkK8kzmcAnAg==}
 
-  '@hey-api/openapi-ts@0.48.2':
-    resolution: {integrity: sha512-pjJb0kzjTyKAdKGfi3GkOqD4AklImS5xz7xx1grZQMlNv87iV12g2pccEsml6WYDxQ1qJ7DFWa8FexAPDbzvZg==}
+  '@hey-api/openapi-ts@0.48.3':
+    resolution: {integrity: sha512-R53Nr4Gicz77icS+RiH0fwHa9A0uFPtzsjC8SBaGwtOel5ZyxeBbayWE6HhE789hp3dok9pegwWncwwOrr4WFA==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
@@ -588,8 +588,8 @@ packages:
   '@types/json-schema@7.0.15':
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
 
-  '@types/lodash@4.17.6':
-    resolution: {integrity: sha512-OpXEVoCKSS3lQqjx9GGGOapBeuW5eUboYHRlHP9urXPX25IKZ6AnP5ZRxtVf63iieUbsHxLn8NQ5Nlftc6yzAA==}
+  '@types/lodash@4.17.7':
+    resolution: {integrity: sha512-8wTvZawATi/lsmNu10/j2hk1KEP0IvjubqPE3cu1Xz7xfXXt5oCq3SNUz4fMIP4XGF9Ky+Ue2tBA3hcS7LSBlA==}
 
   '@types/mime@1.3.5':
     resolution: {integrity: sha512-/pyBZWSLD2n0dcHE3hq8s8ZvcETHtEuF+3E7XVt0Ig2nvsVQXdghHVcEkIWjy9A0wKfTn97a/PSDYohKIlnP/w==}
@@ -627,28 +627,28 @@ packages:
   '@types/yargs@17.0.32':
     resolution: {integrity: sha512-xQ67Yc/laOG5uMfX/093MRlGGCIBzZMarVa+gfNKJxWAIgykYpVGkBdbqEzGDDfCrVUj6Hiff4mTZ5BA6TmAog==}
 
-  '@vitest/expect@2.0.2':
-    resolution: {integrity: sha512-nKAvxBYqcDugYZ4nJvnm5OR8eDJdgWjk4XM9owQKUjzW70q0icGV2HVnQOyYsp906xJaBDUXw0+9EHw2T8e0mQ==}
+  '@vitest/expect@2.0.3':
+    resolution: {integrity: sha512-X6AepoOYePM0lDNUPsGXTxgXZAl3EXd0GYe/MZyVE4HzkUqyUVC6S3PrY5mClDJ6/7/7vALLMV3+xD/Ko60Hqg==}
 
-  '@vitest/pretty-format@2.0.2':
-    resolution: {integrity: sha512-SBCyOXfGVvddRd9r2PwoVR0fonQjh9BMIcBMlSzbcNwFfGr6ZhOhvBzurjvi2F4ryut2HcqiFhNeDVGwru8tLg==}
+  '@vitest/pretty-format@2.0.3':
+    resolution: {integrity: sha512-URM4GLsB2xD37nnTyvf6kfObFafxmycCL8un3OC9gaCs5cti2u+5rJdIflZ2fUJUen4NbvF6jCufwViAFLvz1g==}
 
-  '@vitest/runner@2.0.2':
-    resolution: {integrity: sha512-OCh437Vi8Wdbif1e0OvQcbfM3sW4s2lpmOjAE7qfLrpzJX2M7J1IQlNvEcb/fu6kaIB9n9n35wS0G2Q3en5kHg==}
+  '@vitest/runner@2.0.3':
+    resolution: {integrity: sha512-EmSP4mcjYhAcuBWwqgpjR3FYVeiA4ROzRunqKltWjBfLNs1tnMLtF+qtgd5ClTwkDP6/DGlKJTNa6WxNK0bNYQ==}
 
-  '@vitest/snapshot@2.0.2':
-    resolution: {integrity: sha512-Yc2ewhhZhx+0f9cSUdfzPRcsM6PhIb+S43wxE7OG0kTxqgqzo8tHkXFuFlndXeDMp09G3sY/X5OAo/RfYydf1g==}
+  '@vitest/snapshot@2.0.3':
+    resolution: {integrity: sha512-6OyA6v65Oe3tTzoSuRPcU6kh9m+mPL1vQ2jDlPdn9IQoUxl8rXhBnfICNOC+vwxWY684Vt5UPgtcA2aPFBb6wg==}
 
-  '@vitest/spy@2.0.2':
-    resolution: {integrity: sha512-MgwJ4AZtCgqyp2d7WcQVE8aNG5vQ9zu9qMPYQHjsld/QVsrvg78beNrXdO4HYkP0lDahCO3P4F27aagIag+SGQ==}
+  '@vitest/spy@2.0.3':
+    resolution: {integrity: sha512-sfqyAw/ypOXlaj4S+w8689qKM1OyPOqnonqOc9T91DsoHbfN5mU7FdifWWv3MtQFf0lEUstEwR9L/q/M390C+A==}
 
-  '@vitest/ui@2.0.2':
-    resolution: {integrity: sha512-VwxFTOC2GcNPexQlR9PFb8drWCLA+nLWTWlAS4oba1xbTJYJ8H5vY8OUFOTMb7YQXF0Vsc5IfmLpYkb2dcVgOA==}
+  '@vitest/ui@2.0.3':
+    resolution: {integrity: sha512-UAkzHk5veR3NRF7BNUxWlLly7Cw7H+wzP3+eiMIVeKo3Md33Ey20rYsNQn/9McIqOeO02tMzqHhpThmjk1yRzw==}
     peerDependencies:
-      vitest: 2.0.2
+      vitest: 2.0.3
 
-  '@vitest/utils@2.0.2':
-    resolution: {integrity: sha512-pxCY1v7kmOCWYWjzc0zfjGTA3Wmn8PKnlPvSrsA643P1NHl1fOyXj2Q9SaNlrlFE+ivCsxM80Ov3AR82RmHCWQ==}
+  '@vitest/utils@2.0.3':
+    resolution: {integrity: sha512-c/UdELMuHitQbbc/EVctlBaxoYAwQPQdSNwv7z/vHyBKy2edYZaFgptE27BRueZB7eW8po+cllotMNTDpL3HWg==}
 
   abort-controller@3.0.0:
     resolution: {integrity: sha512-h8lQ8tacZYnR3vNQTgibj+tODHI5/+l06Au2Pcriv/Gmet0eaj4TwWH41sO9wnHDiQsEj19q0drzdWdeAHtweg==}
@@ -2066,8 +2066,8 @@ packages:
     resolution: {integrity: sha512-ip4qdzjkAyDDZklUaZkcRFb2iA118H9SgRh8yzTkSQK8HilsOJF7rSY8HoW5+I0M46AZgX/pxbprf2vvzQCE0Q==}
     hasBin: true
 
-  pino@9.2.0:
-    resolution: {integrity: sha512-g3/hpwfujK5a4oVbaefoJxezLzsDgLcNJeITvC6yrfwYeT9la+edCK42j5QpEQSQCZgTKapXvnQIdgZwvRaZug==}
+  pino@9.3.1:
+    resolution: {integrity: sha512-afSfrq/hUiW/MFmQcLEwV9Zh8Ry6MrMTOyBU53o/fc0gEl+1OZ/Fks/xQCM2nOC0C/OfDtQMnT2d8c3kpcfSzA==}
     hasBin: true
 
   pirates@4.0.6:
@@ -2584,8 +2584,8 @@ packages:
     resolution: {integrity: sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==}
     engines: {node: '>= 0.8'}
 
-  vite-node@2.0.2:
-    resolution: {integrity: sha512-w4vkSz1Wo+NIQg8pjlEn0jQbcM/0D+xVaYjhw3cvarTanLLBh54oNiRbsT8PNK5GfuST0IlVXjsNRoNlqvY/fw==}
+  vite-node@2.0.3:
+    resolution: {integrity: sha512-14jzwMx7XTcMB+9BhGQyoEAmSl0eOr3nrnn+Z12WNERtOvLN+d2scbRUvyni05rT3997Bg+rZb47NyP4IQPKXg==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
 
@@ -2617,15 +2617,15 @@ packages:
       terser:
         optional: true
 
-  vitest@2.0.2:
-    resolution: {integrity: sha512-WlpZ9neRIjNBIOQwBYfBSr0+of5ZCbxT2TVGKW4Lv0c8+srCFIiRdsP7U009t8mMn821HQ4XKgkx5dVWpyoyLw==}
+  vitest@2.0.3:
+    resolution: {integrity: sha512-o3HRvU93q6qZK4rI2JrhKyZMMuxg/JRt30E6qeQs6ueaiz5hr1cPj+Sk2kATgQzMMqsa2DiNI0TIK++1ULx8Jw==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
       '@edge-runtime/vm': '*'
       '@types/node': ^18.0.0 || >=20.0.0
-      '@vitest/browser': 2.0.2
-      '@vitest/ui': 2.0.2
+      '@vitest/browser': 2.0.3
+      '@vitest/ui': 2.0.3
       happy-dom: '*'
       jsdom: '*'
     peerDependenciesMeta:
@@ -2923,7 +2923,7 @@ snapshots:
     dependencies:
       '@hapi/hoek': 9.3.0
 
-  '@hey-api/openapi-ts@0.48.2(typescript@5.5.3)':
+  '@hey-api/openapi-ts@0.48.3(typescript@5.5.3)':
     dependencies:
       '@apidevtools/json-schema-ref-parser': 11.6.4
       c12: 1.11.1
@@ -3108,7 +3108,7 @@ snapshots:
 
   '@types/json-schema@7.0.15': {}
 
-  '@types/lodash@4.17.6': {}
+  '@types/lodash@4.17.7': {}
 
   '@types/mime@1.3.5': {}
 
@@ -3147,46 +3147,46 @@ snapshots:
     dependencies:
       '@types/yargs-parser': 21.0.3
 
-  '@vitest/expect@2.0.2':
+  '@vitest/expect@2.0.3':
     dependencies:
-      '@vitest/spy': 2.0.2
-      '@vitest/utils': 2.0.2
+      '@vitest/spy': 2.0.3
+      '@vitest/utils': 2.0.3
       chai: 5.1.1
       tinyrainbow: 1.2.0
 
-  '@vitest/pretty-format@2.0.2':
+  '@vitest/pretty-format@2.0.3':
     dependencies:
       tinyrainbow: 1.2.0
 
-  '@vitest/runner@2.0.2':
+  '@vitest/runner@2.0.3':
     dependencies:
-      '@vitest/utils': 2.0.2
+      '@vitest/utils': 2.0.3
       pathe: 1.1.2
 
-  '@vitest/snapshot@2.0.2':
+  '@vitest/snapshot@2.0.3':
     dependencies:
-      '@vitest/pretty-format': 2.0.2
+      '@vitest/pretty-format': 2.0.3
       magic-string: 0.30.10
       pathe: 1.1.2
 
-  '@vitest/spy@2.0.2':
+  '@vitest/spy@2.0.3':
     dependencies:
       tinyspy: 3.0.0
 
-  '@vitest/ui@2.0.2(vitest@2.0.2)':
+  '@vitest/ui@2.0.3(vitest@2.0.3)':
     dependencies:
-      '@vitest/utils': 2.0.2
+      '@vitest/utils': 2.0.3
       fast-glob: 3.3.2
       fflate: 0.8.2
       flatted: 3.3.1
       pathe: 1.1.2
       sirv: 2.0.4
       tinyrainbow: 1.2.0
-      vitest: 2.0.2(@types/node@20.14.10)(@vitest/ui@2.0.2)
+      vitest: 2.0.3(@types/node@20.14.10)(@vitest/ui@2.0.3)
 
-  '@vitest/utils@2.0.2':
+  '@vitest/utils@2.0.3':
     dependencies:
-      '@vitest/pretty-format': 2.0.2
+      '@vitest/pretty-format': 2.0.3
       estree-walker: 3.0.3
       loupe: 3.1.1
       tinyrainbow: 1.2.0
@@ -4402,11 +4402,11 @@ snapshots:
       - thrift
       - winston
 
-  moleculer-io@2.2.0(moleculer@0.14.33(debug@4.3.5)(nats@2.28.0)(pino@9.2.0)):
+  moleculer-io@2.2.0(moleculer@0.14.33(debug@4.3.5)(nats@2.28.0)(pino@9.3.1)):
     dependencies:
       kleur: 4.1.5
       lodash: 4.17.21
-      moleculer: 0.14.33(debug@4.3.5)(nats@2.28.0)(pino@9.2.0)
+      moleculer: 0.14.33(debug@4.3.5)(nats@2.28.0)(pino@9.3.1)
       socket.io: 4.7.5
     transitivePeerDependencies:
       - bufferutil
@@ -4427,7 +4427,7 @@ snapshots:
       tiny-human-time: 1.2.0
       yargs-parser: 21.1.1
 
-  moleculer-web@0.10.7(moleculer@0.14.33(debug@4.3.5)(nats@2.28.0)(pino@9.2.0)):
+  moleculer-web@0.10.7(moleculer@0.14.33(debug@4.3.5)(nats@2.28.0)(pino@9.3.1)):
     dependencies:
       '@fastify/busboy': 1.2.1
       body-parser: 1.20.2
@@ -4437,16 +4437,16 @@ snapshots:
       isstream: 0.1.2
       kleur: 4.1.5
       lodash: 4.17.21
-      moleculer: 0.14.33(debug@4.3.5)(nats@2.28.0)(pino@9.2.0)
+      moleculer: 0.14.33(debug@4.3.5)(nats@2.28.0)(pino@9.3.1)
       path-to-regexp: 3.2.0
       qs: 6.12.3
       serve-static: 1.15.0
     transitivePeerDependencies:
       - supports-color
 
-  moleculer-zod-validator@3.3.1(moleculer@0.14.33(debug@4.3.5)(nats@2.28.0)(pino@9.2.0))(zod@3.23.8):
+  moleculer-zod-validator@3.3.1(moleculer@0.14.33(debug@4.3.5)(nats@2.28.0)(pino@9.3.1))(zod@3.23.8):
     dependencies:
-      moleculer: 0.14.33(debug@4.3.5)(nats@2.28.0)(pino@9.2.0)
+      moleculer: 0.14.33(debug@4.3.5)(nats@2.28.0)(pino@9.3.1)
       zod: 3.23.8
 
   moleculer@0.14.33(debug@4.3.5)(nats@2.28.0)(pino@8.21.0):
@@ -4468,7 +4468,7 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
-  moleculer@0.14.33(debug@4.3.5)(nats@2.28.0)(pino@9.2.0):
+  moleculer@0.14.33(debug@4.3.5)(nats@2.28.0)(pino@9.3.1):
     dependencies:
       args: 5.0.3
       eventemitter2: 6.4.9
@@ -4483,7 +4483,7 @@ snapshots:
     optionalDependencies:
       debug: 4.3.5
       nats: 2.28.0
-      pino: 9.2.0
+      pino: 9.3.1
     transitivePeerDependencies:
       - encoding
 
@@ -4700,7 +4700,7 @@ snapshots:
       sonic-boom: 3.8.1
       thread-stream: 2.7.0
 
-  pino@9.2.0:
+  pino@9.3.1:
     dependencies:
       atomic-sleep: 1.0.0
       fast-redact: 3.5.0
@@ -5265,7 +5265,7 @@ snapshots:
 
   vary@1.1.2: {}
 
-  vite-node@2.0.2(@types/node@20.14.10):
+  vite-node@2.0.3(@types/node@20.14.10):
     dependencies:
       cac: 6.7.14
       debug: 4.3.5
@@ -5291,15 +5291,15 @@ snapshots:
       '@types/node': 20.14.10
       fsevents: 2.3.3
 
-  vitest@2.0.2(@types/node@20.14.10)(@vitest/ui@2.0.2):
+  vitest@2.0.3(@types/node@20.14.10)(@vitest/ui@2.0.3):
     dependencies:
       '@ampproject/remapping': 2.3.0
-      '@vitest/expect': 2.0.2
-      '@vitest/pretty-format': 2.0.2
-      '@vitest/runner': 2.0.2
-      '@vitest/snapshot': 2.0.2
-      '@vitest/spy': 2.0.2
-      '@vitest/utils': 2.0.2
+      '@vitest/expect': 2.0.3
+      '@vitest/pretty-format': 2.0.3
+      '@vitest/runner': 2.0.3
+      '@vitest/snapshot': 2.0.3
+      '@vitest/spy': 2.0.3
+      '@vitest/utils': 2.0.3
       chai: 5.1.1
       debug: 4.3.5
       execa: 8.0.1
@@ -5310,11 +5310,11 @@ snapshots:
       tinypool: 1.0.0
       tinyrainbow: 1.2.0
       vite: 5.3.3(@types/node@20.14.10)
-      vite-node: 2.0.2(@types/node@20.14.10)
+      vite-node: 2.0.3(@types/node@20.14.10)
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@types/node': 20.14.10
-      '@vitest/ui': 2.0.2(vitest@2.0.2)
+      '@vitest/ui': 2.0.3(vitest@2.0.3)
     transitivePeerDependencies:
       - less
       - lightningcss
