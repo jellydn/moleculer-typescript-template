@@ -17,7 +17,7 @@ type ServiceMethods = {
 
 type ServiceThis = Service<ServiceSettings> & ServiceMethods;
 
-const <%= name %>Service: ServiceSchema<ServiceSettings> = {
+const <%= name %>Service: ServiceSchema<ServiceSettings, ServiceThis> = {
 	name: "<%= name %>",
 
 	/**

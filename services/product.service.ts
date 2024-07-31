@@ -40,7 +40,7 @@ const validateParams = (
     }
 };
 
-const productService: ServiceSchema<ServiceSettings> = {
+const productService: ServiceSchema<ServiceSettings, ServiceThis> = {
     name: "product",
 
     /**

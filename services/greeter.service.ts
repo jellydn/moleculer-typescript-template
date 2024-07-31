@@ -34,7 +34,7 @@ type GreeterThis = Service<GreeterSettings> & GreeterMethods;
  *	      minLength: 6
  *	      maxLength: 25
  */
-const greeterService: ServiceSchema<GreeterSettings> = {
+const greeterService: ServiceSchema<GreeterSettings, GreeterThis> = {
     name: "greeter",
 
     /**
