@@ -50,7 +50,7 @@
   "devDependencies": {
     "@biomejs/biome": "1.8.3",
     "@flydotio/dockerfile": "0.5.8",
-    "@hey-api/openapi-ts": "0.51.0",
+    "@hey-api/openapi-ts": "0.52.0",
     "@types/express": "4.17.21",
     "@types/jest": "29.5.12",
     "@types/lodash": "4.17.7",
@@ -71,7 +71,7 @@
     "pino-pretty": "11.2.2",
     "sort-package-json": "2.10.0",
     "tsup": "8.2.3",
-    "tsx": "4.16.3",
+    "tsx": "4.16.5",
     "typescript": "5.5.4",
     "vite": "5.3.5",
     "vitest": "2.0.5",
