@@ -2,11 +2,7 @@
   "name": "moleculer-typescript-template",
   "version": "0.3.0",
   "description": "My Moleculer-based microservices project",
-  "keywords": [
-    "microservices",
-    "moleculer",
-    "moleculer typescript template"
-  ],
+  "keywords": ["microservices", "moleculer", "moleculer typescript template"],
   "license": "MIT",
   "author": "Huynh Duc Dung",
   "scripts": {
