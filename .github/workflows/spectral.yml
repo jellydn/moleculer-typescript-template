@@ -1,0 +1,17 @@
+name: Run Spectral on Pull Requests
+
+on:
+  - pull_request
+
+jobs:
+  linter:
+    name: Run Spectral
+    runs-on: ubuntu-latest
+    steps:
+      # Check out the repository
+      - uses: actions/checkout@v3
+
+      # Run Spectral
+      - uses: stoplightio/spectral-action@latest
+        with:
+          file_glob: "doc/api/*.yaml"
