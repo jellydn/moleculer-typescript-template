@@ -12,6 +12,8 @@
 
 [![IT Man - Logdy Deep Dive: Streamlining Log Management with a Powerful Web UI](https://i.ytimg.com/vi/wO5MTD3Lawg/hqdefault.jpg)](https://www.youtube.com/watch?v=wO5MTD3Lawg)
 
+[![ITMan - Automate API Linting: Spectral Integration with VS Code and GitHub Actions](https://i.ytimg.com/vi/sTjIgGBhfMs/hqdefault.jpg)](https://www.youtube.com/watch?v=sTjIgGBhfMs)
+
 <!-- [![Deploy](https://button.deta.dev/1/svg)](https://go.deta.dev/deploy?repo=https://github.com/jellydn/moleculer-typescript-template) -->
 
 ## Prerequisites
