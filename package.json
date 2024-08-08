@@ -37,7 +37,7 @@
     "dotenv": "16.4.5",
     "helmet": "7.1.0",
     "lodash.defaultsdeep": "4.6.1",
-    "moleculer": "0.14.34",
+    "moleculer": "0.15.0-beta1",
     "moleculer-web": "0.10.7",
     "moleculer-zod-validator": "3.3.1",
     "nats": "2.28.2",
