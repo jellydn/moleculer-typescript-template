@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "run-p -l dev:*",
     "dev:api": "npx tsx watch ./server.ts | npx pino-pretty",
-    "dev:logdy": "npx tsx watch ./server.ts | logdy --no-analytics --port 4567",
+    "logdy": "npx tsx watch ./server.ts | logdy --no-analytics --port 4567",
     "dev:swagger": "wait-on -c ./wait-on.config.cjs -l && npm run generate:swagger",
     "start": "npx tsx ./server.ts",
     "cli": "NODE_OPTIONS='--import tsx' moleculer-connect --env --config moleculer.config.ts --transporter NATS",
