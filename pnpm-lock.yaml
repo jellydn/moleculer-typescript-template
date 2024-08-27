@@ -55,8 +55,8 @@ importers:
         specifier: 0.5.8
         version: 0.5.8
       '@hey-api/openapi-ts':
-        specifier: 0.52.10
-        version: 0.52.10(typescript@5.5.4)
+        specifier: 0.52.11
+        version: 0.52.11(typescript@5.5.4)
       '@types/express':
         specifier: 4.17.21
         version: 4.17.21
@@ -116,10 +116,10 @@ importers:
         version: 2.10.1
       tsup:
         specifier: 8.2.4
-        version: 8.2.4(jiti@1.21.6)(postcss@8.4.41)(tsx@4.18.0)(typescript@5.5.4)(yaml@2.5.0)
+        version: 8.2.4(jiti@1.21.6)(postcss@8.4.41)(tsx@4.19.0)(typescript@5.5.4)(yaml@2.5.0)
       tsx:
-        specifier: 4.18.0
-        version: 4.18.0
+        specifier: 4.19.0
+        version: 4.19.0
       typescript:
         specifier: 5.5.4
         version: 5.5.4
@@ -531,8 +531,8 @@ packages:
   '@hapi/topo@5.1.0':
     resolution: {integrity: sha512-foQZKJig7Ob0BMAYBfcJk8d77QtOe7Wo4ox7ff1lQYoNNAb6jwcY1ncdoy2e9wQZzvNy7ODZCYJkK8kzmcAnAg==}
 
-  '@hey-api/openapi-ts@0.52.10':
-    resolution: {integrity: sha512-ZjCETgc85VOEQvqObLxM0NUx87niv5LUfPk9N9BeVZ2zgvfFX8oT4LAzojc8UEyKDakI3elZKPPY843W3a+aFA==}
+  '@hey-api/openapi-ts@0.52.11':
+    resolution: {integrity: sha512-S3NrCQDxy7AtW5sx8OVoBaqpaYNqYsD0y6YNwhUXPUahbrW7Wxm/N4RIEsRtXVbcjUqdAjo1FmFmeyEKYziJkw==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
@@ -2667,8 +2667,8 @@ packages:
       typescript:
         optional: true
 
-  tsx@4.18.0:
-    resolution: {integrity: sha512-a1jaKBSVQkd6yEc1/NI7G6yHFfefIcuf3QJST7ZEyn4oQnxLYrZR5uZAM8UrwUa3Ge8suiZHcNS1gNrEvmobqg==}
+  tsx@4.19.0:
+    resolution: {integrity: sha512-bV30kM7bsLZKZIOCHeMNVMJ32/LuJzLVajkQI/qf92J2Qr08ueLQvW00PUZGiuLPP760UINwupgUj8qrSCPUKg==}
     engines: {node: '>=18.0.0'}
     hasBin: true
 
@@ -3151,7 +3151,7 @@ snapshots:
     dependencies:
       '@hapi/hoek': 9.3.0
 
-  '@hey-api/openapi-ts@0.52.10(typescript@5.5.4)':
+  '@hey-api/openapi-ts@0.52.11(typescript@5.5.4)':
     dependencies:
       '@apidevtools/json-schema-ref-parser': 11.7.0
       c12: 1.11.1
@@ -4974,13 +4974,13 @@ snapshots:
       mlly: 1.7.1
       pathe: 1.1.2
 
-  postcss-load-config@6.0.1(jiti@1.21.6)(postcss@8.4.41)(tsx@4.18.0)(yaml@2.5.0):
+  postcss-load-config@6.0.1(jiti@1.21.6)(postcss@8.4.41)(tsx@4.19.0)(yaml@2.5.0):
     dependencies:
       lilconfig: 3.1.2
     optionalDependencies:
       jiti: 1.21.6
       postcss: 8.4.41
-      tsx: 4.18.0
+      tsx: 4.19.0
       yaml: 2.5.0
 
   postcss@8.4.41:
@@ -5445,7 +5445,7 @@ snapshots:
 
   tslib@2.7.0: {}
 
-  tsup@8.2.4(jiti@1.21.6)(postcss@8.4.41)(tsx@4.18.0)(typescript@5.5.4)(yaml@2.5.0):
+  tsup@8.2.4(jiti@1.21.6)(postcss@8.4.41)(tsx@4.19.0)(typescript@5.5.4)(yaml@2.5.0):
     dependencies:
       bundle-require: 5.0.0(esbuild@0.23.1)
       cac: 6.7.14
@@ -5457,7 +5457,7 @@ snapshots:
       globby: 11.1.0
       joycon: 3.1.1
       picocolors: 1.0.1
-      postcss-load-config: 6.0.1(jiti@1.21.6)(postcss@8.4.41)(tsx@4.18.0)(yaml@2.5.0)
+      postcss-load-config: 6.0.1(jiti@1.21.6)(postcss@8.4.41)(tsx@4.19.0)(yaml@2.5.0)
       resolve-from: 5.0.0
       rollup: 4.21.0
       source-map: 0.8.0-beta.0
@@ -5472,7 +5472,7 @@ snapshots:
       - tsx
       - yaml
 
-  tsx@4.18.0:
+  tsx@4.19.0:
     dependencies:
       esbuild: 0.23.1
       get-tsconfig: 4.7.6
