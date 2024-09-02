@@ -21,14 +21,14 @@ importers:
         specifier: 4.6.1
         version: 4.6.1
       moleculer:
-        specifier: 0.14.34
-        version: 0.14.34(debug@4.3.6)(nats@2.28.2)(pino@9.3.2)
+        specifier: 0.15.0-beta1
+        version: 0.15.0-beta1(debug@4.3.6)(nats@2.28.2)(pino@9.3.2)
       moleculer-web:
         specifier: 0.10.7
-        version: 0.10.7(moleculer@0.14.34(debug@4.3.6)(nats@2.28.2)(pino@9.3.2))
+        version: 0.10.7(moleculer@0.15.0-beta1(debug@4.3.6)(nats@2.28.2)(pino@9.3.2))
       moleculer-zod-validator:
         specifier: 3.3.1
-        version: 3.3.1(moleculer@0.14.34(debug@4.3.6)(nats@2.28.2)(pino@9.3.2))(zod@3.23.8)
+        version: 3.3.1(moleculer@0.15.0-beta1(debug@4.3.6)(nats@2.28.2)(pino@9.3.2))(zod@3.23.8)
       nats:
         specifier: 2.28.2
         version: 2.28.2
@@ -101,7 +101,7 @@ importers:
         version: 0.2.2(debug@4.3.6)(moleculer-repl@0.7.4)
       moleculer-io:
         specifier: 2.2.0
-        version: 2.2.0(moleculer@0.14.34(debug@4.3.6)(nats@2.28.2)(pino@9.3.2))
+        version: 2.2.0(moleculer@0.15.0-beta1(debug@4.3.6)(nats@2.28.2)(pino@9.3.2))
       moleculer-repl:
         specifier: 0.7.4
         version: 0.7.4
@@ -1987,6 +1987,67 @@ packages:
       rhea-promise:
         optional: true
       thrift:
+        optional: true
+      winston:
+        optional: true
+
+  moleculer@0.15.0-beta1:
+    resolution: {integrity: sha512-b9nMMifxr0O5jaM+OicxODb8dKAKjy47NdXPvTnQIqA6iFuSdHxM5KsHWFdCR4Gd0UOnDMvgk4QS40DRNrlVKg==}
+    engines: {node: '>= 18.x.x'}
+    hasBin: true
+    peerDependencies:
+      amqplib: ^0.10.0
+      bunyan: ^1.0.0
+      cbor-x: ^1.2.0
+      dd-trace: ^4.20.0
+      debug: ^4.0.0
+      etcd3: ^1.0.0
+      ioredis: ^5.0.0
+      jaeger-client: ^3.0.0
+      kafkajs: ^2.2.4
+      log4js: ^6.0.0
+      mqtt: ^5.0.0
+      msgpack5: ^6.0.0
+      nats: ^2.0.0
+      notepack.io: ^2.0.0
+      pino: ^7.0.0
+      redlock: ^4.0.0
+      rhea-promise: ^2.0.0
+      winston: ^3.0.0
+    peerDependenciesMeta:
+      amqplib:
+        optional: true
+      bunyan:
+        optional: true
+      cbor-x:
+        optional: true
+      dd-trace:
+        optional: true
+      debug:
+        optional: true
+      etcd3:
+        optional: true
+      ioredis:
+        optional: true
+      jaeger-client:
+        optional: true
+      kafkajs:
+        optional: true
+      log4js:
+        optional: true
+      mqtt:
+        optional: true
+      msgpack5:
+        optional: true
+      nats:
+        optional: true
+      notepack.io:
+        optional: true
+      pino:
+        optional: true
+      redlock:
+        optional: true
+      rhea-promise:
         optional: true
       winston:
         optional: true
@@ -4654,11 +4715,11 @@ snapshots:
       - thrift
       - winston
 
-  moleculer-io@2.2.0(moleculer@0.14.34(debug@4.3.6)(nats@2.28.2)(pino@9.3.2)):
+  moleculer-io@2.2.0(moleculer@0.15.0-beta1(debug@4.3.6)(nats@2.28.2)(pino@9.3.2)):
     dependencies:
       kleur: 4.1.5
       lodash: 4.17.21
-      moleculer: 0.14.34(debug@4.3.6)(nats@2.28.2)(pino@9.3.2)
+      moleculer: 0.15.0-beta1(debug@4.3.6)(nats@2.28.2)(pino@9.3.2)
       socket.io: 4.7.5
     transitivePeerDependencies:
       - bufferutil
@@ -4679,7 +4740,7 @@ snapshots:
       tiny-human-time: 1.2.0
       yargs-parser: 21.1.1
 
-  moleculer-web@0.10.7(moleculer@0.14.34(debug@4.3.6)(nats@2.28.2)(pino@9.3.2)):
+  moleculer-web@0.10.7(moleculer@0.15.0-beta1(debug@4.3.6)(nats@2.28.2)(pino@9.3.2)):
     dependencies:
       '@fastify/busboy': 1.2.1
       body-parser: 1.20.2
@@ -4689,16 +4750,16 @@ snapshots:
       isstream: 0.1.2
       kleur: 4.1.5
       lodash: 4.17.21
-      moleculer: 0.14.34(debug@4.3.6)(nats@2.28.2)(pino@9.3.2)
+      moleculer: 0.15.0-beta1(debug@4.3.6)(nats@2.28.2)(pino@9.3.2)
       path-to-regexp: 3.2.0
       qs: 6.13.0
       serve-static: 1.15.0
     transitivePeerDependencies:
       - supports-color
 
-  moleculer-zod-validator@3.3.1(moleculer@0.14.34(debug@4.3.6)(nats@2.28.2)(pino@9.3.2))(zod@3.23.8):
+  moleculer-zod-validator@3.3.1(moleculer@0.15.0-beta1(debug@4.3.6)(nats@2.28.2)(pino@9.3.2))(zod@3.23.8):
     dependencies:
-      moleculer: 0.14.34(debug@4.3.6)(nats@2.28.2)(pino@9.3.2)
+      moleculer: 0.15.0-beta1(debug@4.3.6)(nats@2.28.2)(pino@9.3.2)
       zod: 3.23.8
 
   moleculer@0.14.34(debug@4.3.6)(nats@2.28.2)(pino@8.21.0):
@@ -4720,24 +4781,21 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
-  moleculer@0.14.34(debug@4.3.6)(nats@2.28.2)(pino@9.3.2):
+  moleculer@0.15.0-beta1(debug@4.3.6)(nats@2.28.2)(pino@9.3.2):
     dependencies:
       args: 5.0.3
       eventemitter2: 6.4.9
       fastest-validator: 1.19.0
-      glob: 7.2.3
+      glob: 10.4.5
       ipaddr.js: 2.2.0
       kleur: 4.1.5
       lodash: 4.17.21
-      lru-cache: 6.0.0
-      node-fetch: 2.7.0
+      lru-cache: 10.4.3
       recursive-watch: 1.1.4
     optionalDependencies:
       debug: 4.3.6
       nats: 2.28.2
       pino: 9.3.2
-    transitivePeerDependencies:
-      - encoding
 
   mri@1.1.4: {}
 
