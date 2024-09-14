@@ -15,9 +15,7 @@
     "/api/greeter/hello": {
       "get": {
         "description": "Returns the Hello Moleculer",
-        "tags": [
-          "greeter"
-        ],
+        "tags": ["greeter"],
         "responses": {
           "200": {
             "description": "Hello Moleculer",
@@ -36,9 +34,7 @@
     "/api/greeter/welcome": {
       "get": {
         "description": "Returns Welcome, a username",
-        "tags": [
-          "greeter"
-        ],
+        "tags": ["greeter"],
         "parameters": [
           {
             "$ref": "#/components/parameters/username",
@@ -65,9 +61,7 @@
     "/api/product/cart": {
       "post": {
         "description": "Add a product to the cart",
-        "tags": [
-          "product"
-        ],
+        "tags": ["product"],
         "requestBody": {
           "required": true,
           "content": {
@@ -136,17 +130,10 @@
                 "type": "string"
               }
             },
-            "required": [
-              "city",
-              "zip",
-              "country"
-            ]
+            "required": ["city", "zip", "country"]
           }
         },
-        "required": [
-          "name",
-          "qty"
-        ],
+        "required": ["name", "qty"],
         "description": "Add cart DTO"
       },
       "addCartResponseDTO": {
@@ -163,10 +150,7 @@
             "example": "Product added to cart"
           }
         },
-        "required": [
-          "success",
-          "message"
-        ],
+        "required": ["success", "message"],
         "description": "Add cart response DTO"
       }
     },
