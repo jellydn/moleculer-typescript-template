@@ -6,7 +6,5 @@ export default defineConfig({
     output: "generated/sdk",
     name: "MoleculerApi",
     useOptions: true,
-    enums: "javascript",
-    client: "fetch",
-    format: false,
+    client: "legacy/fetch",
 });
