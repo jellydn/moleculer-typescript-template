@@ -33,7 +33,7 @@
     "typecheck": "npm run generate:sdk && tsc -b"
   },
   "dependencies": {
-    "@asteasolutions/zod-to-openapi": "7.1.1",
+    "@asteasolutions/zod-to-openapi": "7.1.2",
     "dotenv": "16.4.5",
     "helmet": "7.1.0",
     "lodash.defaultsdeep": "4.6.1",
