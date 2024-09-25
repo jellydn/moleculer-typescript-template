@@ -55,8 +55,8 @@ importers:
         specifier: 0.5.8
         version: 0.5.8
       '@hey-api/openapi-ts':
-        specifier: 0.53.3
-        version: 0.53.3(typescript@5.6.2)
+        specifier: 0.53.4
+        version: 0.53.4(typescript@5.6.2)
       '@types/express':
         specifier: 4.17.21
         version: 4.17.21
@@ -67,8 +67,8 @@ importers:
         specifier: 4.17.9
         version: 4.17.9
       '@types/node':
-        specifier: 22.6.1
-        version: 22.6.1
+        specifier: 22.7.0
+        version: 22.7.0
       '@types/swagger-jsdoc':
         specifier: 6.0.4
         version: 6.0.4
@@ -124,11 +124,11 @@ importers:
         specifier: 5.6.2
         version: 5.6.2
       vite:
-        specifier: 5.4.7
-        version: 5.4.7(@types/node@22.6.1)
+        specifier: 5.4.8
+        version: 5.4.8(@types/node@22.7.0)
       vitest:
         specifier: 2.1.1
-        version: 2.1.1(@types/node@22.6.1)(@vitest/ui@2.1.1)
+        version: 2.1.1(@types/node@22.7.0)(@vitest/ui@2.1.1)
       wait-on:
         specifier: 8.0.1
         version: 8.0.1(debug@4.3.7)
@@ -527,8 +527,8 @@ packages:
   '@hapi/topo@5.1.0':
     resolution: {integrity: sha512-foQZKJig7Ob0BMAYBfcJk8d77QtOe7Wo4ox7ff1lQYoNNAb6jwcY1ncdoy2e9wQZzvNy7ODZCYJkK8kzmcAnAg==}
 
-  '@hey-api/openapi-ts@0.53.3':
-    resolution: {integrity: sha512-o4XPr0g7Ey0xibSAohRO895ZKS2DgvVn2Dprd9wi7Oi1Vuoe+hT4Zy+0LqhMYOx14E2ViXVWa3fmihwO6meZsA==}
+  '@hey-api/openapi-ts@0.53.4':
+    resolution: {integrity: sha512-5GJ7lQ8FjRFVTqmsGhikj5IpNujySXwF2pN8XJDBP6UXkKycr7GbZrnI0dAww+15Md6MixsClUZuvodp3qJ20g==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
@@ -740,8 +740,8 @@ packages:
   '@types/node@17.0.45':
     resolution: {integrity: sha512-w+tIMs3rq2afQdsPJlODhoUEKzFP1ayaoyl1CcnwtIlsVe7K7bA1NGm4s3PraqTLlXnbIN84zuBlxBWo1u9BLw==}
 
-  '@types/node@22.6.1':
-    resolution: {integrity: sha512-V48tCfcKb/e6cVUigLAaJDAILdMP0fUW6BidkPK4GpGjXcfbnoHasCZDwz3N3yVt5we2RHm4XTQCpv0KJz9zqw==}
+  '@types/node@22.7.0':
+    resolution: {integrity: sha512-MOdOibwBs6KW1vfqz2uKMlxq5xAfAZ98SZjO8e3XnAbFnTJtAspqhWk7hrdSAs9/Y14ZWMiy7/MxMUzAOadYEw==}
 
   '@types/qs@6.9.16':
     resolution: {integrity: sha512-7i+zxXdPD0T4cKDuxCUXJ4wHcsJLwENa6Z3dCu8cfCK743OGy5Nu1RmAGqDPsoTDINVEcdXKRvR/zre+P2Ku1A==}
@@ -2761,8 +2761,8 @@ packages:
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
 
-  vite@5.4.7:
-    resolution: {integrity: sha512-5l2zxqMEPVENgvzTuBpHer2awaetimj2BGkhBPdnwKbPNOlHsODU+oiazEZzLK7KhAnOrO+XGYJYn4ZlUhDtDQ==}
+  vite@5.4.8:
+    resolution: {integrity: sha512-FqrItQ4DT1NC4zCUqMB4c4AZORMKIa0m8/URVCZ77OZ/QSNeJ54bU1vrFADbDsuwfIPcgknRkmqakQcgnL4GiQ==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
@@ -3165,7 +3165,7 @@ snapshots:
     dependencies:
       '@hapi/hoek': 9.3.0
 
-  '@hey-api/openapi-ts@0.53.3(typescript@5.6.2)':
+  '@hey-api/openapi-ts@0.53.4(typescript@5.6.2)':
     dependencies:
       '@apidevtools/json-schema-ref-parser': 11.7.0
       c12: 1.11.2
@@ -3199,7 +3199,7 @@ snapshots:
       '@jest/schemas': 29.6.3
       '@types/istanbul-lib-coverage': 2.0.6
       '@types/istanbul-reports': 3.0.4
-      '@types/node': 22.6.1
+      '@types/node': 22.7.0
       '@types/yargs': 17.0.33
       chalk: 4.1.2
 
@@ -3302,17 +3302,17 @@ snapshots:
   '@types/body-parser@1.19.5':
     dependencies:
       '@types/connect': 3.4.38
-      '@types/node': 22.6.1
+      '@types/node': 22.7.0
 
   '@types/connect@3.4.38':
     dependencies:
-      '@types/node': 22.6.1
+      '@types/node': 22.7.0
 
   '@types/cookie@0.4.1': {}
 
   '@types/cors@2.8.17':
     dependencies:
-      '@types/node': 22.6.1
+      '@types/node': 22.7.0
 
   '@types/estree@1.0.5': {}
 
@@ -3320,7 +3320,7 @@ snapshots:
 
   '@types/express-serve-static-core@4.19.5':
     dependencies:
-      '@types/node': 22.6.1
+      '@types/node': 22.7.0
       '@types/qs': 6.9.16
       '@types/range-parser': 1.2.7
       '@types/send': 0.17.4
@@ -3357,7 +3357,7 @@ snapshots:
 
   '@types/node@17.0.45': {}
 
-  '@types/node@22.6.1':
+  '@types/node@22.7.0':
     dependencies:
       undici-types: 6.19.8
 
@@ -3368,12 +3368,12 @@ snapshots:
   '@types/send@0.17.4':
     dependencies:
       '@types/mime': 1.3.5
-      '@types/node': 22.6.1
+      '@types/node': 22.7.0
 
   '@types/serve-static@1.15.7':
     dependencies:
       '@types/http-errors': 2.0.4
-      '@types/node': 22.6.1
+      '@types/node': 22.7.0
       '@types/send': 0.17.4
 
   '@types/stack-utils@2.0.3': {}
@@ -3382,7 +3382,7 @@ snapshots:
 
   '@types/ws@8.5.12':
     dependencies:
-      '@types/node': 22.6.1
+      '@types/node': 22.7.0
 
   '@types/yargs-parser@21.0.3': {}
 
@@ -3397,13 +3397,13 @@ snapshots:
       chai: 5.1.1
       tinyrainbow: 1.2.0
 
-  '@vitest/mocker@2.1.1(@vitest/spy@2.1.1)(vite@5.4.7(@types/node@22.6.1))':
+  '@vitest/mocker@2.1.1(@vitest/spy@2.1.1)(vite@5.4.8(@types/node@22.7.0))':
     dependencies:
       '@vitest/spy': 2.1.1
       estree-walker: 3.0.3
       magic-string: 0.30.11
     optionalDependencies:
-      vite: 5.4.7(@types/node@22.6.1)
+      vite: 5.4.8(@types/node@22.7.0)
 
   '@vitest/pretty-format@2.1.1':
     dependencies:
@@ -3433,7 +3433,7 @@ snapshots:
       sirv: 2.0.4
       tinyglobby: 0.2.6
       tinyrainbow: 1.2.0
-      vitest: 2.1.1(@types/node@22.6.1)(@vitest/ui@2.1.1)
+      vitest: 2.1.1(@types/node@22.7.0)(@vitest/ui@2.1.1)
 
   '@vitest/utils@2.1.1':
     dependencies:
@@ -3873,7 +3873,7 @@ snapshots:
     dependencies:
       '@types/cookie': 0.4.1
       '@types/cors': 2.8.17
-      '@types/node': 22.6.1
+      '@types/node': 22.7.0
       accepts: 1.3.8
       base64id: 2.0.0
       cookie: 0.4.2
@@ -4464,7 +4464,7 @@ snapshots:
   jest-util@29.7.0:
     dependencies:
       '@jest/types': 29.6.3
-      '@types/node': 22.6.1
+      '@types/node': 22.7.0
       chalk: 4.1.2
       ci-info: 3.9.0
       graceful-fs: 4.2.11
@@ -5546,12 +5546,12 @@ snapshots:
 
   vary@1.1.2: {}
 
-  vite-node@2.1.1(@types/node@22.6.1):
+  vite-node@2.1.1(@types/node@22.7.0):
     dependencies:
       cac: 6.7.14
       debug: 4.3.7
       pathe: 1.1.2
-      vite: 5.4.7(@types/node@22.6.1)
+      vite: 5.4.8(@types/node@22.7.0)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -5563,19 +5563,19 @@ snapshots:
       - supports-color
       - terser
 
-  vite@5.4.7(@types/node@22.6.1):
+  vite@5.4.8(@types/node@22.7.0):
     dependencies:
       esbuild: 0.21.5
       postcss: 8.4.47
       rollup: 4.22.4
     optionalDependencies:
-      '@types/node': 22.6.1
+      '@types/node': 22.7.0
       fsevents: 2.3.3
 
-  vitest@2.1.1(@types/node@22.6.1)(@vitest/ui@2.1.1):
+  vitest@2.1.1(@types/node@22.7.0)(@vitest/ui@2.1.1):
     dependencies:
       '@vitest/expect': 2.1.1
-      '@vitest/mocker': 2.1.1(@vitest/spy@2.1.1)(vite@5.4.7(@types/node@22.6.1))
+      '@vitest/mocker': 2.1.1(@vitest/spy@2.1.1)(vite@5.4.8(@types/node@22.7.0))
       '@vitest/pretty-format': 2.1.1
       '@vitest/runner': 2.1.1
       '@vitest/snapshot': 2.1.1
@@ -5590,11 +5590,11 @@ snapshots:
       tinyexec: 0.3.0
       tinypool: 1.0.1
       tinyrainbow: 1.2.0
-      vite: 5.4.7(@types/node@22.6.1)
-      vite-node: 2.1.1(@types/node@22.6.1)
+      vite: 5.4.8(@types/node@22.7.0)
+      vite-node: 2.1.1(@types/node@22.7.0)
       why-is-node-running: 2.3.0
     optionalDependencies:
-      '@types/node': 22.6.1
+      '@types/node': 22.7.0
       '@vitest/ui': 2.1.1(vitest@2.1.1)
     transitivePeerDependencies:
       - less
