@@ -51,7 +51,7 @@
     "@biomejs/biome": "1.9.2",
     "@flydotio/dockerfile": "0.5.8",
     "@hey-api/openapi-ts": "0.53.5",
-    "@types/express": "4.17.21",
+    "@types/express": "5.0.0",
     "@types/jest": "29.5.13",
     "@types/lodash": "4.17.9",
     "@types/node": "22.7.3",
