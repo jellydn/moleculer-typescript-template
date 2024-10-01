@@ -48,7 +48,7 @@
     "zod": "3.23.8"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.9.2",
+    "@biomejs/biome": "1.9.3",
     "@flydotio/dockerfile": "0.5.9",
     "@hey-api/openapi-ts": "0.53.6",
     "@types/express": "5.0.0",
