@@ -50,7 +50,7 @@
   "devDependencies": {
     "@biomejs/biome": "1.9.3",
     "@flydotio/dockerfile": "0.5.9",
-    "@hey-api/openapi-ts": "0.53.6",
+    "@hey-api/openapi-ts": "0.53.7",
     "@types/express": "5.0.0",
     "@types/jest": "29.5.13",
     "@types/lodash": "4.17.10",
