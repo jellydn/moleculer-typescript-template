@@ -15,8 +15,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
-      - name: Install pre-commit
-        run: pip install pre-commit
+      - name: Install pre-commit with pipx
+        run: |
+          python3 -m pip install --user pipx
+          python3 -m pipx ensurepath
+          pipx install pre-commit
 
       - name: Run pre-commit
         run: pre-commit run --all-files
