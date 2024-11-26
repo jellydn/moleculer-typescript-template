@@ -57,7 +57,7 @@
     "@types/node": "22.10.0",
     "@types/swagger-jsdoc": "6.0.4",
     "@types/ws": "8.5.13",
-    "@vitest/ui": "2.1.5",
+    "@vitest/ui": "2.1.6",
     "c8": "10.1.2",
     "cleye": "1.3.2",
     "express": "4.21.1",
@@ -74,7 +74,7 @@
     "tsx": "4.19.2",
     "typescript": "5.7.2",
     "vite": "5.4.11",
-    "vitest": "2.1.5",
+    "vitest": "2.1.6",
     "wait-on": "8.0.1",
     "ws": "8.18.0"
   },
