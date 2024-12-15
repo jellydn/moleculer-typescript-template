@@ -88,11 +88,11 @@ importers:
         specifier: 4.21.2
         version: 4.21.2
       graphql:
-        specifier: 16.9.0
-        version: 16.9.0
+        specifier: 16.10.0
+        version: 16.10.0
       graphql-ws:
         specifier: 5.16.0
-        version: 5.16.0(graphql@16.9.0)
+        version: 5.16.0(graphql@16.10.0)
       hygen:
         specifier: 6.2.11
         version: 6.2.11
@@ -1663,8 +1663,8 @@ packages:
     peerDependencies:
       graphql: '>=0.11 <=16'
 
-  graphql@16.9.0:
-    resolution: {integrity: sha512-GGTKBX4SD7Wdb8mqeDLni2oaRGYQWjWHGKPQ24ZMnUtKfcsVoiv4uX8+LJr1K6U5VW2Lu1BwJnj7uiori0YtRw==}
+  graphql@16.10.0:
+    resolution: {integrity: sha512-AjqGKbDGUFRKIRCP9tCKiIGHyriz2oHEbPIbEtcSLSs4YjReZOIPQQWek4+6hjw62H9QShXHyaGivGiYVLeYFQ==}
     engines: {node: ^12.22.0 || ^14.16.0 || ^16.0.0 || >=17.0.0}
 
   handlebars@4.7.8:
@@ -4484,11 +4484,11 @@ snapshots:
 
   graceful-fs@4.2.11: {}
 
-  graphql-ws@5.16.0(graphql@16.9.0):
+  graphql-ws@5.16.0(graphql@16.10.0):
     dependencies:
-      graphql: 16.9.0
+      graphql: 16.10.0
 
-  graphql@16.9.0: {}
+  graphql@16.10.0: {}
 
   handlebars@4.7.8:
     dependencies:
