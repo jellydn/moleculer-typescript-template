@@ -55,8 +55,8 @@ importers:
         specifier: 0.6.1
         version: 0.6.1(@sveltejs/kit@2.15.2(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.16.6)(vite@6.0.7(@types/node@22.10.5)(jiti@2.4.2)(tsx@4.19.2)(yaml@2.7.0)))(svelte@5.16.6)(vite@6.0.7(@types/node@22.10.5)(jiti@2.4.2)(tsx@4.19.2)(yaml@2.7.0)))
       '@hey-api/openapi-ts':
-        specifier: 0.61.0
-        version: 0.61.0(typescript@5.7.2)
+        specifier: 0.61.1
+        version: 0.61.1(typescript@5.7.2)
       '@types/express':
         specifier: 5.0.0
         version: 5.0.0
@@ -678,8 +678,8 @@ packages:
     resolution: {integrity: sha512-dBt0A7op9kf4BcK++x6HBYDmvCvnJUZEGe5QytghPFHnMXPyKwDKomwL/v5e9ERk6E0e1GzL/e/y6pWUso9zrQ==}
     engines: {node: '>= 16'}
 
-  '@hey-api/openapi-ts@0.61.0':
-    resolution: {integrity: sha512-gl1lcQFmuaMmtQuY3yn9rd/dUD9wdMW59PIv4J2g2AV9+hIKhWHn1QIdYYmQDio7eCPLvtVmj79EEu21Tu9Ahw==}
+  '@hey-api/openapi-ts@0.61.1':
+    resolution: {integrity: sha512-CJqwyzy2/E6BS/3wrk7M9qIaZKyu52vUiHrmAQCw72/bMzzgy69TbK1IM8AHNJ6+gR9+X/uggjTn8WfouslDUw==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
@@ -3589,7 +3589,7 @@ snapshots:
       '@types/json-schema': 7.0.15
       js-yaml: 4.1.0
 
-  '@hey-api/openapi-ts@0.61.0(typescript@5.7.2)':
+  '@hey-api/openapi-ts@0.61.1(typescript@5.7.2)':
     dependencies:
       '@hey-api/json-schema-ref-parser': 1.0.1
       c12: 2.0.1
