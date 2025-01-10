@@ -55,8 +55,8 @@ importers:
         specifier: 0.6.1
         version: 0.6.1(@sveltejs/kit@2.15.2(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.16.6)(vite@6.0.7(@types/node@22.10.5)(jiti@2.4.2)(tsx@4.19.2)(yaml@2.7.0)))(svelte@5.16.6)(vite@6.0.7(@types/node@22.10.5)(jiti@2.4.2)(tsx@4.19.2)(yaml@2.7.0)))
       '@hey-api/openapi-ts':
-        specifier: 0.61.1
-        version: 0.61.1(typescript@5.7.2)
+        specifier: 0.61.2
+        version: 0.61.2(typescript@5.7.3)
       '@types/express':
         specifier: 5.0.0
         version: 5.0.0
@@ -91,8 +91,8 @@ importers:
         specifier: 16.10.0
         version: 16.10.0
       graphql-ws:
-        specifier: 5.16.0
-        version: 5.16.0(graphql@16.10.0)
+        specifier: 5.16.1
+        version: 5.16.1(graphql@16.10.0)
       hygen:
         specifier: 6.2.11
         version: 6.2.11
@@ -116,13 +116,13 @@ importers:
         version: 2.12.0
       tsup:
         specifier: 8.3.5
-        version: 8.3.5(jiti@2.4.2)(postcss@8.4.49)(tsx@4.19.2)(typescript@5.7.2)(yaml@2.7.0)
+        version: 8.3.5(jiti@2.4.2)(postcss@8.4.49)(tsx@4.19.2)(typescript@5.7.3)(yaml@2.7.0)
       tsx:
         specifier: 4.19.2
         version: 4.19.2
       typescript:
-        specifier: 5.7.2
-        version: 5.7.2
+        specifier: 5.7.3
+        version: 5.7.3
       vite:
         specifier: 6.0.7
         version: 6.0.7(@types/node@22.10.5)(jiti@2.4.2)(tsx@4.19.2)(yaml@2.7.0)
@@ -678,8 +678,8 @@ packages:
     resolution: {integrity: sha512-dBt0A7op9kf4BcK++x6HBYDmvCvnJUZEGe5QytghPFHnMXPyKwDKomwL/v5e9ERk6E0e1GzL/e/y6pWUso9zrQ==}
     engines: {node: '>= 16'}
 
-  '@hey-api/openapi-ts@0.61.1':
-    resolution: {integrity: sha512-CJqwyzy2/E6BS/3wrk7M9qIaZKyu52vUiHrmAQCw72/bMzzgy69TbK1IM8AHNJ6+gR9+X/uggjTn8WfouslDUw==}
+  '@hey-api/openapi-ts@0.61.2':
+    resolution: {integrity: sha512-E0b8PibVqmZd/E/MB0h8Q2VXObZc+nhHHx3quLwNM08QgEtkC29vMcayzmuG+rR4nGvZGvREP1a4rZc0v6Xjgg==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
@@ -1788,8 +1788,8 @@ packages:
   graceful-fs@4.2.11:
     resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==}
 
-  graphql-ws@5.16.0:
-    resolution: {integrity: sha512-Ju2RCU2dQMgSKtArPbEtsK5gNLnsQyTNIo/T7cZNp96niC1x0KdJNZV0TIoilceBPQwfb5itrGl8pkFeOUMl4A==}
+  graphql-ws@5.16.1:
+    resolution: {integrity: sha512-/U3sZOhiZ36ZtSFhdnT8Fj5novy2E+Fnr6P5KjMSDv6E72yfvnWRJN7hll9G/mlzhWPuK+8xRtZ8RJIw++vV3w==}
     engines: {node: '>=10'}
     peerDependencies:
       graphql: '>=0.11 <=16'
@@ -2998,8 +2998,8 @@ packages:
   type@2.7.3:
     resolution: {integrity: sha512-8j+1QmAbPvLZow5Qpi6NCaN8FB60p/6x8/vfNqOk/hC+HuvFZhL4+WfekuhQLiqFZXOgQdrs3B+XxEmCc6b3FQ==}
 
-  typescript@5.7.2:
-    resolution: {integrity: sha512-i5t66RHxDvVN40HfDd1PsEThGNnlMCMT3jMUuoh9/0TaqWevNontacunWyN02LA9/fIbEWlcHZcgTKb9QoaLfg==}
+  typescript@5.7.3:
+    resolution: {integrity: sha512-84MVSjMEHP+FQRPy3pX9sTVV/INIex71s9TL2Gm5FG/WG1SqXeKyZ0k7/blY/4FdOzI12CBy1vGc4og/eus0fw==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -3589,13 +3589,13 @@ snapshots:
       '@types/json-schema': 7.0.15
       js-yaml: 4.1.0
 
-  '@hey-api/openapi-ts@0.61.1(typescript@5.7.2)':
+  '@hey-api/openapi-ts@0.61.2(typescript@5.7.3)':
     dependencies:
       '@hey-api/json-schema-ref-parser': 1.0.1
       c12: 2.0.1
       commander: 13.0.0
       handlebars: 4.7.8
-      typescript: 5.7.2
+      typescript: 5.7.3
     transitivePeerDependencies:
       - magicast
 
@@ -4813,7 +4813,7 @@ snapshots:
 
   graceful-fs@4.2.11: {}
 
-  graphql-ws@5.16.0(graphql@16.10.0):
+  graphql-ws@5.16.1(graphql@16.10.0):
     dependencies:
       graphql: 16.10.0
 
@@ -6051,7 +6051,7 @@ snapshots:
 
   tslib@2.8.1: {}
 
-  tsup@8.3.5(jiti@2.4.2)(postcss@8.4.49)(tsx@4.19.2)(typescript@5.7.2)(yaml@2.7.0):
+  tsup@8.3.5(jiti@2.4.2)(postcss@8.4.49)(tsx@4.19.2)(typescript@5.7.3)(yaml@2.7.0):
     dependencies:
       bundle-require: 5.1.0(esbuild@0.24.2)
       cac: 6.7.14
@@ -6071,7 +6071,7 @@ snapshots:
       tree-kill: 1.2.2
     optionalDependencies:
       postcss: 8.4.49
-      typescript: 5.7.2
+      typescript: 5.7.3
     transitivePeerDependencies:
       - jiti
       - supports-color
@@ -6098,7 +6098,7 @@ snapshots:
 
   type@2.7.3: {}
 
-  typescript@5.7.2: {}
+  typescript@5.7.3: {}
 
   ufo@1.5.4: {}
 
