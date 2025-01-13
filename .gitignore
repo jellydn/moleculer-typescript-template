@@ -69,3 +69,5 @@ dist
 # Envrc file
 .envrc
 generated/sdk
+playwright-report
+test-results

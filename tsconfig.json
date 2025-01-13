@@ -90,6 +90,12 @@
     // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
     "skipLibCheck": true /* Skip type checking all .d.ts files. */
   },
-  "include": ["services/**/*.ts", "addons/**/*.ts", "examples/**/*.ts", "test/**/*.spec.ts"],
+  "include": [
+    "services/**/*.ts",
+    "addons/**/*.ts",
+    "examples/**/*.ts",
+    "test/**/*.spec.ts",
+    "tests/weather.spec.ts"
+  ],
   "files": ["server.ts", "moleculer.config.ts", "logger.ts", "cli.ts"]
 }
