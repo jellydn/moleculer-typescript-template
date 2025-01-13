@@ -1,15 +1,4 @@
 import { expect, test } from "@playwright/test";
-import { server } from "./mocks/server";
-
-// Establish API mocking before all tests.
-test.beforeAll(() => server.listen({ onUnhandledRequest: "warn" }));
-
-// Reset any request handlers that we may add during the tests,
-// so they don't affect other tests.
-test.afterEach(() => server.resetHandlers());
-
-// Clean up after the tests are finished.
-test.afterAll(() => server.close());
 
 test.describe("Weather API", () => {
     const mockWeatherData = {

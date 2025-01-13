@@ -12,7 +12,8 @@ const mockWeatherData = {
 };
 
 export const handlers = [
-    http.get("**/api/weather", ({ request }) => {
+    // Mock weather API
+    http.get("**/api.open-meteo.com/v1/forecast", ({ request }) => {
         const url = new URL(request.url);
         const latitude = url.searchParams.get("latitude");
         const longitude = url.searchParams.get("longitude");

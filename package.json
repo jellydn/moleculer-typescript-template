@@ -2,7 +2,11 @@
   "name": "moleculer-typescript-template",
   "version": "0.3.0",
   "description": "My Moleculer-based microservices project",
-  "keywords": ["microservices", "moleculer", "moleculer typescript template"],
+  "keywords": [
+    "microservices",
+    "moleculer",
+    "moleculer typescript template"
+  ],
   "license": "MIT",
   "author": "Huynh Duc Dung",
   "scripts": {
@@ -31,9 +35,10 @@
     "generate:swagger": "npx tsx cli.ts",
     "generate:sdk": "openapi-ts",
     "typecheck": "npm run generate:sdk && tsc -b",
-    "test:e2e": "playwright test",
-    "test:e2e:ui": "playwright test --ui",
-    "test:e2e:debug": "DEBUG=pw:* playwright test --debug"
+    "test:e2e": "NODE_ENV=test playwright test",
+    "test:e2e:ui": "NODE_ENV=test playwright test --ui",
+    "test:e2e:debug": "NODE_ENV=test DEBUG=pw:* playwright test --debug",
+    "test:e2e:watch": "NODE_ENV=test playwright test --watch"
   },
   "dependencies": {
     "@asteasolutions/zod-to-openapi": "7.3.0",
