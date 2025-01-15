@@ -55,8 +55,8 @@ importers:
         specifier: 0.7.0
         version: 0.7.0(@sveltejs/kit@2.15.2(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.17.3)(vite@6.0.7(@types/node@22.10.6)(jiti@2.4.2)(tsx@4.19.2)(yaml@2.7.0)))(svelte@5.17.3)(vite@6.0.7(@types/node@22.10.6)(jiti@2.4.2)(tsx@4.19.2)(yaml@2.7.0)))
       '@hey-api/openapi-ts':
-        specifier: 0.62.0
-        version: 0.62.0(typescript@5.7.3)
+        specifier: 0.62.1
+        version: 0.62.1(typescript@5.7.3)
       '@types/express':
         specifier: 5.0.0
         version: 5.0.0
@@ -112,8 +112,8 @@ importers:
         specifier: 13.0.0
         version: 13.0.0
       sort-package-json:
-        specifier: 2.13.0
-        version: 2.13.0
+        specifier: 2.14.0
+        version: 2.14.0
       tsup:
         specifier: 8.3.5
         version: 8.3.5(jiti@2.4.2)(postcss@8.4.49)(tsx@4.19.2)(typescript@5.7.3)(yaml@2.7.0)
@@ -707,8 +707,8 @@ packages:
     resolution: {integrity: sha512-dBt0A7op9kf4BcK++x6HBYDmvCvnJUZEGe5QytghPFHnMXPyKwDKomwL/v5e9ERk6E0e1GzL/e/y6pWUso9zrQ==}
     engines: {node: '>= 16'}
 
-  '@hey-api/openapi-ts@0.62.0':
-    resolution: {integrity: sha512-XHIr3F0EakIMIwRApNb2OQndW8KjTb5W4TRMEOo5W5y65VVtHRmOMpAIcZeN5ALVFniK3RwCYY1eyxQmz/UfRg==}
+  '@hey-api/openapi-ts@0.62.1':
+    resolution: {integrity: sha512-iCqeu3jhlMBBhAFu3ZCSww5fV4M9xhYhL06QXjwXso4CSfrCpEGw03wTXOphWI1mmZUl8/eNn3DKdP7QpewhHA==}
     engines: {node: ^18.20.5 || ^20.11.1 || >=22.11.0}
     hasBin: true
     peerDependencies:
@@ -2794,8 +2794,8 @@ packages:
   sort-object-keys@1.1.3:
     resolution: {integrity: sha512-855pvK+VkU7PaKYPc+Jjnmt4EzejQHyhhF33q31qG8x7maDzkeFhAAThdCYay11CISO+qAMwjOBP+fPZe0IPyg==}
 
-  sort-package-json@2.13.0:
-    resolution: {integrity: sha512-y1iCgJ+ZrOSgkzuhtpaxxsCLeUPZbEbIxcMDBde6JwpkZ3e9vVQhZ46iCD97GYImdgBLtXSPxxS9LqZbL6Th2Q==}
+  sort-package-json@2.14.0:
+    resolution: {integrity: sha512-xBRdmMjFB/KW3l51mP31dhlaiFmqkHLfWTfZAno8prb/wbDxwBPWFpxB16GZbiPbYr3wL41H8Kx22QIDWRe8WQ==}
     hasBin: true
 
   source-map-js@1.2.1:
@@ -3645,7 +3645,7 @@ snapshots:
       '@types/json-schema': 7.0.15
       js-yaml: 4.1.0
 
-  '@hey-api/openapi-ts@0.62.0(typescript@5.7.3)':
+  '@hey-api/openapi-ts@0.62.1(typescript@5.7.3)':
     dependencies:
       '@hey-api/json-schema-ref-parser': 1.0.1
       c12: 2.0.1
@@ -5892,7 +5892,7 @@ snapshots:
 
   sort-object-keys@1.1.3: {}
 
-  sort-package-json@2.13.0:
+  sort-package-json@2.14.0:
     dependencies:
       detect-indent: 7.0.1
       detect-newline: 4.0.1
