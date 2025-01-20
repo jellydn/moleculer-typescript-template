@@ -49,7 +49,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
-    "@flydotio/dockerfile": "0.7.0",
+    "@flydotio/dockerfile": "0.7.2",
     "@hey-api/openapi-ts": "0.62.1",
     "@types/express": "5.0.0",
     "@types/jest": "29.5.14",
