@@ -52,8 +52,8 @@ importers:
         specifier: 1.9.4
         version: 1.9.4
       '@flydotio/dockerfile':
-        specifier: 0.7.3
-        version: 0.7.3
+        specifier: 0.7.4
+        version: 0.7.4
       '@hey-api/openapi-ts':
         specifier: 0.62.3
         version: 0.62.3(typescript@5.7.3)
@@ -659,8 +659,8 @@ packages:
     resolution: {integrity: sha512-7PQA7EH43S0CxcOa9OeAnaeA0oQ+e/DHNPZwSQM9CQHW76jle5+OvLdibRp/Aafs9KXbLhxyjOTkRjWUbQEd3Q==}
     engines: {node: '>=14'}
 
-  '@flydotio/dockerfile@0.7.3':
-    resolution: {integrity: sha512-T2OWqiEhK/oOfMzs5gApY9cqlIHEUEDJSE/z5FKk50uVtDqo0a9RqD3ciVI7ZsqukGSdFt4Dif8yVffyJGGokg==}
+  '@flydotio/dockerfile@0.7.4':
+    resolution: {integrity: sha512-TFp5U/1W1AuevUMeXTA5pLnwFmK4nkgZkYpS3jnVsPN4pN4AxBIUKofoH6VUYVEYYEj2AtEtiHGhM7SvJY7zuA==}
     engines: {node: '>=16.0.0'}
     hasBin: true
 
@@ -1901,9 +1901,11 @@ packages:
 
   lodash.get@4.4.2:
     resolution: {integrity: sha512-z+Uw/vLuy6gQe8cfaFWD7p0wVv8fJl3mbzXh33RS+0oW2wvUqiRXiQ69gLWSLpgB5/6sU+r6BlQR0MBILadqTQ==}
+    deprecated: This package is deprecated. Use the optional chaining (?.) operator instead.
 
   lodash.isequal@4.5.0:
     resolution: {integrity: sha512-pDo3lu8Jhfjqls6GkMgpahsF9kCyayhgykjyLMNFTKWrpVdAQtYyB4muAMWozBB4ig/dtWAmsMxLEI8wuz+DYQ==}
+    deprecated: This package is deprecated. Use require('node:util').isDeepStrictEqual instead.
 
   lodash.mergewith@4.6.2:
     resolution: {integrity: sha512-GK3g5RPZWTRSeLSpgP8Xhra+pnjBC56q9FZYe1d5RN3TJ35dbkGy3YqBSMbyCrlbi+CM9Z3Jk5yTL7RCsqboyQ==}
@@ -3387,7 +3389,7 @@ snapshots:
     dependencies:
       text-decoding: 1.0.0
 
-  '@flydotio/dockerfile@0.7.3':
+  '@flydotio/dockerfile@0.7.4':
     dependencies:
       chalk: 5.4.1
       diff: 5.2.0
