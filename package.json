@@ -50,7 +50,7 @@
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@flydotio/dockerfile": "0.7.8",
-    "@hey-api/openapi-ts": "0.64.10",
+    "@hey-api/openapi-ts": "0.64.12",
     "@types/express": "5.0.0",
     "@types/jest": "29.5.14",
     "@types/lodash": "4.17.16",
@@ -73,12 +73,12 @@
     "tsup": "8.4.0",
     "tsx": "4.19.3",
     "typescript": "5.8.2",
-    "vite": "6.2.1",
+    "vite": "6.2.2",
     "vitest": "3.0.8",
-    "wait-on": "8.0.2",
+    "wait-on": "8.0.3",
     "ws": "8.18.1"
   },
-  "packageManager": "pnpm@10.6.2",
+  "packageManager": "pnpm@10.6.3",
   "engines": {
     "node": ">= 18.17.x"
   },
