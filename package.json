@@ -67,7 +67,7 @@
     "moleculer-connect": "0.2.2",
     "moleculer-io": "2.2.0",
     "moleculer-repl": "0.7.4",
-    "npm-run-all2": "7.0.2",
+    "npm-run-all2": "8.0.4",
     "pino-pretty": "13.0.0",
     "sort-package-json": "3.0.0",
     "tsup": "8.4.0",
