@@ -1,1 +1,1 @@
-export * from "./repository.interface";
+export * from "./validation.utils";

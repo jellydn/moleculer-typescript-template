@@ -1,14 +1,7 @@
-import {
-	type Context,
-	Errors,
-	type GenericObject,
-	type Service,
-	type ServiceSchema,
-} from "moleculer";
+import { type Context, type Service, type ServiceSchema } from "moleculer";
 import { ZodParams } from "moleculer-zod-validator";
-import { z } from "zod";
 
-import { logger } from "../../logger";
+import { validateParams } from "../common";
 import { addCartSchema } from "../dtos";
 import { InMemoryProductRepository } from "./product.repository";
 
@@ -19,27 +12,6 @@ type ServiceMethods = Record<string, unknown>;
 type ServiceThis = Service<ServiceSettings> & ServiceMethods;
 
 const orderItemValidator = new ZodParams(addCartSchema);
-
-// TODO: Move this to a shared utility
-const validateParams = (
-	ctx: Context<unknown, Record<string, unknown>, GenericObject>,
-	schema: typeof addCartSchema
-) => {
-	const compiled = z.object(schema).strict();
-	try {
-		const parsedParams = compiled.parse(ctx.params);
-		logger.info("Validated parameters: %o", parsedParams);
-	} catch (err) {
-		if (err instanceof z.ZodError)
-			throw new Errors.ValidationError(
-				"Parameters validation error!",
-				"VALIDATION_ERROR",
-				err.issues
-			);
-
-		throw err;
-	}
-};
 
 const productService: ServiceSchema<ServiceSettings, ServiceThis> = {
 	name: "product",

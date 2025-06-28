@@ -1,14 +1,8 @@
-import {
-	Errors,
-	type Context,
-	type GenericObject,
-	type Service,
-	type ServiceSchema,
-} from "moleculer";
+import { type Context, type Service, type ServiceSchema } from "moleculer";
 import { ZodParams } from "moleculer-zod-validator";
-import z from "zod";
 import { logger } from "../logger";
-import { welcomeSchema } from "./dtos/greeter.dto";
+import { validateParams } from "./common";
+import { welcomeSchema } from "./dtos";
 
 type GreeterSettings = {
 	defaultName: string;
@@ -27,34 +21,6 @@ type GreeterMethods = {
 type GreeterThis = Service<GreeterSettings> & GreeterMethods;
 
 const getterValidator = new ZodParams(welcomeSchema);
-
-const validateParams = (
-	ctx: Context<unknown, Record<string, unknown>, GenericObject>,
-	schema: typeof welcomeSchema
-) => {
-	const compiled = z.object(schema).strict();
-	try {
-		const parsedParams = compiled.parse(ctx.params);
-		logger.info("Validated parameters: %o", parsedParams);
-	} catch (err) {
-		if (err instanceof z.ZodError) {
-			throw new Errors.ValidationError(
-				`Parameters validation error!`,
-				"VALIDATION_ERROR",
-				err.issues.map((issue) => ({
-					field: issue.path.join("."),
-					message: issue.message,
-				}))
-			);
-		}
-
-		if (err instanceof Error) {
-			throw new Error(`Parameters validation error: ${err.message}`);
-		}
-
-		throw err;
-	}
-};
 
 /**
  * @swagger
