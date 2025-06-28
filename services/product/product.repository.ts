@@ -1,5 +1,5 @@
 // services/product/product.repository.ts
-import { IRepository } from "../common/repository.interface";
+import { IRepository } from "../common";
 
 // Suponiendo que tienes una interfaz para el producto
 export interface Product {

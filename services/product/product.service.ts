@@ -8,9 +8,9 @@ import {
 import { ZodParams } from "moleculer-zod-validator";
 import { z } from "zod";
 
-import { logger } from "../logger";
-import { addCartSchema } from "./dtos/product.dto";
-import { InMemoryProductRepository } from "./product/product.repository";
+import { logger } from "../../logger";
+import { addCartSchema } from "../dtos";
+import { InMemoryProductRepository } from "./product.repository";
 
 type ServiceSettings = Record<string, unknown>;
 
