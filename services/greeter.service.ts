@@ -114,7 +114,7 @@ const greeterService: ServiceSchema<GreeterSettings, GreeterThis> = {
 		welcome: {
 			rest: "/welcome",
 			params: {
-				username: { type: "string", min: 4, max: 25 },
+				username: { type: "string", min: 6, max: 25 },
 			},
 			hooks: {
 				before: [
