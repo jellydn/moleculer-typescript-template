@@ -2,6 +2,9 @@
 to: services/<%= name %>.service.ts
 ---
 import type { Context, Service, ServiceSchema } from "moleculer";
+import { ZodParams } from "moleculer-zod-validator";
+
+import { validateParams } from "./common";
 
 export type ActionHelloParams = {
 	name: string;
@@ -38,8 +41,20 @@ const <%= name %>Service: ServiceSchema<ServiceSettings, ServiceThis> = {
 	actions: {
 		/**
 		 * Say a 'Hello' action.
-		 *
-		 * @returns
+		 * @swagger
+		 * /api/<%= name %>/hello:
+		 *   get:
+		 *     description: Returns a greeting message
+		 *     tags:
+		 *     - <%= name %>
+		 *     responses:
+		 *       200:
+		 *         description: Hello message
+		 *         content:
+		 *          text/plain:
+		 *           schema:
+		 *            type: string
+		 *            example: Hello Moleculer
 		 */
 		hello: {
 			rest: {
@@ -53,18 +68,50 @@ const <%= name %>Service: ServiceSchema<ServiceSettings, ServiceThis> = {
 
 		/**
 		 * Welcome, a username
-		 *
-		 * @param {String} name - User name
+		 * @swagger
+		 * /api/<%= name %>/welcome/{name}:
+		 *   get:
+		 *     description: Returns a welcome message for a user
+		 *     tags:
+		 *     - <%= name %>
+		 *     parameters:
+		 *       - in: path
+		 *         name: name
+		 *         required: true
+		 *         schema:
+		 *           type: string
+		 *         description: User name
+		 *     responses:
+		 *      200:
+		 *         description: Welcome message
+		 *         content:
+		 *          text/plain:
+		 *           schema:
+		 *            type: string
+		 *            example: Welcome, John
+		 *      422:
+		 *         description: Validation error
 		 */
 		welcome: {
 			rest: "GET /welcome/:name",
 			params: {
 				name: "string",
 			},
+			hooks: {
+				before(ctx) {
+					this.logger.info("Validating parameters for welcome action");
+					// Add your validation schema here if needed
+					// validateParams(ctx, yourSchema);
+				},
+			},
 			handler(
 				this: ServiceThis,
 				ctx: Context<ActionHelloParams>,
 			): string {
+				this.logger.info(
+					"welcome action called with parameters: %o",
+					ctx.params
+				);
 				return `Welcome, ${ctx.params.name}`;
 			},
 		},

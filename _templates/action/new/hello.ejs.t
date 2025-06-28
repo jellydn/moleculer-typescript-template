@@ -2,14 +2,17 @@
 to: services/<%= service %>/actions/<%= name %>.action.ts
 ---
 import type { Context, ServiceActionsSchema } from "moleculer";
+import { validateParams } from "../../common";
 
 /**
  * The <%= name %> action.
  *
  * @swagger
- * /welcome:
+ * /api/<%= service %>/<%= name %>:
  *   get:
  *     summary: Returns a greeting and calculates the age in days.
+ *     tags:
+ *       - <%= service %>
  *     parameters:
  *       - in: query
  *         name: name
@@ -27,19 +30,42 @@ import type { Context, ServiceActionsSchema } from "moleculer";
  *       200:
  *         description: A greeting message and the age in days.
  *         content:
- *           text/plain:
+ *           application/json:
  *             schema:
- *               type: string
- *               example: "Hello John, you are 10950 days old!"
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   example: "Hello John, you are 10950 days old!"
+ *                 success:
+ *                   type: boolean
+ *                   example: true
+ *       422:
+ *         description: Validation error
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 error:
+ *                   type: string
+ *                   example: Parameters validation error!
  */
 const <%= name %>Action: ServiceActionsSchema = {
 	rest: {
 		method: "GET",
-		path: "/welcome",
+		path: "/<%= name %>",
 	},
 	params: {
 		name: "string",
 		age: "number",
+	},
+	hooks: {
+		before(ctx) {
+			this.logger.info('Validating parameters for <%= name %> action');
+			// Add your validation schema here
+			// validateParams(ctx, your<%= h.capitalize(name) %>Schema);
+		},
 	},
 	handler: <%= name %>Handler,
 };
@@ -52,11 +78,14 @@ function <%= name %>Handler(
 		name: string;
 		age: number;
 	}>,
-): string {
+): { message: string; success: boolean } {
 	// Calculate the age in days
 	const ageInDays = ctx.params.age * 365;
 
-	return `Hello ${ctx.params.name}, you are ${ageInDays} days old!`;
+	return {
+		message: `Hello ${ctx.params.name}, you are ${ageInDays} days old!`,
+		success: true,
+	};
 }
 
 export default <%= name %>Action;
