@@ -49,4 +49,98 @@ components:
         - success
         - message
       description: Add cart response DTO
+    CreateProductResponseSchemaDTO:
+      type: object
+      properties:
+        success:
+          type: boolean
+          description: Success flag
+          example: true
+        message:
+          type: string
+          description: Message
+          example: Product created successfully
+        product:
+          type: object
+          properties:
+            id:
+              type: string
+              description: ID of the created product
+              example: "12345"
+            name:
+              type: string
+              description: Name of the product
+              example: Iphone
+            qty:
+              type: number
+              description: Quantity of the product
+              example: 1
+            price:
+              type: number
+              description: Price of the product
+              example: 1000
+            billing:
+              type: object
+              properties:
+                address:
+                  type: string
+                city:
+                  type: string
+                  description: City of the billing address
+                  example: New York
+                zip:
+                  type: number
+                  description: ZIP code of the billing address
+                  example: 10001
+                country:
+                  type: string
+                  description: Country of the billing address
+                  example: USA
+              required:
+                - city
+                - zip
+                - country
+          required:
+            - id
+            - name
+            - qty
+      required:
+        - success
+        - message
+        - product
+      description: Create product response DTO
+    ProductSchemaDTO:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name of the product
+          example: Iphone
+        qty:
+          type: number
+          description: Quantity of the product
+          example: 1
+        price:
+          type: number
+          description: Price of the product
+          example: 1000
+        billing:
+          type: object
+          properties:
+            address:
+              type: string
+            city:
+              type: string
+            zip:
+              type: number
+            country:
+              type: string
+          required:
+            - city
+            - zip
+            - country
+      required:
+        - name
+        - qty
+      description: Product schema
   parameters: {}

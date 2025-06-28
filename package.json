@@ -30,6 +30,7 @@
     "dc:logs": "docker compose logs -f",
     "dc:down": "docker compose down",
     "generate:service": "hygen service new --name",
+    "generate:dto": "hygen dto new --name",
     "generate:crud": "hygen service crud --name",
     "generate:action": "hygen action new --name",
     "generate:swagger": "npx tsx cli.ts",

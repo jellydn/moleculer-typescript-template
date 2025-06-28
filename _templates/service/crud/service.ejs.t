@@ -1,7 +1,7 @@
 ---
 to: services/<%= name %>/<%= name %>.service.ts
 ---
-import type { ServiceSchema } from "moleculer";
+import type { Service, ServiceSchema } from "moleculer";
 
 import createAction from "./actions/create<%= h.capitalize(name) %>.action";
 import editAction from "./actions/update<%= h.capitalize(name) %>.action";
@@ -12,6 +12,12 @@ import listAction from "./actions/list<%= h.capitalize(name) %>.action";
 type ServiceSettings = {
 	defaultName: string;
 };
+
+type ServiceMethods = {
+	uppercase(str: string): string;
+};
+
+type ServiceThis = Service<ServiceSettings> & ServiceMethods;
 
 /**
  * Define common components for the <%= name %> service.
@@ -24,7 +30,7 @@ type ServiceSettings = {
  *       scheme: bearer
  *       bearerFormat: JWT
  */
-const <%= name %>Service: ServiceSchema<ServiceSettings> = {
+const <%= name %>Service: ServiceSchema<ServiceSettings, ServiceThis> = {
 	name: "<%= name %>",
 
 	/**
@@ -81,14 +87,14 @@ const <%= name %>Service: ServiceSchema<ServiceSettings> = {
 	/**
 	 * Service started lifecycle event handler
 	 */
-	started() {
+	async started() {
 		this.logger.info(`The ${this.name} service started.`);
 	},
 
 	/**
 	 * Service stopped lifecycle event handler
 	 */
-	stopped() {
+	async stopped() {
 		this.logger.info(`The ${this.name} service stopped.`);
 	},
 };
