@@ -1,6 +1,6 @@
 {
-  "name": "moleculer-typescript-template",
-  "description": "My Moleculer-based microservices project",
-  "runtime": "nodejs14.x",
-  "env": []
+	"name": "moleculer-typescript-template",
+	"description": "My Moleculer-based microservices project",
+	"runtime": "nodejs20.x",
+	"env": []
 }
