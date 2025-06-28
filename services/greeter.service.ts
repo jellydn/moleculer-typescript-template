@@ -1,20 +1,60 @@
-import type { Context, Service, ServiceSchema } from "moleculer";
+import {
+	Errors,
+	type Context,
+	type GenericObject,
+	type Service,
+	type ServiceSchema,
+} from "moleculer";
+import { ZodParams } from "moleculer-zod-validator";
+import z from "zod";
+import { logger } from "../logger";
+import { welcomeSchema } from "./dtos/greeter.dto";
 
 type GreeterSettings = {
-    defaultName: string;
+	defaultName: string;
 };
 
 type GreeterMethods = {
-    /**
-     * Say a 'Hello' to a user.
-     * @example
-     * sayHello("John Doe");
-     * // Hello John Doe
-     **/
-    sayHello(name: string): string;
+	/**
+	 * Say a 'Hello' to a user.
+	 * @example
+	 * sayHello("John Doe");
+	 * // Hello John Doe
+	 **/
+	sayHello(name: string): string;
 };
 
 type GreeterThis = Service<GreeterSettings> & GreeterMethods;
+
+const getterValidator = new ZodParams(welcomeSchema);
+
+const validateParams = (
+	ctx: Context<unknown, Record<string, unknown>, GenericObject>,
+	schema: typeof welcomeSchema
+) => {
+	const compiled = z.object(schema).strict();
+	try {
+		const parsedParams = compiled.parse(ctx.params);
+		logger.info("Validated parameters: %o", parsedParams);
+	} catch (err) {
+		if (err instanceof z.ZodError) {
+			throw new Errors.ValidationError(
+				`Parameters validation error!`,
+				"VALIDATION_ERROR",
+				err.issues.map((issue) => ({
+					field: issue.path.join("."),
+					message: issue.message,
+				}))
+			);
+		}
+
+		if (err instanceof Error) {
+			throw new Error(`Parameters validation error: ${err.message}`);
+		}
+
+		throw err;
+	}
+};
 
 /**
  * @swagger
@@ -35,126 +75,142 @@ type GreeterThis = Service<GreeterSettings> & GreeterMethods;
  *	      maxLength: 25
  */
 const greeterService: ServiceSchema<GreeterSettings, GreeterThis> = {
-    name: "greeter",
+	name: "greeter",
 
-    /**
-     * Settings
-     */
-    settings: {
-        defaultName: "Moleculer",
-    },
+	/**
+	 * Settings
+	 */
+	settings: {
+		defaultName: "Moleculer",
+	},
 
-    /**
-     * Dependencies
-     */
-    dependencies: [],
+	/**
+	 * Dependencies
+	 */
+	dependencies: [],
 
-    /**
-     * Actions
-     */
-    actions: {
-        /**
-         * @swagger
-         * /api/greeter/hello:
-         *   get:
-         *     description: Returns the Hello Moleculer
-         *     tags:
-         *     - greeter
-         *     responses:
-         *       200:
-         *         description: Hello Moleculer
-         *         content:
-         *          text/plain:
-         *           schema:
-         *            type: string
-         *            example: Hello Moleculer
-         */
-        hello: {
-            rest: {
-                method: "GET",
-                path: "/hello",
-            },
-            async handler(this: GreeterThis) {
-                return this.sayHello(this.settings.defaultName);
-            },
-        },
+	/**
+	 * Actions
+	 */
+	actions: {
+		/**
+		 * @swagger
+		 * /api/greeter/hello:
+		 *   get:
+		 *     description: Returns the Hello Moleculer
+		 *     tags:
+		 *     - greeter
+		 *     responses:
+		 *       200:
+		 *         description: Hello Moleculer
+		 *         content:
+		 *          text/plain:
+		 *           schema:
+		 *            type: string
+		 *            example: Hello Moleculer
+		 */
+		hello: {
+			rest: {
+				method: "GET",
+				path: "/hello",
+			},
+			/**
+			 * @returns Hello Moleculer
+			 */
+			async handler(this: GreeterThis) {
+				return this.sayHello(this.settings.defaultName);
+			},
+		},
 
-        /**
-         * Welcome, a username
-         *
-         * @param name - User name
-         * @swagger
-         * /api/greeter/welcome:
-         *   get:
-         *     description: Returns Welcome, a username
-         *     tags:
-         *     - greeter
-         *     parameters:
-         *     - $ref: '#/components/parameters/username'
-         *       in: query
-         *     responses:
-         *      200:
-         *         description: Welcome, a username
-         *         content:
-         *          text/plain:
-         *           schema:
-         *	           $ref: '#/components/schemas/welcomeResponseDTO'
-         *      422:
-         *         description: Invalid username
-         */
-        welcome: {
-            rest: "/welcome",
-            params: {
-                username: { type: "string", min: 6, max: 25 },
-            },
-            /**
-             * @param ctx - Request context
-             * @returns Welcome, a username
-             */
-            async handler(
-                ctx: Context<{
-                    username: string;
-                }>,
-            ) {
-                return `Welcome, ${ctx.params.username}`;
-            },
-        },
-    },
+		/**
+		 * Welcome, a username
+		 *
+		 * @param name - User name
+		 * @swagger
+		 * /api/greeter/welcome:
+		 *   get:
+		 *     description: Returns Welcome, a username
+		 *     tags:
+		 *     - greeter
+		 *     parameters:
+		 *     - $ref: '#/components/parameters/username'
+		 *       in: query
+		 *     responses:
+		 *      200:
+		 *         description: Welcome, a username
+		 *         content:
+		 *          text/plain:
+		 *           schema:
+		 *	           $ref: '#/components/schemas/welcomeResponseDTO'
+		 *      422:
+		 *         description: Invalid username
+		 */
+		welcome: {
+			rest: "/welcome",
+			params: {
+				username: { type: "string", min: 4, max: 25 },
+			},
+			hooks: {
+				before: [
+					(ctx: Context) => {
+						logger.info("Validating parameters for hello action");
+						validateParams(ctx, welcomeSchema);
+					},
+				],
+			},
+			/**
+			 * @param ctx - Request context
+			 * @returns Welcome, a username
+			 */
+			async handler(
+				this: GreeterThis,
+				ctx: Context<typeof getterValidator.context>
+			) {
+				this.logger.info(
+					"welcome action called with parameters: %o",
+					ctx.params
+				);
+				// Validate parameters
+				const { username } = ctx.params;
+				return `Welcome, ${username}`;
+			},
+		},
+	},
 
-    /**
-     * Events
-     */
-    events: {},
+	/**
+	 * Events
+	 */
+	events: {},
 
-    /**
-     * Methods
-     */
-    methods: {
-        sayHello(name: string) {
-            return `Hello ${name}`;
-        },
-    },
+	/**
+	 * Methods
+	 */
+	methods: {
+		sayHello(name: string) {
+			return `Hello ${name}`;
+		},
+	},
 
-    /**
-     * Service created lifecycle event handler
-     */
-    created() {
-        this.logger.info("[greeter] The service was created");
-    },
+	/**
+	 * Service created lifecycle event handler
+	 */
+	created() {
+		this.logger.info("[greeter] The service was created");
+	},
 
-    /**
-     * Service started lifecycle event handler
-     */
-    async started() {
-        this.logger.info("[greeter] The service was started");
-    },
+	/**
+	 * Service started lifecycle event handler
+	 */
+	async started() {
+		this.logger.info("[greeter] The service was started");
+	},
 
-    /**
-     * Service stopped lifecycle event handler
-     */
-    async stopped() {
-        this.logger.info("[greeter] The service was stopped");
-    },
+	/**
+	 * Service stopped lifecycle event handler
+	 */
+	async stopped() {
+		this.logger.info("[greeter] The service was stopped");
+	},
 };
 
 export default greeterService;
