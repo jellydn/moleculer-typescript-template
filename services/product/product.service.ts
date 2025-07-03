@@ -9,7 +9,8 @@ type ServiceSettings = Record<string, unknown>;
 
 type ServiceMethods = Record<string, unknown>;
 
-type ServiceThis = Service<ServiceSettings> & ServiceMethods;
+type ServiceThis = Service<ServiceSettings> &
+	ServiceMethods & { repository: InMemoryProductRepository };
 
 const orderItemValidator = new ZodParams(addCartSchema);
 
@@ -122,15 +123,13 @@ const productService: ServiceSchema<ServiceSettings, ServiceThis> = {
 			rest: "POST /",
 			hooks: {
 				before(ctx) {
-					this.logger.info(
-						"Validating parameters for create action"
-					);
+					this.logger.info("Validating parameters for create action");
 					validateParams(ctx, addCartSchema);
 				},
 			},
 			async handler(
 				this: ServiceThis,
-				ctx: Context<typeof addCartSchema>
+				ctx: Context<typeof orderItemValidator.context>
 			) {
 				// Usa el repositorio
 				const newProduct = await this.repository.create(ctx.params);
