@@ -119,7 +119,7 @@ const greeterService: ServiceSchema<GreeterSettings, GreeterThis> = {
 			hooks: {
 				before: [
 					(ctx: Context) => {
-						logger.info("Validating parameters for hello action");
+						logger.info("Validating parameters for welcome action");
 						validateParams(ctx, welcomeSchema);
 					},
 				],
