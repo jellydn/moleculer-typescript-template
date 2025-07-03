@@ -1,4 +1,7 @@
-// services/common/repository.interface.ts
+/**
+ * Interface for a generic repository
+ * @template T - The type of the entity the repository manages
+ */
 export interface IRepository<T> {
 	findById(id: string): Promise<T | null>;
 	findAll(): Promise<T[]>;

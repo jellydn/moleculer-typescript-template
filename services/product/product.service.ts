@@ -119,7 +119,7 @@ const productService: ServiceSchema<ServiceSettings, ServiceThis> = {
 		 *	       $ref: '#/components/schemas/errorResponseDTO'
 		 */
 		create: {
-			// Nueva acción como ejemplo
+			// Example of a new action
 			rest: "POST /",
 			hooks: {
 				before(ctx) {
