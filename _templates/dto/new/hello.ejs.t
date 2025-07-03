@@ -13,7 +13,7 @@ import { z } from "zod";
 extendZodWithOpenApi(z);
 
 // Define your <%= name %> schema here
-export const <%= name %>Schema = {
+const <%= name %>RawSchema = {
 	name: z.string().min(1).max(100).openapi({
 		description: "<%= h.capitalize(name) %> name",
 		example: "Sample <%= name %>",
@@ -27,7 +27,7 @@ export const <%= name %>Schema = {
 // Write to same folder with the DTO file
 const outputDirectory = __dirname;
 
-export const <%= h.capitalize(name) %>Schema = z.object(<%= name %>Schema).openapi("<%= name %>DTO", {
+export const <%= h.capitalize(name) %>Schema = z.object(<%= name %>RawSchema).openapi("<%= name %>DTO", {
 	description: "<%= h.capitalize(name) %> DTO",
 });
 
