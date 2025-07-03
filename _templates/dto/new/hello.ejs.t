@@ -68,7 +68,13 @@ const generator = new OpenApiGeneratorV3([
 const components = generator.generateComponents();
 
 // Write to YAML file
-writeFileSync(
-	resolve(outputDirectory, "<%= name %>-dto.swagger.yaml"),
-	yaml.stringify(components)
-);
+try {
+	writeFileSync(
+		resolve(outputDirectory, "<%= name %>-dto.swagger.yaml"),
+		yaml.stringify(components)
+	);
+	console.log("✅ Successfully generated <%= name %>-dto.swagger.yaml");
+} catch (error) {
+	console.error("❌ Error writing <%= name %>-dto.swagger.yaml:", error);
+	throw error;
+}
