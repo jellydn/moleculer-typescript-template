@@ -181,9 +181,17 @@ const productService: ServiceSchema<ServiceSettings, ServiceThis> = {
 	 * Service created lifecycle event handler
 	 */
 	created() {
-		this.repository = new InMemoryProductRepository();
-		this.logger.info("Product repository initialized.");
-		this.logger.info(`The ${this.name} service created.`);
+		try {
+			this.repository = new InMemoryProductRepository();
+			this.logger.info("Product repository initialized.");
+			this.logger.info(`The ${this.name} service created.`);
+		} catch (error) {
+			this.logger.error(
+				"Failed to initialize product repository:",
+				error
+			);
+			throw error;
+		}
 	},
 
 	/**
