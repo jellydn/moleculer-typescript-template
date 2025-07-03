@@ -10,14 +10,20 @@ import { validateParams } from '../../common';
  * List parameters validation schema
  */
 const listParamsSchema = z.object({
-  page: z.string().optional().transform((val) => val ? parseInt(val, 10) : 1),
-  limit: z.string().optional().transform((val) => val ? parseInt(val, 10) : 10),
-}).refine((data) => data.page >= 1, {
-  message: "Page must be greater than or equal to 1",
-  path: ["page"],
-}).refine((data) => data.limit >= 1 && data.limit <= 100, {
-  message: "Limit must be between 1 and 100",
-  path: ["limit"],
+  page: z.string().optional().default('1').transform((val) => {
+    const parsed = parseInt(val, 10);
+    if (isNaN(parsed) || parsed < 1) {
+      throw new Error('Page must be a positive integer');
+    }
+    return parsed;
+  }),
+  limit: z.string().optional().default('10').transform((val) => {
+    const parsed = parseInt(val, 10);
+    if (isNaN(parsed) || parsed < 1 || parsed > 100) {
+      throw new Error('Limit must be a positive integer between 1 and 100');
+    }
+    return parsed;
+  }),
 });
 
 /**
@@ -95,10 +101,6 @@ const list<%= h.capitalize(name) %>Action: ServiceActionsSchema = {
   },
   auth: true,
   permissions: [],
-  params: {
-    page: { type: 'string', optional: true },
-    limit: { type: 'string', optional: true },
-  },
   hooks: {
     before(ctx) {
       this.logger.info('Validating parameters for list<%= h.capitalize(name) %> action');
