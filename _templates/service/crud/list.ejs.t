@@ -3,19 +3,30 @@ to: services/<%= name %>/actions/list<%= h.capitalize(name) %>.action.ts
 ---
 
 import type { Context, ServiceActionsSchema } from 'moleculer';
+import { z } from 'zod';
 import { validateParams } from '../../common';
+
+/**
+ * List parameters validation schema
+ */
+const listParamsSchema = z.object({
+  page: z.string().optional().transform((val) => val ? parseInt(val, 10) : 1),
+  limit: z.string().optional().transform((val) => val ? parseInt(val, 10) : 10),
+}).refine((data) => data.page >= 1, {
+  message: "Page must be greater than or equal to 1",
+  path: ["page"],
+}).refine((data) => data.limit >= 1 && data.limit <= 100, {
+  message: "Limit must be between 1 and 100",
+  path: ["limit"],
+});
 
 /**
  * Handler for the list action.
  */
 function listHandler(
-  ctx: Context<{
-    page?: string;
-    limit?: string;
-  }>
+  ctx: Context<z.infer<typeof listParamsSchema>>
 ) {
-  const page = parseInt(ctx.params.page || '1', 10);
-  const limit = parseInt(ctx.params.limit || '10', 10);
+  const { page, limit } = ctx.params;
 
   return {
     success: true,
@@ -91,8 +102,7 @@ const list<%= h.capitalize(name) %>Action: ServiceActionsSchema = {
   hooks: {
     before(ctx) {
       this.logger.info('Validating parameters for list<%= h.capitalize(name) %> action');
-      // Add your validation schema here if needed
-      // validateParams(ctx, yourListSchema);
+      validateParams(ctx, listParamsSchema);
     },
   },
   handler: listHandler,
