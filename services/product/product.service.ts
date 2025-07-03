@@ -131,7 +131,6 @@ const productService: ServiceSchema<ServiceSettings, ServiceThis> = {
 				this: ServiceThis,
 				ctx: Context<typeof orderItemValidator.context>
 			) {
-				// Usa el repositorio
 				const newProduct = await this.repository.create(ctx.params);
 				return {
 					success: true,

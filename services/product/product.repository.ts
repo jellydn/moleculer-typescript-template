@@ -1,3 +1,4 @@
+import { randomUUID } from "node:crypto";
 import { IRepository } from "../interfaces";
 
 // Product interface definition
@@ -145,7 +146,7 @@ export class InMemoryProductRepository implements IRepository<Product> {
 	}
 
 	public async create(data: Omit<Product, "id">): Promise<Product> {
-		const id = (Math.random() + 1).toString(36).substring(7);
+		const id = randomUUID();
 		const newProduct: Product = { id, ...data };
 		this.products.set(id, newProduct);
 		return newProduct;

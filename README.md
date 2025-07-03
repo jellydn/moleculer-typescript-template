@@ -1,7 +1,7 @@
 # Welcome to moleculer-typescript-template 👋
 
 ![Version](https://img.shields.io/badge/version-0.3.0-blue.svg?cacheSeconds=2592000)
-![Prerequisite](https://img.shields.io/badge/node-%3E%3D%2014.x.x-blue.svg)
+![Prerequisite](https://img.shields.io/badge/node-%3E%3D%2020.x.x-blue.svg)
 [![Twitter: jellydn](https://img.shields.io/twitter/follow/jellydn.svg?style=social)](https://twitter.com/jellydn)
 
 > My Moleculer-based microservices project
