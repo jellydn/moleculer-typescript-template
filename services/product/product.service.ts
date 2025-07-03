@@ -123,7 +123,7 @@ const productService: ServiceSchema<ServiceSettings, ServiceThis> = {
 			hooks: {
 				before(ctx) {
 					this.logger.info(
-						"Validating parameters for addToCart action"
+						"Validating parameters for create action"
 					);
 					validateParams(ctx, addCartSchema);
 				},
