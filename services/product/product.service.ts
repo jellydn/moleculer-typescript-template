@@ -1,4 +1,4 @@
-import { type Context, type Service, type ServiceSchema } from "moleculer";
+import type { Context, Service, ServiceSchema } from "moleculer";
 import { ZodParams } from "moleculer-zod-validator";
 
 import { validateParams } from "../common";
