@@ -27,7 +27,12 @@ Update all dependencies and devDependencies to their latest versions. Several pa
 
 ## Implementation Plan
 
-1. Phase 1: Update minor/patch versions (safe updates)\n2. Test after Phase 1 to ensure stability\n3. Phase 2: Handle major versions one by one with testing\n4. Phase 3: Remove deprecated @hey-api/client-fetch\n5. Phase 4: Final validation and update configuration\n6. Update documentation for any breaking changes
+1. Phase 1: Update minor/patch versions (safe updates)
+2. Test after Phase 1 to ensure stability
+3. Phase 2: Handle major versions one by one with testing
+4. Phase 3: Remove deprecated @hey-api/client-fetch
+5. Phase 4: Final validation and update configuration
+6. Update documentation for any breaking changes
 
 ## Implementation Notes
 
