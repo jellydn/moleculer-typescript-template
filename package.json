@@ -2,7 +2,11 @@
   "name": "moleculer-typescript-template",
   "version": "0.3.0",
   "description": "My Moleculer-based microservices project",
-  "keywords": ["microservices", "moleculer", "moleculer typescript template"],
+  "keywords": [
+    "microservices",
+    "moleculer",
+    "moleculer typescript template"
+  ],
   "license": "MIT",
   "author": "Huynh Duc Dung",
   "scripts": {
@@ -50,6 +54,7 @@
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@flydotio/dockerfile": "0.7.10",
+    "@hey-api/client-fetch": "^0.13.1",
     "@hey-api/openapi-ts": "0.66.6",
     "@types/express": "5.0.1",
     "@types/jest": "29.5.14",
@@ -83,6 +88,8 @@
     "node": ">= 18.17.x"
   },
   "pnpm": {
-    "onlyBuiltDependencies": ["esbuild"]
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
   }
 }

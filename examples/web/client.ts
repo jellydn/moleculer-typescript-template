@@ -1,10 +1,11 @@
 // Usage: npx tsx client.ts | npx pino-pretty
-import { MoleculerApi } from "../../generated/sdk";
+import { getApiGreeterHello, getApiGreeterWelcome, postApiProductCart } from "../../generated/sdk";
+import { client } from "../../generated/sdk/client.gen";
 import { logger } from "../../logger";
 
-// API client with fetch
-const apiClient = new MoleculerApi({
-    BASE: "http://localhost:4567",
+// Configure API client with fetch
+client.setConfig({
+    baseUrl: "http://localhost:3000",
 });
 
 logger.level = "debug";
@@ -12,14 +13,16 @@ logger.level = "debug";
 async function main() {
     logger.debug("Client started");
     try {
-        const hello = await apiClient.greeter.getApiGreeterHello();
+        const hello = await getApiGreeterHello();
         logger.info("%s", hello);
 
-        const welcome = await apiClient.greeter.getApiGreeterWelcome({ username: "IT Man" });
+        const welcome = await getApiGreeterWelcome({ 
+            query: { username: "IT Man" }
+        });
         logger.info(welcome);
 
-        const item = await apiClient.product.postApiProductCart({
-            requestBody: {
+        const item = await postApiProductCart({
+            body: {
                 name: "Iphone",
                 qty: 1,
             },

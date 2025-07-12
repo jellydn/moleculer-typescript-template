@@ -5,7 +5,15 @@
       "Bash(git commit:*)",
       "Bash(git push:*)",
       "Bash(npx:*)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "WebFetch(domain:heyapi.dev)",
+      "Bash(pnpm generate:swagger:*)",
+      "Bash(pnpm generate:sdk:*)",
+      "Bash(pnpm update:*)",
+      "Bash(pnpm add:*)",
+      "Bash(pnpm typecheck:*)",
+      "Bash(pnpm lint:*)",
+      "Bash(git checkout:*)"
     ],
     "deny": []
   }
