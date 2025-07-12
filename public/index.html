@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -111,9 +111,7 @@
 				font-weight: 300;
 				font-size: 1.25em;
 				border-bottom: 2px solid transparent;
-				transition:
-					color 0.1s linear,
-					border-bottom 0.1s linear;
+				transition: color 0.1s linear, border-bottom 0.1s linear;
 			}
 
 			nav ul li.active {
@@ -695,7 +693,7 @@
 						},
 
 						fields: {
-							welcomeName: "dunghd",
+							welcomeName: "devalexanderdaza",
 							name: "iPhone",
 							quantity: 1,
 						},
@@ -712,7 +710,7 @@
 				computed: {
 					filteredServices() {
 						return this.services.filter(
-							(svc) => !svc.name.startsWith("$"),
+							(svc) => !svc.name.startsWith("$")
 						);
 					},
 				},
@@ -748,7 +746,7 @@
 					getActionParams(action, maxLen) {
 						if (action.action && action.action.params) {
 							const s = Object.keys(action.action.params).join(
-								", ",
+								", "
 							);
 							return s.length > maxLen
 								? s.substr(0, maxLen) + "…"
@@ -859,14 +857,14 @@
 							.then((res) => {
 								this.services = res;
 								res.sort((a, b) =>
-									a.name.localeCompare(b.name),
+									a.name.localeCompare(b.name)
 								);
 								res.forEach((svc) => svc.nodes.sort());
 							})
 							.then(() => this.req("/api/~node/actions", null))
 							.then((res) => {
 								res.sort((a, b) =>
-									a.name.localeCompare(b.name),
+									a.name.localeCompare(b.name)
 								);
 								const actions = res.reduce((a, b) => {
 									a[b.name] = b;

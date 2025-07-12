@@ -15,7 +15,9 @@
     "/api/greeter/hello": {
       "get": {
         "description": "Returns the Hello Moleculer",
-        "tags": ["greeter"],
+        "tags": [
+          "greeter"
+        ],
         "responses": {
           "200": {
             "description": "Hello Moleculer",
@@ -34,7 +36,9 @@
     "/api/greeter/welcome": {
       "get": {
         "description": "Returns Welcome, a username",
-        "tags": ["greeter"],
+        "tags": [
+          "greeter"
+        ],
         "parameters": [
           {
             "$ref": "#/components/parameters/username",
@@ -61,7 +65,9 @@
     "/api/product/cart": {
       "post": {
         "description": "Add a product to the cart",
-        "tags": ["product"],
+        "tags": [
+          "product"
+        ],
         "requestBody": {
           "required": true,
           "content": {
@@ -88,13 +94,100 @@
           }
         }
       }
+    },
+    "/api/product": {
+      "post": {
+        "description": "Create a new product",
+        "tags": [
+          "product"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/addCartDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Product created successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateProductResponseSchemaDTO"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errorResponseDTO"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errorResponseDTO"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "description": "Get all products",
+        "tags": [
+          "product"
+        ],
+        "responses": {
+          "200": {
+            "description": "List of products",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProductSchemaDTO"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
     "schemas": {
       "welcomeResponseDTO": {
         "type": "string",
-        "example": "Welcome, dunghd"
+        "example": "Welcome, Alex"
+      },
+      "welcomeDTO": {
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string",
+            "minLength": 4,
+            "maxLength": 25,
+            "description": "User name",
+            "example": "John Doe"
+          }
+        },
+        "required": [
+          "username"
+        ],
+        "description": "Welcome DTO"
       },
       "addCartDTO": {
         "type": "object",
@@ -130,10 +223,17 @@
                 "type": "string"
               }
             },
-            "required": ["city", "zip", "country"]
+            "required": [
+              "city",
+              "zip",
+              "country"
+            ]
           }
         },
-        "required": ["name", "qty"],
+        "required": [
+          "name",
+          "qty"
+        ],
         "description": "Add cart DTO"
       },
       "addCartResponseDTO": {
@@ -150,8 +250,137 @@
             "example": "Product added to cart"
           }
         },
-        "required": ["success", "message"],
+        "required": [
+          "success",
+          "message"
+        ],
         "description": "Add cart response DTO"
+      },
+      "CreateProductResponseSchemaDTO": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "description": "Success flag",
+            "example": true
+          },
+          "message": {
+            "type": "string",
+            "description": "Message",
+            "example": "Product created successfully"
+          },
+          "product": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "ID of the created product",
+                "example": "12345"
+              },
+              "name": {
+                "type": "string",
+                "description": "Name of the product",
+                "example": "Iphone"
+              },
+              "qty": {
+                "type": "number",
+                "description": "Quantity of the product",
+                "example": 1
+              },
+              "price": {
+                "type": "number",
+                "description": "Price of the product",
+                "example": 1000
+              },
+              "billing": {
+                "type": "object",
+                "properties": {
+                  "address": {
+                    "type": "string"
+                  },
+                  "city": {
+                    "type": "string",
+                    "description": "City of the billing address",
+                    "example": "New York"
+                  },
+                  "zip": {
+                    "type": "number",
+                    "description": "ZIP code of the billing address",
+                    "example": 10001
+                  },
+                  "country": {
+                    "type": "string",
+                    "description": "Country of the billing address",
+                    "example": "USA"
+                  }
+                },
+                "required": [
+                  "city",
+                  "zip",
+                  "country"
+                ]
+              }
+            },
+            "required": [
+              "id",
+              "name",
+              "qty"
+            ]
+          }
+        },
+        "required": [
+          "success",
+          "message",
+          "product"
+        ],
+        "description": "Create product response DTO"
+      },
+      "ProductSchemaDTO": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of the product",
+            "example": "Iphone"
+          },
+          "qty": {
+            "type": "number",
+            "description": "Quantity of the product",
+            "example": 1
+          },
+          "price": {
+            "type": "number",
+            "description": "Price of the product",
+            "example": 1000
+          },
+          "billing": {
+            "type": "object",
+            "properties": {
+              "address": {
+                "type": "string"
+              },
+              "city": {
+                "type": "string"
+              },
+              "zip": {
+                "type": "number"
+              },
+              "country": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "city",
+              "zip",
+              "country"
+            ]
+          }
+        },
+        "required": [
+          "name",
+          "qty"
+        ],
+        "description": "Product schema"
       }
     },
     "parameters": {

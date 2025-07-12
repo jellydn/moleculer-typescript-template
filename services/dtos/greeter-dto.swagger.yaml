@@ -1,0 +1,18 @@
+components:
+  schemas:
+    welcomeDTO:
+      type: object
+      properties:
+        username:
+          type: string
+          minLength: 4
+          maxLength: 25
+          description: User name
+          example: John Doe
+      required:
+        - username
+      description: Welcome DTO
+    welcomeResponseDTO:
+      type: string
+      example: Welcome, Alex
+  parameters: {}

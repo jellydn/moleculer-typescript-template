@@ -3,6 +3,7 @@ to: services/<%= name %>/actions/create<%= h.capitalize(name) %>.action.ts
 ---
 
 import type { Context, ServiceActionsSchema } from 'moleculer';
+import { validateParams } from '../../common';
 
 /**
  * Handler for the create action.
@@ -13,13 +14,14 @@ function createHandler(
   }>,
 ) {
   return {
-    message: 'Created successfully',
+    success: true,
+    message: '<%= h.capitalize(name) %> created successfully',
     data: ctx.params,
   };
 }
 
 /**
- * The create project action.
+ * The create <%= name %> action.
  *
  * @swagger
  * /api/<%= name %>:
@@ -38,13 +40,38 @@ function createHandler(
  *             properties:
  *               name:
  *                 type: string
- *                 description: The name to greet.
- *               age:
- *                 type: number
- *                 description: The age of the person to calculate the days.
+ *                 description: The name of the <%= name %>.
+ *               description:
+ *                 type: string
+ *                 description: Description of the <%= name %>.
  *     responses:
- *       200:
+ *       201:
  *         description: <%= name %> created successfully.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 success:
+ *                   type: boolean
+ *                   example: true
+ *                 message:
+ *                   type: string
+ *                   example: <%= h.capitalize(name) %> created successfully
+ *                 data:
+ *                   type: object
+ *       422:
+ *         description: Validation error
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 error:
+ *                   type: string
+ *                   example: Parameters validation error!
+ *       500:
+ *         description: Internal server error
  */
 const create<%= h.capitalize(name) %>Action: ServiceActionsSchema = {
   rest: {
@@ -55,6 +82,13 @@ const create<%= h.capitalize(name) %>Action: ServiceActionsSchema = {
   permissions: [],
   params: {
     <%= name %>: { type: "object" }
+  },
+  hooks: {
+    before(ctx) {
+      this.logger.info('Validating parameters for create<%= h.capitalize(name) %> action');
+      // Add your validation schema here
+      // validateParams(ctx, your<%= h.capitalize(name) %>Schema);
+    },
   },
   handler: createHandler,
 };
