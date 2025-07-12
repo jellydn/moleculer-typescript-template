@@ -6,6 +6,5 @@ export default defineConfig({
     output: "generated/sdk",
     name: "MoleculerApi",
     useOptions: true,
-    plugins: ["@hey-api/client-fetch"],
     exportCore: true,
 });
