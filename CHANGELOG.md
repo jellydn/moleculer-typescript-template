@@ -11,7 +11,10 @@ All notable changes to this project will be documented in this file.
 - Updated @hey-api/openapi-ts from v0.66.6 to v0.78.3 and removed deprecated @hey-api/client-fetch
 - Updated Vite from v6 to v7 with Node.js 22+ requirement
 - Updated @types/node from v22.9.4 to v22.16.3 for Vite v7 peer dependency compatibility
-- Removed @types/jest dependency (project uses Vitest exclusively)
+- Removed @types/jest dependency and c8 coverage tool (project uses Vitest exclusively)
+- Updated Vitest from v3.1.2 to v3.2.4 with @vitest/coverage-v8 for built-in coverage
+- Migrated from global test APIs to explicit Vitest imports for better clarity
+- Enhanced Vitest configuration with proper coverage settings and exclusions
 - Updated dotenv from v16 to v17
 - Updated npm-run-all2 from v7 to v8
 
