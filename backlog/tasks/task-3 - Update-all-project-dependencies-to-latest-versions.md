@@ -3,8 +3,8 @@ id: task-3
 title: Update all project dependencies to latest versions
 status: Done
 assignee: []
-created_date: '2025-07-12'
-updated_date: '2025-07-12'
+created_date: "2025-07-12"
+updated_date: "2025-07-12"
 labels: []
 dependencies: []
 ---

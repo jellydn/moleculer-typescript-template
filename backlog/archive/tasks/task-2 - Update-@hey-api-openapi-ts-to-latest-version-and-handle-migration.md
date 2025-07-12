@@ -3,7 +3,7 @@ id: task-2
 title: Update @hey-api/openapi-ts to latest version and handle migration
 status: To Do
 assignee: []
-created_date: '2025-07-12'
+created_date: "2025-07-12"
 labels: []
 dependencies: []
 ---
