@@ -9,12 +9,12 @@ describe("SDK Generation", () => {
 
     beforeAll(() => {
         // Ensure SDK is generated before tests
-        execSync("pnpm generate:sdk", { stdio: "inherit" });
+        execSync("npm run generate:sdk", { stdio: "inherit" });
     });
 
     it("should generate SDK successfully", () => {
         expect(() => {
-            execSync("pnpm generate:sdk", { stdio: "pipe" });
+            execSync("npm run generate:sdk", { stdio: "pipe" });
         }).not.toThrow();
     });
 
@@ -56,7 +56,7 @@ describe("SDK Generation", () => {
 
     it("should TypeScript compile the generated SDK", () => {
         expect(() => {
-            execSync("pnpm typecheck", { stdio: "pipe" });
+            execSync("npm run typecheck", { stdio: "pipe" });
         }).not.toThrow();
     });
 });
