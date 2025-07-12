@@ -1,5 +1,6 @@
 import { Errors, ServiceBroker, type ServiceSchema } from "moleculer";
 import { ZodValidator } from "moleculer-zod-validator";
+import { afterAll, beforeAll, describe, expect, it } from "vitest";
 
 import TestService from "../../../services/product.service";
 

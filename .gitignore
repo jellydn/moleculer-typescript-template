@@ -71,3 +71,6 @@ dist
 
 # Generated files
 generated/
+
+# Claude Code local settings
+.claude/settings.local.json

@@ -1,9 +1,9 @@
 // Usage: npx tsx cli.ts or pnpm run generate:swagger
-import { cli } from "cleye";
-import swaggerJsdoc, { type OAS3Definition, type Options } from "swagger-jsdoc";
 
 import { writeFileSync } from "node:fs";
 import { join } from "node:path";
+import { cli } from "cleye";
+import swaggerJsdoc, { type OAS3Definition, type Options } from "swagger-jsdoc";
 
 type SwaggerOptions = Options & {
     apiFolder?: string;
