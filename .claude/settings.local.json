@@ -13,7 +13,11 @@
       "Bash(pnpm add:*)",
       "Bash(pnpm typecheck:*)",
       "Bash(pnpm lint:*)",
-      "Bash(git checkout:*)"
+      "Bash(git checkout:*)",
+      "Bash(git pull:*)",
+      "Bash(git stash:*)",
+      "Bash(grep:*)",
+      "Bash(pnpm test:*)"
     ],
     "deny": []
   }

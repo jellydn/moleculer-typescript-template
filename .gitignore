@@ -68,4 +68,6 @@ dist
 
 # Envrc file
 .envrc
-generated/sdk
+
+# Generated files
+generated/
