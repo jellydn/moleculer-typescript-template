@@ -7,29 +7,14 @@ describe("SDK Generation", () => {
     const sdkPath = join(process.cwd(), "generated", "sdk");
     const expectedFiles = ["index.ts", "types.gen.ts", "sdk.gen.ts", "client.gen.ts"];
 
-    // Detect package manager
-    const packageManager = existsSync("pnpm-lock.yaml") ? "pnpm" : "bun";
-    const generateCmd = packageManager === "pnpm" ? "pnpm generate:sdk" : "bun run generate:sdk";
-    const typecheckCmd = packageManager === "pnpm" ? "pnpm typecheck" : "bun run typecheck";
-
     beforeAll(() => {
         // Ensure SDK is generated before tests
-        try {
-            execSync(generateCmd, { stdio: "inherit" });
-        } catch {
-            // Fallback to direct openapi-ts command
-            execSync("npx openapi-ts", { stdio: "inherit" });
-        }
+        execSync("pnpm generate:sdk", { stdio: "inherit" });
     });
 
     it("should generate SDK successfully", () => {
         expect(() => {
-            try {
-                execSync(generateCmd, { stdio: "pipe" });
-            } catch {
-                // Fallback to direct command
-                execSync("npx openapi-ts", { stdio: "pipe" });
-            }
+            execSync("pnpm generate:sdk", { stdio: "pipe" });
         }).not.toThrow();
     });
 
@@ -71,12 +56,7 @@ describe("SDK Generation", () => {
 
     it("should TypeScript compile the generated SDK", () => {
         expect(() => {
-            try {
-                execSync(typecheckCmd, { stdio: "pipe" });
-            } catch {
-                // Fallback to direct tsc command
-                execSync("npx tsc -b", { stdio: "pipe" });
-            }
+            execSync("pnpm typecheck", { stdio: "pipe" });
         }).not.toThrow();
     });
 });
