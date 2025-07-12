@@ -19,7 +19,12 @@
       "Bash(grep:*)",
       "Bash(pnpm test:*)",
       "Bash(pnpm outdated:*)",
-      "Bash(pnpm remove:*)"
+      "Bash(pnpm remove:*)",
+      "Bash(gh pr checks:*)",
+      "Bash(gh run list:*)",
+      "Bash(gh run view:*)",
+      "WebFetch(domain:github.com)",
+      "Bash(pnpm check:*)"
     ],
     "deny": []
   }
