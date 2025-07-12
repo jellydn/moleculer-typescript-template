@@ -3,8 +3,8 @@ id: task-1
 title: Fix OpenAPI SDK generation missing client configuration
 status: Done
 assignee: []
-created_date: '2025-07-12'
-updated_date: '2025-07-12'
+created_date: "2025-07-12"
+updated_date: "2025-07-12"
 labels: []
 dependencies: []
 ---

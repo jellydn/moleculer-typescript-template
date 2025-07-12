@@ -16,8 +16,8 @@ async function main() {
         const hello = await getApiGreeterHello();
         logger.info("%s", hello);
 
-        const welcome = await getApiGreeterWelcome({ 
-            query: { username: "IT Man" }
+        const welcome = await getApiGreeterWelcome({
+            query: { username: "IT Man" },
         });
         logger.info(welcome);
 
