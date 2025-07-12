@@ -110,6 +110,74 @@ Open the http://localhost:3000/docs URL in your browser, you will see the Swagge
 
 ![https://gyazo.com/a4fe2413414c94dde636a531eee1a4a0.gif](https://gyazo.com/a4fe2413414c94dde636a531eee1a4a0.gif)
 
+## TypeScript SDK Generation
+
+This template automatically generates a type-safe TypeScript SDK from your OpenAPI specification using [@hey-api/openapi-ts](https://heyapi.dev/openapi-ts/).
+
+### Generating the SDK
+
+To generate the TypeScript SDK from your OpenAPI specification:
+
+```sh
+pnpm generate:sdk
+```
+
+This command:
+
+1. Reads the OpenAPI specification from `public/docs/open-api.json`
+2. Generates TypeScript client code in `generated/sdk/`
+3. Creates type-safe functions for all your API endpoints
+
+### Using the Generated SDK
+
+The generated SDK provides a type-safe client for your API:
+
+```typescript
+import {
+    client,
+    getApiGreeterHello,
+    getApiGreeterWelcome,
+    postApiProductCart,
+} from "./generated/sdk";
+
+// Configure the client
+client.setConfig({
+    baseUrl: "http://localhost:3000",
+});
+
+// Use type-safe API calls
+const hello = await getApiGreeterHello();
+const welcome = await getApiGreeterWelcome({
+    query: { username: "John" },
+});
+const cartItem = await postApiProductCart({
+    body: { name: "Product", qty: 1 },
+});
+```
+
+### SDK Regeneration Process
+
+The SDK is automatically regenerated:
+
+- **During typecheck**: `pnpm typecheck` runs `generate:sdk` first
+- **In CI/CD**: The deploy workflow ensures SDK is current before type checking
+- **After API changes**: Regenerate manually when you modify services or DTOs
+
+### Configuration
+
+SDK generation is configured in `openapi-ts.config.ts`:
+
+```typescript
+export default defineConfig({
+    input: "public/docs/open-api.json", // OpenAPI spec source
+    output: "generated/sdk", // Output directory
+    plugins: ["@hey-api/client-fetch"], // HTTP client plugin
+    exportCore: true, // Export client utilities
+});
+```
+
+**Note**: The `generated/` directory is in `.gitignore` and should not be committed. The SDK is generated fresh in CI/CD and during development.
+
 ## Run tests
 
 ```sh
