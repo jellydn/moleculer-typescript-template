@@ -11,7 +11,7 @@ All notable changes to this project will be documented in this file.
 - Updated @hey-api/openapi-ts from v0.66.6 to v0.78.3 and removed deprecated @hey-api/client-fetch
 - Updated Vite from v6 to v7 with Node.js 22+ requirement
 - Updated @types/node from v22.9.4 to v22.16.3 for Vite v7 peer dependency compatibility
-- Updated @types/jest from v29 to v30
+- Removed @types/jest dependency (project uses Vitest exclusively)
 - Updated dotenv from v16 to v17
 - Updated npm-run-all2 from v7 to v8
 

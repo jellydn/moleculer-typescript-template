@@ -29,7 +29,10 @@
       "WebFetch(domain:dashboard.gitguardian.com)",
       "Bash(pnpm list:*)",
       "Bash(pnpm install:*)",
-      "Bash(pnpm view:*)"
+      "Bash(pnpm view:*)",
+      "mcp__filesystem__read_multiple_files",
+      "mcp__filesystem__read_file",
+      "mcp__filesystem__list_directory"
     ],
     "deny": []
   }

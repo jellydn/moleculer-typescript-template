@@ -11,7 +11,7 @@ dependencies: []
 
 ## Description
 
-Update all dependencies and devDependencies to their latest versions. Several packages have major version updates that require careful migration: @biomejs/biome (1.9→2.1), @types/jest (29→30), @types/node (22→24), dotenv (16→17), npm-run-all2 (7→8), vite (6→7), zod (3→4), @hey-api/openapi-ts (0.66→0.78). Also need to remove deprecated @hey-api/client-fetch package.
+Update all dependencies and devDependencies to their latest versions. Several packages have major version updates that require careful migration: @biomejs/biome (1.9→2.1), @types/node (22→24), dotenv (16→17), npm-run-all2 (7→8), vite (6→7), zod (3→4), @hey-api/openapi-ts (0.66→0.78). Also need to remove deprecated packages like @hey-api/client-fetch and @types/jest (project uses Vitest exclusively).
 
 ## Acceptance Criteria
 
@@ -31,4 +31,4 @@ Update all dependencies and devDependencies to their latest versions. Several pa
 
 ## Implementation Notes
 
-Successfully updated all project dependencies with major version migrations. Updated: @biomejs/biome (1.9→2.1), @types/jest (29→30), @types/node (22→24), dotenv (16→17), npm-run-all2 (7→8), vite (6→7), zod (3.24→3.25), @hey-api/openapi-ts (0.66→0.78). Migrated Biome v2 configuration. Removed deprecated @hey-api/client-fetch. Zod v4 deferred due to peer dependency incompatibility. All tests, linting, and typecheck pass successfully.
+Successfully updated all project dependencies with major version migrations. Updated: @biomejs/biome (1.9→2.1), @types/node (22→24), dotenv (16→17), npm-run-all2 (7→8), vite (6→7), zod (3.24→3.25), @hey-api/openapi-ts (0.66→0.78). Migrated Biome v2 configuration. Removed deprecated packages: @hey-api/client-fetch and @types/jest (project uses Vitest exclusively). Zod v4 deferred due to peer dependency incompatibility. All tests, linting, and typecheck pass successfully.
