@@ -15,10 +15,10 @@ The openapi-ts command is failing because no HTTP client is specified for SDK ge
 
 ## Acceptance Criteria
 
-- [ ] SDK generation command succeeds without errors
-- [ ] Generated SDK files are created in expected location
-- [ ] CI/CD pipeline passes without SDK generation failures
-- [ ] Documentation is updated with correct SDK generation setup
+- [x] SDK generation command succeeds without errors
+- [x] Generated SDK files are created in expected location
+- [x] CI/CD pipeline passes without SDK generation failures
+- [x] Documentation is updated with correct SDK generation setup
 
 ## Implementation Plan
 
