@@ -24,7 +24,8 @@
       "Bash(gh run list:*)",
       "Bash(gh run view:*)",
       "WebFetch(domain:github.com)",
-      "Bash(pnpm check:*)"
+      "Bash(pnpm check:*)",
+      "Bash(gh pr view:*)"
     ],
     "deny": []
   }

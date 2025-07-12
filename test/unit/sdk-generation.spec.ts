@@ -16,7 +16,7 @@ describe("SDK Generation", () => {
         // Ensure SDK is generated before tests
         try {
             execSync(generateCmd, { stdio: "inherit" });
-        } catch (_error) {
+        } catch {
             // Fallback to direct openapi-ts command
             execSync("npx openapi-ts", { stdio: "inherit" });
         }
@@ -26,7 +26,7 @@ describe("SDK Generation", () => {
         expect(() => {
             try {
                 execSync(generateCmd, { stdio: "pipe" });
-            } catch (_error) {
+            } catch {
                 // Fallback to direct command
                 execSync("npx openapi-ts", { stdio: "pipe" });
             }
@@ -73,7 +73,7 @@ describe("SDK Generation", () => {
         expect(() => {
             try {
                 execSync(typecheckCmd, { stdio: "pipe" });
-            } catch (_error) {
+            } catch {
                 // Fallback to direct tsc command
                 execSync("npx tsc -b", { stdio: "pipe" });
             }
