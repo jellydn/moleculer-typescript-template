@@ -25,7 +25,11 @@
       "Bash(gh run view:*)",
       "WebFetch(domain:github.com)",
       "Bash(pnpm check:*)",
-      "Bash(gh pr view:*)"
+      "Bash(gh pr view:*)",
+      "WebFetch(domain:dashboard.gitguardian.com)",
+      "Bash(pnpm list:*)",
+      "Bash(pnpm install:*)",
+      "Bash(pnpm view:*)"
     ],
     "deny": []
   }
