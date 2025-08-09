@@ -48,7 +48,7 @@
     "pino": "9.7.0",
     "swagger-jsdoc": "6.2.8",
     "yaml": "2.8.0",
-    "zod": "3.25.76"
+    "zod": "4.0.17"
   },
   "devDependencies": {
     "@asteasolutions/zod-to-openapi": "7.3.4",
