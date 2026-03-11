@@ -15,7 +15,7 @@ jobs:
       - uses: pnpm/action-setup@v3
         name: Install pnpm
         with:
-          version: 10
+          version: 10.32.1
           run_install: true
       - uses: mongolyy/reviewdog-action-biome@v2
         with:
