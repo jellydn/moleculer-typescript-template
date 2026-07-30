@@ -11,13 +11,13 @@ jobs:
       contents: read
       pull-requests: write
     steps:
-      - uses: actions/checkout@v6
-      - uses: pnpm/action-setup@v3
+      - uses: actions/checkout@v6.1.0
+      - uses: pnpm/action-setup@v3.0.0
         name: Install pnpm
         with:
-          version: 10
+          version: 10.34.5
           run_install: true
-      - uses: mongolyy/reviewdog-action-biome@v2
+      - uses: mongolyy/reviewdog-action-biome@v2.11.2
         with:
           github_token: ${{ secrets.github_token }}
           reporter: github-pr-review
@@ -28,9 +28,9 @@ jobs:
       contents: read
       pull-requests: write
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v6.1.0
       - name: misspell
-        uses: reviewdog/action-misspell@v1
+        uses: reviewdog/action-misspell@v1.27.0
         with:
           github_token: ${{ secrets.github_token }}
           locale: "US"
