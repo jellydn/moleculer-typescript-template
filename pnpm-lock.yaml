@@ -25,7 +25,7 @@ importers:
         version: 0.10.8(moleculer@0.14.35(debug@4.4.3)(nats@2.29.3)(pino@10.3.1))
       moleculer-zod-validator:
         specifier: 3.3.1
-        version: 3.3.1(moleculer@0.14.35(debug@4.4.3)(nats@2.29.3)(pino@10.3.1))(zod@3.25.76)
+        version: 3.3.1(moleculer@0.14.35(debug@4.4.3)(nats@2.29.3)(pino@10.3.1))(zod@4.5.4)
       nats:
         specifier: 2.29.3
         version: 2.29.3
@@ -42,12 +42,12 @@ importers:
         specifier: 2.8.2
         version: 2.8.2
       zod:
-        specifier: 3.25.76
-        version: 3.25.76
+        specifier: 4.5.4
+        version: 4.5.4
     devDependencies:
       '@asteasolutions/zod-to-openapi':
         specifier: 7.3.4
-        version: 7.3.4(zod@3.25.76)
+        version: 7.3.4(zod@4.5.4)
       '@biomejs/biome':
         specifier: 2.4.6
         version: 2.4.6
@@ -2053,6 +2053,7 @@ packages:
   nats@2.29.3:
     resolution: {integrity: sha512-tOQCRCwC74DgBTk4pWZ9V45sk4d7peoE2njVprMRCBXrhJ5q5cYM7i6W+Uvw2qUrcfOSnuisrX7bEx3b3Wx4QA==}
     engines: {node: '>= 14.0.0'}
+    deprecated: Package moved. Use @nats-io/transport-node from https://github.com/nats-io/nats.js
 
   negotiator@0.6.3:
     resolution: {integrity: sha512-+EUsqGPLsM+j/zdChZjsnX51g4XrHFOIXwfnCVPGlQk/k5giakcKsuxCObBRu6DSm9opw/O6slWbJdghQM4bBg==}
@@ -2948,8 +2949,8 @@ packages:
     engines: {node: '>=8.0.0'}
     hasBin: true
 
-  zod@3.25.76:
-    resolution: {integrity: sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ==}
+  zod@4.5.4:
+    resolution: {integrity: sha512-sC95tT5iHHH9gtpj6A81kh+NEaRAUFN+qlUPDUbRfOMvNf5QCBqsb3WgvnpVtK5Y+4UfA6KqufotuTvMGiTlsA==}
 
 snapshots:
 
@@ -2974,10 +2975,10 @@ snapshots:
       openapi-types: 12.1.3
       z-schema: 5.0.5
 
-  '@asteasolutions/zod-to-openapi@7.3.4(zod@3.25.76)':
+  '@asteasolutions/zod-to-openapi@7.3.4(zod@4.5.4)':
     dependencies:
       openapi3-ts: 4.4.0
-      zod: 3.25.76
+      zod: 4.5.4
 
   '@babel/helper-string-parser@7.27.1': {}
 
@@ -4737,10 +4738,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  moleculer-zod-validator@3.3.1(moleculer@0.14.35(debug@4.4.3)(nats@2.29.3)(pino@10.3.1))(zod@3.25.76):
+  moleculer-zod-validator@3.3.1(moleculer@0.14.35(debug@4.4.3)(nats@2.29.3)(pino@10.3.1))(zod@4.5.4):
     dependencies:
       moleculer: 0.14.35(debug@4.4.3)(nats@2.29.3)(pino@10.3.1)
-      zod: 3.25.76
+      zod: 4.5.4
 
   moleculer@0.14.35(debug@4.4.3)(nats@2.29.3)(pino@10.3.1):
     dependencies:
@@ -5738,4 +5739,4 @@ snapshots:
     optionalDependencies:
       commander: 9.5.0
 
-  zod@3.25.76: {}
+  zod@4.5.4: {}
