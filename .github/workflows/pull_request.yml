@@ -13,20 +13,20 @@ jobs:
       contents: write
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v6.1.0
       - name: Setup Biome
-        uses: biomejs/setup-biome@v2
+        uses: biomejs/setup-biome@v2.7.1
         with:
           version: latest
       - name: Run Biome
         run: biome ci .
         continue-on-error: true # Continue even if pre-commit fails
       # Commit all changed files back to the repository
-      - uses: stefanzweifel/git-auto-commit-action@v6
+      - uses: stefanzweifel/git-auto-commit-action@v6.0.1
 
   oxlint:
     name: Lint JS
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v6.1.0
       - run: npx --yes oxlint@latest --deny-warnings #
