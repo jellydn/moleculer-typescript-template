@@ -5,7 +5,8 @@ RUN corepack enable
 
 COPY package.json pnpm-lock.yaml ./
 # The source entry point uses tsx and generates DTO docs at runtime.
-RUN pnpm install --frozen-lockfile
+RUN pnpm install --frozen-lockfile --store-dir /tmp/pnpm-store \
+    && rm -rf /tmp/pnpm-store
 
 COPY server.ts moleculer.config.ts logger.ts tsconfig.json ./
 COPY services services
