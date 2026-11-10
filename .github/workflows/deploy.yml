@@ -131,12 +131,9 @@ jobs:
           printf '%s\n' "$DOKKU_SSH_PRIVATE_KEY" > "$key"
           export GIT_SSH_COMMAND="ssh -i $key -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes -o UserKnownHostsFile=$GITHUB_WORKSPACE/.github/dokku_known_hosts"
           ssh_options=(-i "$key" -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes -o "UserKnownHostsFile=$GITHUB_WORKSPACE/.github/dokku_known_hosts")
-          # This Dokku version reports app and global properties, but no computed property.
+          # This target has deploy-branch=main set per-app on Dokku 0.37.7.
+          # Require that setting; old git:report defaults cannot resolve inherited branches.
           branch=$(ssh "${ssh_options[@]}" dokku@95.111.232.131 git:report moleculer --git-deploy-branch)
-          if [ -z "$branch" ]; then
-            branch=$(ssh "${ssh_options[@]}" dokku@95.111.232.131 git:report moleculer --git-global-deploy-branch)
-          fi
-          branch=${branch:-master}
           if [ "$branch" != main ]; then
             printf 'Expected Dokku deploy branch main, got <%s>\n' "$branch" >&2
             exit 1
