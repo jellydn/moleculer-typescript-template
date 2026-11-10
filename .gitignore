@@ -68,4 +68,9 @@ dist
 
 # Envrc file
 .envrc
-generated/sdk
+
+# Generated files
+generated/
+
+# Claude Code local settings
+.claude/settings.local.json
