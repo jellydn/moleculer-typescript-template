@@ -75,4 +75,13 @@ test.describe("Weather API", () => {
             });
         });
     }
+
+    test("should map an invalid upstream payload to 502", async ({ request }) => {
+        const response = await request.get("/api/weather?latitude=13&longitude=13");
+        expect(response.status()).toBe(502);
+        expect(await response.json()).toMatchObject({
+            type: "WEATHER_UPSTREAM_ERROR",
+            message: "Weather upstream request failed",
+        });
+    });
 });
