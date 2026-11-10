@@ -206,6 +206,8 @@ The app uses the root Dockerfile, deploy branch `main`, two web processes and po
 Read-only preflight confirmed `TRANSPORTER=TCP` and the configured port map
 `http:80:8888 https:443:8888`. Preserve those settings; no port-map reset is needed.
 Forks must change the target host, app, domain and verified host-key file before using this workflow.
+Before the first dispatch, set the app's per-app deploy branch with `dokku git:set <app> deploy-branch main`.
+The preflight requires that per-app setting; a global deploy branch alone does not satisfy it.
 
 The workflow validates lint, TypeScript, unit tests and the Docker image on pull requests and pushes to `main`.
 Deployment from GitHub is an explicit **Run workflow** action on `main`, not an automatic push deployment.
