@@ -32,7 +32,11 @@ describe("Test 'weather' service", () => {
                     longitude: 7.4474,
                 },
             );
-            expect(response).toEqual(mockWeatherData);
+            expect(response).toEqual({
+                ...mockWeatherData,
+                latitude: 46.9481,
+                longitude: 7.4474,
+            });
         });
 
         it("should report an upstream failure", async () => {

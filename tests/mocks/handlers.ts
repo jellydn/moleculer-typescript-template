@@ -1,12 +1,5 @@
 import { HttpResponse, http } from "msw";
-
 import { mockWeatherData } from "./fixtures";
-
-/**
- * The upstream is modelled as unavailable for this coordinate pair so the
- * gateway's 502 mapping can be exercised end to end.
- */
-const unavailableCoordinates = { latitude: "11.1111", longitude: "22.2222" };
 
 export const handlers = [
     // Mock weather API
@@ -15,16 +8,27 @@ export const handlers = [
         const latitude = url.searchParams.get("latitude");
         const longitude = url.searchParams.get("longitude");
 
-        if (
-            latitude === unavailableCoordinates.latitude &&
-            longitude === unavailableCoordinates.longitude
-        ) {
+        if (latitude === "11.1111" && longitude === "22.2222") {
             return HttpResponse.json(
                 { error: true, reason: "Service unavailable" },
                 { status: 503 },
             );
         }
 
-        return HttpResponse.json(mockWeatherData);
+        if (latitude === "10" && longitude === "10") return HttpResponse.error();
+        if (latitude === "12" && longitude === "12") return HttpResponse.text("not JSON");
+        if (
+            url.searchParams.get("current") !==
+            "temperature_2m,relative_humidity_2m,rain,weather_code"
+        ) {
+            return new HttpResponse(null, { status: 400 });
+        }
+
+        // Echo coordinates to expose dropped or swapped query parameters in API assertions.
+        return HttpResponse.json({
+            ...mockWeatherData,
+            latitude: Number(latitude),
+            longitude: Number(longitude),
+        });
     }),
 ];
