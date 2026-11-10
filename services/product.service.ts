@@ -1,10 +1,4 @@
-import {
-    type Context,
-    Errors,
-    type GenericObject,
-    type Service,
-    type ServiceSchema,
-} from "moleculer";
+import { type Context, Errors, type Service, type ServiceSchema } from "moleculer";
 import { ZodParams } from "moleculer-zod-validator";
 import { z } from "zod";
 
@@ -21,7 +15,7 @@ const orderItemValidator = new ZodParams(addCartSchema);
 
 // TODO: Move this to a shared utility
 const validateParams = (
-    ctx: Context<unknown, Record<string, unknown>, GenericObject>,
+    ctx: Context<unknown, Record<string, unknown>>,
     schema: typeof addCartSchema,
 ) => {
     const compiled = z.object(schema).strict();

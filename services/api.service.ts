@@ -2,9 +2,9 @@ import type { IncomingMessage } from "node:http";
 import process from "node:process";
 import helmet from "helmet";
 import type { Context, ServiceAction, ServiceSchema } from "moleculer";
-import ApiGateway from "moleculer-web";
+import ApiGateway, { type ApiSettingsSchema } from "moleculer-web";
 
-const apiService: ServiceSchema = {
+const apiService: ServiceSchema<ApiSettingsSchema> = {
     name: "api",
     mixins: [ApiGateway],
 
@@ -78,7 +78,7 @@ const apiService: ServiceSchema = {
 				}, */
 
                 // Calling options. More info: https://moleculer.services/docs/0.14/moleculer-web.html#Calling-options
-                callingOptions: {},
+                callOptions: {},
 
                 aliases: {},
 
