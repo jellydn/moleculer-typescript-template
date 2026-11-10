@@ -1,7 +1,7 @@
 # Welcome to moleculer-typescript-template 👋
 
 ![Version](https://img.shields.io/badge/version-0.1.1-blue.svg?cacheSeconds=2592000)
-![Prerequisite](https://img.shields.io/badge/node-%3E%3D%2014.x.x-blue.svg)
+![Prerequisite](https://img.shields.io/badge/node-22.22.2%2B%20%7C%2024.15.0%2B%20%7C%2026%2B-blue.svg)
 [![Twitter: jellydn](https://img.shields.io/twitter/follow/jellydn.svg?style=social)](https://twitter.com/jellydn)
 
 > My Moleculer-based microservices project
@@ -18,7 +18,7 @@
 
 ## Prerequisites
 
-- node >= 18.17.x
+- Node.js 22.22.2 or later in the 22.x line, 24.15.0 or later in the 24.x line, or 26.0.0 or later, matching the development toolchain's engine range.
 
 ## Init new project
 
