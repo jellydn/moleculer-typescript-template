@@ -27,8 +27,8 @@ describe("Test 'weather' service", () => {
             const response = await broker.call<WeatherData, GetWeatherParams>(
                 "weather.getCurrentWeather",
                 {
-                    latitude: "46.9481",
-                    longitude: "7.4474",
+                    latitude: 46.9481,
+                    longitude: 7.4474,
                 },
             );
             expect(response.current).toEqual({
@@ -40,18 +40,37 @@ describe("Test 'weather' service", () => {
         });
 
         it("should report an upstream failure", async () => {
-            await expect(
-                broker.call("weather.getCurrentWeather", {
-                    latitude: "11.1111",
-                    longitude: "22.2222",
-                }),
-            ).rejects.toThrow("Weather API error:");
+            expect.assertions(3);
+            try {
+                await broker.call("weather.getCurrentWeather", {
+                    latitude: 11.1111,
+                    longitude: 22.2222,
+                });
+            } catch (error: unknown) {
+                expect(error).toBeInstanceOf(Errors.MoleculerError);
+                expect((error as Errors.MoleculerError).message).toContain(
+                    "Weather API error: 422",
+                );
+                expect((error as Errors.MoleculerError).code).toBe(502);
+            }
         });
 
         it("should reject with ValidationError when params are missing", async () => {
             expect.assertions(1);
             try {
                 await broker.call("weather.getCurrentWeather");
+            } catch (error: unknown) {
+                expect(error).toBeInstanceOf(ValidationError);
+            }
+        });
+
+        it("should reject with ValidationError when coordinates are out of range", async () => {
+            expect.assertions(1);
+            try {
+                await broker.call("weather.getCurrentWeather", {
+                    latitude: 91,
+                    longitude: 7.4474,
+                });
             } catch (error: unknown) {
                 expect(error).toBeInstanceOf(ValidationError);
             }

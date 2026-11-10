@@ -1,4 +1,4 @@
-import type { Context, Service, ServiceSchema } from "moleculer";
+import { type Context, Errors, type Service, type ServiceSchema } from "moleculer";
 
 export type WeatherData = {
     current: {
@@ -10,8 +10,8 @@ export type WeatherData = {
 };
 
 export type GetWeatherParams = {
-    latitude: string;
-    longitude: string;
+    latitude: number;
+    longitude: number;
 };
 
 type ServiceSettings = {
@@ -37,8 +37,8 @@ const weatherService: ServiceSchema<ServiceSettings, ServiceThis> = {
         getCurrentWeather: {
             rest: "GET /",
             params: {
-                latitude: { type: "string", min: 6, max: 25 },
-                longitude: { type: "string", min: 6, max: 25 },
+                latitude: { type: "number", min: -90, max: 90, convert: true },
+                longitude: { type: "number", min: -180, max: 180, convert: true },
             },
             async handler(this: ServiceThis, ctx: Context<GetWeatherParams>): Promise<WeatherData> {
                 return this.fetchWeatherData(ctx.params);
@@ -57,7 +57,12 @@ const weatherService: ServiceSchema<ServiceSettings, ServiceThis> = {
             });
             const response = await fetch(`${this.settings.weatherApiUrl}?${queryParams}`);
             if (!response.ok) {
-                throw new Error(`Weather API error: ${response.statusText}`);
+                const statusText = response.statusText ? ` ${response.statusText}` : "";
+                throw new Errors.MoleculerError(
+                    `Weather API error: ${response.status}${statusText}`,
+                    502,
+                    "WEATHER_API_ERROR",
+                );
             }
             return response.json();
         },
