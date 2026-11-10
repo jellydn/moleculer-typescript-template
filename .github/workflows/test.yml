@@ -52,4 +52,12 @@ jobs:
           PORT=8888 TRANSPORTER=TCP bun run start &
           # Health can pass before the gateway generates REST aliases.
           wait-on http://127.0.0.1:8888/api/health/check http-get://127.0.0.1:8888/api/api/list-aliases -l -i 500 -d 1000 -t 60000
+          deadline=$((SECONDS + 60))
+          until curl --fail --silent --max-time 2 http://127.0.0.1:8888/api/api/list-aliases | jq --exit-status 'any(.[]; .fullPath == "/api/product/cart" and .methods == "POST")' > /dev/null; do
+            if (( SECONDS >= deadline )); then
+              echo "Timed out waiting for POST /api/product/cart" >&2
+              exit 1
+            fi
+            sleep 0.5
+          done
           hurl --variable PORT=8888 --test test/e2e/*.hurl
