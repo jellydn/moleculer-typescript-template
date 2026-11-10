@@ -26,15 +26,46 @@ test.describe("Weather API", () => {
         expect(response.status()).toBe(422);
     });
 
-    test("should reject coordinates outside the valid range", async ({ request }) => {
-        const response = await request.get("/api/weather?latitude=91&longitude=7.4474");
-        expect(response.ok()).toBeFalsy();
-        expect(response.status()).toBe(422);
-    });
+    for (const [latitude, longitude] of [
+        [52.52, 13.41],
+        [1.5, -33.87],
+        [-90, -180],
+        [90, 180],
+    ]) {
+        test(`should accept coordinates ${latitude}, ${longitude}`, async ({ request }) => {
+            const response = await request.get(
+                `/api/weather?latitude=${latitude}&longitude=${longitude}`,
+            );
+            expect(response.status()).toBe(200);
+            expect(await response.json()).toEqual(mockWeatherData);
+        });
+    }
 
-    test("should report an upstream failure as a bad gateway", async ({ request }) => {
+    for (const [latitude, longitude] of [
+        [90.01, 0],
+        [-90.01, 0],
+        [0, 180.01],
+        [0, -180.01],
+        ["invalid", 0],
+    ]) {
+        test(`should reject coordinates ${latitude}, ${longitude}`, async ({ request }) => {
+            const response = await request.get(
+                `/api/weather?latitude=${latitude}&longitude=${longitude}`,
+            );
+            expect(response.status()).toBe(422);
+            expect((await response.json()).type).toBe("VALIDATION_ERROR");
+        });
+    }
+
+    test("should preserve the upstream status without reporting an internal error", async ({
+        request,
+    }) => {
         const response = await request.get("/api/weather?latitude=11.1111&longitude=22.2222");
-        expect(response.ok()).toBeFalsy();
         expect(response.status()).toBe(502);
+        expect(await response.json()).toMatchObject({
+            message: "Weather API error: HTTP 503",
+            type: "WEATHER_UPSTREAM_ERROR",
+            data: { status: 503 },
+        });
     });
 });

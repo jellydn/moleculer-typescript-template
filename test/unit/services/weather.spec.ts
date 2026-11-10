@@ -40,19 +40,17 @@ describe("Test 'weather' service", () => {
         });
 
         it("should report an upstream failure", async () => {
-            expect.assertions(3);
-            try {
-                await broker.call("weather.getCurrentWeather", {
-                    latitude: 11.1111,
-                    longitude: 22.2222,
-                });
-            } catch (error: unknown) {
-                expect(error).toBeInstanceOf(Errors.MoleculerError);
-                expect((error as Errors.MoleculerError).message).toContain(
-                    "Weather API error: 422",
-                );
-                expect((error as Errors.MoleculerError).code).toBe(502);
-            }
+            await expect(
+                broker.call("weather.getCurrentWeather", {
+                    latitude: "11.1111",
+                    longitude: "22.2222",
+                }),
+            ).rejects.toMatchObject({
+                message: "Weather API error: HTTP 503",
+                code: 502,
+                type: "WEATHER_UPSTREAM_ERROR",
+                data: { status: 503 },
+            });
         });
 
         it("should reject with ValidationError when params are missing", async () => {

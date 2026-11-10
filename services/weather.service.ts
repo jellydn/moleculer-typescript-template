@@ -57,11 +57,11 @@ const weatherService: ServiceSchema<ServiceSettings, ServiceThis> = {
             });
             const response = await fetch(`${this.settings.weatherApiUrl}?${queryParams}`);
             if (!response.ok) {
-                const statusText = response.statusText ? ` ${response.statusText}` : "";
                 throw new Errors.MoleculerError(
-                    `Weather API error: ${response.status}${statusText}`,
+                    `Weather API error: HTTP ${response.status}`,
                     502,
-                    "WEATHER_API_ERROR",
+                    "WEATHER_UPSTREAM_ERROR",
+                    { status: response.status },
                 );
             }
             return response.json();

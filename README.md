@@ -43,6 +43,17 @@ npx degit jellydn/moleculer-typescript-template [PROJECT-NAME]
 pnpm install
 ```
 
+## Weather API and tests
+
+The template exposes `GET /api/weather?latitude=52.52&longitude=13.41` in every deployment.
+It calls the external Open-Meteo forecast API. Latitude must be between -90 and 90 and longitude between -180 and 180.
+Upstream HTTP failures return 502 with the upstream status in `data.status`.
+Remove `services/weather.service.ts` from a derived project if it does not need this public demo endpoint.
+
+`pnpm test` runs Vitest tests in `test/`. `pnpm test:e2e` runs the API-only Playwright suite in `tests/`.
+The Playwright suite starts its own broker and MSW mocks through `tests/start-server.ts`; production startup never loads these mocks.
+Both test trees are checked by Biome. No browser installation is needed for the API suite.
+
 ## Usage
 
 ```sh
