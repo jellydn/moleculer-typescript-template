@@ -17,7 +17,7 @@ export default defineConfig({
 
     webServer: {
         command: "node --import tsx tests/start-server.ts",
-        url: "http://127.0.0.1:18889/api/weather?latitude=46.9481&longitude=7.4474",
+        url: "http://127.0.0.1:18889/api/api/list-aliases",
         env: { NODE_ENV: "test", PORT: "18889", TRANSPORTER: "TCP" },
         reuseExistingServer: false,
     },

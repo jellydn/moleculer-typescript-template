@@ -63,7 +63,10 @@ test.describe("Weather API", () => {
         });
     });
 
-    for (const coordinate of [10, 12]) {
+    for (const [coordinate, reason] of [
+        [10, "network"],
+        [12, "invalid_json"],
+    ]) {
         test(`should map network or JSON failures at ${coordinate} to 502`, async ({ request }) => {
             const response = await request.get(
                 `/api/weather?latitude=${coordinate}&longitude=${coordinate}`,
@@ -72,6 +75,7 @@ test.describe("Weather API", () => {
             expect(await response.json()).toMatchObject({
                 type: "WEATHER_UPSTREAM_ERROR",
                 message: "Weather upstream request failed",
+                data: { reason },
             });
         });
     }
@@ -82,6 +86,13 @@ test.describe("Weather API", () => {
         expect(await response.json()).toMatchObject({
             type: "WEATHER_UPSTREAM_ERROR",
             message: "Weather upstream request failed",
+            data: { reason: "invalid_payload" },
         });
+    });
+
+    test("should convert numeric string syntax before applying bounds", async ({ request }) => {
+        const response = await request.get("/api/weather?latitude=0x10&longitude=4.2e1");
+        expect(response.status()).toBe(200);
+        expect(await response.json()).toEqual({ ...mockWeatherData, latitude: 16, longitude: 42 });
     });
 });

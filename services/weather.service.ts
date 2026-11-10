@@ -26,10 +26,10 @@ const weatherDataSchema = z.looseObject({
     current: z.looseObject({
         time: z.string(),
         interval: z.number(),
-        temperature_2m: z.number(),
-        relative_humidity_2m: z.number(),
-        rain: z.number(),
-        weather_code: z.number(),
+        temperature_2m: z.number().nullable(),
+        relative_humidity_2m: z.number().nullable(),
+        rain: z.number().nullable(),
+        weather_code: z.number().nullable(),
     }),
 });
 
@@ -130,16 +130,20 @@ const weatherService: ServiceSchema<ServiceSettings, ServiceThis> = {
          *                       type: number
          *                     temperature_2m:
          *                       type: number
+         *                       nullable: true
          *                     relative_humidity_2m:
          *                       type: number
+         *                       nullable: true
          *                     rain:
          *                       type: number
+         *                       nullable: true
          *                     weather_code:
          *                       type: number
+         *                       nullable: true
          *       422:
          *         description: Missing, blank, non-numeric or out-of-range coordinate.
          *       502:
-         *         description: Upstream HTTP, network, timeout, JSON or response-schema failure.
+         *         description: Upstream HTTP failure with data.status, or data.reason identifying network, timeout, invalid_json or invalid_payload. Internal error details are not exposed.
          */
         getCurrentWeather: {
             rest: "GET /",
@@ -186,10 +190,17 @@ const weatherService: ServiceSchema<ServiceSettings, ServiceThis> = {
                 return weatherDataSchema.parse(await response.json());
             } catch (error) {
                 if (error instanceof Errors.MoleculerError) throw error;
+                let reason = "network";
+                if (error instanceof z.ZodError) reason = "invalid_payload";
+                else if (error instanceof SyntaxError) reason = "invalid_json";
+                else if (error instanceof Error && error.name === "TimeoutError")
+                    reason = "timeout";
+                this.logger.warn("Weather upstream request failed", { reason, error });
                 throw new Errors.MoleculerError(
                     "Weather upstream request failed",
                     502,
                     "WEATHER_UPSTREAM_ERROR",
+                    { reason },
                 );
             }
         },
