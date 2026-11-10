@@ -4,7 +4,7 @@ title: Replace Fly deployment with Dokku production release
 status: In Progress
 assignee: []
 created_date: "2026-11-10 13:31"
-updated_date: "2026-11-10 14:13"
+updated_date: "2026-11-10 15:47"
 labels: []
 dependencies: []
 ---
@@ -45,4 +45,6 @@ Read-only inspection confirms Dokku 0.37.7, per-app deploy-branch=main, global d
 Owner-approved exact-ID cache cleanup completed after a fresh reference and in-use audit: 107 records became 101; all other cache IDs, 16 image IDs, 24 container IDs and 23 volume names were unchanged. Available space rose from 3,701,366,784 to 5,386,567,680 bytes: 1,685,200,896 bytes actually freed. No further cleanup is authorized. Recheck capacity immediately before deployment and preserve all images and rollback data.
 
 The latest integrated Node 22 amd64 image built successfully after frozen install, typecheck, 19 unit tests, 26 API tests, lint, Biome, build and actionlint. Earlier measured Node 22 runtime passed revision-header and 10-request Hurl checks without test tools installed. Node 26 is validated separately in PR #895. Weather responses now validate the complete upstream shape while preserving valid extra fields, and OpenAPI describes the full payload. Production remains on its old release; task stays In Progress until exact-head review gates and live deployment verification complete.
+
+Main was merged into the branch to clear the conflicting state that skipped every pull_request-triggered workflow. The package.json conflict is resolved by keeping the msw devDependency and taking npm-run-all2 9.0.4 from #896, together with main's explicit dev task list and Node engine range; the merged pnpm-lock.yaml is byte-identical to pnpm's own regeneration from the merged package.json. After the merge, frozen install, lint, Biome, oxlint, typecheck, 19 unit tests, 27 API tests and build all pass. The container smoke check could not be reproduced in the merge environment because it has no Docker daemon; the Dockerfile itself is unchanged by the merge.
 <!-- SECTION:NOTES:END -->
