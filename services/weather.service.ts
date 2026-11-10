@@ -7,31 +7,33 @@ const weatherParamsSchema = z.object({
     longitude: coordinateSchema.pipe(z.number().min(-180).max(180)),
 });
 
-export type WeatherData = {
-    latitude: number;
-    longitude: number;
-    generationtime_ms: number;
-    utc_offset_seconds: number;
-    timezone: string;
-    timezone_abbreviation: string;
-    elevation: number;
-    current_units: {
-        time: string;
-        interval: string;
-        temperature_2m: string;
-        relative_humidity_2m: string;
-        rain: string;
-        weather_code: string;
-    };
-    current: {
-        time: string;
-        interval: number;
-        temperature_2m: number;
-        relative_humidity_2m: number;
-        rain: number;
-        weather_code: number;
-    };
-};
+const weatherDataSchema = z.looseObject({
+    latitude: z.number(),
+    longitude: z.number(),
+    generationtime_ms: z.number(),
+    utc_offset_seconds: z.number(),
+    timezone: z.string(),
+    timezone_abbreviation: z.string(),
+    elevation: z.number(),
+    current_units: z.looseObject({
+        time: z.string(),
+        interval: z.string(),
+        temperature_2m: z.string(),
+        relative_humidity_2m: z.string(),
+        rain: z.string(),
+        weather_code: z.string(),
+    }),
+    current: z.looseObject({
+        time: z.string(),
+        interval: z.number(),
+        temperature_2m: z.number(),
+        relative_humidity_2m: z.number(),
+        rain: z.number(),
+        weather_code: z.number(),
+    }),
+});
+
+export type WeatherData = z.infer<typeof weatherDataSchema>;
 
 export type GetWeatherParams = {
     latitude: number;
@@ -86,12 +88,46 @@ const weatherService: ServiceSchema<ServiceSettings, ServiceThis> = {
          *           application/json:
          *             schema:
          *               type: object
-         *               required: [current]
+         *               required: [latitude, longitude, generationtime_ms, utc_offset_seconds, timezone, timezone_abbreviation, elevation, current_units, current]
          *               properties:
+         *                 latitude:
+         *                   type: number
+         *                 longitude:
+         *                   type: number
+         *                 generationtime_ms:
+         *                   type: number
+         *                 utc_offset_seconds:
+         *                   type: number
+         *                 timezone:
+         *                   type: string
+         *                 timezone_abbreviation:
+         *                   type: string
+         *                 elevation:
+         *                   type: number
+         *                 current_units:
+         *                   type: object
+         *                   required: [time, interval, temperature_2m, relative_humidity_2m, rain, weather_code]
+         *                   properties:
+         *                     time:
+         *                       type: string
+         *                     interval:
+         *                       type: string
+         *                     temperature_2m:
+         *                       type: string
+         *                     relative_humidity_2m:
+         *                       type: string
+         *                     rain:
+         *                       type: string
+         *                     weather_code:
+         *                       type: string
          *                 current:
          *                   type: object
-         *                   required: [temperature_2m, relative_humidity_2m, rain, weather_code]
+         *                   required: [time, interval, temperature_2m, relative_humidity_2m, rain, weather_code]
          *                   properties:
+         *                     time:
+         *                       type: string
+         *                     interval:
+         *                       type: number
          *                     temperature_2m:
          *                       type: number
          *                     relative_humidity_2m:
@@ -103,7 +139,7 @@ const weatherService: ServiceSchema<ServiceSettings, ServiceThis> = {
          *       422:
          *         description: Missing, blank, non-numeric or out-of-range coordinate.
          *       502:
-         *         description: Upstream HTTP, network, timeout or JSON failure.
+         *         description: Upstream HTTP, network, timeout, JSON or response-schema failure.
          */
         getCurrentWeather: {
             rest: "GET /",
@@ -147,7 +183,7 @@ const weatherService: ServiceSchema<ServiceSettings, ServiceThis> = {
                         { status: response.status },
                     );
                 }
-                return await response.json();
+                return weatherDataSchema.parse(await response.json());
             } catch (error) {
                 if (error instanceof Errors.MoleculerError) throw error;
                 throw new Errors.MoleculerError(
