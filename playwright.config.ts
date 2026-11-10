@@ -1,4 +1,4 @@
-import { defineConfig, devices } from "@playwright/test";
+import { defineConfig } from "@playwright/test";
 
 export default defineConfig({
     testDir: "./tests",
@@ -8,28 +8,17 @@ export default defineConfig({
     workers: process.env.CI ? 1 : undefined,
     reporter: "html",
     use: {
-        baseURL: "http://localhost:4567",
+        baseURL: "http://127.0.0.1:18889",
         trace: "on-first-retry",
     },
 
-    projects: [
-        {
-            name: "chromium",
-            use: { ...devices["Desktop Chrome"] },
-        },
-        {
-            name: "firefox",
-            use: { ...devices["Desktop Firefox"] },
-        },
-        {
-            name: "webkit",
-            use: { ...devices["Desktop Safari"] },
-        },
-    ],
+    // These tests exercise HTTP APIs, not browser engines.
+    projects: [{ name: "api" }],
 
     webServer: {
-        command: "npm run dev",
-        url: "http://localhost:4567",
-        reuseExistingServer: !process.env.CI,
+        command: "node --import tsx tests/start-server.ts",
+        url: "http://127.0.0.1:18889/api/weather?latitude=46.9481&longitude=7.4474",
+        env: { NODE_ENV: "test", PORT: "18889", TRANSPORTER: "TCP" },
+        reuseExistingServer: false,
     },
 });

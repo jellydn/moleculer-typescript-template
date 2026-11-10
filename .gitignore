@@ -68,6 +68,11 @@ dist
 
 # Envrc file
 .envrc
-generated/sdk
-playwright-report
-test-results
+
+# Generated files
+generated/
+
+# Claude Code local settings
+.claude/settings.local.json
+playwright-report/
+test-results/

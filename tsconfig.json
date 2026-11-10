@@ -95,7 +95,8 @@
     "addons/**/*.ts",
     "examples/**/*.ts",
     "test/**/*.spec.ts",
-    "tests/weather.spec.ts"
+    "tests/**/*.ts",
+    "playwright.config.ts"
   ],
   "files": ["server.ts", "moleculer.config.ts", "logger.ts", "cli.ts"]
 }

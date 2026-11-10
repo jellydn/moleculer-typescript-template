@@ -1,9 +1,10 @@
 import { Errors, ServiceBroker, type ServiceSchema } from "moleculer";
+import { afterAll, afterEach, beforeAll, describe, expect, it } from "vitest";
 import TestService, {
     type GetWeatherParams,
     type WeatherData,
 } from "../../../services/weather.service";
-import "../../../tests/mocks/server";
+import { server } from "../../../tests/mocks/server";
 
 const { ValidationError } = Errors;
 
@@ -11,8 +12,15 @@ describe("Test 'weather' service", () => {
     const broker = new ServiceBroker({ logger: false });
     broker.createService(TestService as unknown as ServiceSchema);
 
-    beforeAll(async () => broker.start());
-    afterAll(async () => broker.stop());
+    beforeAll(async () => {
+        server.listen({ onUnhandledRequest: "error" });
+        await broker.start();
+    });
+    afterEach(() => server.resetHandlers());
+    afterAll(async () => {
+        await broker.stop();
+        server.close();
+    });
 
     describe("Test 'weather.getCurrentWeather' action", () => {
         it("should return weather data for valid coordinates", async () => {
@@ -23,7 +31,21 @@ describe("Test 'weather' service", () => {
                     longitude: "7.4474",
                 },
             );
-            expect(response.current).toBeDefined();
+            expect(response.current).toEqual({
+                temperature_2m: 20.5,
+                relative_humidity_2m: 65,
+                rain: 0,
+                weather_code: 1,
+            });
+        });
+
+        it("should report an upstream failure", async () => {
+            await expect(
+                broker.call("weather.getCurrentWeather", {
+                    latitude: "11.1111",
+                    longitude: "22.2222",
+                }),
+            ).rejects.toThrow("Weather API error:");
         });
 
         it("should reject with ValidationError when params are missing", async () => {

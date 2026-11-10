@@ -53,10 +53,3 @@ broker
     .catch((err) => {
         broker.logger.error(err);
     });
-
-// Run mock server if development or test
-if (process.env.NODE_ENV === "development" || process.env.NODE_ENV === "test") {
-    import("./tests/mocks/server").then((module) => {
-        module.server.listen({ onUnhandledRequest: "warn" });
-    });
-}

@@ -1,10 +1,13 @@
 import { type APIRequestContext, expect, test } from "@playwright/test";
+import os from "node:os";
 
 // Test group for health check endpoint
 test.describe("Health Check API", () => {
     test("should return success response with CPU info", async ({
         request,
-    }: { request: APIRequestContext }) => {
+    }: {
+        request: APIRequestContext;
+    }) => {
         const response = await request.get("/api/health/check");
         expect(response.ok()).toBeTruthy();
         expect(response.status()).toBe(200);
@@ -21,7 +24,9 @@ test.describe("Health Check API", () => {
 
     test("should include memory information", async ({
         request,
-    }: { request: APIRequestContext }) => {
+    }: {
+        request: APIRequestContext;
+    }) => {
         const response = await request.get("/api/health/check");
         const body = await response.json();
 
@@ -34,30 +39,34 @@ test.describe("Health Check API", () => {
 
     test("should include detailed OS information", async ({
         request,
-    }: { request: APIRequestContext }) => {
+    }: {
+        request: APIRequestContext;
+    }) => {
         const response = await request.get("/api/health/check");
         const body = await response.json();
 
         expect(body.os).toBeDefined();
         expect(body.os.uptime).toBeGreaterThan(0);
-        expect(body.os.type).toBe("Darwin");
+        expect(body.os.type).toBe(os.type());
         expect(body.os.release).toBeDefined();
         expect(body.os.hostname).toBeDefined();
-        expect(body.os.arch).toBe("arm64");
-        expect(body.os.platform).toBe("darwin");
+        expect(body.os.arch).toBe(os.arch());
+        expect(body.os.platform).toBe(os.platform());
 
         // OS User info
         expect(body.os.user).toBeDefined();
-        expect(body.os.user.uid).toBeGreaterThan(0);
-        expect(body.os.user.gid).toBeGreaterThan(0);
+        expect(body.os.user.uid).toBeGreaterThanOrEqual(0);
+        expect(body.os.user.gid).toBeGreaterThanOrEqual(0);
         expect(body.os.user.username).toBeDefined();
-        expect(body.os.user.homedir).toMatch(/^\/Users\//);
+        expect(body.os.user.homedir).toBe(os.homedir());
         expect(body.os.user.shell).toBeDefined();
     });
 
     test("should include detailed process information", async ({
         request,
-    }: { request: APIRequestContext }) => {
+    }: {
+        request: APIRequestContext;
+    }) => {
         const response = await request.get("/api/health/check");
         const body = await response.json();
 
@@ -80,7 +89,9 @@ test.describe("Health Check API", () => {
 
     test("should include client information", async ({
         request,
-    }: { request: APIRequestContext }) => {
+    }: {
+        request: APIRequestContext;
+    }) => {
         const response = await request.get("/api/health/check");
         const body = await response.json();
 
@@ -92,7 +103,9 @@ test.describe("Health Check API", () => {
 
     test("should include network information", async ({
         request,
-    }: { request: APIRequestContext }) => {
+    }: {
+        request: APIRequestContext;
+    }) => {
         const response = await request.get("/api/health/check");
         const body = await response.json();
 
@@ -107,7 +120,9 @@ test.describe("Health Check API", () => {
 
     test("should include properly formatted time information", async ({
         request,
-    }: { request: APIRequestContext }) => {
+    }: {
+        request: APIRequestContext;
+    }) => {
         const response = await request.get("/api/health/check");
         const body = await response.json();
         expect(body.time).toBeDefined();
@@ -128,7 +143,9 @@ test.describe("Health Check API", () => {
 
     test("should respond within acceptable time limit", async ({
         request,
-    }: { request: APIRequestContext }) => {
+    }: {
+        request: APIRequestContext;
+    }) => {
         const startTime = Date.now();
         await request.get("/api/health/check");
         const endTime = Date.now();
