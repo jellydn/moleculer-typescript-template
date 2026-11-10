@@ -21,8 +21,9 @@ PR #883 must preserve the current framework contract while updating compatible d
 
 <!-- AC:BEGIN -->
 
--   [x] #1 TypeScript compilation and existing tests pass with the grouped dependency updates
--   [x] #2 Framework and companion packages retain compatible peer versions
+- [x] #1 TypeScript compilation and existing tests pass with the grouped dependency updates
+- [x] #2 Framework and companion packages retain compatible peer versions
+
 <!-- AC:END -->
 
 ## Implementation Plan
@@ -30,6 +31,7 @@ PR #883 must preserve the current framework contract while updating compatible d
 <!-- SECTION:PLAN:BEGIN -->
 
 1. Confirm the failing upgrade. 2. Keep the framework and companion dependencies on compatible versions. 3. Regenerate the lockfile and run tests, typecheck, lint, and build.
+
  <!-- SECTION:PLAN:END -->
 
 ## Implementation Notes
