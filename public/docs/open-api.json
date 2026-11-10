@@ -48,18 +48,86 @@
                 "schema": {
                   "type": "object",
                   "required": [
+                    "latitude",
+                    "longitude",
+                    "generationtime_ms",
+                    "utc_offset_seconds",
+                    "timezone",
+                    "timezone_abbreviation",
+                    "elevation",
+                    "current_units",
                     "current"
                   ],
                   "properties": {
-                    "current": {
+                    "latitude": {
+                      "type": "number"
+                    },
+                    "longitude": {
+                      "type": "number"
+                    },
+                    "generationtime_ms": {
+                      "type": "number"
+                    },
+                    "utc_offset_seconds": {
+                      "type": "number"
+                    },
+                    "timezone": {
+                      "type": "string"
+                    },
+                    "timezone_abbreviation": {
+                      "type": "string"
+                    },
+                    "elevation": {
+                      "type": "number"
+                    },
+                    "current_units": {
                       "type": "object",
                       "required": [
+                        "time",
+                        "interval",
                         "temperature_2m",
                         "relative_humidity_2m",
                         "rain",
                         "weather_code"
                       ],
                       "properties": {
+                        "time": {
+                          "type": "string"
+                        },
+                        "interval": {
+                          "type": "string"
+                        },
+                        "temperature_2m": {
+                          "type": "string"
+                        },
+                        "relative_humidity_2m": {
+                          "type": "string"
+                        },
+                        "rain": {
+                          "type": "string"
+                        },
+                        "weather_code": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "current": {
+                      "type": "object",
+                      "required": [
+                        "time",
+                        "interval",
+                        "temperature_2m",
+                        "relative_humidity_2m",
+                        "rain",
+                        "weather_code"
+                      ],
+                      "properties": {
+                        "time": {
+                          "type": "string"
+                        },
+                        "interval": {
+                          "type": "number"
+                        },
                         "temperature_2m": {
                           "type": "number"
                         },
@@ -83,7 +151,7 @@
             "description": "Missing, blank, non-numeric or out-of-range coordinate."
           },
           "502": {
-            "description": "Upstream HTTP, network, timeout or JSON failure."
+            "description": "Upstream HTTP, network, timeout, JSON or response-schema failure."
           }
         }
       }

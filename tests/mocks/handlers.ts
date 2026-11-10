@@ -17,6 +17,10 @@ export const handlers = [
 
         if (latitude === "10" && longitude === "10") return HttpResponse.error();
         if (latitude === "12" && longitude === "12") return HttpResponse.text("not JSON");
+        // A 200 response whose body does not match the upstream contract.
+        if (latitude === "13" && longitude === "13") {
+            return HttpResponse.json({ current: { temperature_2m: "warm" } });
+        }
         if (
             url.searchParams.get("current") !==
             "temperature_2m,relative_humidity_2m,rain,weather_code"

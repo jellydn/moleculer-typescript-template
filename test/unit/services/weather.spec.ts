@@ -1,4 +1,5 @@
 import { Errors, ServiceBroker, type ServiceSchema } from "moleculer";
+import { HttpResponse, http } from "msw";
 import { afterAll, afterEach, beforeAll, describe, expect, it } from "vitest";
 import TestService, {
     type GetWeatherParams,
@@ -51,6 +52,40 @@ describe("Test 'weather' service", () => {
                 type: "WEATHER_UPSTREAM_ERROR",
                 data: { status: 503 },
             });
+        });
+
+        it.each([
+            {},
+            {
+                ...mockWeatherData,
+                current: { ...mockWeatherData.current, temperature_2m: "invalid" },
+            },
+        ])("should map an invalid upstream payload to 502", async (payload) => {
+            server.use(
+                http.get("https://api.open-meteo.com/v1/forecast", () =>
+                    HttpResponse.json(payload),
+                ),
+            );
+            await expect(
+                broker.call("weather.getCurrentWeather", { latitude: 46.9481, longitude: 7.4474 }),
+            ).rejects.toMatchObject({ code: 502, type: "WEATHER_UPSTREAM_ERROR" });
+        });
+
+        it("should preserve additional upstream fields", async () => {
+            const payload = {
+                ...mockWeatherData,
+                source: "Open-Meteo",
+                current_units: { ...mockWeatherData.current_units, wind_speed_10m: "km/h" },
+                current: { ...mockWeatherData.current, wind_speed_10m: 8.6 },
+            };
+            server.use(
+                http.get("https://api.open-meteo.com/v1/forecast", () =>
+                    HttpResponse.json(payload),
+                ),
+            );
+            await expect(
+                broker.call("weather.getCurrentWeather", { latitude: 46.9481, longitude: 7.4474 }),
+            ).resolves.toEqual(payload);
         });
 
         it("should reject with ValidationError when params are missing", async () => {

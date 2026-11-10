@@ -48,6 +48,7 @@ pnpm install
 The template exposes `GET /api/weather?latitude=52.52&longitude=13.41` in every deployment.
 It calls the external Open-Meteo forecast API. Latitude must be between -90 and 90 and longitude between -180 and 180.
 Upstream HTTP failures return 502 with the upstream status in `data.status`.
+Network failures, the five-second timeout, malformed JSON and invalid response payloads return 502 with `WEATHER_UPSTREAM_ERROR` and no upstream status.
 Remove `services/weather.service.ts` from a derived project if it does not need this public demo endpoint.
 
 `pnpm test` runs Vitest tests in `test/`. `pnpm test:e2e` runs the API-only Playwright suite in `tests/`.
@@ -220,7 +221,7 @@ curl --fail https://moleculer.itman.fyi/api/health/check
 The container installs production dependencies only, including the TypeScript runner and DTO generator.
 It sets `NODE_ENV=production`, `TRANSPORTER=TCP` and a default `PORT=8888`; Dokku overrides the port from its configured map.
 The health response includes `X-Revision` from Dokku's per-deploy `GIT_REV`; the workflow requires it to equal the dispatched commit.
-Dokku startup checks verify broker health and the greeter route before replacing the old containers.
+On the verified Dokku 0.37.7 host with the docker-local scheduler, startup checks verify broker health and the greeter route before switching traffic to the new containers.
 Keep the existing domain, routing and process scale when deploying; no app recreation or volume cleanup is required.
 
 ## GitHub Actions

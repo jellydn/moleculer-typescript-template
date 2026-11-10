@@ -1,10 +1,10 @@
 ---
 id: TASK-8
 title: Finish weather API and Playwright mock coverage
-status: Done
+status: In Progress
 assignee: []
 created_date: "2026-11-10 13:24"
-updated_date: "2026-11-10 14:05"
+updated_date: "2026-11-10 15:25"
 labels: []
 dependencies: []
 ---
@@ -38,7 +38,5 @@ Make the existing draft weather demo deterministic and portable without importin
 
 <!-- SECTION:NOTES:BEGIN -->
 
-Removed production imports of test mocks and duplicate Vitest config. Test-owned bootstrap starts MSW before services. Playwright runs API requests once without browser installs, waits for weather alias at port 18889, and sets test environment/TCP transport. Unit mocks explicitly listen/reset/close; exact payload and upstream failure tested. Health assertions use runtime OS values. Pinned Playwright 1.65.0 and MSW 2.15.0; MSW 3 requires a broader TypeScript module-resolution migration, so retained compatible major 2. Local typecheck, 14 unit tests, lint, Biome, build and 10 Playwright API tests pass. GitHub validation pending.
-
-Addressed Pullfrog findings: numeric coordinate bounds with query coercion, explicit 502 upstream failure with preserved status, Biome coverage for tests/, and README notes for public Open-Meteo dependency and test-tree roles. Local frozen install, typecheck, 16 unit tests, lint, Biome, build and 20 Playwright API tests pass. HTTP cases cover both coordinate boundaries, values just outside them, invalid text, and an empty-statusText upstream failure. An out-of-range coordinate case was added to the unit suite and the leftover tests/example.spec.ts scaffold was renamed to tests/health.spec.ts. The MSW fixture now mirrors the live Open-Meteo payload (including current.time, current.interval, current_units and the top-level fields), WeatherData describes the same contract, the fixture lives in tests/mocks/fixtures.ts as the single source of truth for both suites, and the mocked upstream failure mirrors the upstream's 503 JSON error body.
+Test-owned MSW bootstrap keeps mocks out of production. Coordinates are validated before coercion; blanks, missing values, text and out-of-range values return 422. Upstream HTTP failures retain data.status, while transport, timeout, invalid JSON and invalid response shapes return 502. WeatherData is inferred from the runtime Zod schema, and valid extra fields survive at all response levels. The shared fixture records the live grid-cell response; query-sensitive handlers deliberately echo requested coordinates to detect forwarding errors. Complete OpenAPI metadata covers the same fields and generates the SDK. Removed per-request debug output and restricted the Playwright workflow token. Verified frozen install, typecheck, 19 unit tests, 27 Playwright API tests, lint, Biome, build and actionlint. Two invalid-payload regression cases fail before the schema fix and pass after it. The Playwright API suite also covers the invalid-payload 502 so the validation is asserted over HTTP as well as in the unit suite.
 <!-- SECTION:NOTES:END -->

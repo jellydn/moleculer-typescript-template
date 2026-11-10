@@ -4,12 +4,17 @@ on:
     branches: [main, master]
   pull_request:
     branches: [main, master]
+permissions:
+  contents: read
 jobs:
   test:
+    name: Playwright API
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
       - name: Install pnpm
         uses: pnpm/action-setup@v4
       - name: Use Node.js

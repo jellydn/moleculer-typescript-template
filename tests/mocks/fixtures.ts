@@ -2,8 +2,9 @@ import type { WeatherData } from "../../services/weather.service";
 
 /**
  * A recorded Open-Meteo forecast response for the fields the weather endpoint
- * requests. The shape mirrors the live API so the suites assert a payload the
- * production endpoint can actually return.
+ * requests. The live API returns snapped grid coordinates. The query-sensitive
+ * handler replaces them with the requested pair to test query forwarding;
+ * direct fixture responses retain the recorded grid coordinates.
  *
  * https://api.open-meteo.com/v1/forecast?latitude=46.9481&longitude=7.4474&current=temperature_2m,relative_humidity_2m,rain,weather_code
  */
