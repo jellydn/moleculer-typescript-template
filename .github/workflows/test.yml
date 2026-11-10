@@ -27,7 +27,8 @@ jobs:
         run: bun run test
 
   e2e-test:
-    runs-on: ubuntu-latest
+    # Hurl 4 requires libxml2, which Ubuntu 26.04 no longer provides.
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout
         uses: actions/checkout@v6
