@@ -129,16 +129,20 @@
                           "type": "number"
                         },
                         "temperature_2m": {
-                          "type": "number"
+                          "type": "number",
+                          "nullable": true
                         },
                         "relative_humidity_2m": {
-                          "type": "number"
+                          "type": "number",
+                          "nullable": true
                         },
                         "rain": {
-                          "type": "number"
+                          "type": "number",
+                          "nullable": true
                         },
                         "weather_code": {
-                          "type": "number"
+                          "type": "number",
+                          "nullable": true
                         }
                       }
                     }
@@ -151,7 +155,7 @@
             "description": "Missing, blank, non-numeric or out-of-range coordinate."
           },
           "502": {
-            "description": "Upstream HTTP, network, timeout, JSON or response-schema failure."
+            "description": "Upstream HTTP failure with data.status, or data.reason identifying network, timeout, invalid_json or invalid_payload. Internal error details are not exposed."
           }
         }
       }
