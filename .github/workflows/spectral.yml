@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # Check out the repository
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@v7.0.1
 
       # Run Spectral
       - uses: stoplightio/spectral-action@latest
