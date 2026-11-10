@@ -1,0 +1,24 @@
+{
+	"healthchecks": {
+		"web": [
+			{
+				"type": "startup",
+				"name": "broker health",
+				"path": "/api/health/check",
+				"port": 8888,
+				"attempts": 12,
+				"timeout": 5,
+				"wait": 5
+			},
+			{
+				"type": "startup",
+				"name": "service routes ready",
+				"path": "/api/greeter/hello",
+				"port": 8888,
+				"attempts": 12,
+				"timeout": 5,
+				"wait": 5
+			}
+		]
+	}
+}

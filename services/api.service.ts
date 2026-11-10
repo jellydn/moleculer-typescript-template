@@ -1,4 +1,4 @@
-import type { IncomingMessage } from "node:http";
+import type { IncomingMessage, ServerResponse } from "node:http";
 import process from "node:process";
 import helmet from "helmet";
 import type { Context, ServiceAction, ServiceSchema } from "moleculer";
@@ -8,7 +8,7 @@ const apiService: ServiceSchema<ApiSettingsSchema> = {
     name: "api",
     mixins: [ApiGateway],
 
-    // More info about settings: https://moleculer.services/docs/0.14/moleculer-web.html
+    // More info about settings: https://moleculer.services/docs/0.15/moleculer-web.html
     settings: {
         // Exposed port
         port: Number(process.env?.PORT ?? 3000),
@@ -16,7 +16,7 @@ const apiService: ServiceSchema<ApiSettingsSchema> = {
         // Exposed IP
         ip: process.env?.SERVER_HOSTNAME ?? "0.0.0.0",
 
-        // Global Express middlewares. More info: https://moleculer.services/docs/0.14/moleculer-web.html#Middlewares
+        // Global Express middlewares. More info: https://moleculer.services/docs/0.15/moleculer-web.html#Middlewares
         use: [helmet()],
 
         routes: [
@@ -30,22 +30,32 @@ const apiService: ServiceSchema<ApiSettingsSchema> = {
                 aliases: {
                     check: "$node.health",
                 },
+                onAfterCall(
+                    _ctx: Context,
+                    _route: unknown,
+                    _req: IncomingMessage,
+                    res: ServerResponse,
+                    data: unknown,
+                ) {
+                    res.setHeader("X-Revision", process.env.GIT_REV ?? "unknown");
+                    return data;
+                },
             },
             {
                 path: "/api",
 
                 whitelist: ["**"],
 
-                // Route-level Express middlewares. More info: https://moleculer.services/docs/0.14/moleculer-web.html#Middlewares
+                // Route-level Express middlewares. More info: https://moleculer.services/docs/0.15/moleculer-web.html#Middlewares
                 use: [],
 
-                // Enable/disable parameter merging method. More info: https://moleculer.services/docs/0.14/moleculer-web.html#Disable-merging
+                // Enable/disable parameter merging method. More info: https://moleculer.services/docs/0.15/moleculer-web.html#Disable-merging
                 mergeParams: true,
 
-                // Enable authentication. Implement the logic into `authenticate` method. More info: https://moleculer.services/docs/0.14/moleculer-web.html#Authentication
+                // Enable authentication. Implement the logic into `authenticate` method. More info: https://moleculer.services/docs/0.15/moleculer-web.html#Authentication
                 authentication: false,
 
-                // Enable authorization. Implement the logic into `authorize` method. More info: https://moleculer.services/docs/0.14/moleculer-web.html#Authorization
+                // Enable authorization. Implement the logic into `authorize` method. More info: https://moleculer.services/docs/0.15/moleculer-web.html#Authorization
                 authorization: false,
 
                 // The auto-alias feature allows you to declare your route alias directly in your services.
@@ -77,7 +87,7 @@ const apiService: ServiceSchema<ApiSettingsSchema> = {
 					return doSomething(ctx, res, data);
 				}, */
 
-                // Calling options. More info: https://moleculer.services/docs/0.14/moleculer-web.html#Calling-options
+                // Calling options. More info: https://moleculer.services/docs/0.15/moleculer-web.html#Calling-options
                 callOptions: {},
 
                 aliases: {},
@@ -93,7 +103,7 @@ const apiService: ServiceSchema<ApiSettingsSchema> = {
                     },
                 },
 
-                // Mapping policy setting. More info: https://moleculer.services/docs/0.14/moleculer-web.html#Mapping-policy
+                // Mapping policy setting. More info: https://moleculer.services/docs/0.15/moleculer-web.html#Mapping-policy
                 mappingPolicy: "all", // Available values: "all", "restrict"
 
                 // Enable/disable logging
@@ -108,7 +118,7 @@ const apiService: ServiceSchema<ApiSettingsSchema> = {
         // Logging the response data. Set to any log level to enable it. E.g. "info"
         logResponseData: null,
 
-        // Serve assets from "public" folder. More info: https://moleculer.services/docs/0.14/moleculer-web.html#Serve-static-files
+        // Serve assets from "public" folder. More info: https://moleculer.services/docs/0.15/moleculer-web.html#Serve-static-files
         assets: {
             folder: "public",
 

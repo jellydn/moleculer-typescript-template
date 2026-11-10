@@ -6,7 +6,7 @@ import { stdTimeFunctions } from "pino";
  * Moleculer ServiceBroker configuration file
  *
  * More info about options:
- *     https://moleculer.services/docs/0.14/configuration.html
+ *     https://moleculer.services/docs/0.15/configuration.html
  *
  *
  * Overwriting options in production:
@@ -37,7 +37,7 @@ const config: BrokerOptions = {
     // Custom metadata store. Store here what you want. Accessing: `this.broker.metadata`
     metadata: {},
 
-    // Enable/disable logging or use custom logger. More info: https://moleculer.services/docs/0.14/logging.html
+    // Enable/disable logging or use custom logger. More info: https://moleculer.services/docs/0.15/logging.html
     // Available logger types: "Console", "File", "Pino", "Winston", "Bunyan", "debug", "Log4js", "Datadog"
     logger: {
         // Note: Change to Console if you want to see the logger output
@@ -56,24 +56,24 @@ const config: BrokerOptions = {
     logLevel: "info",
 
     // Define transporter.
-    // More info: https://moleculer.services/docs/0.14/networking.html
+    // More info: https://moleculer.services/docs/0.15/networking.html
     // Note: During the development, you don't need to define it because all services will be loaded locally.
     // In production you can set it via `TRANSPORTER=nats://localhost:4222` environment variable.
     transporter: "NATS", // "NATS"
 
     // Define a cacher.
-    // More info: https://moleculer.services/docs/0.14/caching.html
+    // More info: https://moleculer.services/docs/0.15/caching.html
     // cacher: null,
 
     // Define a serializer.
     // Available values: "JSON", "Avro", "ProtoBuf", "MsgPack", "Notepack", "Thrift".
-    // More info: https://moleculer.services/docs/0.14/networking.html#Serialization
+    // More info: https://moleculer.services/docs/0.15/networking.html#Serialization
     serializer: "JSON",
 
     // Number of milliseconds to wait before reject a request with a RequestTimeout error. Disabled: 0
     requestTimeout: 10 * 1000,
 
-    // Retry policy settings. More info: https://moleculer.services/docs/0.14/fault-tolerance.html#Retry
+    // Retry policy settings. More info: https://moleculer.services/docs/0.15/fault-tolerance.html#Retry
     retryPolicy: {
         // Enable feature
         enabled: false,
@@ -100,7 +100,7 @@ const config: BrokerOptions = {
     // Cloning the params of context if enabled. High performance impact, use it with caution!
     contextParamsCloning: false,
 
-    // Tracking requests and waiting for running requests before shutting down. More info: https://moleculer.services/docs/0.14/context.html#Context-tracking
+    // Tracking requests and waiting for running requests before shutting down. More info: https://moleculer.services/docs/0.15/context.html#Context-tracking
     tracking: {
         // Enable feature
         enabled: false,
@@ -108,19 +108,19 @@ const config: BrokerOptions = {
         shutdownTimeout: 5000,
     },
 
-    // Disable built-in request & emit balancer. (Transporter must support it, as well.). More info: https://moleculer.services/docs/0.14/networking.html#Disabled-balancer
+    // Disable built-in request & emit balancer. (Transporter must support it, as well.). More info: https://moleculer.services/docs/0.15/networking.html#Disabled-balancer
     disableBalancer: false,
 
-    // Settings of Service Registry. More info: https://moleculer.services/docs/0.14/registry.html
+    // Settings of Service Registry. More info: https://moleculer.services/docs/0.15/registry.html
     registry: {
-        // Define balancing strategy. More info: https://moleculer.services/docs/0.14/balancing.html
+        // Define balancing strategy. More info: https://moleculer.services/docs/0.15/balancing.html
         // Available values: "RoundRobin", "Random", "CpuUsage", "Latency", "Shard"
         strategy: "RoundRobin",
         // Enable local action call preferring. Always call the local action instance if available.
         preferLocal: true,
     },
 
-    // Settings of Circuit Breaker. More info: https://moleculer.services/docs/0.14/fault-tolerance.html#Circuit-Breaker
+    // Settings of Circuit Breaker. More info: https://moleculer.services/docs/0.15/fault-tolerance.html#Circuit-Breaker
     circuitBreaker: {
         // Enable feature
         enabled: false,
@@ -137,7 +137,7 @@ const config: BrokerOptions = {
         check: (error) => error && error.code >= 500,
     },
 
-    // Settings of bulkhead feature. More info: https://moleculer.services/docs/0.14/fault-tolerance.html#Bulkhead
+    // Settings of bulkhead feature. More info: https://moleculer.services/docs/0.15/fault-tolerance.html#Bulkhead
     bulkhead: {
         // Enable feature.
         enabled: false,
@@ -147,12 +147,12 @@ const config: BrokerOptions = {
         maxQueueSize: 100,
     },
 
-    // Enable action & event parameter validation. More info: https://moleculer.services/docs/0.14/validating.html
+    // Enable action & event parameter validation. More info: https://moleculer.services/docs/0.15/validating.html
     validator: true,
 
     // ErrorHandler: null,
 
-    // Enable/disable built-in metrics function. More info: https://moleculer.services/docs/0.14/metrics.html
+    // Enable/disable built-in metrics function. More info: https://moleculer.services/docs/0.15/metrics.html
     metrics: {
         enabled: false,
         // Available built-in reporters: "Console", "CSV", "Event", "Prometheus", "Datadog", "StatsD"
@@ -167,7 +167,7 @@ const config: BrokerOptions = {
         },
     },
 
-    // Enable built-in tracing function. More info: https://moleculer.services/docs/0.14/tracing.html
+    // Enable built-in tracing function. More info: https://moleculer.services/docs/0.15/tracing.html
     tracing: {
         enabled: true,
         // Available built-in exporters: "Console", "Datadog", "Event", "EventLegacy", "Jaeger", "Zipkin"

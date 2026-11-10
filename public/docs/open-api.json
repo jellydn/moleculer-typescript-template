@@ -12,48 +12,150 @@
     }
   },
   "paths": {
-    "/api/greeter/hello": {
+    "/api/weather": {
       "get": {
-        "description": "Returns the Hello Moleculer",
-        "tags": ["greeter"],
-        "responses": {
-          "200": {
-            "description": "Hello Moleculer",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "string",
-                  "example": "Hello Moleculer"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/greeter/welcome": {
-      "get": {
-        "description": "Returns Welcome, a username",
-        "tags": ["greeter"],
+        "description": "Returns current weather from Open-Meteo for the supplied coordinates.",
+        "tags": [
+          "weather"
+        ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/username",
-            "in": "query"
+            "name": "latitude",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "minimum": -90,
+              "maximum": 90
+            }
+          },
+          {
+            "name": "longitude",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "minimum": -180,
+              "maximum": 180
+            }
           }
         ],
         "responses": {
           "200": {
-            "description": "Welcome, a username",
+            "description": "Upstream weather payload including current measurements.",
             "content": {
-              "text/plain": {
+              "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/welcomeResponseDTO"
+                  "type": "object",
+                  "required": [
+                    "latitude",
+                    "longitude",
+                    "generationtime_ms",
+                    "utc_offset_seconds",
+                    "timezone",
+                    "timezone_abbreviation",
+                    "elevation",
+                    "current_units",
+                    "current"
+                  ],
+                  "properties": {
+                    "latitude": {
+                      "type": "number"
+                    },
+                    "longitude": {
+                      "type": "number"
+                    },
+                    "generationtime_ms": {
+                      "type": "number"
+                    },
+                    "utc_offset_seconds": {
+                      "type": "number"
+                    },
+                    "timezone": {
+                      "type": "string"
+                    },
+                    "timezone_abbreviation": {
+                      "type": "string"
+                    },
+                    "elevation": {
+                      "type": "number"
+                    },
+                    "current_units": {
+                      "type": "object",
+                      "required": [
+                        "time",
+                        "interval",
+                        "temperature_2m",
+                        "relative_humidity_2m",
+                        "rain",
+                        "weather_code"
+                      ],
+                      "properties": {
+                        "time": {
+                          "type": "string"
+                        },
+                        "interval": {
+                          "type": "string"
+                        },
+                        "temperature_2m": {
+                          "type": "string"
+                        },
+                        "relative_humidity_2m": {
+                          "type": "string"
+                        },
+                        "rain": {
+                          "type": "string"
+                        },
+                        "weather_code": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "current": {
+                      "type": "object",
+                      "required": [
+                        "time",
+                        "interval",
+                        "temperature_2m",
+                        "relative_humidity_2m",
+                        "rain",
+                        "weather_code"
+                      ],
+                      "properties": {
+                        "time": {
+                          "type": "string"
+                        },
+                        "interval": {
+                          "type": "number"
+                        },
+                        "temperature_2m": {
+                          "type": "number",
+                          "nullable": true
+                        },
+                        "relative_humidity_2m": {
+                          "type": "number",
+                          "nullable": true
+                        },
+                        "rain": {
+                          "type": "number",
+                          "nullable": true
+                        },
+                        "weather_code": {
+                          "type": "number",
+                          "nullable": true
+                        }
+                      }
+                    }
+                  }
                 }
               }
             }
           },
           "422": {
-            "description": "Invalid username"
+            "description": "Missing, blank, non-numeric or out-of-range coordinate."
+          },
+          "502": {
+            "description": "Upstream HTTP failure with data.status, or data.reason identifying network, timeout, invalid_json or invalid_payload. Internal error details are not exposed."
           }
         }
       }
@@ -61,7 +163,9 @@
     "/api/product/cart": {
       "post": {
         "description": "Add a product to the cart",
-        "tags": ["product"],
+        "tags": [
+          "product"
+        ],
         "requestBody": {
           "required": true,
           "content": {
@@ -85,6 +189,56 @@
           },
           "422": {
             "description": "Validation error"
+          }
+        }
+      }
+    },
+    "/api/greeter/hello": {
+      "get": {
+        "description": "Returns the Hello Moleculer",
+        "tags": [
+          "greeter"
+        ],
+        "responses": {
+          "200": {
+            "description": "Hello Moleculer",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string",
+                  "example": "Hello Moleculer"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/greeter/welcome": {
+      "get": {
+        "description": "Returns Welcome, a username",
+        "tags": [
+          "greeter"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/username",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Welcome, a username",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/welcomeResponseDTO"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Invalid username"
           }
         }
       }
@@ -130,10 +284,17 @@
                 "type": "string"
               }
             },
-            "required": ["city", "zip", "country"]
+            "required": [
+              "city",
+              "zip",
+              "country"
+            ]
           }
         },
-        "required": ["name", "qty"],
+        "required": [
+          "name",
+          "qty"
+        ],
         "description": "Add cart DTO"
       },
       "addCartResponseDTO": {
@@ -150,7 +311,10 @@
             "example": "Product added to cart"
           }
         },
-        "required": ["success", "message"],
+        "required": [
+          "success",
+          "message"
+        ],
         "description": "Add cart response DTO"
       }
     },

@@ -4,3 +4,8 @@ Dockerfile
 node_modules
 test
 .vscode
+.git
+.amp
+tests
+test-results
+playwright-report
