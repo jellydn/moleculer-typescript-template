@@ -54,7 +54,6 @@
   "devDependencies": {
     "@asteasolutions/zod-to-openapi": "9.1.0",
     "@biomejs/biome": "2.6.6",
-    "@flydotio/dockerfile": "0.7.15",
     "@hey-api/openapi-ts": "0.99.0",
     "@playwright/test": "1.65.0",
     "@types/express": "5.0.6",
