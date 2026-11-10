@@ -4,7 +4,7 @@ title: Replace Fly deployment with Dokku production release
 status: In Progress
 assignee: []
 created_date: "2026-11-10 13:31"
-updated_date: "2026-11-10 15:47"
+updated_date: "2026-11-10 16:12"
 labels: []
 dependencies: []
 ---
@@ -46,5 +46,7 @@ Owner-approved exact-ID cache cleanup completed after a fresh reference and in-u
 
 An earlier Node 22 amd64 image built successfully when the suites contained 19 unit tests and 26 API tests; frozen install, typecheck, lint, Biome, build and actionlint also passed then. That runtime passed revision-header and 10-request Hurl checks without test tools installed. Current test totals are recorded below. Node 26 is validated separately in PR #895. Weather responses now validate the complete upstream shape while preserving valid extra fields, and OpenAPI describes the full payload. Production remains on its old release; task stays In Progress until exact-head review gates and live deployment verification complete.
 
-Main was merged into the branch to clear the conflicting state that skipped every pull_request-triggered workflow. The package.json conflict is resolved by keeping the msw devDependency and taking npm-run-all2 9.0.4 from #896, together with main's explicit dev task list and Node engine range; the merged pnpm-lock.yaml is byte-identical to pnpm's own regeneration from the merged package.json. The integrated tree passes frozen install, typecheck, 21 unit tests, 28 API tests, lint, Biome and build; CI also passes oxlint and image smoke. The earlier isolated merge environment had no Docker daemon, but the Mac runner verified the integrated images. A real broker/Pino reproduction failed before the log argument-order fix and passes after it, retaining reason and serialized error details without exposing them to callers. Task 8 is restored to Done after the merge reverted its status.
+Main was merged into the branch to clear the conflicting state that skipped every pull_request-triggered workflow. The package.json conflict is resolved by keeping the msw devDependency and taking npm-run-all2 9.0.4 from #896, together with main's explicit dev task list; this branch deliberately retains engines.node >= 26.0.0 rather than main's Node 22/24/26 range; the merged pnpm-lock.yaml is byte-identical to pnpm's own regeneration from the merged package.json. The integrated tree passes frozen install, typecheck, 21 unit tests, 28 API tests, lint, Biome and build; CI also passes oxlint and image smoke. The earlier isolated merge environment had no Docker daemon, but the Mac runner verified the integrated images. A real broker/Pino reproduction failed before the log argument-order fix and passes after it, retaining reason and serialized error details without exposing them to callers. Task 8 is restored to Done after the merge reverted its status.
+
+Node 26 follow-up: the real read-only host reports Dokku 0.37.7. The workflow now requires Dokku >=0.31.0 for app.json healthchecks. Ten isolated executions of the actual release script pass: success, explicit master with global main, wrong branch, empty branch, SSH rejection, rejected push, zero-exit skipped deployment, old version, invalid version and minimum supported version. These boundary cases ran locally with stubbed SSH/Git, not on the VPS. The Node 26 amd64 image passed all 10 Hurl requests, revision-header checks and invalid-coordinate 422 without test tools installed; the later logging-only fix passed the real broker/Pino reproduction.
 <!-- SECTION:NOTES:END -->

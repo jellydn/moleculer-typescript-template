@@ -1,7 +1,7 @@
-FROM node:22.23.4-alpine
+FROM node:26.13.0-alpine
 
 WORKDIR /app
-RUN corepack enable
+RUN npm install -g pnpm@10.34.9
 
 COPY package.json pnpm-lock.yaml ./
 # The source entry point uses tsx and generates DTO docs at runtime.

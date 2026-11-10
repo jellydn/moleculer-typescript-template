@@ -1,7 +1,7 @@
 # Welcome to moleculer-typescript-template 👋
 
 ![Version](https://img.shields.io/badge/version-0.1.1-blue.svg?cacheSeconds=2592000)
-![Prerequisite](https://img.shields.io/badge/node-22.22.2%2B%20%7C%2024.15.0%2B%20%7C%2026%2B-blue.svg)
+![Prerequisite](https://img.shields.io/badge/node-%3E%3D%2026.0.0-blue.svg)
 [![Twitter: jellydn](https://img.shields.io/twitter/follow/jellydn.svg?style=social)](https://twitter.com/jellydn)
 
 > My Moleculer-based microservices project
@@ -18,7 +18,7 @@
 
 ## Prerequisites
 
-- Node.js 22.22.2 or later in the 22.x line, 24.15.0 or later in the 24.x line, or 26.0.0 or later, matching the development toolchain's engine range.
+- Node.js >= 26.0.0
 
 ## Init new project
 
@@ -224,9 +224,11 @@ curl --fail https://moleculer.itman.fyi/api/health/check
 ```
 
 The container installs production dependencies only, including the TypeScript runner and DTO generator.
-It sets `NODE_ENV=production`, `TRANSPORTER=TCP` and a default `PORT=8888`; Dokku overrides the port from its configured map.
+It sets `NODE_ENV=production`, `TRANSPORTER=TCP` and a default `PORT=8888`, which is the container port of Dokku's `http:80:8888 https:443:8888` map.
+Docker Compose and Kubernetes pin `PORT=3000` explicitly, so the image default only applies to deployments that do not set the port themselves.
 The health response includes `X-Revision` from Dokku's per-deploy `GIT_REV`; the workflow requires it to equal the dispatched commit.
 On the verified Dokku 0.37.7 host with the docker-local scheduler, startup checks verify broker health and the greeter route before switching traffic to the new containers.
+Those checks come from `app.json` and need Dokku 0.31.0 or newer, so the deploy job fails when the host reports an older version.
 Keep the existing domain, routing and process scale when deploying; no app recreation or volume cleanup is required.
 
 ## GitHub Actions
