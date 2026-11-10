@@ -8,7 +8,7 @@
     "defaultBranch": "main"
   },
   "files": {
-    "includes": ["src/**", "test/**", "*.ts"]
+    "includes": ["services/**/*.ts", "test/**", "tests/**", "*.ts"]
   },
   "linter": {
     "enabled": true,

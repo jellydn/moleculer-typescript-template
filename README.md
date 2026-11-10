@@ -1,7 +1,7 @@
 # Welcome to moleculer-typescript-template 👋
 
 ![Version](https://img.shields.io/badge/version-0.1.1-blue.svg?cacheSeconds=2592000)
-![Prerequisite](https://img.shields.io/badge/node-%3E%3D%2014.x.x-blue.svg)
+![Prerequisite](https://img.shields.io/badge/node-%3E%3D%2026.0.0-blue.svg)
 [![Twitter: jellydn](https://img.shields.io/twitter/follow/jellydn.svg?style=social)](https://twitter.com/jellydn)
 
 > My Moleculer-based microservices project
@@ -18,7 +18,7 @@
 
 ## Prerequisites
 
-- node >= 18.17.x
+- Node.js >= 26.0.0
 
 ## Init new project
 
@@ -42,6 +42,17 @@ npx degit jellydn/moleculer-typescript-template [PROJECT-NAME]
 ```sh
 pnpm install
 ```
+
+## Weather API and tests
+
+The template exposes `GET /api/weather?latitude=52.52&longitude=13.41` in every deployment.
+It calls the external Open-Meteo forecast API. Latitude must be between -90 and 90 and longitude between -180 and 180.
+Upstream HTTP failures return 502 with the upstream status in `data.status`.
+Remove `services/weather.service.ts` from a derived project if it does not need this public demo endpoint.
+
+`pnpm test` runs Vitest tests in `test/`. `pnpm test:e2e` runs the API-only Playwright suite in `tests/`.
+The Playwright suite starts its own broker and MSW mocks through `tests/start-server.ts`; production startup never loads these mocks.
+Both test trees are checked by Biome. No browser installation is needed for the API suite.
 
 ## Usage
 
@@ -186,39 +197,41 @@ pnpm test
 
 ## Deployment
 
-This template comes with two GitHub Actions that handle automatically deploying your app to production and staging environments.
+Production runs in the existing Dokku app `moleculer` on `dokku@95.111.232.131`, at https://moleculer.itman.fyi.
+The app uses the root Dockerfile, deploy branch `main`, two web processes and port `8888`.
+Read-only preflight confirmed `TRANSPORTER=TCP` and the configured port map
+`http:80:8888 https:443:8888`. Preserve those settings; no port-map reset is needed.
+Forks must change the target host, app, domain and verified host-key file before using this workflow.
 
-Prior to your first deployment, you'll need to do a few things:
+The workflow validates lint, TypeScript, unit tests and the Docker image on pull requests and pushes to `main`.
+Deployment from GitHub is an explicit **Run workflow** action on `main`, not an automatic push deployment.
+Before using it, obtain owner approval to register an app-scoped Dokku key and store it as `DOKKU_SSH_PRIVATE_KEY`.
+Until then, deploy manually from a trusted workstation with existing authorized SSH access.
+The server's verified Ed25519 host key is pinned in `.github/dokku_known_hosts`; do not disable host-key checking.
+Fly credentials and registry access are not used.
 
-- [Install Fly](https://fly.io/docs/getting-started/installing-flyctl/)
+For an authorized manual deployment from a trusted workstation:
 
-- Sign up and log in to Fly
+```sh
+git push ssh://dokku@95.111.232.131/moleculer main:main
+curl --fail https://moleculer.itman.fyi/api/health/check
+```
 
-    ```sh
-    fly auth signup
-    ```
-
-- Create two apps on Fly, one for staging and one for production:
-
-    ```sh
-    fly create moleculer-typescript
-    fly create moleculer-typescript-staging
-    ```
-
-- Create a new [GitHub Repository](https://repo.new)
-
-- Add a `FLY_API_TOKEN` to your GitHub repo. To do this, go to your user settings on Fly and create a new [token](https://web.fly.io/user/personal_access_tokens/new), then add it to [your repo secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets) with the name `FLY_API_TOKEN`.
-
-Now that every is set up you can commit and push your changes to your repo. Every commit to your `main` branch will trigger a deployment to your production environment, and every commit to your `dev` branch will trigger a deployment to your staging environment.
+The container installs production dependencies only, including the TypeScript runner and DTO generator.
+It sets `NODE_ENV=production`, `TRANSPORTER=TCP` and a default `PORT=8888`; Dokku overrides the port from its configured map.
+The health response includes `X-Revision` from Dokku's per-deploy `GIT_REV`; the workflow requires it to equal the dispatched commit.
+Dokku startup checks verify broker health and the greeter route before replacing the old containers.
+Keep the existing domain, routing and process scale when deploying; no app recreation or volume cleanup is required.
 
 ## GitHub Actions
 
-We use GitHub Actions for continuous integration and deployment. Anything that gets into the `main` branch will be deployed to production after running tests/build/etc. Anything in the `dev` branch will be deployed to staging.
+GitHub Actions validates pull requests and pushes to `main`; a manually dispatched run can deploy `main` after its checks pass.
+There is no staging deployment target configured for `dev`.
 
 ## Useful links
 
 - Moleculer website: https://moleculer.services/
-- Moleculer Documentation: https://moleculer.services/docs/0.14/
+- Moleculer Documentation: https://moleculer.services/docs/0.15/
 
 ## NPM scripts
 
