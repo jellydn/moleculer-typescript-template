@@ -21,9 +21,10 @@ Make the existing draft weather demo deterministic and portable without importin
 
 <!-- AC:BEGIN -->
 
--   [x] #1 Weather API succeeds with mock data and rejects invalid requests
--   [x] #2 Unit and Playwright API tests run without external weather network access
--   [x] #3 Production startup has no test imports and CI runs matching port environment and Node version
+- [x] #1 Weather API succeeds with mock data and rejects invalid requests
+- [x] #2 Unit and Playwright API tests run without external weather network access
+- [x] #3 Production startup has no test imports and CI runs matching port environment and Node version
+
 <!-- AC:END -->
 
 ## Implementation Plan
@@ -31,6 +32,7 @@ Make the existing draft weather demo deterministic and portable without importin
 <!-- SECTION:PLAN:BEGIN -->
 
 1. Merge main and preserve current tool configuration. 2. Move mock startup to test-owned bootstrap. 3. Fix portable assertions and API-only Playwright configuration. 4. Run typecheck unit HTTP and Playwright suites then review current-head CI.
+
  <!-- SECTION:PLAN:END -->
 
 ## Implementation Notes

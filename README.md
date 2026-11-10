@@ -18,7 +18,7 @@
 
 ## Prerequisites
 
--   node >= 18.17.x
+- node >= 18.17.x
 
 ## Init new project
 
@@ -28,14 +28,14 @@ npx degit jellydn/moleculer-typescript-template [PROJECT-NAME]
 
 ## Features
 
--   ⚡️ Progressive microservices framework for Node.js.
-    [Moleculer](https://moleculer.services/) with [Typescript](https://www.typescriptlang.org/) template
--   📦 [hygen](http://www.hygen.io/) - The scalable code generator that saves you time.
--   🦾 [pino](https://getpino.io) - super fast, all natural json logger
--   🔥 [swagger-jsdoc](https://github.com/Surnet/swagger-jsdoc/blob/v6/docs/README.md) - Generates swagger/openapi specification based on jsDoc comments and YAML files.
--   ✨ [moleculer-zod-validator](https://github.com/TheAppleFreak/moleculer-zod-validator) - A validator for the Moleculer microservice framework to allow the use of [Zod](https://zod.dev/).
--   🔏 [asteasolutions/zod-to-openapi](https://github.com/asteasolutions/zod-to-openapi#defining-schemas) - A library that generates OpenAPI (Swagger) docs from Zod schemas.
--   🪄 [hey-api/openapi-ts](https://github.com/hey-api/openapi-ts) - Turn your OpenAPI specification into a beautiful TypeScript client.
+- ⚡️ Progressive microservices framework for Node.js.
+  [Moleculer](https://moleculer.services/) with [Typescript](https://www.typescriptlang.org/) template
+- 📦 [hygen](http://www.hygen.io/) - The scalable code generator that saves you time.
+- 🦾 [pino](https://getpino.io) - super fast, all natural json logger
+- 🔥 [swagger-jsdoc](https://github.com/Surnet/swagger-jsdoc/blob/v6/docs/README.md) - Generates swagger/openapi specification based on jsDoc comments and YAML files.
+- ✨ [moleculer-zod-validator](https://github.com/TheAppleFreak/moleculer-zod-validator) - A validator for the Moleculer microservice framework to allow the use of [Zod](https://zod.dev/).
+- 🔏 [asteasolutions/zod-to-openapi](https://github.com/asteasolutions/zod-to-openapi#defining-schemas) - A library that generates OpenAPI (Swagger) docs from Zod schemas.
+- 🪄 [hey-api/openapi-ts](https://github.com/hey-api/openapi-ts) - Turn your OpenAPI specification into a beautiful TypeScript client.
 
 ## Install
 
@@ -75,10 +75,10 @@ pnpm cli --ns api
 
 In the terminal, try the following commands:
 
--   `nodes` - List all connected nodes.
--   `actions` - List all registered service actions.
--   `call greeter.hello` - Call the `greeter.hello` action.
--   `call greeter.welcome --username dunghd` - Call the `greeter.welcome` action with the `username` parameter.
+- `nodes` - List all connected nodes.
+- `actions` - List all registered service actions.
+- `call greeter.hello` - Call the `greeter.hello` action.
+- `call greeter.welcome --username dunghd` - Call the `greeter.welcome` action with the `username` parameter.
 
 ![https://gyazo.com/3aca1c4e1992ad1c10da8060d7e21a6c.gif](https://gyazo.com/3aca1c4e1992ad1c10da8060d7e21a6c.gif)
 
@@ -171,9 +171,9 @@ const cartItem = await postApiProductCart({
 
 The SDK is automatically regenerated:
 
--   **During typecheck**: `pnpm typecheck` runs `generate:sdk` first
--   **In CI/CD**: The deploy workflow ensures SDK is current before type checking
--   **After API changes**: Regenerate manually when you modify services or DTOs
+- **During typecheck**: `pnpm typecheck` runs `generate:sdk` first
+- **In CI/CD**: The deploy workflow ensures SDK is current before type checking
+- **After API changes**: Regenerate manually when you modify services or DTOs
 
 ### Configuration
 
@@ -231,18 +231,18 @@ There is no staging deployment target configured for `dev`.
 
 ## Useful links
 
--   Moleculer website: https://moleculer.services/
--   Moleculer Documentation: https://moleculer.services/docs/0.15/
+- Moleculer website: https://moleculer.services/
+- Moleculer Documentation: https://moleculer.services/docs/0.15/
 
 ## NPM scripts
 
--   `pnpm dev`: Start development mode (load all services locally with hot-reload & watch)
--   `pnpm start`: Start production mode (set `SERVICES` env variable to load certain services)
--   `pnpm cli`: Start a CLI and connect to production. Don't forget to set production namespace with `--ns` argument in script
--   `pnpm ci`: Run continuous test mode with watching
--   `pnpm test`: Run tests & generate coverage report
--   `pnpm dc:up`: Start the stack with Docker Compose
--   `pnpm dc:down`: Stop the stack with Docker Compose
+- `pnpm dev`: Start development mode (load all services locally with hot-reload & watch)
+- `pnpm start`: Start production mode (set `SERVICES` env variable to load certain services)
+- `pnpm cli`: Start a CLI and connect to production. Don't forget to set production namespace with `--ns` argument in script
+- `pnpm ci`: Run continuous test mode with watching
+- `pnpm test`: Run tests & generate coverage report
+- `pnpm dc:up`: Start the stack with Docker Compose
+- `pnpm dc:down`: Stop the stack with Docker Compose
 
 ## Pre-commit hooks
 
@@ -279,9 +279,9 @@ See [Pullfrog PR review settings and status checks](https://docs.pullfrog.com/pr
 
 👤 **Dung Huynh**
 
--   Website: https://productsway.com/
--   Twitter: [@jellydn](https://twitter.com/jellydn)
--   Github: [@jellydn](https://github.com/jellydn)
+- Website: https://productsway.com/
+- Twitter: [@jellydn](https://twitter.com/jellydn)
+- Github: [@jellydn](https://github.com/jellydn)
 
 ## Show your support
 
