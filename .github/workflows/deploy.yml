@@ -118,6 +118,7 @@ jobs:
         uses: actions/checkout@v7.0.1
         with:
           fetch-depth: 0
+          persist-credentials: false
 
       - name: 🚀 Deploy to Dokku
         shell: bash
