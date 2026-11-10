@@ -4,6 +4,7 @@ import TestService, {
     type GetWeatherParams,
     type WeatherData,
 } from "../../../services/weather.service";
+import { mockWeatherData } from "../../../tests/mocks/fixtures";
 import { server } from "../../../tests/mocks/server";
 
 const { ValidationError } = Errors;
@@ -31,12 +32,7 @@ describe("Test 'weather' service", () => {
                     longitude: 7.4474,
                 },
             );
-            expect(response.current).toEqual({
-                temperature_2m: 20.5,
-                relative_humidity_2m: 65,
-                rain: 0,
-                weather_code: 1,
-            });
+            expect(response).toEqual(mockWeatherData);
         });
 
         it("should report an upstream failure", async () => {
