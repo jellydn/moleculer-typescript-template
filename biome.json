@@ -1,38 +1,38 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.4.5/schema.json",
-  "assist": { "actions": { "source": { "organizeImports": "on" } } },
-  "vcs": {
-    "enabled": true,
-    "clientKind": "git",
-    "useIgnoreFile": true,
-    "defaultBranch": "main"
-  },
-  "files": {
-    "includes": ["src/**", "test/**", "tests/**", "*.ts"]
-  },
-  "linter": {
-    "enabled": true,
-    "rules": {
-      "recommended": true,
-      "suspicious": {
-        "noExplicitAny": "warn",
-        "noCommentText": "warn",
-        "noShadowRestrictedNames": "warn"
-      },
-      "complexity": {
-        "noForEach": "off"
-      }
-    }
-  },
-  "formatter": {
-    "enabled": true,
-    "indentStyle": "space",
-    "indentWidth": 4,
-    "lineWidth": 100
-  },
-  "json": {
-    "formatter": {
-      "indentWidth": 2
-    }
-  }
+	"$schema": "https://biomejs.dev/schemas/2.4.5/schema.json",
+	"assist": { "actions": { "source": { "organizeImports": "on" } } },
+	"vcs": {
+		"enabled": true,
+		"clientKind": "git",
+		"useIgnoreFile": true,
+		"defaultBranch": "main"
+	},
+	"files": {
+		"includes": ["services/**/*.ts", "test/**", "tests/**", "*.ts"]
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true,
+			"suspicious": {
+				"noExplicitAny": "warn",
+				"noCommentText": "warn",
+				"noShadowRestrictedNames": "warn"
+			},
+			"complexity": {
+				"noForEach": "off"
+			}
+		}
+	},
+	"formatter": {
+		"enabled": true,
+		"indentStyle": "space",
+		"indentWidth": 4,
+		"lineWidth": 100
+	},
+	"json": {
+		"formatter": {
+			"indentWidth": 2
+		}
+	}
 }

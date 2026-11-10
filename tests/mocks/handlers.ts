@@ -22,6 +22,19 @@ export const handlers = [
             return new HttpResponse(null, { status: 503 });
         }
 
-        return HttpResponse.json(mockWeatherData);
+        if (latitude === "10" && longitude === "10") return HttpResponse.error();
+        if (latitude === "12" && longitude === "12") return HttpResponse.text("not JSON");
+        if (
+            url.searchParams.get("current") !==
+            "temperature_2m,relative_humidity_2m,rain,weather_code"
+        ) {
+            return new HttpResponse(null, { status: 400 });
+        }
+
+        return HttpResponse.json({
+            ...mockWeatherData,
+            latitude: Number(latitude),
+            longitude: Number(longitude),
+        });
     }),
 ];

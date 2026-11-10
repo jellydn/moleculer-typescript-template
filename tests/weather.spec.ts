@@ -17,7 +17,7 @@ test.describe("Weather API", () => {
         expect(response.ok()).toBeTruthy();
 
         const data = await response.json();
-        expect(data).toEqual(mockWeatherData);
+        expect(data).toEqual({ ...mockWeatherData, latitude: 46.9481, longitude: 7.4474 });
     });
 
     test("should validate required parameters", async ({ request }) => {
@@ -37,7 +37,7 @@ test.describe("Weather API", () => {
                 `/api/weather?latitude=${latitude}&longitude=${longitude}`,
             );
             expect(response.status()).toBe(200);
-            expect(await response.json()).toEqual(mockWeatherData);
+            expect(await response.json()).toEqual({ ...mockWeatherData, latitude, longitude });
         });
     }
 
@@ -47,6 +47,10 @@ test.describe("Weather API", () => {
         [0, 180.01],
         [0, -180.01],
         ["invalid", 0],
+        ["", 1],
+        [1, ""],
+        ["%20%20", 1],
+        [1, "%20%20"],
     ]) {
         test(`should reject coordinates ${latitude}, ${longitude}`, async ({ request }) => {
             const response = await request.get(
@@ -68,4 +72,17 @@ test.describe("Weather API", () => {
             data: { status: 503 },
         });
     });
+
+    for (const coordinate of [10, 12]) {
+        test(`should map network or JSON failures at ${coordinate} to 502`, async ({ request }) => {
+            const response = await request.get(
+                `/api/weather?latitude=${coordinate}&longitude=${coordinate}`,
+            );
+            expect(response.status()).toBe(502);
+            expect(await response.json()).toMatchObject({
+                type: "WEATHER_UPSTREAM_ERROR",
+                message: "Weather upstream request failed",
+            });
+        });
+    }
 });

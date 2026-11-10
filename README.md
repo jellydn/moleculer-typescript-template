@@ -199,6 +199,9 @@ pnpm test
 
 Production runs in the existing Dokku app `moleculer` on `dokku@95.111.232.131`, at https://moleculer.itman.fyi.
 The app uses the root Dockerfile, deploy branch `main`, two web processes and port `8888`.
+Read-only preflight confirmed `TRANSPORTER=TCP` and the configured port map
+`http:80:8888 https:443:8888`. Preserve those settings; no port-map reset is needed.
+Forks must change the target host, app, domain and verified host-key file before using this workflow.
 
 The workflow validates lint, TypeScript, unit tests and the Docker image on pull requests and pushes to `main`.
 Deployment from GitHub is an explicit **Run workflow** action on `main`, not an automatic push deployment.
@@ -214,7 +217,9 @@ git push ssh://dokku@95.111.232.131/moleculer main:main
 curl --fail https://moleculer.itman.fyi/api/health/check
 ```
 
-The container sets `NODE_ENV=production` and listens on `PORT=8888` by default.
+The container installs production dependencies only, including the TypeScript runner and DTO generator.
+It sets `NODE_ENV=production`, `TRANSPORTER=TCP` and a default `PORT=8888`; Dokku overrides the port from its configured map.
+The health response includes `X-Revision` from Dokku's per-deploy `GIT_REV`; the workflow requires it to equal the dispatched commit.
 Dokku startup checks verify broker health and the greeter route before replacing the old containers.
 Keep the existing domain, routing and process scale when deploying; no app recreation or volume cleanup is required.
 

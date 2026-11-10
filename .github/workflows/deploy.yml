@@ -14,9 +14,6 @@ jobs:
     name: ⬣ Linter
     runs-on: ubuntu-latest
     steps:
-      - name: 🛑 Cancel Previous Runs
-        uses: styfle/cancel-workflow-action@0.13.1
-
       - name: ⬇️ Checkout repo
         uses: actions/checkout@v7.0.1
 
@@ -38,9 +35,6 @@ jobs:
     name: ʦ TypeScript
     runs-on: ubuntu-latest
     steps:
-      - name: 🛑 Cancel Previous Runs
-        uses: styfle/cancel-workflow-action@0.13.1
-
       - name: ⬇️ Checkout repo
         uses: actions/checkout@v7.0.1
 
@@ -62,9 +56,6 @@ jobs:
     name: ⚡ Vitest
     runs-on: ubuntu-latest
     steps:
-      - name: 🛑 Cancel Previous Runs
-        uses: styfle/cancel-workflow-action@0.13.1
-
       - name: ⬇️ Checkout repo
         uses: actions/checkout@v7.0.1
 
@@ -97,8 +88,21 @@ jobs:
         with:
           context: .
           push: false
+          load: true
+          tags: moleculer-smoke:ci
           cache-from: type=gha
           cache-to: type=gha,mode=max
+
+      - name: Check production container
+        env:
+          EXPECTED_REVISION: ${{ github.sha }}
+        run: |
+          trap 'docker logs moleculer-smoke; docker rm -f moleculer-smoke' EXIT
+          docker run -d --name moleculer-smoke -p 127.0.0.1:8888:8888 -e GIT_REV="$EXPECTED_REVISION" moleculer-smoke:ci
+          curl --fail --silent --show-error --retry 12 --retry-all-errors --retry-delay 2 -D "$RUNNER_TEMP/health-headers" http://127.0.0.1:8888/api/health/check
+          actual=$(awk 'tolower($1) == "x-revision:" {gsub("\r", "", $2); print $2}' "$RUNNER_TEMP/health-headers" | tail -n 1)
+          test "$actual" = "$EXPECTED_REVISION"
+          curl --fail --silent --show-error --retry 12 --retry-all-errors --retry-delay 2 http://127.0.0.1:8888/api/greeter/hello
 
   deploy:
     name: 🚀 Deploy
@@ -125,9 +129,15 @@ jobs:
           trap 'rm -f "$key"' EXIT
           printf '%s\n' "$DOKKU_SSH_PRIVATE_KEY" > "$key"
           export GIT_SSH_COMMAND="ssh -i $key -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes -o UserKnownHostsFile=$GITHUB_WORKSPACE/.github/dokku_known_hosts"
-          git push ssh://dokku@95.111.232.131/moleculer HEAD:main
+          ssh -i "$key" -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes -o UserKnownHostsFile="$GITHUB_WORKSPACE/.github/dokku_known_hosts" dokku@95.111.232.131 git:report moleculer --git-deploy-branch | grep -qx main
+          git push ssh://dokku@95.111.232.131/moleculer HEAD:main 2>&1 | tee "$RUNNER_TEMP/dokku-push.log"
+          if grep -q 'deploy did not complete' "$RUNNER_TEMP/dokku-push.log"; then exit 1; fi
 
       - name: Check public health
+        env:
+          EXPECTED_REVISION: ${{ github.sha }}
         run: |
-          curl --fail --silent --show-error --retry 6 --retry-all-errors --retry-delay 5 https://moleculer.itman.fyi/api/health/check
-          curl --fail --silent --show-error https://moleculer.itman.fyi/api/greeter/hello
+          curl --fail --silent --show-error --retry 6 --retry-all-errors --retry-delay 5 -D "$RUNNER_TEMP/health-headers" https://moleculer.itman.fyi/api/health/check
+          actual=$(awk 'tolower($1) == "x-revision:" {gsub("\r", "", $2); print $2}' "$RUNNER_TEMP/health-headers" | tail -n 1)
+          test "$actual" = "$EXPECTED_REVISION"
+          curl --fail --silent --show-error --retry 6 --retry-all-errors --retry-delay 5 https://moleculer.itman.fyi/api/greeter/hello

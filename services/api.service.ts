@@ -1,4 +1,4 @@
-import type { IncomingMessage } from "node:http";
+import type { IncomingMessage, ServerResponse } from "node:http";
 import process from "node:process";
 import helmet from "helmet";
 import type { Context, ServiceAction, ServiceSchema } from "moleculer";
@@ -29,6 +29,16 @@ const apiService: ServiceSchema<ApiSettingsSchema> = {
                 },
                 aliases: {
                     check: "$node.health",
+                },
+                onAfterCall(
+                    _ctx: Context,
+                    _route: unknown,
+                    _req: IncomingMessage,
+                    res: ServerResponse,
+                    data: unknown,
+                ) {
+                    res.setHeader("X-Revision", process.env.GIT_REV ?? "unknown");
+                    return data;
                 },
             },
             {
