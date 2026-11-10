@@ -4,6 +4,7 @@ import TestService, {
     type GetWeatherParams,
     type WeatherData,
 } from "../../../services/weather.service";
+import { mockWeatherData } from "../../../tests/mocks/fixtures";
 import { server } from "../../../tests/mocks/server";
 
 const { ValidationError } = Errors;
@@ -31,11 +32,10 @@ describe("Test 'weather' service", () => {
                     longitude: 7.4474,
                 },
             );
-            expect(response.current).toEqual({
-                temperature_2m: 20.5,
-                relative_humidity_2m: 65,
-                rain: 0,
-                weather_code: 1,
+            expect(response).toEqual({
+                ...mockWeatherData,
+                latitude: 46.9481,
+                longitude: 7.4474,
             });
         });
 
@@ -57,6 +57,18 @@ describe("Test 'weather' service", () => {
             expect.assertions(1);
             try {
                 await broker.call("weather.getCurrentWeather");
+            } catch (error: unknown) {
+                expect(error).toBeInstanceOf(ValidationError);
+            }
+        });
+
+        it("should reject with ValidationError when coordinates are out of range", async () => {
+            expect.assertions(1);
+            try {
+                await broker.call("weather.getCurrentWeather", {
+                    latitude: 91,
+                    longitude: 7.4474,
+                });
             } catch (error: unknown) {
                 expect(error).toBeInstanceOf(ValidationError);
             }

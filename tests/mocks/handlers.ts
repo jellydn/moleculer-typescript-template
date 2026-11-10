@@ -1,15 +1,5 @@
 import { HttpResponse, http } from "msw";
-
-const mockWeatherData = {
-    latitude: 46.94,
-    longitude: 7.44,
-    current: {
-        temperature_2m: 20.5,
-        relative_humidity_2m: 65,
-        rain: 0,
-        weather_code: 1,
-    },
-};
+import { mockWeatherData } from "./fixtures";
 
 export const handlers = [
     // Mock weather API
@@ -19,7 +9,10 @@ export const handlers = [
         const longitude = url.searchParams.get("longitude");
 
         if (latitude === "11.1111" && longitude === "22.2222") {
-            return new HttpResponse(null, { status: 503 });
+            return HttpResponse.json(
+                { error: true, reason: "Service unavailable" },
+                { status: 503 },
+            );
         }
 
         if (latitude === "10" && longitude === "10") return HttpResponse.error();
@@ -31,6 +24,7 @@ export const handlers = [
             return new HttpResponse(null, { status: 400 });
         }
 
+        // Echo coordinates to expose dropped or swapped query parameters in API assertions.
         return HttpResponse.json({
             ...mockWeatherData,
             latitude: Number(latitude),
