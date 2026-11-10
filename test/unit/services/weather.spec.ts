@@ -27,8 +27,8 @@ describe("Test 'weather' service", () => {
             const response = await broker.call<WeatherData, GetWeatherParams>(
                 "weather.getCurrentWeather",
                 {
-                    latitude: "46.9481",
-                    longitude: "7.4474",
+                    latitude: 46.9481,
+                    longitude: 7.4474,
                 },
             );
             expect(response.current).toEqual({
@@ -45,7 +45,12 @@ describe("Test 'weather' service", () => {
                     latitude: "11.1111",
                     longitude: "22.2222",
                 }),
-            ).rejects.toThrow("Weather API error:");
+            ).rejects.toMatchObject({
+                message: "Weather API error: HTTP 503",
+                code: 502,
+                type: "WEATHER_UPSTREAM_ERROR",
+                data: { status: 503 },
+            });
         });
 
         it("should reject with ValidationError when params are missing", async () => {

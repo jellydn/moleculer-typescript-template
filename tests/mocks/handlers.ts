@@ -1,4 +1,4 @@
-import { http, HttpResponse } from "msw";
+import { HttpResponse, http } from "msw";
 
 const mockWeatherData = {
     latitude: 46.94,
@@ -18,10 +18,10 @@ export const handlers = [
         const latitude = url.searchParams.get("latitude");
         const longitude = url.searchParams.get("longitude");
 
-        if (latitude === "46.9481" && longitude === "7.4474") {
-            return HttpResponse.json(mockWeatherData);
+        if (latitude === "11.1111" && longitude === "22.2222") {
+            return new HttpResponse(null, { status: 503 });
         }
 
-        return new HttpResponse("Invalid coordinates", { status: 422 });
+        return HttpResponse.json(mockWeatherData);
     }),
 ];

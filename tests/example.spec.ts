@@ -1,5 +1,5 @@
-import { type APIRequestContext, expect, test } from "@playwright/test";
 import os from "node:os";
+import { type APIRequestContext, expect, test } from "@playwright/test";
 
 // Test group for health check endpoint
 test.describe("Health Check API", () => {
