@@ -195,7 +195,7 @@ const weatherService: ServiceSchema<ServiceSettings, ServiceThis> = {
                 else if (error instanceof SyntaxError) reason = "invalid_json";
                 else if (error instanceof Error && error.name === "TimeoutError")
                     reason = "timeout";
-                this.logger.warn("Weather upstream request failed", { reason, error });
+                this.logger.warn({ reason, err: error }, "Weather upstream request failed");
                 throw new Errors.MoleculerError(
                     "Weather upstream request failed",
                     502,
