@@ -124,6 +124,7 @@ jobs:
         env:
           DOKKU_SSH_PRIVATE_KEY: ${{ secrets.DOKKU_SSH_PRIVATE_KEY }}
         run: |
+          set -o pipefail # a failing git push must fail the step even though its output is piped into tee
           test -n "$DOKKU_SSH_PRIVATE_KEY" || { echo "Missing DOKKU_SSH_PRIVATE_KEY" >&2; exit 1; }
           umask 077
           key="$RUNNER_TEMP/dokku_key"
@@ -131,15 +132,38 @@ jobs:
           printf '%s\n' "$DOKKU_SSH_PRIVATE_KEY" > "$key"
           export GIT_SSH_COMMAND="ssh -i $key -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes -o UserKnownHostsFile=$GITHUB_WORKSPACE/.github/dokku_known_hosts"
           ssh_options=(-i "$key" -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes -o "UserKnownHostsFile=$GITHUB_WORKSPACE/.github/dokku_known_hosts")
+
+          # The app.json healthchecks are only honoured by Dokku 0.31.0 and newer.
+          version_output=$(ssh "${ssh_options[@]}" dokku@95.111.232.131 version)
+          dokku_version=${version_output##* }
+          if [[ ! "$dokku_version" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            printf 'Could not determine the Dokku version from <%s>\n' "$version_output" >&2
+            exit 1
+          fi
+          dokku_major=${dokku_version%%.*}
+          dokku_minor=${dokku_version#*.}
+          dokku_minor=${dokku_minor%%.*}
+          if [ "$dokku_major" -eq 0 ] && [ "$dokku_minor" -lt 31 ]; then
+            printf 'Dokku 0.31.0 or newer is required for the app.json healthchecks, found <%s>\n' "$dokku_version" >&2
+            exit 1
+          fi
+
           # This target has deploy-branch=main set per-app on Dokku 0.37.7.
-          # Require that setting; old git:report defaults cannot resolve inherited branches.
+          # git:report prints the app property or the literal default "master", so
+          # "master" means "unset" and the global property decides the effective branch.
           branch=$(ssh "${ssh_options[@]}" dokku@95.111.232.131 git:report moleculer --git-deploy-branch)
+          if [ "$branch" = master ]; then
+            branch=$(ssh "${ssh_options[@]}" dokku@95.111.232.131 git:report moleculer --git-global-deploy-branch)
+          fi
+          branch=${branch:-master}
           if [ "$branch" != main ]; then
             printf 'Expected Dokku deploy branch main, got <%s>\n' "$branch" >&2
             exit 1
           fi
-          git push ssh://dokku@95.111.232.131/moleculer HEAD:main 2>&1 | tee "$RUNNER_TEMP/dokku-push.log"
-          if grep -q 'deploy did not complete' "$RUNNER_TEMP/dokku-push.log"; then exit 1; fi
+          if ! git push ssh://dokku@95.111.232.131/moleculer HEAD:main 2>&1 | tee "$RUNNER_TEMP/dokku-push.log"; then
+            printf 'Dokku git push failed, see %s\n' "$RUNNER_TEMP/dokku-push.log" >&2
+            exit 1
+          fi
 
       - name: Check public health
         env:

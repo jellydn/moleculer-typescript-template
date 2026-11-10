@@ -25,6 +25,7 @@ services:
     env_file: docker-compose.env
     environment:
       SERVICES: greeter
+      PORT: 3000
     depends_on:
       - nats
     networks:
@@ -37,6 +38,7 @@ services:
     env_file: docker-compose.env
     environment:
       SERVICES: product
+      PORT: 3000
     depends_on:
       - nats
     networks:
