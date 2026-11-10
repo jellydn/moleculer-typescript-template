@@ -246,6 +246,21 @@ pre-commit run --all-files
 
 CI runs the same hooks and fails if a hook reports an error or changes a file. It does not commit or push fixes. Run the hooks locally. If Biome reports errors, run `pnpm check` to apply formatting and safe fixes. Resolve any remaining errors and rerun the hooks. Review the changes and commit them before pushing. The Biome CI hook uses the Biome 2 version pinned in `.pre-commit-config.yaml`.
 
+## Pullfrog reviews
+
+The repository uses the [official Pullfrog workflow](https://docs.pullfrog.com/getting-started) in `.github/workflows/pullfrog.yml` instead of the Claude workflows. The Pullfrog GitHub App receives PR events and dispatches this workflow; adding a `pull_request` trigger is not required. Other review tools are unchanged.
+
+Repository owner setup:
+
+1. Sign in to the [Pullfrog console](https://pullfrog.com/console) and install or authorize its GitHub App for this repository.
+2. Choose model access in the console. [Public repositories use the platform free](https://docs.pullfrog.com/billing), but model tokens are separate. A [free model](https://docs.pullfrog.com/model-access) still needs an `OPENCODE_API_KEY`; paid providers or Router credit can incur costs. Funded OSS model access requires acceptance into the program for repositories with more than 1,000 stars. No paid access is configured by this workflow.
+3. After the workflow reaches the default branch through normal review and required checks, select **Verify manual installation** in the repository console.
+4. Under **Automations → Review PRs**, enable automatic reviews, re-review on push, and **Include PRs opened by bots** so Renovate PRs are reviewed. Enable the `pullfrog` run-status and `pullfrog-approval` verdict checks. Leave auto-merge off.
+5. Send the console's test prompt, then request a review on a PR with `@pullfrog`. Verify the completed workflow, published review, and both checks on the exact PR head before treating the integration as working.
+6. If branch protection requires `claude-review`, an owner must migrate that requirement to the verified Pullfrog checks without weakening other required checks or approvals. Do not remove a required gate just to merge this installation change. The integration is not verified merely because the old Claude check stops running.
+
+See [Pullfrog PR review settings and status checks](https://docs.pullfrog.com/pr-reviews). The workflow needs `id-token: write` for authentication and checks out code without persisted Git credentials. It does not use `CLAUDE_CODE_OAUTH_TOKEN`. Installing the App, choosing model credentials, and configuring review gates are owner actions; repository YAML alone cannot complete them.
+
 ## Author
 
 👤 **Dung Huynh**
