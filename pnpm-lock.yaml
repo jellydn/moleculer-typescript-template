@@ -25,7 +25,7 @@ importers:
         version: 0.11.0(moleculer@0.15.2(debug@4.4.3)(nats@2.29.3)(pino@10.4.0))
       moleculer-zod-validator:
         specifier: 3.3.1
-        version: 3.3.1(moleculer@0.15.2(debug@4.4.3)(nats@2.29.3)(pino@10.4.0))(zod@3.25.76)
+        version: 3.3.1(moleculer@0.15.2(debug@4.4.3)(nats@2.29.3)(pino@10.4.0))(zod@4.6.7)
       nats:
         specifier: 2.29.3
         version: 2.29.3
@@ -42,12 +42,12 @@ importers:
         specifier: 2.9.1
         version: 2.9.1
       zod:
-        specifier: 3.25.76
-        version: 3.25.76
+        specifier: 4.6.7
+        version: 4.6.7
     devDependencies:
       '@asteasolutions/zod-to-openapi':
         specifier: 7.3.4
-        version: 7.3.4(zod@3.25.76)
+        version: 7.3.4(zod@4.6.7)
       '@biomejs/biome':
         specifier: 2.6.6
         version: 2.6.6
@@ -2978,8 +2978,8 @@ packages:
     resolution: {integrity: sha512-U/PBtDf35ff0D8X8D0jfdzHYEPFxAI7jJlxZXwCSez5M3190m+QobIfh+sWDWSHMCWWJN2AWamkegn6vr6YBTw==}
     engines: {node: '>=18'}
 
-  zod@3.25.76:
-    resolution: {integrity: sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ==}
+  zod@4.6.7:
+    resolution: {integrity: sha512-g8W2D2kU6a8untc053fX1uVBKzM7yqAxW/3zwk83+6RyF2+SKOuV+c0wBDhUwzV1PaGapmZH+rmcUzPf+3CGwg==}
 
 snapshots:
 
@@ -3002,10 +3002,10 @@ snapshots:
       call-me-maybe: 1.0.2
       openapi-types: 12.1.3
 
-  '@asteasolutions/zod-to-openapi@7.3.4(zod@3.25.76)':
+  '@asteasolutions/zod-to-openapi@7.3.4(zod@4.6.7)':
     dependencies:
       openapi3-ts: 4.6.2
-      zod: 3.25.76
+      zod: 4.6.7
 
   '@babel/helper-string-parser@7.29.13': {}
 
@@ -4822,10 +4822,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  moleculer-zod-validator@3.3.1(moleculer@0.15.2(debug@4.4.3)(nats@2.29.3)(pino@10.4.0))(zod@3.25.76):
+  moleculer-zod-validator@3.3.1(moleculer@0.15.2(debug@4.4.3)(nats@2.29.3)(pino@10.4.0))(zod@4.6.7):
     dependencies:
       moleculer: 0.15.2(debug@4.4.3)(nats@2.29.3)(pino@10.4.0)
-      zod: 3.25.76
+      zod: 4.6.7
 
   moleculer@0.15.2(debug@4.4.3)(nats@2.29.3)(pino@10.4.0):
     dependencies:
@@ -5712,4 +5712,4 @@ snapshots:
 
   yoctocolors-cjs@2.1.3: {}
 
-  zod@3.25.76: {}
+  zod@4.6.7: {}
