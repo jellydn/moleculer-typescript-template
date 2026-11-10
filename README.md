@@ -189,8 +189,10 @@ pnpm test
 Production runs in the existing Dokku app `moleculer` on `dokku@95.111.232.131`, at https://moleculer.itman.fyi.
 The app uses the root Dockerfile, deploy branch `main`, two web processes and port `8888`.
 
-The deployment workflow validates lint, TypeScript, unit tests and the Docker image before pushing `main` to Dokku.
-Set the repository secret `DOKKU_SSH_PRIVATE_KEY` to an app-scoped deployment key registered with Dokku.
+The workflow validates lint, TypeScript, unit tests and the Docker image on pull requests and pushes to `main`.
+Deployment from GitHub is an explicit **Run workflow** action on `main`, not an automatic push deployment.
+Before using it, obtain owner approval to register an app-scoped Dokku key and store it as `DOKKU_SSH_PRIVATE_KEY`.
+Until then, deploy manually from a trusted workstation with existing authorized SSH access.
 The server's verified Ed25519 host key is pinned in `.github/dokku_known_hosts`; do not disable host-key checking.
 Fly credentials and registry access are not used.
 
@@ -207,13 +209,13 @@ Keep the existing domain, routing and process scale when deploying; no app recre
 
 ## GitHub Actions
 
-GitHub Actions validates pull requests and deploys pushes to `main` to production after the deployment workflow's checks pass.
+GitHub Actions validates pull requests and pushes to `main`; a manually dispatched run can deploy `main` after its checks pass.
 There is no staging deployment target configured for `dev`.
 
 ## Useful links
 
 - Moleculer website: https://moleculer.services/
-- Moleculer Documentation: https://moleculer.services/docs/0.14/
+- Moleculer Documentation: https://moleculer.services/docs/0.15/
 
 ## NPM scripts
 

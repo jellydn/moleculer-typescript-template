@@ -18,7 +18,7 @@ const validateParams = (
     ctx: Context<unknown, Record<string, unknown>>,
     schema: typeof addCartSchema,
 ) => {
-    const compiled = z.object(schema).strict();
+    const compiled = z.strictObject(schema);
     try {
         const parsedParams = compiled.parse(ctx.params);
         logger.info("Validated parameters: %o", parsedParams);
