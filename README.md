@@ -1,7 +1,7 @@
 # Welcome to moleculer-typescript-template 👋
 
 ![Version](https://img.shields.io/badge/version-0.1.1-blue.svg?cacheSeconds=2592000)
-![Prerequisite](https://img.shields.io/badge/node-%3E%3D%2014.x.x-blue.svg)
+![Prerequisite](https://img.shields.io/badge/node-22.22.2%2B%20%7C%2024.15.0%2B%20%7C%2026%2B-blue.svg)
 [![Twitter: jellydn](https://img.shields.io/twitter/follow/jellydn.svg?style=social)](https://twitter.com/jellydn)
 
 > My Moleculer-based microservices project
@@ -18,7 +18,7 @@
 
 ## Prerequisites
 
-- node >= 18.17.x
+- Node.js 22.22.2 or later in the 22.x line, 24.15.0 or later in the 24.x line, or 26.0.0 or later, matching the development toolchain's engine range.
 
 ## Init new project
 
@@ -47,8 +47,11 @@ pnpm install
 
 The template exposes `GET /api/weather?latitude=52.52&longitude=13.41` in every deployment.
 It calls the external Open-Meteo forecast API. Latitude must be between -90 and 90 and longitude between -180 and 180.
+Non-blank numeric strings use JavaScript Number syntax, including scientific and hexadecimal notation; bounds apply after conversion. Non-numeric text returns 422.
+Open-Meteo returns the coordinates of its grid cell, not necessarily the requested coordinates. Test mocks deliberately echo the query to detect forwarding errors.
+Missing current measurements remain `null`, as returned by Open-Meteo; malformed values still return 502.
 Upstream HTTP failures return 502 with the upstream status in `data.status`.
-Network failures, the five-second timeout, malformed JSON and invalid response payloads return 502 with `WEATHER_UPSTREAM_ERROR` and no upstream status.
+Network failures, the five-second timeout, malformed JSON and invalid response payloads return 502 with `WEATHER_UPSTREAM_ERROR` and `data.reason` set to `network`, `timeout`, `invalid_json` or `invalid_payload`, respectively. Internal error details are not exposed.
 Remove `services/weather.service.ts` from a derived project if it does not need this public demo endpoint.
 
 `pnpm test` runs Vitest tests in `test/`. `pnpm test:e2e` runs the API-only Playwright suite in `tests/`.

@@ -10,7 +10,7 @@
   "license": "MIT",
   "author": "Huynh Duc Dung",
   "scripts": {
-    "dev": "run-p -l dev:*",
+    "dev": "run-p -l dev:api dev:swagger",
     "dev:api": "npx tsx watch ./server.ts | npx pino-pretty",
     "logdy": "npx tsx watch ./server.ts | logdy --no-analytics --port 4567",
     "dev:swagger": "wait-on -c ./wait-on.config.cjs -l && npm run generate:swagger",
@@ -73,7 +73,7 @@
     "moleculer-io": "3.0.0",
     "moleculer-repl": "0.8.0",
     "msw": "2.15.0",
-    "npm-run-all2": "8.0.4",
+    "npm-run-all2": "9.0.4",
     "pino-pretty": "13.2.0",
     "sort-package-json": "4.1.0",
     "tsup": "8.5.1",
@@ -85,7 +85,7 @@
   },
   "packageManager": "pnpm@10.34.9",
   "engines": {
-    "node": ">= 22.0.0"
+    "node": "^22.22.2 || ^24.15.0 || >=26.0.0"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
