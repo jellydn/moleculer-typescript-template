@@ -120,6 +120,7 @@ jobs:
           fetch-depth: 0
 
       - name: 🚀 Deploy to Dokku
+        shell: bash
         env:
           DOKKU_SSH_PRIVATE_KEY: ${{ secrets.DOKKU_SSH_PRIVATE_KEY }}
         run: |
@@ -129,7 +130,11 @@ jobs:
           trap 'rm -f "$key"' EXIT
           printf '%s\n' "$DOKKU_SSH_PRIVATE_KEY" > "$key"
           export GIT_SSH_COMMAND="ssh -i $key -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes -o UserKnownHostsFile=$GITHUB_WORKSPACE/.github/dokku_known_hosts"
-          ssh -i "$key" -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes -o UserKnownHostsFile="$GITHUB_WORKSPACE/.github/dokku_known_hosts" dokku@95.111.232.131 git:report moleculer --git-deploy-branch | grep -qx main
+          branch=$(ssh -i "$key" -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes -o UserKnownHostsFile="$GITHUB_WORKSPACE/.github/dokku_known_hosts" dokku@95.111.232.131 git:report moleculer --git-computed-deploy-branch)
+          if [ "$branch" != main ]; then
+            printf 'Expected Dokku deploy branch main, got <%s>\n' "$branch" >&2
+            exit 1
+          fi
           git push ssh://dokku@95.111.232.131/moleculer HEAD:main 2>&1 | tee "$RUNNER_TEMP/dokku-push.log"
           if grep -q 'deploy did not complete' "$RUNNER_TEMP/dokku-push.log"; then exit 1; fi
 
