@@ -244,6 +244,8 @@ To run the checks manually, use the following command:
 pre-commit run --all-files
 ```
 
+CI runs the same hooks and fails if a hook reports an error or changes a file. It does not commit or push fixes. Run the hooks locally, review any formatting changes, and commit them before pushing. The Biome CI hook uses the Biome 2 version pinned in `.pre-commit-config.yaml`.
+
 ## Author
 
 👤 **Dung Huynh**
