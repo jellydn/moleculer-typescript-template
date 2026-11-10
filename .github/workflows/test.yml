@@ -27,7 +27,8 @@ jobs:
         run: bun run test
 
   e2e-test:
-    runs-on: ubuntu-latest
+    # Hurl 4 requires libxml2, which Ubuntu 26.04 no longer provides.
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout
         uses: actions/checkout@v6
@@ -40,10 +41,23 @@ jobs:
       - name: Install wait-on
         run: bun add -g wait-on
 
+      - name: Install Hurl
+        run: |
+          curl --fail --location --remote-name https://github.com/Orange-OpenSource/hurl/releases/download/4.0.0/hurl_4.0.0_amd64.deb
+          sudo apt-get update
+          sudo apt-get install -y ./hurl_4.0.0_amd64.deb
+
       - name: Integration test
         run: |
           PORT=8888 TRANSPORTER=TCP bun run start &
-          curl --location --remote-name https://github.com/Orange-OpenSource/hurl/releases/download/4.0.0/hurl_4.0.0_amd64.deb
-          sudo dpkg -i hurl_4.0.0_amd64.deb
-          wait-on http://0.0.0.0:8888/api/health/check -l -i 500 -d 1000
+          # Health can pass before the gateway generates REST aliases.
+          wait-on http://127.0.0.1:8888/api/health/check http-get://127.0.0.1:8888/api/api/list-aliases -l -i 500 -d 1000 -t 60000
+          deadline=$((SECONDS + 60))
+          until curl --fail --silent --max-time 2 http://127.0.0.1:8888/api/api/list-aliases | jq --exit-status 'any(.[]; .fullPath == "/api/product/cart" and .methods == "POST")' > /dev/null; do
+            if (( SECONDS >= deadline )); then
+              echo "Timed out waiting for POST /api/product/cart" >&2
+              exit 1
+            fi
+            sleep 0.5
+          done
           hurl --variable PORT=8888 --test test/e2e/*.hurl
