@@ -163,10 +163,6 @@ const config: BrokerOptions = {
                 logger: null,
                 // Using colors
                 colors: true,
-                // Width of row
-                width: 100,
-                // Gauge width in the row
-                gaugeWidth: 40,
             },
         },
     },
@@ -188,13 +184,13 @@ const config: BrokerOptions = {
                     // Broadcast or emit event
                     broadcast: false,
                     // Event groups
-                    groups: null,
+                    groups: undefined,
                     // Sending time interval in seconds
                     interval: 5,
                     // Custom span object converter before sending
-                    spanConverter: null,
+                    spanConverter: undefined,
                     // Default tags. They will be added into all span tags.
-                    defaultTags: null,
+                    defaultTags: undefined,
                 },
             },
         ],

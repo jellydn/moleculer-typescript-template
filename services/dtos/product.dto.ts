@@ -1,6 +1,10 @@
 import { writeFileSync } from "node:fs";
 import { resolve } from "node:path";
-import { extendZodWithOpenApi, OpenApiGeneratorV3 } from "@asteasolutions/zod-to-openapi";
+import {
+    extendZodWithOpenApi,
+    OpenApiGeneratorV3,
+    OpenAPIRegistry,
+} from "@asteasolutions/zod-to-openapi";
 import yaml from "yaml";
 import { z } from "zod";
 
@@ -41,7 +45,11 @@ const ResponseSchema = z
     .openapi("addCartResponseDTO", {
         description: "Add cart response DTO",
     });
-const generator = new OpenApiGeneratorV3([Schema, ResponseSchema]);
+// These components are referenced from JSDoc, not from generator-owned routes.
+const registry = new OpenAPIRegistry();
+registry.register("addCartDTO", Schema);
+registry.register("addCartResponseDTO", ResponseSchema);
+const generator = new OpenApiGeneratorV3(registry.definitions);
 const components = generator.generateComponents();
 
 // Write to YAML file

@@ -1,7 +1,7 @@
 import os from "node:os";
 import { config } from "dotenv";
 import defaultsDeep from "lodash/defaultsDeep";
-import { type BrokerOptions, type LogLevels, ServiceBroker } from "moleculer";
+import { type BrokerOptions, type LogLevels, ServiceBroker, Transporters } from "moleculer";
 
 import moleculerConfig from "./moleculer.config";
 
@@ -20,7 +20,7 @@ export function getMoleculerConfig(moleculerFileConfig: BrokerOptions) {
 
     //
     if (process.env.TRANSPORTER) {
-        mergedConfig.transporter = process.env.TRANSPORTER;
+        mergedConfig.transporter = Transporters.resolve(process.env.TRANSPORTER);
     }
 
     if (process.env.LOGLEVEL) {

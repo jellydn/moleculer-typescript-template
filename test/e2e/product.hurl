@@ -72,4 +72,5 @@ POST http://localhost:{{PORT}}/api/product/cart
 HTTP 422
 [Asserts]
 jsonpath "$.message" == "Parameters validation error!"
-jsonpath "$.data[0].message" == "Unrecognized key(s) in object: 'buyer'"
+jsonpath "$.data[0].code" == "unrecognized_keys"
+jsonpath "$.data[0].keys[0]" == "buyer"
