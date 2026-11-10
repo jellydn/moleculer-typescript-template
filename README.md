@@ -221,7 +221,7 @@ curl --fail https://moleculer.itman.fyi/api/health/check
 The container installs production dependencies only, including the TypeScript runner and DTO generator.
 It sets `NODE_ENV=production`, `TRANSPORTER=TCP` and a default `PORT=8888`; Dokku overrides the port from its configured map.
 The health response includes `X-Revision` from Dokku's per-deploy `GIT_REV`; the workflow requires it to equal the dispatched commit.
-Dokku startup checks verify broker health and the greeter route before replacing the old containers.
+On the verified Dokku 0.37.7 host with the docker-local scheduler, startup checks verify broker health and the greeter route before switching traffic to the new containers.
 Keep the existing domain, routing and process scale when deploying; no app recreation or volume cleanup is required.
 
 ## GitHub Actions

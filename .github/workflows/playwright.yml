@@ -8,6 +8,7 @@ permissions:
   contents: read
 jobs:
   test:
+    name: Playwright API
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
