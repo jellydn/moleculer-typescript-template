@@ -10,7 +10,7 @@
   "license": "MIT",
   "author": "Huynh Duc Dung",
   "scripts": {
-    "dev": "run-p -l dev:*",
+    "dev": "run-p -l dev:api dev:swagger",
     "dev:api": "npx tsx watch ./server.ts | npx pino-pretty",
     "logdy": "npx tsx watch ./server.ts | logdy --no-analytics --port 4567",
     "dev:swagger": "wait-on -c ./wait-on.config.cjs -l && npm run generate:swagger",
