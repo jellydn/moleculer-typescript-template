@@ -1,10 +1,10 @@
 ---
 id: TASK-8
 title: Finish weather API and Playwright mock coverage
-status: In Progress
+status: Done
 assignee: []
 created_date: "2026-11-10 13:24"
-updated_date: "2026-11-10 15:25"
+updated_date: "2026-11-10 15:56"
 labels: []
 dependencies: []
 ---
@@ -14,7 +14,6 @@ dependencies: []
 <!-- SECTION:DESCRIPTION:BEGIN -->
 
 Make the existing draft weather demo deterministic and portable without importing tests in production.
-
 <!-- SECTION:DESCRIPTION:END -->
 
 ## Acceptance Criteria
@@ -40,5 +39,4 @@ Make the existing draft weather demo deterministic and portable without importin
 <!-- SECTION:NOTES:BEGIN -->
 
 Test-owned MSW bootstrap keeps mocks out of production. Coordinates are validated before coercion; blanks, missing values, non-numeric text and out-of-range values return 422. Numeric strings use JavaScript Number syntax, including hexadecimal and scientific notation, with bounds applied after conversion. Upstream HTTP failures retain data.status; other 502 failures identify network, timeout, invalid_json or invalid_payload in data.reason without exposing internal details. WeatherData is inferred from the runtime Zod schema, and valid extra fields survive at all response levels. The README explains live grid-cell coordinates versus the mock's deliberate query echo. Complete OpenAPI metadata covers the same fields and generates the SDK. Removed per-request debug output and restricted the Playwright workflow token. The Playwright readiness probe uses list-aliases instead of the feature under test. Verified frozen install, typecheck, unit and API suites, lint, Biome, build and actionlint. Invalid-payload regressions fail before the schema fix and pass after it; HTTP tests cover error reasons and numeric-string conversion, and a unit regression distinguishes timeout from network failure.
-
 <!-- SECTION:NOTES:END -->
