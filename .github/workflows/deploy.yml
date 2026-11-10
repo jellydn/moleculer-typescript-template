@@ -149,13 +149,8 @@ jobs:
           fi
 
           # This target has deploy-branch=main set per-app on Dokku 0.37.7.
-          # git:report prints the app property or the literal default "master", so
-          # "master" means "unset" and the global property decides the effective branch.
+          # Require that setting; git:report cannot distinguish unset from explicit master.
           branch=$(ssh "${ssh_options[@]}" dokku@95.111.232.131 git:report moleculer --git-deploy-branch)
-          if [ "$branch" = master ]; then
-            branch=$(ssh "${ssh_options[@]}" dokku@95.111.232.131 git:report moleculer --git-global-deploy-branch)
-          fi
-          branch=${branch:-master}
           if [ "$branch" != main ]; then
             printf 'Expected Dokku deploy branch main, got <%s>\n' "$branch" >&2
             exit 1
@@ -164,6 +159,8 @@ jobs:
             printf 'Dokku git push failed, see %s\n' "$RUNNER_TEMP/dokku-push.log" >&2
             exit 1
           fi
+          # A branch configuration change after preflight can skip deployment with exit zero.
+          if grep -q 'deploy did not complete' "$RUNNER_TEMP/dokku-push.log"; then exit 1; fi
 
       - name: Check public health
         env:

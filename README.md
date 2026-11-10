@@ -222,7 +222,7 @@ curl --fail https://moleculer.itman.fyi/api/health/check
 ```
 
 The container installs production dependencies only, including the TypeScript runner and DTO generator.
-It sets `NODE_ENV=production`, `TRANSPORTER=TCP` and a default `PORT=8888`, which is the container port of Dokku's `http:80:8888 https:43:8888` map.
+It sets `NODE_ENV=production`, `TRANSPORTER=TCP` and a default `PORT=8888`, which is the container port of Dokku's `http:80:8888 https:443:8888` map.
 Docker Compose and Kubernetes pin `PORT=3000` explicitly, so the image default only applies to deployments that do not set the port themselves.
 The health response includes `X-Revision` from Dokku's per-deploy `GIT_REV`; the workflow requires it to equal the dispatched commit.
 On the verified Dokku 0.37.7 host with the docker-local scheduler, startup checks verify broker health and the greeter route before switching traffic to the new containers.
