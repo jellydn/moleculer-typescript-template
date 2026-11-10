@@ -2,6 +2,8 @@ import { execSync } from "node:child_process";
 import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { beforeAll, describe, expect, it } from "vitest";
+import yaml from "yaml";
+import "../../services/dtos/product.dto";
 
 describe("SDK Generation", () => {
     const sdkPath = join(process.cwd(), "generated", "sdk");
@@ -52,6 +54,22 @@ describe("SDK Generation", () => {
         expect(typesContent).toContain("GetApiGreeterHelloResponse");
         expect(typesContent).toContain("GetApiGreeterWelcomeResponse");
         expect(typesContent).toContain("PostApiProductCartResponse");
+    });
+
+    it("should retain the cart components referenced by the API documentation", () => {
+        const document = yaml.parse(
+            readFileSync("services/dtos/product-dto.swagger.yaml", "utf-8"),
+        );
+        expect(document.components.schemas.addCartDTO.required).toEqual(["name", "qty"]);
+        expect(document.components.schemas.addCartDTO.properties.billing.required).toEqual([
+            "city",
+            "zip",
+            "country",
+        ]);
+        expect(document.components.schemas.addCartResponseDTO.required).toEqual([
+            "success",
+            "message",
+        ]);
     });
 
     it("should TypeScript compile the generated SDK", () => {
