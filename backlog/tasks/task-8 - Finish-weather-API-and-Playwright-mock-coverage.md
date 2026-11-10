@@ -4,7 +4,7 @@ title: Finish weather API and Playwright mock coverage
 status: In Progress
 assignee: []
 created_date: "2026-11-10 13:24"
-updated_date: "2026-11-10 13:27"
+updated_date: "2026-11-10 13:50"
 labels: []
 dependencies: []
 ---
@@ -39,4 +39,6 @@ Make the existing draft weather demo deterministic and portable without importin
 <!-- SECTION:NOTES:BEGIN -->
 
 Removed production imports of test mocks and duplicate Vitest config. Test-owned bootstrap starts MSW before services. Playwright runs API requests once without browser installs, waits for weather alias at port 18889, and sets test environment/TCP transport. Unit mocks explicitly listen/reset/close; exact payload and upstream failure tested. Health assertions use runtime OS values. Pinned Playwright 1.65.0 and MSW 2.15.0; MSW 3 requires a broader TypeScript module-resolution migration, so retained compatible major 2. Local typecheck, 14 unit tests, lint, Biome, build and 10 Playwright API tests pass. GitHub validation pending.
+
+Addressed Pullfrog findings: numeric coordinate bounds with query coercion, explicit 502 upstream failure with preserved status, Biome coverage for tests/, and README notes for public Open-Meteo dependency and test-tree roles. Local frozen install, typecheck, 15 unit tests, lint, Biome, build and 20 Playwright API tests pass. HTTP cases cover both coordinate boundaries, values just outside them, invalid text, and an empty-statusText upstream failure.
 <!-- SECTION:NOTES:END -->
