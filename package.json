@@ -76,7 +76,7 @@
     "npm-run-all2": "9.0.4",
     "pino-pretty": "13.2.0",
     "sort-package-json": "4.1.0",
-    "tsup": "8.5.1",
+    "tsup": "9.0.0",
     "typescript": "5.9.3",
     "vite": "7.3.8",
     "vitest": "4.1.12",
