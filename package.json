@@ -54,9 +54,9 @@
     "zod": "4.6.7"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.6.7",
+    "@biomejs/biome": "2.6.8",
     "@hey-api/openapi-ts": "0.99.0",
-    "@playwright/test": "1.65.0",
+    "@playwright/test": "1.65.1",
     "@types/express": "5.0.6",
     "@types/lodash": "4.17.27",
     "@types/node": "26.6.6",
@@ -81,7 +81,7 @@
     "vite": "7.3.8",
     "vitest": "4.1.12",
     "wait-on": "9.5.1",
-    "ws": "8.22.2"
+    "ws": "8.23.0"
   },
   "packageManager": "pnpm@10.34.9",
   "engines": {
